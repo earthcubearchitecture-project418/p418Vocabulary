@@ -1,0 +1,2983 @@
+{
+  "@context": {
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ec1": "http://example.org/voc/"
+  },
+  "@graph": [
+    {
+      "@id": "ec1:apiType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type of API"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:API"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "The type of API"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/apiType"
+    },
+    {
+      "@id": "ec1:responsibilityStartDate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Responsibility start date"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Responsibility start date"
+      },
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:XXX"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/responsibilityStartDate"
+    },
+    {
+      "@id": "ec1:api",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to a API standard for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "api "
+      },
+      "rdfs:range": {
+        "@id": "ec1:API"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/api"
+    },
+    {
+      "@id": "ec1:OtherContent",
+      "@type": [
+        "ec1:ContentType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "other"
+      }
+    },
+    {
+      "@id": "ec1:remarks",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Free text remarks about the respository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Informational remarks"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/XXXX"
+    },
+    {
+      "@id": "ec1:repositoryName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The name of the data repository expressed in text."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Repository Name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:name"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryName"
+    },
+    {
+      "@id": "ec1:contentType",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "All types of resources available in the repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Content Type"
+      },
+      "rdfs:range": {
+        "@id": "ec1:ContentType"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/contentType"
+    },
+    {
+      "@id": "ec1:contactPoint",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The agent to contact."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Repository Contact"
+      },
+      "rdfs:range": {
+        "@id": "ec1:ContactPoint"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:contactPoint"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryContact"
+    },
+    {
+      "@id": "ec1:MetadataStandard",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The metadata standard the data repository offers "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Metadata standard"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/metadataStandard"
+    },
+    {
+      "@id": "ec1:identifiers",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to identifiers that uniquely identify the data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Identifier"
+      },
+      "rdfs:range": {
+        "@id": "http://examples.org/voc/Identifier"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/identifiers"
+    },
+    {
+      "@id": "ec1:dataUploadRestriction",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "All existing restrictions to the data upload (required if restricted is chosen).."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataUpload"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "All existing restrictions to the data upload (required if restricted is chosen).."
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadRestriction"
+    },
+    {
+      "@id": "ec1:identifierValue",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The value that will be unique within a specifc identifier type. For example a DOI of doi:10.1234/567890 would have the identifier value of '10.1234/567890'"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Identifier"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "An identifier's value."
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:value"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryIdentifierValue"
+    },
+    {
+      "@id": "ec1:dataUploadLicenseUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The data upload license URL."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataUploadLicense"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "The data upload license URL."
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadLicenseUrl"
+    },
+    {
+      "@id": "ec1:software",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The software used to run the RDR  ex Dspace."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Software"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/software"
+    },
+    {
+      "@id": "ec1:institutionCountry",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution country name."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution county name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionCountry"
+    },
+    {
+      "@id": "ec1:RepositoryType",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type of repository."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Repostory Type"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/type"
+    },
+    {
+      "@id": "ec1:qualityManagement",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Any form of quality management concerning the research data or metadata of the RDR."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "qualityManagement information and remarks"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/qualityManagement"
+    },
+    {
+      "@id": "ec1:responsibilityEndDate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Responsibility end date"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Responsibility end date"
+      },
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:XXX"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/responsibilityEndDate"
+    },
+    {
+      "@id": "ec1:ScientificStatisticalDataFormats",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:ContentType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Scientific and statistical data formats"
+      }
+    },
+    {
+      "@id": "ec1:IdentifierTypeDOI",
+      "@type": [
+        "ec1:IdentifierType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Digital Object Identifier (DOI)"
+      }
+    },
+    {
+      "@id": "ec1:AudiovisualData",
+      "@type": [
+        "ec1:ContentType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Audiovisual data"
+      }
+    },
+    {
+      "@id": "ec1:institutionType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution country name."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution county name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionType"
+    },
+    {
+      "@id": "ec1:metrics",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Any service, tool, etc. that is used by the RDR to track, measure and visualize the usage of provided research data."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "metrics information and remarks"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/metrics"
+    },
+    {
+      "@id": "ec1:DataLicense",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The license for data  "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data license standard"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataLicense"
+    },
+    {
+      "@id": "ec1:DFGSubjectScheme",
+      "@type": [
+        "ec1:SubjectScheme",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "DFG"
+      },
+      "rdfs:seeAlso": "http://www.dfg.de/en/dfg_profile/statutory_bodies/review_boards/subject_areas/index.jsp"
+    },
+    {
+      "@id": "ec1:contactEmail",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "An email address for a data repository's contact point."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:ContactPoint"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Contact Point Email"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:email"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryContact"
+    },
+    {
+      "@id": "ec1:subjectArea",
+      "@type": "owl:ObjectProperty",
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The disciplinary focus of the repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Subject Area"
+      },
+      "rdfs:range": {
+        "@id": "ec1:SubjectArea"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/subject"
+    },
+    {
+      "@id": "ec1:dataAccessRestriction",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "All existing restrictions to the database Access (required if restricted is chosen).."
+        },
+        {
+          "@language": "en",
+          "@value": "All existing restrictions to the data Access (required if restricted is chosen).."
+        }
+      ],
+      "rdfs:domain": [
+        {
+          "@id": "ec1:DatabaseAccess"
+        },
+        {
+          "@id": "ec1:DataAccess"
+        }
+      ],
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "All existing restrictions to the data Access (required if restricted is chosen).."
+        },
+        {
+          "@language": "en",
+          "@value": "All existing restrictions to the database Access (required if restricted is chosen).."
+        }
+      ],
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": [
+        "http://www.re3data.org/schema/3-0/databaseAccessRestriction",
+        "http://www.re3data.org/schema/3-0/dataAccessRestriction"
+      ]
+    },
+    {
+      "@id": "ec1:subjectName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The name of a subject within a specific scheme for a subject area."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:SubjectArea"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Subject Area Name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/subjectName"
+    },
+    {
+      "@id": "ec1:DataUpload",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The regulation for submitting research data to the RDR "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data upload"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUpload"
+    },
+    {
+      "@id": "ec1:NetworkbasedData",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:ContentType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Networkbased data"
+      }
+    },
+    {
+      "@id": "ec1:AlertService",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The alerting service the data repository offers "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Alert Service"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/syndication"
+    },
+    {
+      "@id": "ec1:RepositoryTypeOther",
+      "@type": [
+        "ec1:RepositoryType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Other repository type"
+      }
+    },
+    {
+      "@id": "ec1:StructuredText",
+      "@type": [
+        "ec1:ContentType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Structured text"
+      }
+    },
+    {
+      "@id": "ec1:ContentType",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The resource available from a repository."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Content Type"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/contentType"
+    },
+    {
+      "@id": "ec1:RawData",
+      "@type": [
+        "ec1:ContentType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Raw data"
+      }
+    },
+    {
+      "@id": "ec1:DatabaseLicense",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The license for database  "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Database license standard"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseLicense"
+    },
+    {
+      "@id": "ec1:ContactPoint",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The contact point with either an email address or URL for an online contact form."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Contact Point"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ContactPoint"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryContact"
+    },
+    {
+      "@id": "ec1:dataAccess",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to a data Access for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Access"
+      },
+      "rdfs:range": {
+        "@id": "ec1:DataAccess"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataAccess"
+    },
+    {
+      "@id": "ec1:offlineDate",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The date when the repository went offline. The database and/or the website are no longer available."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Closed Date"
+      },
+      "rdfs:range": {
+        "@id": "xsd:date"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:dissolutionDate"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/offline"
+    },
+    {
+      "@id": "ec1:DataUploadLicense",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The license for data upload "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data license standard"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadLicense"
+    },
+    {
+      "@id": "ec1:dataUpload",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to a data upload for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data upload"
+      },
+      "rdfs:range": {
+        "@id": "ec1:DataUpload"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUpload"
+    },
+    {
+      "@id": "ec1:alertService",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to an alerting service for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Alert Service"
+      },
+      "rdfs:range": {
+        "@id": "ec1:AlertService"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/syndication"
+    },
+    {
+      "@id": "ec1:policyType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Policy type."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Policy"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Policy type"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/policytype"
+    },
+    {
+      "@id": "ec1:Images",
+      "@type": [
+        "ec1:ContentType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Images"
+      }
+    },
+    {
+      "@id": "ec1:SourceCode",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:ContentType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Source code"
+      }
+    },
+    {
+      "@id": "ec1:keyword",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "English keyword(s) describing the subject focus of the repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Keyword"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/keyword"
+    },
+    {
+      "@id": "ec1:databaseLicenseUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The data  license URL."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DatabaseLicense"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "The data  license URL."
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseLicenseUrl"
+    },
+    {
+      "@id": "ec1:metadataStandardUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Metadata standard  URL like 'http://example.org/metadataX.html'."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:MetadataStandard"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Metadata standard URL"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/metadataStandardUrl"
+    },
+    {
+      "@id": "ec1:alertServiceType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Alerting service type like RSS."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:AlertService"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Alert Service Type"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/syndicationType"
+    },
+    {
+      "@id": "ec1:ProviderType",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type of provider."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Provider Type"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/providerType"
+    },
+    {
+      "@id": "ec1:IdentifierTypeRe3data",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:IdentifierType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Specifically a Re3Data Digital Object Identifier (DOI)"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/re3data"
+    },
+    {
+      "@id": "ec1:dataLicenseName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Metadata standard like ISO 115."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataLicense"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data license standard name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataLicenseName"
+    },
+    {
+      "@id": "ec1:ConfigurationData",
+      "@type": [
+        "ec1:ContentType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Configuration data"
+      }
+    },
+    {
+      "@id": "ec1:policyName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Policy name."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Policy"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Policy name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/policyName"
+    },
+    {
+      "@id": "ec1:databaseLicense",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to a database license for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DatabaseRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Database license  standard"
+      },
+      "rdfs:range": {
+        "@id": "ec1:DatabaseLicense"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseLicense"
+    },
+    {
+      "@id": "ec1:metadataStandard",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to a metadata standard for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Metadata standard"
+      },
+      "rdfs:range": {
+        "@id": "ec1:MetadataStandard"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/metadataStandard"
+    },
+    {
+      "@id": "ec1:providerType",
+      "@type": "owl:ObjectProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "2"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type of provider."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Provider Type"
+      },
+      "rdfs:range": {
+        "@id": "ec1:ProviderType"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/providerType"
+    },
+    {
+      "@id": "ec1:identifierUrl",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The url that will resolve to the identified thing. For example a DOI of doi:10.1234/567890 could have the identifier url of 'https://doi.org/10.1234/567890' and/or 'http://doi.org/10.1234/567890' and/or 'http://dx.doi.org/10.1234/567890', hence it's unbounded cardinality."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Identifier"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "An identifier's resolvable URL."
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryIdentifierValue"
+    },
+    {
+      "@id": "ec1:PlainText",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:ContentType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Plain text"
+      }
+    },
+    {
+      "@id": "ec1:institution",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "All institutions being responsible for funding, creating and/or running the RDR (."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution"
+      },
+      "rdfs:range": {
+        "@id": "ec1:Institution"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institution"
+    },
+    {
+      "@id": "ec1:repositoryType",
+      "@type": "owl:ObjectProperty",
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type of repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Repository Type"
+      },
+      "rdfs:range": {
+        "@id": "ec1:RepositoryType"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:additionalType"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryTypes"
+    },
+    {
+      "@id": "ec1:IdentifierType",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A identifier type for an Identifier."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Repository Identifier Type"
+      }
+    },
+    {
+      "@id": "ec1:API",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "An API standard the data repository offers "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "API"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/api"
+    },
+    {
+      "@id": "ec1:RepositoryTypeMultidisciplinary",
+      "@type": [
+        "ec1:RepositoryType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Multidisciplinary repository type"
+      }
+    },
+    {
+      "@id": "ec1:policyUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Policy URL like 'http://example.org/policy.html'."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Policy"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Policye URL"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/policyUrl"
+    },
+    {
+      "@id": "ec1:Institution",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "All institutions being responsible for funding, creating and/or running the RDR (."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institution"
+    },
+    {
+      "@id": "ec1:StructuredGraphics",
+      "@type": [
+        "ec1:ContentType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Structured graphics"
+      }
+    },
+    {
+      "@id": "ec1:databaseAccess",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to a database Access for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DatabaseRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Database Access"
+      },
+      "rdfs:range": {
+        "@id": "ec1:DatabaseAccess"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseAccess"
+    },
+    {
+      "@id": "ec1:databaseLicenseName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Metadata standard like ISO 115."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DatabaseLicense"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data license standard name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseLicenseName"
+    },
+    {
+      "@id": "ec1:DataProvider",
+      "@type": [
+        "ec1:ProviderType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Provider"
+      }
+    },
+    {
+      "@id": "ec1:ArchivedData",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:ContentType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Archived data"
+      }
+    },
+    {
+      "@id": "ec1:identifierType",
+      "@type": "owl:ObjectProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type that identifies the domain space for its uniqueness."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Identifier"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "An identifier's type such as DOI, ARK, URN or for custom types like Re3Data. For example a DOI of doi:10.1234/567890 would have the identifier value of '<ec1:IdentifierTypeDOI>'"
+      },
+      "rdfs:range": {
+        "@id": "ec1:IdentifierType"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:propertyID"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryIdentifierType"
+    },
+    {
+      "@id": "ec1:dataLicense",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to a data license for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data license  standard"
+      },
+      "rdfs:range": {
+        "@id": "ec1:DataLicense"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataLicense"
+    },
+    {
+      "@id": "ec1:StandardOfficeDocuments",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:ContentType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Standard office documents"
+      }
+    },
+    {
+      "@id": "ec1:DatabaseAccess",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The regulation for submitting research data to the RDR "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Database Access"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseAccess"
+    },
+    {
+      "@id": "ec1:institutionName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution name."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionName"
+    },
+    {
+      "@id": "ec1:pidSystem",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The persistent identifier system that is used by the RDR."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "pidSystem information and remarks"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/pidSystem"
+    },
+    {
+      "@id": "ec1:institutionIdentifierValue",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution identifier value"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:InstitutionIdentifier"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution Identifier value"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionIdentifierValue"
+    },
+    {
+      "@id": "ec1:institutionAdditionalName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Additional Institution name."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Additional Institution name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionAdditionalName"
+    },
+    {
+      "@id": "ec1:certificate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Free text remarks about the respository certificate."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "certificate information and remarks"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/certificate"
+    },
+    {
+      "@id": "ec1:SoftwareApplications",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:ContentType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Software applications"
+      }
+    },
+    {
+      "@id": "ec1:databaseAccessType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type of the database Access."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DatabaseAccess"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "The type of the database Access"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseAccessType"
+    },
+    {
+      "@id": "ec1:institutionIdentifierType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution identifier type"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:InstitutionIdentifier"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution Identifier type"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionIdentifierType"
+    },
+    {
+      "@id": "ec1:contactUrl",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "URL for an online contact form."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:ContactPoint"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Contact Point URL"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryContact"
+    },
+    {
+      "@id": "ec1:lastUpdate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The date from which last update was made"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Date of last update"
+      },
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:XXX"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/XXXX"
+    },
+    {
+      "@id": "ec1:policy",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to an alerting service for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Policy"
+      },
+      "rdfs:range": {
+        "@id": "ec1:Policy"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/policy"
+    },
+    {
+      "@id": "ec1:institutionContact",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution contact point."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution contact point"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:contactPoint"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionContact"
+    },
+    {
+      "@id": "ec1:Databases",
+      "@type": [
+        "ec1:ContentType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Databases"
+      }
+    },
+    {
+      "@id": "ec1:SubjectArea",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A disciplinary focus."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Subject Area"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/subject"
+    },
+    {
+      "@id": "ec1:enhancedPublication",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The RDR offers the interlinking between publications and data."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "enhancedPublication information and remarks"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/enhancedPublication"
+    },
+    {
+      "@id": "ec1:Identifier",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A unique identifier with a type and value for the Data Repository."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Repository Identifier"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:PropertyValue"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryIdentifier"
+    },
+    {
+      "@id": "ec1:apiDocumentation",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A link referring to the API documentation, a website that states its availability and other information for using the API"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:API"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "A link referring to the API documentation"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/apiDocumentation"
+    },
+    {
+      "@id": "ec1:DataAccess",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The regulation for submitting research data to the RDR "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Access"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataAccess"
+    },
+    {
+      "@id": "ec1:versioning",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The RDR supports versioning of research data."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Versioning"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/versioning"
+    },
+    {
+      "@id": "ec1:institutionUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution URL like 'http://example.org'."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution URL"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionUrl"
+    },
+    {
+      "@id": "ec1:institutionIdentifier",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The identifier for the responsible institution"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Insitution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Link to Institution Identifier"
+      },
+      "rdfs:range": {
+        "@id": "ec1:InstitutionIdentifier"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionIdentifier"
+    },
+    {
+      "@id": "ec1:description",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A textual description providing additional information about the Data Repository (primary language is English). The language should be defined by the xsd datatype of the value. For example, '@en'. See "
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Repository Description"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/description"
+    },
+    {
+      "@id": "ec1:citationGuidelineUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The URL of the RDR providing information on how to cite its research data. The DataCite citation format is recommended (http://www.datacite.org/whycitedata)."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Citation Guideline Url"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/citationGuidelineUrl"
+    },
+    {
+      "@id": "ec1:dataLicenseUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The data  license URL."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataLicense"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "The data  license URL."
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataLicenseUrl"
+    },
+    {
+      "@id": "ec1:ServiceProvider",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:ProviderType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Service Provider"
+      }
+    },
+    {
+      "@id": "ec1:responsibilityType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution responsibility type."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:Institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution responsibility type"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/responsibilityType"
+    },
+    {
+      "@id": "ec1:alertServiceUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Alerting service URL like 'http://example.org/rss.xml'."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:AlertService"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Alert Service URL"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/syndicationUrl"
+    },
+    {
+      "@id": "ec1:RepositoryTypeInstitutional",
+      "@type": [
+        "ec1:RepositoryType",
+        "owl:namedIndividual"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institutional repository type"
+      }
+    },
+    {
+      "@id": "ec1:aidSystem",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The author identifier system that is used by the RDR."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "aidSystem information and remarks"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/aidSystem"
+    },
+    {
+      "@id": "ec1:RepositoryTypeGovernmental",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:RepositoryType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Governmental repository type"
+      }
+    },
+    {
+      "@id": "ec1:dataUploadLicense",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links to a data license for a data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data license  standard"
+      },
+      "rdfs:range": {
+        "@id": "ec1:DataUploadLicense"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadLicense"
+    },
+    {
+      "@id": "ec1:Policy",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The alerting service the data repository offers "
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "policy"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/policy"
+    },
+    {
+      "@id": "ec1:RepositoryTypeDisciplinary",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:RepositoryType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Disciplinary repository type"
+      }
+    },
+    {
+      "@id": "ec1:additionalName",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The alternative name or acronym for the data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Additional Name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:additionalName"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/alternateName"
+    },
+    {
+      "@id": "ec1:startDate",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Releasing date of the repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Releasing Date"
+      },
+      "rdfs:range": {
+        "@id": "xsd:date"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:foundingDate"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/startDate"
+    },
+    {
+      "@id": "ec1:subjectId",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The unique identifier within a specific scheme for a subject area."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:SubjectArea"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Subject Area Identifier"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/subjectId"
+    },
+    {
+      "@id": "ec1:DataRepository",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A Data Repository."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Repository"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:Organization"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repository"
+    },
+    {
+      "@id": "ec1:dataUploadLicenseName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Metadata standard like ISO 115."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataUploadLicense"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data license standard name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadLicenseName"
+    },
+    {
+      "@id": "ec1:size",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The number of items contained in the repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Size of Data Repository"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:numberOfItems"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/size"
+    },
+    {
+      "@id": "ec1:missionStatementUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The URL of a mission statement describing the designated community of the repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Mission Statement URL"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/missionStatementUrl"
+    },
+    {
+      "@id": "ec1:",
+      "@type": "owl:Ontology",
+      "dcterms:issued": {
+        "@type": "xsd:date",
+        "@value": "2011-05-11"
+      },
+      "dc:creator": {
+        "@id": "https://raw.githubusercontent.com/fils/CDFRegistryWG/master/Vocabulary/some-old-joe-schmoe"
+      },
+      "dc:description": "Schema.org extension for a Data Repository",
+      "dc:identifier": "EC RWG Vocabulary v0.1",
+      "dc:title": "EarthCube Registry Working Group Vocabulary"
+    },
+    {
+      "@id": "ec1:apiUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The URL of the API"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:API"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "The URL of the API"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/apiUrl"
+    },
+    {
+      "@id": "ec1:SubjectScheme",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The specific scheme for a subject area."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Subject Scheme"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/subjectScheme"
+    },
+    {
+      "@id": "ec1:userInterfaceLanguage",
+      "@type": "owl:DatatypeProperty",
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The user interface language(s) of the RDR."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Repository Language"
+      },
+      "rdfs:range": {
+        "@id": "xsd:language"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:inLanguage"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryLanguage"
+    },
+    {
+      "@id": "ec1:InstitutionIdentifier",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The identifier for the responsible institution"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Institution Identifier"
+      },
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionIdentifier"
+    },
+    {
+      "@id": "ec1:metadataStandardName",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Metadata standard like ISO 115."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:MetadataStandard"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Matadata standard name"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/metadataStandardName"
+    },
+    {
+      "@id": "ec1:dataAccessType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type of the data Access."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataAccess"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "The type of the data Access"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataAccessType"
+    },
+    {
+      "@id": "ec1:citationReference",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The RDR is covered by SCOPUS or the Data Citation Index."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "citationReference information and remarks"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/citationReference"
+    },
+    {
+      "@id": "ec1:closedDate",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The date when the repository stopped ingesting new research data to its database. The database and its research data are still available."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Closed Date"
+      },
+      "rdfs:range": {
+        "@id": "xsd:date"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/closed"
+    },
+    {
+      "@id": "ec1:repositoryUrl",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The canonical URL of the data repository."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Data Repository URL"
+      },
+      "rdfs:range": {
+        "@id": "xsd:anyURI"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:url"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryUrl"
+    },
+    {
+      "@id": "ec1:subjectScheme",
+      "@type": "owl:ObjectProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The specific scheme for a subject area."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:SubjectArea"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Subject Area Scheme"
+      },
+      "rdfs:range": {
+        "@id": "ec1:SubjectScheme"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/subjectScheme"
+    },
+    {
+      "@id": "ec1:entryDate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The date entry made"
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Date of entry"
+      },
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:XXX"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/XXXX"
+    },
+    {
+      "@id": "ec1:endDate",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The date the repository ended its service of ingesting new research data and/or providing it."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataRepository"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Releasing Date"
+      },
+      "rdfs:range": {
+        "@id": "xsd:date"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/endDate"
+    },
+    {
+      "@id": "ec1:RepositoryTypeProjectRelated",
+      "@type": [
+        "owl:namedIndividual",
+        "ec1:RepositoryType"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Project-related repository type"
+      }
+    },
+    {
+      "@id": "ec1:dataUploadType",
+      "@type": "owl:DatatypeProperty",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The type of the data upload."
+      },
+      "rdfs:domain": {
+        "@id": "ec1:DataUpload"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "ec1:"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "The type of the data upload"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadType"
+    }
+  ]
+}

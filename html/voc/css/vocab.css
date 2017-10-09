@@ -1,0 +1,94 @@
+body {
+  font-family: "Gotham SSm A", "Gotham SSm B", Verdana, sans-serif;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+
+.code-value-uri
+{
+    margin-top: 6px;
+    color: #999;
+    font-size: 80%;
+}
+
+.firstCol3 { width: 33%; max-width: 33%; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto;}
+.secondCol3 { width: 33%; max-width: 33%; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto;}
+.thirdCol3 { width: 34%; max-width: 34%; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto;}
+
+.firstCol2 { width: 40%; max-width: 40%; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto;}
+.secondCol2 { width: 60%; max-width: 60%; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto;}
+
+.tableheader {
+font-size: 150%;
+font-weight: 700;
+text-align: left;
+width: 100%;
+background-color: #000000;
+color: #FFFFFF;
+padding-left: 0.5em;
+margin-top: 1.5em;
+}
+
+h3.tableheader {
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+}
+
+a[target^="_blank"] {
+    background: url("../images/external.png") center right no-repeat;
+    background-size: contain;
+    padding-right: 25px;
+}
+
+
+.oval {
+-moz-border-radius: 50% / 50%;
+-webkit-border-radius: 50% / 50%;
+border-radius: 50% / 50%;
+border: 1px solid black;
+padding-left: 2em;
+padding-right: 2em;
+text-align: center;
+display: table-cell;
+padding-top: 0.6em;
+padding-bottom: 0.2em;
+background-color: #EEFFFF;
+}
+
+.rect {
+border: 1px solid black;
+padding-left: 2em;
+padding-right: 2em;
+text-align: center;
+display: table-cell;
+padding-top: 0.6em;
+padding-bottom: 0.2em;
+background-color: #EEFFFF;
+}
+
+.predicate {
+display: table-cell;
+text-align: center;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 1.2em;
+vertical-align: top;
+background-repeat: no-repeat;
+background-position: right center;
+background-image: url('../images/rightarrow.svg');
+}
+
+#triple {
+padding-top: 1em;
+padding-bottom: 1em;
+}
+
+.footer {
+position: relative; padding-top: 6em; bottom: 4px; left: 4px; font-size: 0.8em;
+}
+
+.italic {font-style: italic; color: #999999;}
