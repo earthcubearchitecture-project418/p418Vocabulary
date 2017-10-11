@@ -15,7 +15,7 @@ type MyServer struct {
 func main() {
 
   htmlRouter := mux.NewRouter().StrictSlash(true)
-  htmlRouter.PathPrefix("/static").Handler(http.StripPrefix("/static", http.FileServer(http.Dir("./html/static"))))
+  htmlRouter.PathPrefix("/voc/static").Handler(http.StripPrefix("/voc/static", http.FileServer(http.Dir("./html/voc/static"))))
   htmlRouter.HandleFunc("/voc/", func(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, "./html/voc/index.html")
   })
