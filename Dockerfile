@@ -1,10 +1,15 @@
-FROM golang:1.9
+# Start from scratch image and add in a precompiled binary
+# docker build  --tag="earthcube/p418vocab:0.1.0"  .
+# docker run -d -p 9900:9900  earthcube/p418vocab:0.1.0
+FROM scratch
 
-WORKDIR /go/src/app
-ADD ./server.go .
+# Add in the static elements (could also mount these from local filesystem)
+# later as the indexes grow
+ADD p418Vocabulary /
 ADD ./html/ ./html
 
-RUN go-wrapper download   # "go get -d -v ./..."
-RUN go-wrapper install    # "go install -v ./..."
+# Add our binary
+CMD ["/p418Vocabulary"]
 
-CMD ["go-wrapper", "run"] # ["app"]
+# Document that the service listens on this port
+EXPOSE 9900
