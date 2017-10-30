@@ -8,12 +8,15 @@
     "schema": "http://schema.org/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "ec1": "http://example.org/voc/"
+    "gdx": "http://geodex.org/voc/"
   },
   "@graph": [
     {
-      "@id": "ec1:apiType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:apiType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -27,10 +30,10 @@
         "@value": "The type of API"
       },
       "rdfs:domain": {
-        "@id": "ec1:API"
+        "@id": "gdx:API"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -42,17 +45,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/apiType"
     },
     {
-      "@id": "ec1:responsibilityStartDate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:responsibilityStartDate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Responsibility start date"
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -67,31 +73,34 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/responsibilityStartDate"
     },
     {
-      "@id": "ec1:api",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:api",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to a API standard for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "api "
       },
       "rdfs:range": {
-        "@id": "ec1:API"
+        "@id": "gdx:API"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/api"
     },
     {
-      "@id": "ec1:OtherContent",
+      "@id": "gdx:OtherContent",
       "@type": [
-        "ec1:ContentType",
+        "gdx:ContentType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -100,17 +109,20 @@
       }
     },
     {
-      "@id": "ec1:remarks",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:remarks",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Free text remarks about the respository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -122,8 +134,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/XXXX"
     },
     {
-      "@id": "ec1:repositoryName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:repositoryName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -137,10 +152,10 @@
         "@value": "The name of the data repository expressed in text."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -155,46 +170,52 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryName"
     },
     {
-      "@id": "ec1:contentType",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:contentType",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "All types of resources available in the repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Content Type"
       },
       "rdfs:range": {
-        "@id": "ec1:ContentType"
+        "@id": "gdx:ContentType"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/contentType"
     },
     {
-      "@id": "ec1:contactPoint",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:contactPoint",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The agent to contact."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Data Repository Contact"
       },
       "rdfs:range": {
-        "@id": "ec1:ContactPoint"
+        "@id": "gdx:ContactPoint"
       },
       "rdfs:subPropertyOf": {
         "@id": "schema:contactPoint"
@@ -202,14 +223,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryContact"
     },
     {
-      "@id": "ec1:MetadataStandard",
+      "@id": "gdx:MetadataStandard",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The metadata standard the data repository offers "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -221,17 +242,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/metadataStandard"
     },
     {
-      "@id": "ec1:identifiers",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:identifiers",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to identifiers that uniquely identify the data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -246,8 +270,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/identifiers"
     },
     {
-      "@id": "ec1:dataUploadRestriction",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:dataUploadRestriction",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -261,10 +288,10 @@
         "@value": "All existing restrictions to the data upload (required if restricted is chosen).."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataUpload"
+        "@id": "gdx:DataUpload"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -279,8 +306,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadRestriction"
     },
     {
-      "@id": "ec1:identifierValue",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:identifierValue",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -294,10 +324,10 @@
         "@value": "The value that will be unique within a specifc identifier type. For example a DOI of doi:10.1234/567890 would have the identifier value of '10.1234/567890'"
       },
       "rdfs:domain": {
-        "@id": "ec1:Identifier"
+        "@id": "gdx:Identifier"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -312,8 +342,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryIdentifierValue"
     },
     {
-      "@id": "ec1:dataUploadLicenseUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:dataUploadLicenseUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -327,10 +360,10 @@
         "@value": "The data upload license URL."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataUploadLicense"
+        "@id": "gdx:DataUploadLicense"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -345,17 +378,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadLicenseUrl"
     },
     {
-      "@id": "ec1:software",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:software",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The software used to run the RDR  ex Dspace."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -367,8 +403,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/software"
     },
     {
-      "@id": "ec1:institutionCountry",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:institutionCountry",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -382,10 +421,10 @@
         "@value": "Institution country name."
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -397,14 +436,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionCountry"
     },
     {
-      "@id": "ec1:RepositoryType",
+      "@id": "gdx:RepositoryType",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The type of repository."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -413,17 +452,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/type"
     },
     {
-      "@id": "ec1:qualityManagement",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:qualityManagement",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Any form of quality management concerning the research data or metadata of the RDR."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -435,17 +477,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/qualityManagement"
     },
     {
-      "@id": "ec1:responsibilityEndDate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:responsibilityEndDate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Responsibility end date"
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -460,10 +505,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/responsibilityEndDate"
     },
     {
-      "@id": "ec1:ScientificStatisticalDataFormats",
+      "@id": "gdx:ScientificStatisticalDataFormats",
       "@type": [
         "owl:namedIndividual",
-        "ec1:ContentType"
+        "gdx:ContentType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -471,9 +516,9 @@
       }
     },
     {
-      "@id": "ec1:IdentifierTypeDOI",
+      "@id": "gdx:IdentifierTypeDOI",
       "@type": [
-        "ec1:IdentifierType",
+        "gdx:IdentifierType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -482,9 +527,9 @@
       }
     },
     {
-      "@id": "ec1:AudiovisualData",
+      "@id": "gdx:AudiovisualData",
       "@type": [
-        "ec1:ContentType",
+        "gdx:ContentType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -493,8 +538,11 @@
       }
     },
     {
-      "@id": "ec1:institutionType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:institutionType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -508,10 +556,10 @@
         "@value": "Institution country name."
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -523,17 +571,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionType"
     },
     {
-      "@id": "ec1:metrics",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:metrics",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Any service, tool, etc. that is used by the RDR to track, measure and visualize the usage of provided research data."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -545,14 +596,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/metrics"
     },
     {
-      "@id": "ec1:DataLicense",
+      "@id": "gdx:DataLicense",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The license for data  "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -564,9 +615,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataLicense"
     },
     {
-      "@id": "ec1:DFGSubjectScheme",
+      "@id": "gdx:DFGSubjectScheme",
       "@type": [
-        "ec1:SubjectScheme",
+        "gdx:SubjectScheme",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -576,17 +627,20 @@
       "rdfs:seeAlso": "http://www.dfg.de/en/dfg_profile/statutory_bodies/review_boards/subject_areas/index.jsp"
     },
     {
-      "@id": "ec1:contactEmail",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:contactEmail",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "An email address for a data repository's contact point."
       },
       "rdfs:domain": {
-        "@id": "ec1:ContactPoint"
+        "@id": "gdx:ContactPoint"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -601,8 +655,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryContact"
     },
     {
-      "@id": "ec1:subjectArea",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:subjectArea",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "owl:minCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -612,23 +669,26 @@
         "@value": "The disciplinary focus of the repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Subject Area"
       },
       "rdfs:range": {
-        "@id": "ec1:SubjectArea"
+        "@id": "gdx:SubjectArea"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/subject"
     },
     {
-      "@id": "ec1:dataAccessRestriction",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:dataAccessRestriction",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -649,14 +709,14 @@
       ],
       "rdfs:domain": [
         {
-          "@id": "ec1:DatabaseAccess"
+          "@id": "gdx:DatabaseAccess"
         },
         {
-          "@id": "ec1:DataAccess"
+          "@id": "gdx:DataAccess"
         }
       ],
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": [
         {
@@ -680,8 +740,11 @@
       ]
     },
     {
-      "@id": "ec1:subjectName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:subjectName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -695,10 +758,10 @@
         "@value": "The name of a subject within a specific scheme for a subject area."
       },
       "rdfs:domain": {
-        "@id": "ec1:SubjectArea"
+        "@id": "gdx:SubjectArea"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -710,14 +773,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/subjectName"
     },
     {
-      "@id": "ec1:DataUpload",
+      "@id": "gdx:DataUpload",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The regulation for submitting research data to the RDR "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -729,10 +792,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUpload"
     },
     {
-      "@id": "ec1:NetworkbasedData",
+      "@id": "gdx:NetworkbasedData",
       "@type": [
         "owl:namedIndividual",
-        "ec1:ContentType"
+        "gdx:ContentType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -740,14 +803,14 @@
       }
     },
     {
-      "@id": "ec1:AlertService",
+      "@id": "gdx:AlertService",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The alerting service the data repository offers "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -759,9 +822,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/syndication"
     },
     {
-      "@id": "ec1:RepositoryTypeOther",
+      "@id": "gdx:RepositoryTypeOther",
       "@type": [
-        "ec1:RepositoryType",
+        "gdx:RepositoryType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -770,9 +833,9 @@
       }
     },
     {
-      "@id": "ec1:StructuredText",
+      "@id": "gdx:StructuredText",
       "@type": [
-        "ec1:ContentType",
+        "gdx:ContentType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -781,14 +844,14 @@
       }
     },
     {
-      "@id": "ec1:ContentType",
+      "@id": "gdx:ContentType",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The resource available from a repository."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -797,9 +860,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/contentType"
     },
     {
-      "@id": "ec1:RawData",
+      "@id": "gdx:RawData",
       "@type": [
-        "ec1:ContentType",
+        "gdx:ContentType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -808,14 +871,14 @@
       }
     },
     {
-      "@id": "ec1:DatabaseLicense",
+      "@id": "gdx:DatabaseLicense",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The license for database  "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -827,14 +890,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseLicense"
     },
     {
-      "@id": "ec1:ContactPoint",
+      "@id": "gdx:ContactPoint",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The contact point with either an email address or URL for an online contact form."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -846,30 +909,36 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryContact"
     },
     {
-      "@id": "ec1:dataAccess",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:dataAccess",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to a data Access for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Data Access"
       },
       "rdfs:range": {
-        "@id": "ec1:DataAccess"
+        "@id": "gdx:DataAccess"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataAccess"
     },
     {
-      "@id": "ec1:offlineDate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:offlineDate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -879,10 +948,10 @@
         "@value": "The date when the repository went offline. The database and/or the website are no longer available."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -897,14 +966,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/offline"
     },
     {
-      "@id": "ec1:DataUploadLicense",
+      "@id": "gdx:DataUploadLicense",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The license for data upload "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -916,52 +985,61 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadLicense"
     },
     {
-      "@id": "ec1:dataUpload",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:dataUpload",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to a data upload for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Data upload"
       },
       "rdfs:range": {
-        "@id": "ec1:DataUpload"
+        "@id": "gdx:DataUpload"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUpload"
     },
     {
-      "@id": "ec1:alertService",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:alertService",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to an alerting service for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Alert Service"
       },
       "rdfs:range": {
-        "@id": "ec1:AlertService"
+        "@id": "gdx:AlertService"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/syndication"
     },
     {
-      "@id": "ec1:policyType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:policyType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -975,10 +1053,10 @@
         "@value": "Policy type."
       },
       "rdfs:domain": {
-        "@id": "ec1:Policy"
+        "@id": "gdx:Policy"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -990,9 +1068,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/policytype"
     },
     {
-      "@id": "ec1:Images",
+      "@id": "gdx:Images",
       "@type": [
-        "ec1:ContentType",
+        "gdx:ContentType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -1001,10 +1079,10 @@
       }
     },
     {
-      "@id": "ec1:SourceCode",
+      "@id": "gdx:SourceCode",
       "@type": [
         "owl:namedIndividual",
-        "ec1:ContentType"
+        "gdx:ContentType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -1012,17 +1090,20 @@
       }
     },
     {
-      "@id": "ec1:keyword",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:keyword",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "English keyword(s) describing the subject focus of the repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1034,8 +1115,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/keyword"
     },
     {
-      "@id": "ec1:databaseLicenseUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:databaseLicenseUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1049,10 +1133,10 @@
         "@value": "The data  license URL."
       },
       "rdfs:domain": {
-        "@id": "ec1:DatabaseLicense"
+        "@id": "gdx:DatabaseLicense"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1067,8 +1151,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseLicenseUrl"
     },
     {
-      "@id": "ec1:metadataStandardUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:metadataStandardUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1079,13 +1166,13 @@
       },
       "rdfs:comment": {
         "@language": "en",
-        "@value": "Metadata standard  URL like 'http://example.org/metadataX.html'."
+        "@value": "Metadata standard  URL like 'http://geodex.org/metadataX.html'."
       },
       "rdfs:domain": {
-        "@id": "ec1:MetadataStandard"
+        "@id": "gdx:MetadataStandard"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1100,8 +1187,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/metadataStandardUrl"
     },
     {
-      "@id": "ec1:alertServiceType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:alertServiceType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1115,10 +1205,10 @@
         "@value": "Alerting service type like RSS."
       },
       "rdfs:domain": {
-        "@id": "ec1:AlertService"
+        "@id": "gdx:AlertService"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1130,14 +1220,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/syndicationType"
     },
     {
-      "@id": "ec1:ProviderType",
+      "@id": "gdx:ProviderType",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The type of provider."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1146,10 +1236,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/providerType"
     },
     {
-      "@id": "ec1:IdentifierTypeRe3data",
+      "@id": "gdx:IdentifierTypeRe3data",
       "@type": [
         "owl:namedIndividual",
-        "ec1:IdentifierType"
+        "gdx:IdentifierType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -1158,8 +1248,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/re3data"
     },
     {
-      "@id": "ec1:dataLicenseName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:dataLicenseName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1173,10 +1266,10 @@
         "@value": "Metadata standard like ISO 115."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataLicense"
+        "@id": "gdx:DataLicense"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1188,9 +1281,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataLicenseName"
     },
     {
-      "@id": "ec1:ConfigurationData",
+      "@id": "gdx:ConfigurationData",
       "@type": [
-        "ec1:ContentType",
+        "gdx:ContentType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -1199,8 +1292,11 @@
       }
     },
     {
-      "@id": "ec1:policyName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:policyName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1214,10 +1310,10 @@
         "@value": "Policy name."
       },
       "rdfs:domain": {
-        "@id": "ec1:Policy"
+        "@id": "gdx:Policy"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1229,52 +1325,61 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/policyName"
     },
     {
-      "@id": "ec1:databaseLicense",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:databaseLicense",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to a database license for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DatabaseRepository"
+        "@id": "gdx:DatabaseRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Database license  standard"
       },
       "rdfs:range": {
-        "@id": "ec1:DatabaseLicense"
+        "@id": "gdx:DatabaseLicense"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseLicense"
     },
     {
-      "@id": "ec1:metadataStandard",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:metadataStandard",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to a metadata standard for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Metadata standard"
       },
       "rdfs:range": {
-        "@id": "ec1:MetadataStandard"
+        "@id": "gdx:MetadataStandard"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/metadataStandard"
     },
     {
-      "@id": "ec1:providerType",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:providerType",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "2"
@@ -1288,32 +1393,35 @@
         "@value": "The type of provider."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Provider Type"
       },
       "rdfs:range": {
-        "@id": "ec1:ProviderType"
+        "@id": "gdx:ProviderType"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/providerType"
     },
     {
-      "@id": "ec1:identifierUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:identifierUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The url that will resolve to the identified thing. For example a DOI of doi:10.1234/567890 could have the identifier url of 'https://doi.org/10.1234/567890' and/or 'http://doi.org/10.1234/567890' and/or 'http://dx.doi.org/10.1234/567890', hence it's unbounded cardinality."
       },
       "rdfs:domain": {
-        "@id": "ec1:Identifier"
+        "@id": "gdx:Identifier"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1328,10 +1436,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryIdentifierValue"
     },
     {
-      "@id": "ec1:PlainText",
+      "@id": "gdx:PlainText",
       "@type": [
         "owl:namedIndividual",
-        "ec1:ContentType"
+        "gdx:ContentType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -1339,30 +1447,36 @@
       }
     },
     {
-      "@id": "ec1:institution",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:institution",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "All institutions being responsible for funding, creating and/or running the RDR (."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Institution"
       },
       "rdfs:range": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institution"
     },
     {
-      "@id": "ec1:repositoryType",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:repositoryType",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "owl:minCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1372,17 +1486,17 @@
         "@value": "The type of repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Data Repository Type"
       },
       "rdfs:range": {
-        "@id": "ec1:RepositoryType"
+        "@id": "gdx:RepositoryType"
       },
       "rdfs:subPropertyOf": {
         "@id": "schema:additionalType"
@@ -1390,14 +1504,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryTypes"
     },
     {
-      "@id": "ec1:IdentifierType",
+      "@id": "gdx:IdentifierType",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "A identifier type for an Identifier."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1405,14 +1519,14 @@
       }
     },
     {
-      "@id": "ec1:API",
+      "@id": "gdx:API",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "An API standard the data repository offers "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1424,9 +1538,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/api"
     },
     {
-      "@id": "ec1:RepositoryTypeMultidisciplinary",
+      "@id": "gdx:RepositoryTypeMultidisciplinary",
       "@type": [
-        "ec1:RepositoryType",
+        "gdx:RepositoryType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -1435,8 +1549,11 @@
       }
     },
     {
-      "@id": "ec1:policyUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:policyUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1447,13 +1564,13 @@
       },
       "rdfs:comment": {
         "@language": "en",
-        "@value": "Policy URL like 'http://example.org/policy.html'."
+        "@value": "Policy URL like 'http://geodex.org/policy.html'."
       },
       "rdfs:domain": {
-        "@id": "ec1:Policy"
+        "@id": "gdx:Policy"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1468,14 +1585,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/policyUrl"
     },
     {
-      "@id": "ec1:Institution",
+      "@id": "gdx:Institution",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "All institutions being responsible for funding, creating and/or running the RDR (."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1487,9 +1604,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institution"
     },
     {
-      "@id": "ec1:StructuredGraphics",
+      "@id": "gdx:StructuredGraphics",
       "@type": [
-        "ec1:ContentType",
+        "gdx:ContentType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -1498,30 +1615,36 @@
       }
     },
     {
-      "@id": "ec1:databaseAccess",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:databaseAccess",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to a database Access for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DatabaseRepository"
+        "@id": "gdx:DatabaseRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Database Access"
       },
       "rdfs:range": {
-        "@id": "ec1:DatabaseAccess"
+        "@id": "gdx:DatabaseAccess"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseAccess"
     },
     {
-      "@id": "ec1:databaseLicenseName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:databaseLicenseName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1535,10 +1658,10 @@
         "@value": "Metadata standard like ISO 115."
       },
       "rdfs:domain": {
-        "@id": "ec1:DatabaseLicense"
+        "@id": "gdx:DatabaseLicense"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1550,9 +1673,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseLicenseName"
     },
     {
-      "@id": "ec1:DataProvider",
+      "@id": "gdx:DataProvider",
       "@type": [
-        "ec1:ProviderType",
+        "gdx:ProviderType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -1561,10 +1684,10 @@
       }
     },
     {
-      "@id": "ec1:ArchivedData",
+      "@id": "gdx:ArchivedData",
       "@type": [
         "owl:namedIndividual",
-        "ec1:ContentType"
+        "gdx:ContentType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -1572,8 +1695,11 @@
       }
     },
     {
-      "@id": "ec1:identifierType",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:identifierType",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1587,17 +1713,17 @@
         "@value": "The type that identifies the domain space for its uniqueness."
       },
       "rdfs:domain": {
-        "@id": "ec1:Identifier"
+        "@id": "gdx:Identifier"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "An identifier's type such as DOI, ARK, URN or for custom types like Re3Data. For example a DOI of doi:10.1234/567890 would have the identifier value of '<ec1:IdentifierTypeDOI>'"
+        "@value": "An identifier's type such as DOI, ARK, URN or for custom types like Re3Data. For example a DOI of doi:10.1234/567890 would have the identifier value of '<gdx:IdentifierTypeDOI>'"
       },
       "rdfs:range": {
-        "@id": "ec1:IdentifierType"
+        "@id": "gdx:IdentifierType"
       },
       "rdfs:subPropertyOf": {
         "@id": "schema:propertyID"
@@ -1605,32 +1731,35 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryIdentifierType"
     },
     {
-      "@id": "ec1:dataLicense",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:dataLicense",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to a data license for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Data license  standard"
       },
       "rdfs:range": {
-        "@id": "ec1:DataLicense"
+        "@id": "gdx:DataLicense"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataLicense"
     },
     {
-      "@id": "ec1:StandardOfficeDocuments",
+      "@id": "gdx:StandardOfficeDocuments",
       "@type": [
         "owl:namedIndividual",
-        "ec1:ContentType"
+        "gdx:ContentType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -1638,14 +1767,14 @@
       }
     },
     {
-      "@id": "ec1:DatabaseAccess",
+      "@id": "gdx:DatabaseAccess",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The regulation for submitting research data to the RDR "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1657,8 +1786,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseAccess"
     },
     {
-      "@id": "ec1:institutionName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:institutionName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1672,10 +1804,10 @@
         "@value": "Institution name."
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1687,17 +1819,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionName"
     },
     {
-      "@id": "ec1:pidSystem",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:pidSystem",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The persistent identifier system that is used by the RDR."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1709,8 +1844,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/pidSystem"
     },
     {
-      "@id": "ec1:institutionIdentifierValue",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:institutionIdentifierValue",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1724,10 +1862,10 @@
         "@value": "Institution identifier value"
       },
       "rdfs:domain": {
-        "@id": "ec1:InstitutionIdentifier"
+        "@id": "gdx:InstitutionIdentifier"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1739,8 +1877,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionIdentifierValue"
     },
     {
-      "@id": "ec1:institutionAdditionalName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:institutionAdditionalName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1754,10 +1895,10 @@
         "@value": "Additional Institution name."
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1769,17 +1910,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionAdditionalName"
     },
     {
-      "@id": "ec1:certificate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:certificate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Free text remarks about the respository certificate."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1791,10 +1935,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/certificate"
     },
     {
-      "@id": "ec1:SoftwareApplications",
+      "@id": "gdx:SoftwareApplications",
       "@type": [
         "owl:namedIndividual",
-        "ec1:ContentType"
+        "gdx:ContentType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -1802,8 +1946,11 @@
       }
     },
     {
-      "@id": "ec1:databaseAccessType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:databaseAccessType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1817,10 +1964,10 @@
         "@value": "The type of the database Access."
       },
       "rdfs:domain": {
-        "@id": "ec1:DatabaseAccess"
+        "@id": "gdx:DatabaseAccess"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1832,8 +1979,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/databaseAccessType"
     },
     {
-      "@id": "ec1:institutionIdentifierType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:institutionIdentifierType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -1847,10 +1997,10 @@
         "@value": "Institution identifier type"
       },
       "rdfs:domain": {
-        "@id": "ec1:InstitutionIdentifier"
+        "@id": "gdx:InstitutionIdentifier"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1862,17 +2012,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionIdentifierType"
     },
     {
-      "@id": "ec1:contactUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:contactUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "URL for an online contact form."
       },
       "rdfs:domain": {
-        "@id": "ec1:ContactPoint"
+        "@id": "gdx:ContactPoint"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1887,17 +2040,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryContact"
     },
     {
-      "@id": "ec1:lastUpdate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:lastUpdate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The date from which last update was made"
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1912,43 +2068,52 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/XXXX"
     },
     {
-      "@id": "ec1:policy",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:policy",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to an alerting service for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Policy"
       },
       "rdfs:range": {
-        "@id": "ec1:Policy"
+        "@id": "gdx:Policy"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/policy"
     },
     {
-      "@id": "ec1:institutionContact",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:institutionContact",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Institution contact point."
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Institution contact point"
+      },
+      "rdfs:range": {
+        "@id": "owl:Thing"
       },
       "rdfs:subPropertyOf": {
         "@id": "schema:contactPoint"
@@ -1956,9 +2121,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionContact"
     },
     {
-      "@id": "ec1:Databases",
+      "@id": "gdx:Databases",
       "@type": [
-        "ec1:ContentType",
+        "gdx:ContentType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -1967,14 +2132,14 @@
       }
     },
     {
-      "@id": "ec1:SubjectArea",
+      "@id": "gdx:SubjectArea",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "A disciplinary focus."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1983,17 +2148,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/subject"
     },
     {
-      "@id": "ec1:enhancedPublication",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:enhancedPublication",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The RDR offers the interlinking between publications and data."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2005,14 +2173,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/enhancedPublication"
     },
     {
-      "@id": "ec1:Identifier",
+      "@id": "gdx:Identifier",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "A unique identifier with a type and value for the Data Repository."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2024,8 +2192,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryIdentifier"
     },
     {
-      "@id": "ec1:apiDocumentation",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:apiDocumentation",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2039,10 +2210,10 @@
         "@value": "A link referring to the API documentation, a website that states its availability and other information for using the API"
       },
       "rdfs:domain": {
-        "@id": "ec1:API"
+        "@id": "gdx:API"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2057,14 +2228,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/apiDocumentation"
     },
     {
-      "@id": "ec1:DataAccess",
+      "@id": "gdx:DataAccess",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The regulation for submitting research data to the RDR "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2076,17 +2247,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataAccess"
     },
     {
-      "@id": "ec1:versioning",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:versioning",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The RDR supports versioning of research data."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2098,8 +2272,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/versioning"
     },
     {
-      "@id": "ec1:institutionUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:institutionUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2110,13 +2287,13 @@
       },
       "rdfs:comment": {
         "@language": "en",
-        "@value": "Institution URL like 'http://example.org'."
+        "@value": "Institution URL like 'http://geodex.org'."
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2131,30 +2308,36 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionUrl"
     },
     {
-      "@id": "ec1:institutionIdentifier",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:institutionIdentifier",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The identifier for the responsible institution"
       },
       "rdfs:domain": {
-        "@id": "ec1:Insitution"
+        "@id": "gdx:Insitution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Link to Institution Identifier"
       },
       "rdfs:range": {
-        "@id": "ec1:InstitutionIdentifier"
+        "@id": "gdx:InstitutionIdentifier"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionIdentifier"
     },
     {
-      "@id": "ec1:description",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:description",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2164,10 +2347,10 @@
         "@value": "A textual description providing additional information about the Data Repository (primary language is English). The language should be defined by the xsd datatype of the value. For example, '@en'. See "
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2182,8 +2365,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/description"
     },
     {
-      "@id": "ec1:citationGuidelineUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:citationGuidelineUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2197,10 +2383,10 @@
         "@value": "The URL of the RDR providing information on how to cite its research data. The DataCite citation format is recommended (http://www.datacite.org/whycitedata)."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2215,8 +2401,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/citationGuidelineUrl"
     },
     {
-      "@id": "ec1:dataLicenseUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:dataLicenseUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2230,10 +2419,10 @@
         "@value": "The data  license URL."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataLicense"
+        "@id": "gdx:DataLicense"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2248,10 +2437,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataLicenseUrl"
     },
     {
-      "@id": "ec1:ServiceProvider",
+      "@id": "gdx:ServiceProvider",
       "@type": [
         "owl:namedIndividual",
-        "ec1:ProviderType"
+        "gdx:ProviderType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -2259,8 +2448,11 @@
       }
     },
     {
-      "@id": "ec1:responsibilityType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:responsibilityType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2274,10 +2466,10 @@
         "@value": "Institution responsibility type."
       },
       "rdfs:domain": {
-        "@id": "ec1:Institution"
+        "@id": "gdx:Institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2289,8 +2481,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/responsibilityType"
     },
     {
-      "@id": "ec1:alertServiceUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:alertServiceUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2301,13 +2496,13 @@
       },
       "rdfs:comment": {
         "@language": "en",
-        "@value": "Alerting service URL like 'http://example.org/rss.xml'."
+        "@value": "Alerting service URL like 'http://geodex.org/rss.xml'."
       },
       "rdfs:domain": {
-        "@id": "ec1:AlertService"
+        "@id": "gdx:AlertService"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2322,9 +2517,9 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/syndicationUrl"
     },
     {
-      "@id": "ec1:RepositoryTypeInstitutional",
+      "@id": "gdx:RepositoryTypeInstitutional",
       "@type": [
-        "ec1:RepositoryType",
+        "gdx:RepositoryType",
         "owl:namedIndividual"
       ],
       "rdfs:label": {
@@ -2333,17 +2528,20 @@
       }
     },
     {
-      "@id": "ec1:aidSystem",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:aidSystem",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The author identifier system that is used by the RDR."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2355,10 +2553,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/aidSystem"
     },
     {
-      "@id": "ec1:RepositoryTypeGovernmental",
+      "@id": "gdx:RepositoryTypeGovernmental",
       "@type": [
         "owl:namedIndividual",
-        "ec1:RepositoryType"
+        "gdx:RepositoryType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -2366,36 +2564,39 @@
       }
     },
     {
-      "@id": "ec1:dataUploadLicense",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:dataUploadLicense",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "Links to a data license for a data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Data license  standard"
       },
       "rdfs:range": {
-        "@id": "ec1:DataUploadLicense"
+        "@id": "gdx:DataUploadLicense"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadLicense"
     },
     {
-      "@id": "ec1:Policy",
+      "@id": "gdx:Policy",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The alerting service the data repository offers "
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2407,10 +2608,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/policy"
     },
     {
-      "@id": "ec1:RepositoryTypeDisciplinary",
+      "@id": "gdx:RepositoryTypeDisciplinary",
       "@type": [
         "owl:namedIndividual",
-        "ec1:RepositoryType"
+        "gdx:RepositoryType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -2418,17 +2619,20 @@
       }
     },
     {
-      "@id": "ec1:additionalName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:additionalName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The alternative name or acronym for the data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2443,8 +2647,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/alternateName"
     },
     {
-      "@id": "ec1:startDate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:startDate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2454,10 +2661,10 @@
         "@value": "Releasing date of the repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2472,8 +2679,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/startDate"
     },
     {
-      "@id": "ec1:subjectId",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:subjectId",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2487,10 +2697,10 @@
         "@value": "The unique identifier within a specific scheme for a subject area."
       },
       "rdfs:domain": {
-        "@id": "ec1:SubjectArea"
+        "@id": "gdx:SubjectArea"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2502,14 +2712,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/subjectId"
     },
     {
-      "@id": "ec1:DataRepository",
+      "@id": "gdx:DataRepository",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "A Data Repository."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2521,8 +2731,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repository"
     },
     {
-      "@id": "ec1:dataUploadLicenseName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:dataUploadLicenseName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2536,10 +2749,10 @@
         "@value": "Metadata standard like ISO 115."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataUploadLicense"
+        "@id": "gdx:DataUploadLicense"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2551,8 +2764,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataUploadLicenseName"
     },
     {
-      "@id": "ec1:size",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:size",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2562,10 +2778,10 @@
         "@value": "The number of items contained in the repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2580,8 +2796,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/size"
     },
     {
-      "@id": "ec1:missionStatementUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:missionStatementUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2591,10 +2810,10 @@
         "@value": "The URL of a mission statement describing the designated community of the repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2606,7 +2825,7 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/missionStatementUrl"
     },
     {
-      "@id": "ec1:",
+      "@id": "gdx:",
       "@type": "owl:Ontology",
       "dcterms:issued": {
         "@type": "xsd:date",
@@ -2620,8 +2839,11 @@
       "dc:title": "EarthCube Registry Working Group Vocabulary"
     },
     {
-      "@id": "ec1:apiUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:apiUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2635,10 +2857,10 @@
         "@value": "The URL of the API"
       },
       "rdfs:domain": {
-        "@id": "ec1:API"
+        "@id": "gdx:API"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2653,14 +2875,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/apiUrl"
     },
     {
-      "@id": "ec1:SubjectScheme",
+      "@id": "gdx:SubjectScheme",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The specific scheme for a subject area."
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2669,8 +2891,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/subjectScheme"
     },
     {
-      "@id": "ec1:userInterfaceLanguage",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:userInterfaceLanguage",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:minCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2680,10 +2905,10 @@
         "@value": "The user interface language(s) of the RDR."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2698,14 +2923,14 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryLanguage"
     },
     {
-      "@id": "ec1:InstitutionIdentifier",
+      "@id": "gdx:InstitutionIdentifier",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
         "@value": "The identifier for the responsible institution"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2717,8 +2942,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/institutionIdentifier"
     },
     {
-      "@id": "ec1:metadataStandardName",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:metadataStandardName",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2732,10 +2960,10 @@
         "@value": "Metadata standard like ISO 115."
       },
       "rdfs:domain": {
-        "@id": "ec1:MetadataStandard"
+        "@id": "gdx:MetadataStandard"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2747,8 +2975,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/metadataStandardName"
     },
     {
-      "@id": "ec1:dataAccessType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:dataAccessType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2762,10 +2993,10 @@
         "@value": "The type of the data Access."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataAccess"
+        "@id": "gdx:DataAccess"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2777,17 +3008,20 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/dataAccessType"
     },
     {
-      "@id": "ec1:citationReference",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:citationReference",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The RDR is covered by SCOPUS or the Data Citation Index."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2799,8 +3033,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/citationReference"
     },
     {
-      "@id": "ec1:closedDate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:closedDate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2810,10 +3047,10 @@
         "@value": "The date when the repository stopped ingesting new research data to its database. The database and its research data are still available."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2825,8 +3062,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/closed"
     },
     {
-      "@id": "ec1:repositoryUrl",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:repositoryUrl",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2840,10 +3080,10 @@
         "@value": "The canonical URL of the data repository."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2858,8 +3098,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/repositoryUrl"
     },
     {
-      "@id": "ec1:subjectScheme",
-      "@type": "owl:ObjectProperty",
+      "@id": "gdx:subjectScheme",
+      "@type": [
+        "owl:ObjectProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2873,32 +3116,35 @@
         "@value": "The specific scheme for a subject area."
       },
       "rdfs:domain": {
-        "@id": "ec1:SubjectArea"
+        "@id": "gdx:SubjectArea"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Subject Area Scheme"
       },
       "rdfs:range": {
-        "@id": "ec1:SubjectScheme"
+        "@id": "gdx:SubjectScheme"
       },
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/subjectScheme"
     },
     {
-      "@id": "ec1:entryDate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:entryDate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "rdfs:comment": {
         "@language": "en",
         "@value": "The date entry made"
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2913,8 +3159,11 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/XXXX"
     },
     {
-      "@id": "ec1:endDate",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:endDate",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2924,10 +3173,10 @@
         "@value": "The date the repository ended its service of ingesting new research data and/or providing it."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataRepository"
+        "@id": "gdx:DataRepository"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2939,10 +3188,10 @@
       "skos:relatedTo": "http://www.re3data.org/schema/3-0/endDate"
     },
     {
-      "@id": "ec1:RepositoryTypeProjectRelated",
+      "@id": "gdx:RepositoryTypeProjectRelated",
       "@type": [
         "owl:namedIndividual",
-        "ec1:RepositoryType"
+        "gdx:RepositoryType"
       ],
       "rdfs:label": {
         "@language": "en",
@@ -2950,8 +3199,11 @@
       }
     },
     {
-      "@id": "ec1:dataUploadType",
-      "@type": "owl:DatatypeProperty",
+      "@id": "gdx:dataUploadType",
+      "@type": [
+        "owl:DatatypeProperty",
+        "rdf:Property"
+      ],
       "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
@@ -2965,10 +3217,10 @@
         "@value": "The type of the data upload."
       },
       "rdfs:domain": {
-        "@id": "ec1:DataUpload"
+        "@id": "gdx:DataUpload"
       },
       "rdfs:isDefinedBy": {
-        "@id": "ec1:"
+        "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en",

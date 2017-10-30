@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:schema="http://schema.org/"
+         xmlns:datacite="http://purl.org/spar/datacite"
+         xmlns:r3d="http://www.re3data.org/schema/3-0#"
+         xmlns:gdx="https://geodex.org/voc/">
+
+  <owl:Ontology rdf:about="gdx:">
+    <dc:description>Schema.org extension for a Information Service Provider</dc:description>
+    <dc:title>Information Service Provider Vocabulary</dc:title>
+    <dc:creator>EarthCube Registry Working Group</dc:creator>
+    <dcterms:issued rdf:datatype="xsd:date">2017-10-16</dcterms:issued>
+    <owl:versionInfo>0.1.0</owl:versionInfo>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="gdx:InformationService">
+    <rdfs:subClassOf rdf:resource="schema:Service"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Information Service</rdfs:label>
+    <rdfs:comment xml:lang="en">A provider of information as a service to a community.</rdfs:comment>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="gdx:informationProvider">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:provider"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationService"/>
+    <rdfs:range rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:label xml:lang="en">Information Resource Respository</rdfs:label>
+    <rdfs:comment xml:lang="en">An organization acting as a repository that provides access to certain types of information resources for specific subject areas.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:InformationResourceRepository">
+    <rdfs:subClassOf rdf:resource="schema:Organization"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:repositoryName"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:repositoryUrl"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:description"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:repositoryType"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:size"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:startDate"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:endDate"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:closedDate"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:offlineDate"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:userInterfaceLanguage"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:subjectArea"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:missionStatementUrl"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:providerType"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">2</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Data Repository</rdfs:label>
+    <rdfs:comment xml:lang="en">A Data Repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repository"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="gdx:identifier">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:identifier"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:Identifier"/>
+    <rdfs:label xml:lang="en">Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to identifiers that uniquely identify the data repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:identifiers"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:Identifier">
+    <rdfs:subClassOf rdf:resource="owl:Thing"/>
+    <skos:exactMatch rdf:resource="datacite:Identifier"/>
+    <skos:closeMatch rdf:resource="schema:PropertyValue"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="identifierType"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:identifierValue"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Data Repository Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">A unique identifier with a type and value for the Data Repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:identifiers"/>
+    <skos:related rdf:resource="r3d:repositoryIdentifier"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="gdx:identifierType">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:propertyID"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Identifier"/>
+    <rdfs:range rdf:resource="gdx:IdentifierType"/>
+    <rdfs:label xml:lang="en">An identifier's type such as DOI, ARK, URN or for custom types like Re3Data. For example a DOI of doi:10.1234/567890 would have the identifier value of '&lt;http://example.org/voc/IdentifierTypeDOI&gt;'</rdfs:label>
+    <rdfs:comment xml:lang="en">The type that identifies the domain space for its uniqueness.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryIdentifierType"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:IdentifierType">
+    <rdfs:subClassOf rdf:resource="owl:Thing"/>
+    <skos:exactMatch rdf:resource="datacite:IdentifierScheme"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Data Repository Identifier Type</rdfs:label>
+    <rdfs:comment xml:lang="en">A identifier type for an Identifier.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryIdentifierType"/>
+  </owl:Class>
+
+  <owl:namedIndividual rdf:about="gdx:IdentifierTypeDOI">
+    <rdf:type rdf:resource="gdx:IdentifierType"/>
+    <skos:exactMatch rdf:resource="datacite:doi"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Digital Object Identifier (DOI)</rdfs:label>
+    <rdfs:comment xml:lang="en">An identifier minted by an issuer of Digital Object Identifiers (DOIs).</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:IdentifierTypeRe3data">
+    <rdf:type rdf:resource="gdx:IdentifierType"/>
+    <skos:broadMatch rdf:resource="gdx:IdentifierTypeDOI"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Re3data Digital Object Identifier (DOI)</rdfs:label>
+    <rdfs:comment xml:lang="en">A DOI issued by Re3Data for a Data Repository's metadata record at Re3data.</rdfs:comment>
+    <skos:related rdf:resource="r3d:doi"/>
+  </owl:namedIndividual>
+
+  <owl:DatatypeProperty rdf:about="gdx:identifierValue">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <skos:exactMatch rdf:resource="schema:value"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Identifier"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">An identifier's value.</rdfs:label>
+    <rdfs:comment xml:lang="en">The value that will be unique within a specifc identifier type. For example a DOI of doi:10.1234/567890 would have the identifier value of '10.1234/567890'</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryIdentifierValue"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:identifierUrl">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Identifier"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <rdfs:label xml:lang="en">An identifier's resolvable URL.</rdfs:label>
+    <rdfs:comment xml:lang="en">The url that will resolve to the identified thing. For example a DOI of doi:10.1234/567890 could have the identifier url of 'https://doi.org/10.1234/567890' and/or 'http://doi.org/10.1234/567890' and/or 'http://dx.doi.org/10.1234/567890', hence it's unbounded cardinality.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryIdentifierValue"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:repositoryName">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:name"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">Repository Name</rdfs:label>
+    <rdfs:comment xml:lang="en">The name of the data repository expressed in text.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryName"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:additionalName">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:additionalName"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">Additional Name</rdfs:label>
+    <rdfs:comment xml:lang="en">The alternative name or acronym for the data repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:alternateName"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:repositoryUrl">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <rdfs:label xml:lang="en">Data Repository URL</rdfs:label>
+    <rdfs:comment xml:lang="en">The canonical URL of the data repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryUrl"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:description">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:description"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="rdf:langString"/>
+    <rdfs:label xml:lang="en">Data Repository Description</rdfs:label>
+    <rdfs:comment xml:lang="en">A textual description providing additional information about the Data Repository (primary language is English). The language should be defined by the xsd datatype of the value. For example, '@en'. See </rdfs:comment>
+    <skos:related rdf:resource="r3d:description"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:contactPoint">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:contactPoint"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:ContactPoint"/>
+    <rdfs:label xml:lang="en">Data Repository Contact</rdfs:label>
+    <rdfs:comment xml:lang="en">The agent to contact.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryContact"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:ContactPoint">
+    <rdfs:subClassOf rdf:resource="schema:ContactPoint"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Contact Point</rdfs:label>
+    <rdfs:comment xml:lang="en">The contact point with either an email address or URL for an online contact form.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryContact"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:contactEmail">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:email"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:ContactPoint"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">Contact Point Email</rdfs:label>
+    <rdfs:comment xml:lang="en">An email address for a data repository's contact point.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryContact"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:contactUrl">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:ContactPoint"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <rdfs:label xml:lang="en">Contact Point URL</rdfs:label>
+    <rdfs:comment xml:lang="en">URL for an online contact form.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryContact"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:repositoryType">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:additionalType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:RepositoryType"/>
+    <rdfs:label xml:lang="en">Data Repository Type</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:type"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:RepositoryType">
+    <rdf:subClassOf rdf:resource="owl:Thing"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Repostory Type</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:type"/>
+  </owl:Class>
+
+  <owl:namedIndividual rdf:about="gdx:RepositoryTypeDisciplinary">
+    <rdf:type rdf:resource="gdx:RepositoryType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Disciplinary repository type</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:RepositoryTypeGovernmental">
+    <rdf:type rdf:resource="gdx:RepositoryType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Governmental repository type</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:RepositoryTypeInstitutional">
+    <rdf:type rdf:resource="gdx:RepositoryType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Institutional repository type</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:RepositoryTypeMultidisciplinary">
+    <rdf:type rdf:resource="gdx:RepositoryType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Multidisciplinary repository type</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:RepositoryTypeProjectRelated">
+    <rdf:type rdf:resource="gdx:RepositoryType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Project-related repository type</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:RepositoryTypeOther">
+    <rdf:type rdf:resource="gdx:RepositoryType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Other repository type</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:DatatypeProperty rdf:about="gdx:totalNumberOfItemsProvided">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <skos:closeMatch rdf:resource="schema:numberOfItems"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:integer"/>
+    <rdfs:label xml:lang="en">Size of Data Repository</rdfs:label>
+    <rdfs:comment xml:lang="en">The total number of items provided by the repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:size"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:startDate">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <skos:closeMatch rdf:resource="schema:foundingDate"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:date"/>
+    <rdfs:label xml:lang="en">Start Date</rdfs:label>
+    <rdfs:comment xml:lang="en">Releasing date of the repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:startDate"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:endDate">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:date"/>
+    <rdfs:label xml:lang="en">End Date</rdfs:label>
+    <rdfs:comment xml:lang="en">The date the repository ended its service of ingesting new research data and/or providing it.</rdfs:comment>
+    <skos:related rdf:resource="r3d:endDate"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:closedDate">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:date"/>
+    <rdfs:label xml:lang="en">Closed Date</rdfs:label>
+    <rdfs:comment xml:lang="en">The date when the repository stopped ingesting new research data to its database. The database and its research data are still available.</rdfs:comment>
+    <skos:related rdf:resource="r3d:closed"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:offlineDate">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:closeMatch rdf:resource="schema:dissolutionDate"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:date"/>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Offline Date</rdfs:label>
+    <rdfs:comment xml:lang="en">The date when the repository went offline. The database and/or the website are no longer available.</rdfs:comment>
+    <skos:related rdf:resource="r3d:offline"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:userInterfaceLanguage">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:inLanguage"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:language"/>
+    <rdfs:label xml:lang="en">Repository Language</rdfs:label>
+    <rdfs:comment xml:lang="en">The user interface language(s) of the data repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:repositoryLanguage"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:subjectArea">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <skos:closeMatch rdf:resource="schema:keywords"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:SubjectArea"/>
+    <rdfs:label xml:lang="en">Subject Area</rdfs:label>
+    <rdfs:comment xml:lang="en">The disciplinary focus of the repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:subject"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:SubjectArea">
+    <rdfs:subClassOf rdf:resource="owl:Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:subjectScheme"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:subjectId"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:subjectName"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <skos:closeMatch rdf:resource="schema:PropertyValue"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Subject Area</rdfs:label>
+    <rdfs:comment xml:lang="en">A disciplinary focus.</rdfs:comment>
+    <skos:related rdf:resource="r3d:subject"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="gdx:subjectScheme">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:propertyID"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:SubjectArea"/>
+    <rdfs:range rdf:resource="gdx:SubjectScheme"/>
+    <rdfs:label xml:lang="en">Subject Area Scheme</rdfs:label>
+    <rdfs:comment xml:lang="en">The specific scheme for a subject area.</rdfs:comment>
+    <skos:related rdf:resource="r3d:subjectScheme"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:SubjectScheme">
+    <rdf:subClassOf rdf:resource="owl:Thing"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Subject Scheme</rdfs:label>
+    <rdfs:comment xml:lang="en">The specific scheme that supplies a set of subject areas.</rdfs:comment>
+    <skos:related rdf:resource="r3d:subjectScheme"/>
+  </owl:Class>
+
+  <owl:namedIndividual rdf:about="gdx:DFGSubjectScheme">
+    <rdf:type rdf:resource="gdx:SubjectScheme"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">DFG</rdfs:label>
+    <rdfs:seeAlso>http://www.dfg.de/en/dfg_profile/statutory_bodies/review_boards/subject_areas/index.jsp</rdfs:seeAlso>
+  </owl:namedIndividual>
+
+  <owl:DatatypeProperty rdf:about="gdx:subjectId">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subClassOf rdf:resource="schema:value"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:SubjectArea"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">Subject Area Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">The unique identifier within a specific scheme for a subject area.</rdfs:comment>
+    <skos:related rdf:resource="r3d:subjectId"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:subjectName">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:SubjectArea"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">Subject Area Name</rdfs:label>
+    <rdfs:comment xml:lang="en">The name of a subject within a specific scheme for a subject area.</rdfs:comment>
+    <skos:related rdf:resource="r3d:subjectName"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:missionStatementUrl">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <rdfs:label xml:lang="en">Mission Statement URL</rdfs:label>
+    <rdfs:comment xml:lang="en">The URL of a mission statement describing the designated community of the repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:missionStatementUrl"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:providesContentOfType">
+    <rdf:type rdf:resource="owl:Thing"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:ContentType"/>
+    <rdfs:label xml:lang="en">Content Type</rdfs:label>
+    <rdfs:comment xml:lang="en">All types of resources available in the repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:contentType"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:ContentType">
+    <rdfs:subClassOf rdf:resource="schema:CreativeWork"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Content Type</rdfs:label>
+    <rdfs:comment xml:lang="en">The resource available from a repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:contentType"/>
+  </owl:Class>
+
+  <owl:namedIndividual rdf:about="gdx:StandardOfficeDocuments">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:broadMatch rdf:resource="schema:DigitalDocument"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Standard office documents</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:NetworkbasedData">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Network-based data</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:Databases">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Databases</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:Images">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:exactMatch rdf:resource="schema:ImageObject"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Images</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:StructuredGraphics">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:closeMatch rdf:resource="schema:ImageObject"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Structured graphics</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:AudiovisualData">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:closeMatch rdf:resource="schema:AudioObject"/>
+    <skos:closeMatch rdf:resource="schema:VisualArtwork"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Audio/Visual data</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:ScientificStatisticalDataFormats">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Scientific and statistical data formats</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:RawData">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Raw data</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:PlainText">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:exactMatch rdf:resource="schema:TextDigitalDocument"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Plain text</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:StructuredText">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:broadMatch rdf:resource="schema:TextDigitalDocument"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Structured text</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:ArchivedData">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Archived data</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:SoftwareApplications">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:exactMatch rdf:resource="schema:SoftwareApplication"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Software applications</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:SourceCode">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:exactMatch rdf:resource="schema:Code"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Source code</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:ConfigurationData">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <skos:broadMatch rdf:resource="schema:Code"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Configuration data</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:OtherContent">
+    <rdf:type rdf:resource="gdx:ContentType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">other</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:ObjectProperty rdf:about="gdx:providerType">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:closeMatch rdf:resource="schema:additionalType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:ProviderType"/>
+    <rdfs:label xml:lang="en">Provider Type</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of provider.</rdfs:comment>
+    <skos:related rdf:resource="r3d:providerType"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:ProviderType">
+    <rdfs:subClassOf rdf:resource="owl:Thing"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Provider Type</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of provider.</rdfs:comment>
+    <skos:related rdf:resource="r3d:providerType"/>
+  </owl:Class>
+
+  <owl:namedIndividual rdf:about="gdx:DataProvider">
+    <rdf:type rdf:resource="gdx:ProviderType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Data Provider</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:ServiceProvider">
+    <rdf:type rdf:resource="gdx:ProviderType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Service Provider</rdfs:label>
+  </owl:namedIndividual>
+
+  <owl:DatatypeProperty rdf:about="gdx:keyword">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <skos:exactMatch rdf:resource="schema:keywords"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="rdf:langString"/>
+    <rdfs:label xml:lang="en">Keyword</rdfs:label>
+    <rdfs:comment xml:lang="en">English keyword(s) describing the subject focus of the repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:keyword"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:agentWithRole">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:Agent"/>
+    <rdfs:label xml:lang="en">Institution</rdfs:label>
+    <rdfs:comment xml:lang="en">All agents being responsible for activities such as funding, creating and/or running the repository.</rdfs:comment>
+    <skos:related rdf:resource="r3d:institution"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:Agent">
+    <rdfs:subClassOf rdf:resource="owl:Thing"/>
+    <skos:narrowMatch rdf:resource="schema:Organization"/>
+    <skos:narrowMatch rdf:resource="schema:Person"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:comment xml:lang="en">A person or organization that performs a specific role for another Agent.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="gdx:Institution">
+    <rdfs:subClassOf rdf:resource="gdx:Agent"/>
+    <skos:exactMatch rdf:resource="schema:Organization"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Institution</rdfs:label>
+    <rdfs:comment xml:lang="en">An organization that performs a specific role for another Agent.</rdfs:comment>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:institutionName">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Institution name</rdfs:label>
+    <rdfs:comment xml:lang="en">Institution name.</rdfs:comment>
+    <skos:related>r3d:institutionName</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:institutionAdditionalName">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Additional Institution name</rdfs:label>
+    <rdfs:comment xml:lang="en">Additional Institution name.</rdfs:comment>
+    <skos:related>r3d:institutionAdditionalName</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:institutionCountry">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Institution county name</rdfs:label>
+    <rdfs:comment xml:lang="en">Institution country name.</rdfs:comment>
+    <skos:related>r3d:institutionCountry</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:responsibilityType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Institution responsibility type</rdfs:label>
+    <rdfs:comment xml:lang="en">Institution responsibility type.</rdfs:comment>
+    <skos:related>r3d:responsibilityType</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:institutionType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Institution county name</rdfs:label>
+    <rdfs:comment xml:lang="en">Institution country name.</rdfs:comment>
+    <skos:related>r3d:institutionType</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:institutionUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Institution URL</rdfs:label>
+    <rdfs:comment xml:lang="en">Institution URL like 'http://example.org'.</rdfs:comment>
+    <skos:related>r3d:institutionUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:institutionIdentifier">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Insitution"/>
+    <rdfs:range rdf:resource="gdx:InstitutionIdentifier"/>
+    <rdfs:label xml:lang="en">Link to Institution Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">The identifier for the responsible institution</rdfs:comment>
+    <skos:related>r3d:institutionIdentifier</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:InstitutionIdentifier">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Institution Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">The identifier for the responsible institution</rdfs:comment>
+    <skos:related>r3d:institutionIdentifier</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:institutionIdentifierType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InstitutionIdentifier"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Institution Identifier type</rdfs:label>
+    <rdfs:comment xml:lang="en">Institution identifier type</rdfs:comment>
+    <skos:related>r3d:institutionIdentifierType</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:institutionIdentifierValue">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InstitutionIdentifier"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Institution Identifier value</rdfs:label>
+    <rdfs:comment xml:lang="en">Institution identifier value</rdfs:comment>
+    <skos:related>r3d:institutionIdentifierValue</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:responsibilityStartDate">
+    <rdfs:subPropertyOf rdf:resource="schema:XXX"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:range rdf:resource="xsd:dateTime"/>
+    <rdfs:label xml:lang="en">Responsibility start date</rdfs:label>
+    <rdfs:comment xml:lang="en">Responsibility start date</rdfs:comment>
+    <skos:related>r3d:responsibilityStartDate</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:responsibilityEndDate">
+    <rdfs:subPropertyOf rdf:resource="schema:XXX"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:range rdf:resource="xsd:dateTime"/>
+    <rdfs:label xml:lang="en">Responsibility end date</rdfs:label>
+    <rdfs:comment xml:lang="en">Responsibility end date</rdfs:comment>
+    <skos:related>r3d:responsibilityEndDate</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:institutionContact">
+    <rdfs:subPropertyOf rdf:resource="gdx:agentWithRole"/>
+    <rdfs:exactMatch rdf:resource="schema:contactPoint"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Institution"/>
+    <rdfs:label xml:lang="en">Institution contact point</rdfs:label>
+    <rdfs:comment xml:lang="en">Institution contact point.</rdfs:comment>
+    <skos:related>r3d:institutionContact</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:policy">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:Policy"/>
+    <rdfs:label xml:lang="en">Policy</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to an alerting service for a repository.</rdfs:comment>
+    <skos:related>r3d:policy</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:Policy">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">policy</rdfs:label>
+    <rdfs:comment xml:lang="en">The alerting service the repository offers </rdfs:comment>
+    <skos:related>r3d:policy</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:policyType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Policy"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Policy type</rdfs:label>
+    <rdfs:comment xml:lang="en">Policy type.</rdfs:comment>
+    <skos:related>r3d:policytype</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:policyName">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Policy"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Policy name</rdfs:label>
+    <rdfs:comment xml:lang="en">Policy name.</rdfs:comment>
+    <skos:related>r3d:policyName</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:policyUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:Policy"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Policye URL</rdfs:label>
+    <rdfs:comment xml:lang="en">Policy URL like 'http://example.org/policy.html'.</rdfs:comment>
+    <skos:related>r3d:policyUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:databaseAccess">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DatabaseRepository"/>
+    <rdfs:range rdf:resource="gdx:DatabaseAccess"/>
+    <rdfs:label xml:lang="en">Database Access</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a database Access for a data repository.</rdfs:comment>
+    <skos:related>r3d:databaseAccess</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:DatabaseAccess">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Database Access</rdfs:label>
+    <rdfs:comment xml:lang="en">The regulation for submitting research data to the RDR </rdfs:comment>
+    <skos:related>r3d:databaseAccess</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:databaseAccessType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DatabaseAccess"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">The type of the database Access</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of the database Access.</rdfs:comment>
+    <skos:related>r3d:databaseAccessType</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:dataAccessRestriction">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DatabaseAccess"/>
+    <rdfs:domain rdf:resource="gdx:DataAccess"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">All existing restrictions to the database Access (required if restricted is chosen)..</rdfs:label>
+    <rdfs:label xml:lang="en">All existing restrictions to the data Access (required if restricted is chosen)..</rdfs:label>
+    <rdfs:comment xml:lang="en">All existing restrictions to the database Access (required if restricted is chosen)..</rdfs:comment>
+    <rdfs:comment xml:lang="en">All existing restrictions to the data Access (required if restricted is chosen)..</rdfs:comment>
+    <skos:related>r3d:databaseAccessRestriction</skos:related>
+    <skos:related>r3d:dataAccessRestriction</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:databaseLicense">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DatabaseRepository"/>
+    <rdfs:range rdf:resource="gdx:DatabaseLicense"/>
+    <rdfs:label xml:lang="en">Database license  standard</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a database license for a data repository.</rdfs:comment>
+    <skos:related>r3d:databaseLicense</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:DatabaseLicense">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Database license standard</rdfs:label>
+    <rdfs:comment xml:lang="en">The license for database  </rdfs:comment>
+    <skos:related>r3d:databaseLicense</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:databaseLicenseName">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DatabaseLicense"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Data license standard name</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata standard like ISO 115.</rdfs:comment>
+    <skos:related>r3d:databaseLicenseName</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:databaseLicenseUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DatabaseLicense"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">The data  license URL.</rdfs:label>
+    <rdfs:comment xml:lang="en">The data  license URL.</rdfs:comment>
+    <skos:related>r3d:databaseLicenseUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:dataAccess">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:DataAccess"/>
+    <rdfs:label xml:lang="en">Data Access</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a data Access for a data repository.</rdfs:comment>
+    <skos:related>r3d:dataAccess</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:DataAccess">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Data Access</rdfs:label>
+    <rdfs:comment xml:lang="en">The regulation for submitting research data to the RDR </rdfs:comment>
+    <skos:related>r3d:dataAccess</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:dataAccessType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DataAccess"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">The type of the data Access</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of the data Access.</rdfs:comment>
+    <skos:related>r3d:dataAccessType</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:dataLicense">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:DataLicense"/>
+    <rdfs:label xml:lang="en">Data license  standard</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a data license for a data repository.</rdfs:comment>
+    <skos:related>r3d:dataLicense</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:DataLicense">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Data license standard</rdfs:label>
+    <rdfs:comment xml:lang="en">The license for data  </rdfs:comment>
+    <skos:related>r3d:dataLicense</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:dataLicenseName">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DataLicense"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Data license standard name</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata standard like ISO 115.</rdfs:comment>
+    <skos:related>r3d:dataLicenseName</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:dataLicenseUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DataLicense"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">The data  license URL.</rdfs:label>
+    <rdfs:comment xml:lang="en">The data  license URL.</rdfs:comment>
+    <skos:related>r3d:dataLicenseUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:dataUpload">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:DataUpload"/>
+    <rdfs:label xml:lang="en">Data upload</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a data upload for a data repository.</rdfs:comment>
+    <skos:related>r3d:dataUpload</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:DataUpload">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Data upload</rdfs:label>
+    <rdfs:comment xml:lang="en">The regulation for submitting research data to the RDR </rdfs:comment>
+    <skos:related>r3d:dataUpload</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:dataUploadType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DataUpload"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">The type of the data upload</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of the data upload.</rdfs:comment>
+    <skos:related>r3d:dataUploadType</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:dataUploadRestriction">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DataUpload"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">All existing restrictions to the data upload (required if restricted is chosen)..</rdfs:label>
+    <rdfs:comment xml:lang="en">All existing restrictions to the data upload (required if restricted is chosen)..</rdfs:comment>
+    <skos:related>r3d:dataUploadRestriction</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:dataUploadLicense">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:DataUploadLicense"/>
+    <rdfs:label xml:lang="en">Data license  standard</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a data license for a data repository.</rdfs:comment>
+    <skos:related>r3d:dataUploadLicense</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:DataUploadLicense">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Data license standard</rdfs:label>
+    <rdfs:comment xml:lang="en">The license for data upload </rdfs:comment>
+    <skos:related>r3d:dataUploadLicense</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:dataUploadLicenseName">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DataUploadLicense"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Data license standard name</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata standard like ISO 115.</rdfs:comment>
+    <skos:related>r3d:dataUploadLicenseName</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:dataUploadLicenseUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:DataUploadLicense"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">The data upload license URL.</rdfs:label>
+    <rdfs:comment xml:lang="en">The data upload license URL.</rdfs:comment>
+    <skos:related>r3d:dataUploadLicenseUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:software">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">Software</rdfs:label>
+    <rdfs:comment xml:lang="en">The software used to run the RDR  ex Dspace.</rdfs:comment>
+    <skos:related>r3d:software</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:versioning">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">Versioning</rdfs:label>
+    <rdfs:comment xml:lang="en">The RDR supports versioning of research data.</rdfs:comment>
+    <skos:related>r3d:versioning</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:api">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:API"/>
+    <rdfs:label xml:lang="en">api </rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a API standard for a data repository.</rdfs:comment>
+    <skos:related>r3d:api</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:API">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">API</rdfs:label>
+    <rdfs:comment xml:lang="en">An API standard the data repository offers </rdfs:comment>
+    <skos:related>r3d:api</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:apiType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:API"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">The type of API</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of API</rdfs:comment>
+    <skos:related>r3d:apiType</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:apiUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:API"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">The URL of the API</rdfs:label>
+    <rdfs:comment xml:lang="en">The URL of the API</rdfs:comment>
+    <skos:related>r3d:apiUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:apiDocumentation">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:API"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">A link referring to the API documentation</rdfs:label>
+    <rdfs:comment xml:lang="en">A link referring to the API documentation, a website that states its availability and other information for using the API</rdfs:comment>
+    <skos:related>r3d:apiDocumentation</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:pidSystem">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">pidSystem information and remarks</rdfs:label>
+    <rdfs:comment xml:lang="en">The persistent identifier system that is used by the RDR.</rdfs:comment>
+    <skos:related>r3d:pidSystem</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:citationReference">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">citationReference information and remarks</rdfs:label>
+    <rdfs:comment xml:lang="en">The RDR is covered by SCOPUS or the Data Citation Index.</rdfs:comment>
+    <skos:related>r3d:citationReference</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:metrics">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">metrics information and remarks</rdfs:label>
+    <rdfs:comment xml:lang="en">Any service, tool, etc. that is used by the RDR to track, measure and visualize the usage of provided research data.</rdfs:comment>
+    <skos:related>r3d:metrics</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:citationGuidelineUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Citation Guideline Url</rdfs:label>
+    <rdfs:comment xml:lang="en">The URL of the RDR providing information on how to cite its research data. The DataCite citation format is recommended (http://www.datacite.org/whycitedata).</rdfs:comment>
+    <skos:related>r3d:citationGuidelineUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:aidSystem">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">aidSystem information and remarks</rdfs:label>
+    <rdfs:comment xml:lang="en">The author identifier system that is used by the RDR.</rdfs:comment>
+    <skos:related>r3d:aidSystem</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:enhancedPublication">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">enhancedPublication information and remarks</rdfs:label>
+    <rdfs:comment xml:lang="en">The RDR offers the interlinking between publications and data.</rdfs:comment>
+    <skos:related>r3d:enhancedPublication</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:qualityManagement">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">qualityManagement information and remarks</rdfs:label>
+    <rdfs:comment xml:lang="en">Any form of quality management concerning the research data or metadata of the RDR.</rdfs:comment>
+    <skos:related>r3d:qualityManagement</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:certificate">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">certificate information and remarks</rdfs:label>
+    <rdfs:comment xml:lang="en">Free text remarks about the respository certificate.</rdfs:comment>
+    <skos:related>r3d:certificate</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:metadataStandard">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:MetadataStandard"/>
+    <rdfs:label xml:lang="en">Metadata standard</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to a metadata standard for a data repository.</rdfs:comment>
+    <skos:related>r3d:metadataStandard</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:MetadataStandard">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Metadata standard</rdfs:label>
+    <rdfs:comment xml:lang="en">The metadata standard the data repository offers </rdfs:comment>
+    <skos:related>r3d:metadataStandard</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:metadataStandardName">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:MetadataStandard"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Matadata standard name</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata standard like ISO 115.</rdfs:comment>
+    <skos:related>r3d:metadataStandardName</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:metadataStandardUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:MetadataStandard"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Metadata standard URL</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata standard  URL like 'http://example.org/metadataX.html'.</rdfs:comment>
+    <skos:related>r3d:metadataStandardUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:alertService">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="gdx:AlertService"/>
+    <rdfs:label xml:lang="en">Alert Service</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to an alerting service for a data repository.</rdfs:comment>
+    <skos:related>r3d:syndication</skos:related>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:AlertService">
+    <rdfs:subClassOf rdf:resource="schema:ItemList"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Alert Service</rdfs:label>
+    <rdfs:comment xml:lang="en">The alerting service the data repository offers </rdfs:comment>
+    <skos:related>r3d:syndication</skos:related>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="gdx:alertServiceType">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:AlertService"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Alert Service Type</rdfs:label>
+    <rdfs:comment xml:lang="en">Alerting service type like RSS.</rdfs:comment>
+    <skos:related>r3d:syndicationType</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:alertServiceUrl">
+    <rdfs:subPropertyOf rdf:resource="schema:url"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:AlertService"/>
+    <rdfs:range rdf:resource="xsd:anyURI"/>
+    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:label xml:lang="en">Alert Service URL</rdfs:label>
+    <rdfs:comment xml:lang="en">Alerting service URL like 'http://example.org/rss.xml'.</rdfs:comment>
+    <skos:related>r3d:syndicationUrl</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:remarks">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+    <rdfs:label xml:lang="en">Informational remarks</rdfs:label>
+    <rdfs:comment xml:lang="en">Free text remarks about the respository.</rdfs:comment>
+    <skos:related>r3d:XXXX</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:entryDate">
+    <rdfs:subPropertyOf rdf:resource="schema:XXX"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:dateTime"/>
+    <rdfs:label xml:lang="en">Date of entry</rdfs:label>
+    <rdfs:comment xml:lang="en">The date entry made</rdfs:comment>
+    <skos:related>r3d:XXXX</skos:related>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="gdx:lastUpdate">
+    <rdfs:subPropertyOf rdf:resource="schema:XXX"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
+    <rdfs:range rdf:resource="xsd:dateTime"/>
+    <rdfs:label xml:lang="en">Date of last update</rdfs:label>
+    <rdfs:comment xml:lang="en">The date from which last update was made</rdfs:comment>
+    <skos:related>r3d:XXXX</skos:related>
+  </owl:DatatypeProperty>
+
+</rdf:RDF>
