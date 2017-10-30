@@ -681,12 +681,38 @@
   </owl:DatatypeProperty>
 
   <owl:ObjectProperty rdf:about="gdx:agentWithRole">
+    <rdf:type rdf:resource="rdf:Property"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:domain rdf:resource="gdx:InformationResourceRepository"/>
-    <rdfs:range rdf:resource="gdx:Agent"/>
-    <rdfs:label xml:lang="en">Institution</rdfs:label>
+    <rdfs:range rdf:resource="gdx:AgentRole"/>
+    <rdfs:label xml:lang="en">Agent with Role</rdfs:label>
     <rdfs:comment xml:lang="en">All agents being responsible for activities such as funding, creating and/or running the repository.</rdfs:comment>
     <skos:related rdf:resource="r3d:institution"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="gdx:AgentRole">
+    <rdfs:subClassOf rdf:resource="owl:Thing"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Agent Role</rdfs:label>
+    <rdfs:comment xml:lang="en">A role performed by a single Agent.</rdfs:comment>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="gdx:performedBy">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:AgentRole"/>
+    <rdfs:range rdf:resource="gdx:Agent"/>
+    <rdfs:label xml:lang="en">Performed By</rdfs:label>
+    <rdfs:comment xml:lang="en">A role performed by a specific Agent.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="gdx:roleType">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="gdx:AgentRole"/>
+    <rdfs:range rdf:resource="gdx:AgentRoleType"/>
+    <rdfs:label xml:lang="en">Role Type</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of role performed by an Agent.</rdfs:comment>
   </owl:ObjectProperty>
 
   <owl:Class rdf:about="gdx:Agent">
@@ -698,56 +724,129 @@
     <rdfs:comment xml:lang="en">A person or organization that performs a specific role for another Agent.</rdfs:comment>
   </owl:Class>
 
+  <owl:ObjectProperty rdf:about="gdx:providesAgentRoleType">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:domain rdf:resource="owl:Thing"/>
+    <rdfs:range rdf:resource="gdx:AgentRoleType"/>
+    <rdfs:label xml:lang="en">Provides AgentRoleType</rdfs:label>
+    <rdfs:comment xml:lang="en">The existence of some thing provides the ability for an Agent to perform a specific role. </rdfs:comment>
+  </owl:ObjectProperty>
+
   <owl:Class rdf:about="gdx:Institution">
     <rdfs:subClassOf rdf:resource="gdx:Agent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:institutionName"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:institutionAdditionalName"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:institutionCountry"/>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="gdx:responsibilityType"/>
+        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
+        <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <skos:exactMatch rdf:resource="schema:Organization"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en">Institution</rdfs:label>
-    <rdfs:comment xml:lang="en">An organization that performs a specific role for another Agent.</rdfs:comment>
+    <rdfs:comment xml:lang="en">An organization that is responsible for a specific role for another Agent.</rdfs:comment>
+    <gdx:providesAgentRoleType rdf:resource="gdx:InstitutionRole-MAIN"/>
+    <gdx:providesAgentRoleType rdf:resource="gdx:InstitutionRole-FUNDING"/>
+    <gdx:providesAgentRoleType rdf:resource="gdx:InstitutionRole-SPONSORING"/>
+    <gdx:providesAgentRoleType rdf:resource="gdx:InstitutionRole-TECHNICAL"/>
+    <gdx:providesAgentRoleType rdf:resource="gdx:InstitutionRole-GENERAL"/>
   </owl:Class>
 
+  <owl:namedIndividual rdf:about="gdx:InstitutionRole-MAIN">
+    <rdf:type rdf:resource="gdx:AgentRoleType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Institution Role: Main Institution</rdfs:label>
+    <rdfs:comment xml:lang="en">The lead/main institution acting as the Information Resource Repository.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:InstitutionRole-FUNDING">
+    <rdf:type rdf:resource="gdx:AgentRoleType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Institution Role: Funding Institution</rdfs:label>
+    <rdfs:comment xml:lang="en">An institution providing funding for the Information Resource Repository.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:InstitutionRole-SPONSORING">
+    <rdf:type rdf:resource="gdx:AgentRoleType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Institution Role: Sponsoring Institution</rdfs:label>
+    <rdfs:comment xml:lang="en">An institution sponsoring the Information Resource Repository.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:InstitutionRole-TECHNICAL">
+    <rdf:type rdf:resource="gdx:AgentRoleType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Institution Role: Technical Institution</rdfs:label>
+    <rdfs:comment xml:lang="en">An institution providing technical resources to the main Information Resource Repository.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:InstitutionRole-GENERAL">
+    <rdf:type rdf:resource="gdx:AgentRoleType"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en">Institution Role: General Institution</rdfs:label>
+    <rdfs:comment xml:lang="en">An institution providing some type of support or resources to the main Information Resource Repository.</rdfs:comment>
+  </owl:namedIndividual>
+
   <owl:DatatypeProperty rdf:about="gdx:institutionName">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:legalName"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:domain rdf:resource="gdx:Institution"/>
     <rdfs:range rdf:resource="xsd:string"/>
-    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
-    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
     <rdfs:label xml:lang="en">Institution name</rdfs:label>
-    <rdfs:comment xml:lang="en">Institution name.</rdfs:comment>
-    <skos:related>r3d:institutionName</skos:related>
+    <rdfs:comment xml:lang="en">The official name for an Institution.</rdfs:comment>
+    <skos:related rdf:resource="r3d:institutionName"/>
   </owl:DatatypeProperty>
 
   <owl:DatatypeProperty rdf:about="gdx:institutionAdditionalName">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <rdfs:subPropertyOf rdf:resource="schema:additionalName"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:domain rdf:resource="gdx:Institution"/>
     <rdfs:range rdf:resource="xsd:string"/>
-    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
-    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
-    <rdfs:label xml:lang="en">Additional Institution name</rdfs:label>
-    <rdfs:comment xml:lang="en">Additional Institution name.</rdfs:comment>
-    <skos:related>r3d:institutionAdditionalName</skos:related>
+    <rdfs:label xml:lang="en">Additional Institution Name</rdfs:label>
+    <rdfs:comment xml:lang="en">Additional name for an Institution.</rdfs:comment>
+    <skos:related rdf:resource="r3d:institutionAdditionalName"/>
   </owl:DatatypeProperty>
 
   <owl:DatatypeProperty rdf:about="gdx:institutionCountry">
+    <rdf:type rdf:resource="rdf:Property"/>
+    <skos:closeMatch rdf:resource="schema:addressCountry"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:domain rdf:resource="gdx:Institution"/>
     <rdfs:range rdf:resource="xsd:string"/>
-    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
-    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
     <rdfs:label xml:lang="en">Institution county name</rdfs:label>
     <rdfs:comment xml:lang="en">Institution country name.</rdfs:comment>
-    <skos:related>r3d:institutionCountry</skos:related>
+    <skos:related rdf:resource="r3d:institutionCountry"/>
   </owl:DatatypeProperty>
 
-  <owl:DatatypeProperty rdf:about="gdx:responsibilityType">
+  <owl:ObjectProperty rdf:about="gdx:responsibilityType">
+    <rdf:type rdf:resource="rdf:Property"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:domain rdf:resource="gdx:Institution"/>
-    <rdfs:range rdf:resource="xsd:string"/>
-    <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
-    <owl:maxCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:maxCardinality>
+    <rdfs:range rdf:resource="gdx:InstitutionResponsibilityType"/>
     <rdfs:label xml:lang="en">Institution responsibility type</rdfs:label>
-    <rdfs:comment xml:lang="en">Institution responsibility type.</rdfs:comment>
-    <skos:related>r3d:responsibilityType</skos:related>
+    <rdfs:comment xml:lang="en">The main responsibility .</rdfs:comment>
+    <skos:related rdf:resource="r3d:responsibilityType"/>
   </owl:DatatypeProperty>
 
   <owl:DatatypeProperty rdf:about="gdx:institutionType">
