@@ -7,8 +7,9 @@
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
          xmlns:schema="http://schema.org/"
-         xmlns:geolink="http://schema.geolink.org/1.0/base/main#"
          xmlns:gdx="https://geodex.org/voc/">
+
+  <!-- xmlns:geolink="http://schema.geolink.org/1.0/base/main#" -->
 
   <owl:Ontology rdf:about="gdx:">
     <dc:description>Schema.org extension for a Information Resource Service</dc:description>
@@ -18,7 +19,8 @@
     <owl:versionInfo>0.1.0</owl:versionInfo>
   </owl:Ontology>
 
-  <!-- RULES
+  <!-- Ignore, if using simpler model
+    RULES
     1. If gdx:ResearchRepositoryService schema:provider <resource>,
        then there must be a Role
        where performedBy is <resource>
@@ -55,16 +57,15 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="schema:provider"/>
-        <owl:someValuesFrom rdf:resource="gdx:Institution"/>
         <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    <!--rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="gdx:supportService"/>
         <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf-->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="gdx:searchService"/>
@@ -105,6 +106,7 @@
     <rdfs:comment xml:lang="en">A service providing access to products developed from research activities such as data, software and other research outputs.</rdfs:comment>
   </owl:Class>
 
+  <!-- Instead, use the schema:provider [ schema:contactPoint ?contactPoint ]
   <owl:ObjectProperty rdf:about="gdx:supportService">
     <rdf:type rdf:resource="rdf:Property"/>
     <rdfs:subPropertyOf rdf:resource="schema:availableChannel"/>
@@ -113,7 +115,7 @@
     <rdfs:range rdf:resource="schema:ServiceChannel"/>
     <rdfs:label xml:lang="en">supportService</rdfs:label>
     <rdfs:comment xml:lang="en">Provides a channel for contacting support for a research resource respository.</rdfs:comment>
-  </owl:ObjectProperty>
+  </owl:ObjectProperty-->
 
   <owl:ObjectProperty rdf:about="gdx:searchService">
     <rdf:type rdf:resource="rdf:Property"/>
@@ -145,7 +147,9 @@
     <rdfs:comment xml:lang="en">Provides a channel for alerting the user community of updates at a repository.</rdfs:comment>
   </owl:ObjectProperty>
 
-  <owl:DatatypeProperty rdf:about="gdx:serviceEmail">
+  <!-- Instead, use schema:Organization [ schema:contactPoint schema:email ]
+
+    owl:DatatypeProperty rdf:about="gdx:serviceEmail">
     <rdf:type rdf:resource="rdf:Property"/>
     <skos:subPropertyOf rdf:resource="schema:email"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
@@ -153,7 +157,7 @@
     <rdfs:range rdf:resource="schema:Text"/>
     <rdfs:label xml:lang="en">serviceEmail</rdfs:label>
     <rdfs:comment xml:lang="en">Provides a channel for contacting support for a research resource respository.</rdfs:comment>
-  </owl:DatatypeProperty>
+  </owl:DatatypeProperty-->
 
   <owl:ObjectProperty rdf:about="gdx:subjectArea">
     <rdf:type rdf:resource="rdf:Property"/>
@@ -178,7 +182,9 @@
     <rdfs:comment xml:lang="en">A disciplinary focus for the contents of the respository.</rdfs:comment>
   </owl:Class>
 
-  <owl:ObjectProperty rdf:about="gdx:providesRole">
+  <!-- Instead, schema.org prefers to make explicit predicates unless abstractions such as Action and CreativeWork
+       make sense for extension
+  owl:ObjectProperty rdf:about="gdx:providesRole">
     <rdf:type rdf:resource="rdf:Property"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:domain rdf:resource="schema:Thing"/>
@@ -199,6 +205,7 @@
 
   <owl:Class rdf:about="gdx:Role">
     <rdfs:subClassOf rdf:resource="schema:Thing"/>
+    <skos:closeMatch rdf:resource="schema:Action"/>
     <skos:closeMatch rdf:resource="geolink:Participant"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -219,6 +226,7 @@
 
   <owl:ObjectProperty rdf:about="gdx:performedBy">
     <rdf:type rdf:resource="rdf:Property"/>
+    <skos:exactMatch rdf:resource="schema:agent"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:domain rdf:resource="gdx:Role"/>
     <rdfs:range rdf:resource="gdx:Agent"/>
@@ -290,9 +298,10 @@
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en">Role: Technical Service Provider</rdfs:label>
     <rdfs:comment xml:lang="en">An agent providing technical resources to the main Information Resource Repository.</rdfs:comment>
-  </owl:namedIndividual>
+  </owl:namedIndividual-->
 
-  <owl:Class rdf:about="gdx:Institution">
+  <!-- Instead, use schema:Organization
+    owl:Class rdf:about="gdx:Institution">
     <rdfs:subClassOf rdf:resource="gdx:Agent"/>
     <skos:exactMatch rdf:resource="schema:Organization"/>
     <skos:exactMatch rdf:resource="geolink:Organization"/>
@@ -305,7 +314,7 @@
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en">Institution</rdfs:label>
     <rdfs:comment xml:lang="en">An organization that normally should continue to exist beyond the scope of the Research Resource repository. This institution is responsible for a specific role for the respository.</rdfs:comment>
-  </owl:Class>
+  </owl:Class-->
 
   <owl:ObjectProperty rdf:about="gdx:followsProtocol">
     <rdf:type rdf:resource="rdf:Property"/>
