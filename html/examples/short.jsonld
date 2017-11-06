@@ -114,6 +114,7 @@
             "@type": "s:ServiceChannel",
             "s:name": "Website Search",
             "s:serviceUrl": "http://www.bco-dmo.org/search",
+            "gdx:serviceEmail": "webmaster@bco-dmo.org",
             "s:potentialAction": {
                 "@type": "s:SearchAction",
                 "s:target": {
@@ -130,6 +131,7 @@
             "@type": "s:ServiceChannel",
             "s:name": "SPARQL Endpoint",
             "s:serviceUrl": "http://lod.bco-dmo.org/sparql",
+            "gdx:serviceEmail": "webmaster@bco-dmo.org",
             "s:potentialAction": {
                 "@type": "s:SearchAction",
                 "s:target": {
@@ -146,6 +148,7 @@
             "@type": "s:ServiceChannel",
             "s:name": "OAI-PMH Endpoint",
             "s:serviceUrl": "http://www.bco-dmo.org/services/oai",
+            "gdx:serviceEmail": "webmaster@bco-dmo.org",
             "s:potentialAction": {
                 "@type": "s:SearchAction",
                 "s:target": {
@@ -165,6 +168,7 @@
         "s:name": "RSS Feed of Recently Added Datasets",
         "s:serviceUrl": "http://www.bco-dmo.org/how-get-started",
         "s:description": "Submit data to BCO-DMO",
+        "gdx:serviceEmail": "webmaster@bco-dmo.org",
         "s:serviceUrl": "http://www.bco-dmo.org/rss/datasets/recent.xml"
     },
     "gdx:subjectArea": [
