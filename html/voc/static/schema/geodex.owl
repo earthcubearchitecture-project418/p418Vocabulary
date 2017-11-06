@@ -83,7 +83,7 @@
     <rdfs:comment xml:lang="en">A service providing access to products developed from research activities such as data, software and other research outputs.</rdfs:comment>
   </owl:Class>
 
-  <owl:ObjectProperty rdf:resource="gdx:hasResourceCatalog">
+  <owl:ObjectProperty rdf:about="gdx:hasResourceCatalog">
     <rdf:type rdf:resource="rdf:Property"/>
     <rdfs:subPropertyOf rdf:resource="schema:hasOfferCatalog"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
@@ -377,35 +377,35 @@
   <owl:namedIndividual rdf:about="gdx:ProtocolType-Access">
     <rdf:type rdf:resource="gdx:protocolType"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en">Access Protocol</rdfs:comment>
+    <rdfs:label xml:lang="en">Access Protocol</rdfs:label>
     <rdfs:comment xml:lang="en">An access regulation.</rdfs:comment>
   </owl:namedIndividual>
 
   <owl:namedIndividual rdf:about="gdx:ProtocolType-PreservationPolicy">
     <rdf:type rdf:resource="gdx:protocolType"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en">Preservation Policy</rdfs:comment>
+    <rdfs:label xml:lang="en">Preservation Policy</rdfs:label>
     <rdfs:comment xml:lang="en">A policy describing a preservation protocol.</rdfs:comment>
   </owl:namedIndividual>
 
   <owl:namedIndividual rdf:about="gdx:ProtocolType-ResourceSubmissionPolicy">
     <rdf:type rdf:resource="gdx:protocolType"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en">Resource Submission Policy</rdfs:comment>
+    <rdfs:label xml:lang="en">Resource Submission Policy</rdfs:label>
     <rdfs:comment xml:lang="en">A policy describing the protocols for submitting resources to the repository.</rdfs:comment>
   </owl:namedIndividual>
 
   <owl:namedIndividual rdf:about="gdx:ProtocolType-TermsOfUse">
     <rdf:type rdf:resource="gdx:protocolType"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en">Terms of Use</rdfs:comment>
+    <rdfs:label xml:lang="en">Terms of Use</rdfs:label>
     <rdfs:comment xml:lang="en">A policy describing the Terms of Use.</rdfs:comment>
   </owl:namedIndividual>
 
   <owl:namedIndividual rdf:about="gdx:ProtocolType-License">
     <rdf:type rdf:resource="gdx:protocolType"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en">License</rdfs:comment>
+    <rdfs:label xml:lang="en">License</rdfs:label>
     <rdfs:comment xml:lang="en">An applicable license.</rdfs:comment>
   </owl:namedIndividual>
-
+</rdf:RDF>
