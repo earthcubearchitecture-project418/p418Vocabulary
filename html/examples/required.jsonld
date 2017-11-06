@@ -25,17 +25,10 @@
         },
         "s:funder": {
             "@type": "s:Organization",
-            "@id": "http://dx.doi.org/10.13039/100000085",
-            "s:legalName": "National Science Foundation - Directorate for Geosciences",
-            "s:alternateName": "NSF-GEO",
-            "s:url": "http://www.nsf.gov",
-            "s:parentOrganization": {
-                "@type": "s:Organization",
-                "@id": "http://dx.doi.org/10.13039/100000001",
-                "s:legalName": "National Science Foundation",
-                "s:alternateName": "NSF",
-                "s:url": "http://www.nsf.gov"
-            }
+            "@id": "http://dx.doi.org/10.13039/100000141",
+            "s:legalName": "Division of Ocean Sciences",
+            "s:alternateName": "OCE",
+            "s:url": "https://www.nsf.gov/div/index.jsp?div=OCE"
         }
     },
     "gdx:hasResourceCatalog": {
