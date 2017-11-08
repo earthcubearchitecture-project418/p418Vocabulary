@@ -102,18 +102,8 @@
         "name": "BCO-DMO Resource Catalog",
         "description": "A sitemap.xml file where all datasets available from BCO-DMO are listed.",
         "itemListElement": [{
-            "@type": "DigitalDocument",
-            "name": "sitemap.xml",
-            "fileFormat": "application/xml",
-            "url": "https://www.bco-dmo.org/sitemap.xml",
-            "offers": {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "serviceOutput": "Dataset",
-                    "serviceType": "Listing of datasets"
-                }
-            }
+            "@type": "DataCatalog",
+            "name": "BCO-DMO Data Catalog"
         }]
     },
     "availableChannel": [
@@ -167,6 +157,13 @@
                     "httpMethod": "GET"
                 }
             }
+        },
+        {
+            "@type": "ServiceChannel",
+            "additionalType": "gdx:SyndicationService",
+            "name": "Sitemap",
+            "serviceUrl": "https://www.bco-dmo.org/sitemap.xml",
+            "description": "Listing of datasets and other resources available from the BCO-DMO data service"
         },
         {
             "@type": "ServiceChannel",
