@@ -238,14 +238,14 @@
       ],
       "rdfs:comment": {
         "@language": "en-US",
-        "@value": "An applicable license."
+        "@value": "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en-US",
-        "@value": "License"
+        "@value": "Sitemap XML File"
       }
     },
     {

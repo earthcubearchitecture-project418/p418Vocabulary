@@ -4,7 +4,7 @@ var voc_prefix="gdx:";
 var page_title="Geodex Web Vocabulary";
 var objectProperties={};
 var datatypeProperties={};
-var uiLanguage="en";
+var uiLanguage="en-US";
 var isValueOfProperty="_:isValueOf";
 var uiText=[];
 uiText["Exact match:"] = "Exact match:";
@@ -163,7 +163,7 @@ function getAllNamedIndividuals() {
   $.each(graph, function( index, value ) {
     var id=value["@id"];
     var type=value["@type"] || [];
-    if (type.indexOf("owl:NamedIndividual") > -1) {
+    if (type.indexOf("owl:namedIndividual") > -1 ) {
       namedIndividuals[value["@id"]]=value;
     }
   });
@@ -512,7 +512,7 @@ function determineType(val) {
   if ( (first.indexOf('rdf:Property') > -1) || (first.indexOf('owl:ObjectProperty') > -1) || (first.indexOf('owl:DatatypeProperty') > -1) ) {
     type="property";
   }
-  if ( first.indexOf('owl:NamedIndividual') > -1 ) {
+  if ( first.indexOf('owl:namedIndividual') > -1 ) {
     type="NamedIndividual";
   }
   if ( first.indexOf(voc_prefix+'TypeCode') > -1  ) {
@@ -731,7 +731,7 @@ function tabulateNamedIndividuals(obj) {
     var label=value["rdfs:label"];
     var types = "";
     $.each(value["@type"], function (index, type) {
-      if (type != "owl:NamedIndividual") {
+      if (type != "owl:namedIndividual") {
         types += type + '</br>';
       }
     });
@@ -1241,7 +1241,25 @@ function updatestate2(val) {
     }
 
     if (type == "NamedIndividual") {
-      $(".termschema").hide();
+      var ndtypes=[];
+      if ((node["@type"] !== undefined) && (node["@type"] !== null)) {
+        $.each(node["@type"], function( index, value ) {
+          if (value.indexOf('schema:') > -1) {
+            ndtypes.push(prepareLink(value));
+          }
+        });
+      }
+      var schemaEquivalent="";
+      if (ndtypes.length > 0) {
+        schemaEquivalent+="Type: "+ndtypes.join(", ")+"<br>";
+      }
+      $("#schemaEquivalent").html(schemaEquivalent);
+      if (schemaEquivalent.indexOf('schema:') > -1) {
+        $(".termschema").show();
+      } else {
+        $(".termschema").hide();
+      }
+
       $("#termComment").html(selectLanguage(termComment,uiLanguage));
       $('#triple').hide();
       var properties=getNamedIndividualProperties(node, term);

@@ -15,6 +15,36 @@ type MyServer struct {
 func main() {
 
   htmlRouter := mux.NewRouter().StrictSlash(true)
+  htmlRouter.HandleFunc("/voc/diagram", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/diagram.html")
+  })
+  htmlRouter.HandleFunc("/voc/examples", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/examples.html")
+  })
+  htmlRouter.HandleFunc("/voc/schema.rdf", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
+  })
+  htmlRouter.HandleFunc("/voc/schema.xml", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
+  })
+  htmlRouter.HandleFunc("/voc/schema.owl", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
+  })
+  htmlRouter.HandleFunc("/voc/schema.json", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
+  })
+  htmlRouter.HandleFunc("/voc/schema.jsonld", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
+  })
+  htmlRouter.HandleFunc("/voc/schema.jsonld", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
+  })
+  htmlRouter.HandleFunc("/voc/schema.ttl", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/schema.ttl")
+  })
+  htmlRouter.HandleFunc("/voc/schema.n3", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/schema.n3")
+  })
   htmlRouter.PathPrefix("/voc/static").Handler(http.StripPrefix("/voc/static", http.FileServer(http.Dir("./html/voc/static"))))
   htmlRouter.HandleFunc("/voc/", func(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, "./html/voc/index.html")

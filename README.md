@@ -13,7 +13,8 @@ Serves the vocabulary in JSON-LD at https://geodex.org/voc/
 <a id="diagram"></a>
 #### Diagram
 
-![Research Repository Service Vocabulary](html/diagrams/diagram.png "Research Repository Service Vocabulary")
+![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/diagram.png "Research Repository Service Vocabulary")
+![Graphical Notation](html/voc/static/schema/diagrams/graphical-notation.png "Graphical Notation")
 
 <a id="examples"></a>
 #### Examples

@@ -1,0 +1,111 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gdx: <http://geodex.org/voc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<gdx:> a owl:Ontology ;
+    dc:creator "EarthCube Registry Working Group"@en-US ;
+    dc:description ">Schema.org extension for a Information Resource Service"@en-US ;
+    dc:title ">Research Repository Service Vocabulary"@en-US ;
+    dcterms:issued "2017-10-16"^^<xsd:date> ;
+    dcterms:source "https://github.com/earthcubearchitecture-project418"^^<xsd:anyURI> ;
+    owl:versionInfo "0.7.0" .
+
+<gdx:ResearchRepositoryService> a owl:Class ;
+    rdfs:label "Research Repository Service"@en-US ;
+    rdfs:comment "A service providing access to products developed from research activities such as data, software and other research outputs."@en-US ;
+    rdfs:isDefinedBy <gdx:> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^<xsd:nonNegativeInteger> ;
+            owl:onProperty <schema:name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^<xsd:nonNegativeInteger> ;
+            owl:onProperty <gdx:hasResourceCatalog> ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^<xsd:nonNegativeInteger> ;
+            owl:onProperty <schema:url> ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^<xsd:nonNegativeInteger> ;
+            owl:onProperty <schema:provider> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^<xsd:nonNegativeInteger> ;
+            owl:onProperty <schema:description> ],
+        <schema:Service> .
+
+<gdx:ResearchResourceCatalog> a owl:Class ;
+    rdfs:label "Research Repository Service"@en-US ;
+    rdfs:comment "A service providing access to products developed from research activities such as data, software and other research outputs."@en-US ;
+    rdfs:isDefinedBy <gdx:> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <schema:itemListElement> ;
+            owl:someValuesFrom <schema:CreativeWork> ],
+        <schema:OfferCatalog> .
+
+<gdx:hasResourceCatalog> a owl:ObjectProperty,
+        <rdf:Property> ;
+    rdfs:label "hasResourceCatalog"@en-US ;
+    rdfs:comment "Indicates an OfferCatalog listing of CreativeWorks for this Service."@en-US ;
+    rdfs:domain <gdx:ResearchRepositoryService> ;
+    rdfs:isDefinedBy <gdx:> ;
+    rdfs:range <gdx:ResearchResourceCatalog> ;
+    rdfs:subPropertyOf <schema:hasOfferCatalog> .
+
+<gdx:Protocol-Access> a owl:namedIndividual,
+        <schema:DigitalDocument> ;
+    rdfs:label "Access Protocol"@en-US ;
+    rdfs:comment "An access regulation."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:Protocol-License> a owl:namedIndividual,
+        <schema:DigitalDocument> ;
+    rdfs:label "License"@en-US ;
+    rdfs:comment "An applicable license."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:Protocol-PreservationPolicy> a owl:namedIndividual,
+        <schema:DigitalDocument> ;
+    rdfs:label "Preservation Policy"@en-US ;
+    rdfs:comment "A policy describing a preservation protocol."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:Protocol-ResourceSubmissionPolicy> a owl:namedIndividual,
+        <schema:DigitalDocument> ;
+    rdfs:label "Resource Submission Policy"@en-US ;
+    rdfs:comment "A policy describing the protocols for submitting resources to the repository."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:Protocol-TermsOfUse> a owl:namedIndividual,
+        <schema:DigitalDocument> ;
+    rdfs:label "Terms of Use"@en-US ;
+    rdfs:comment "A policy describing the Terms of Use."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:SearchService> a owl:namedIndividual,
+        <schema:ServiceChannel> ;
+    rdfs:label "Search Service Channel"@en-US ;
+    rdfs:comment "A service provided for searching the resource catalog."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:SubmissionService> a owl:namedIndividual,
+        <schema:ServiceChannel> ;
+    rdfs:label "Submssions Service Channel"@en-US ;
+    rdfs:comment "A service provided for submitting resources to the catalog."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:SyndicationService> a owl:namedIndividual,
+        <schema:ServiceChannel> ;
+    rdfs:label "Syndication Service Channel"@en-US ;
+    rdfs:comment "A service provided for syndicating resources from the catalog."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:SitemapXML> a owl:namedIndividual,
+        <schema:DigitalDocument> ;
+    rdfs:label "Sitemap XML File"@en-US ;
+    rdfs:comment "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
