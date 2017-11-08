@@ -1,90 +1,82 @@
 {
     "@context": {
-        "@vocab": "https://geodex.org/voc/",
-        "gdx": "https://geodex.org/voc/",
-        "s": "https://schema.org/"
+        "@vocab": "http://schema.org/",
+        "gdx": "https://geodex.org/voc/"
     },
-    "@type": ["gdx:ResearchRepositoryService", "s:Service"],
+    "@type": "Service",
     "@id": "http://www.bco-dmo.org",
-    "s:name": "Biological and Chemical Data Management Office Data Catalog",
-    "s:url": "http://wwww.bco-dmo.org",
-    "s:description": "The BCO-DMO data catalog offers free and open access to publicly funded research products whose field of study are biological and chemical oceanography.",
-    "s:provider": {
-        "@type": "s:Organization",
+    "additionalType": "gdx:ResearchRepositoryService",
+    "name": "Biological and Chemical Data Management Office Data Service",
+    "url": "http://wwww.bco-dmo.org",
+    "category": ["Biological Oceanography", "Chemical Oceanography"],
+    "description": "The BCO-DMO resource catalog offers free and open access to publicly funded research products whose field of study are biological and chemical oceanography.",
+    "provider": {
+        "@type": "Organization",
         "@id": "http://www.bco-dmo.org/affiliation/191",
-        "s:legalName": "Biological and Chemical Data Management Office",
-        "s:url": "http://www.bco-dmo.org",
-        "s:description": "The Biological and Chemical Oceanography Data Management Office (BCO-DMO) was created in late 2006 to serve PIs funded by the NSF Geosciences Directorate (GEO) Division of Ocean Sciences (OCE) Biological and Chemical Oceanography Programs and Office of Polar Programs (OPP) Antarctic Sciences (ANT) Organisms & Ecosystems Program. The BCO-DMO is a combination the Data Management Offices formerly created to support the US JGOFS and US GLOBEC programs. The BCO-DMO staff members are the curators of the legacy data collections created by those respective programs, as well as many other more recent research efforts including those of individual investigators.",
-        "s:contactPoint": {
+        "identifier": "http://lod.bco-dmo.org/id/affiliation/191",
+        "legalName": "Biological and Chemical Data Management Office",
+        "name": "BCO-DMO",
+        "url": "http://www.bco-dmo.org",
+        "description": "The Biological and Chemical Oceanography Data Management Office (BCO-DMO) was created in late 2006 to serve PIs funded by the NSF Geosciences Directorate (GEO) Division of Ocean Sciences (OCE) Biological and Chemical Oceanography Programs and Office of Polar Programs (OPP) Antarctic Sciences (ANT) Organisms & Ecosystems Program. The BCO-DMO is a combination the Data Management Offices formerly created to support the US JGOFS and US GLOBEC programs. The BCO-DMO staff members are the curators of the legacy data collections created by those respective programs, as well as many other more recent research efforts including those of individual investigators.",
+        "contactPoint": {
             "@id": "http:/www.bco-dmo.org/about-us",
-            "@type": "s:ContactPoint",
-            "s:name": "Support",
-            "s:email": "info@bco-dmo.org",
-            "s:url": "http:/www.bco-dmo.org/about-us",
-            "s:contactType": "support questions & information requests"
+            "@type": "ContactPoint",
+            "name": "Support",
+            "email": "info@bco-dmo.org",
+            "url": "http:/www.bco-dmo.org/about-us",
+            "contactType": "customer support"
         },
-        "s:funder": {
-            "@type": "s:Organization",
+        "funder": {
+            "@type": "Organization",
             "@id": "http://dx.doi.org/10.13039/100000141",
-            "s:legalName": "Division of Ocean Sciences",
-            "s:alternateName": "OCE",
-            "s:url": "https://www.nsf.gov/div/index.jsp?div=OCE"
+            "legalName": "Division of Ocean Sciences",
+            "alternateName": "OCE",
+            "url": "https://www.nsf.gov/div/index.jsp?div=OCE"
         }
     },
-    "gdx:hasResourceCatalog": {
-        "@type": ["gdx:ResearchResourceCatalog", "s:OfferCatalog"],
-        "s:name": "BCO-DMO Catalog",
-        "s:description": "A sitemap.xml file where all datasets available from BCO-DMO are listed.",
-        "s:itemListElement": [
-            {
-                "@type": "s:DigitalDocument",
-                "s:name": "sitemap.xml",
-                "s:fileFormat": "application/xml",
-                "s:url": "https://www.bco-dmo.org/sitemap.xml",
-                "s:offers": {
-                    "@type": "s:Offer",
-                    "schemorg:itemOffered": {
-                        "@type": "s:Service",
-                        "s:serviceOutput": "s:Dataset",
-                        "s:serviceType": "Listing of datasets"
-                    }
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "additionalType": "gdx:ResearchResourceCatalog",
+        "name": "BCO-DMO Resource Catalog",
+        "description": "A sitemap.xml file where all datasets available from BCO-DMO are listed.",
+        "itemListElement": [{
+            "@type": "DigitalDocument",
+            "name": "sitemap.xml",
+            "fileFormat": "application/xml",
+            "url": "https://www.bco-dmo.org/sitemap.xml",
+            "offers": {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "serviceOutput": "Dataset",
+                    "serviceType": "Listing of datasets"
                 }
             }
-        ]
+        }]
     },
-    "gdx:submissionService": {
-        "@type": "s:ServiceChannel",
-        "s:availableLanguage": "en-US",
-        "s:serviceUrl": "http://www.bco-dmo.org/how-get-started",
-        "s:description": "Submit data to BCO-DMO",
-        "gdx:serviceEmail": "info@bco-dmo.org"
-    },
-    "gdx:searchService": [
-        {
-            "@type": "s:ServiceChannel",
-            "s:name": "Website Search",
-            "s:serviceUrl": "http://www.bco-dmo.org/search",
-            "s:potentialAction": {
-                "@type": "s:SearchAction",
-                "s:target": {
-                    "@type": "s:EntryPoint",
-                    "s:contentType": "text/html",
-                    "s:url": "http://www.bco-dmo.org/search",
-                    "s:urlTemplate": "http://www.bco-dmo.org/search?keywords={query_string}",
-                    "s:description": "Search the BCO-DMO catalog",
-                    "s:httpMethod": "GET"
+    "availableChannel": [{
+            "@type": "ServiceChannel",
+            "additionalType": "gdx:SearchService",
+            "name": "Website Search",
+            "serviceUrl": "http://www.bco-dmo.org/search",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "contentType": "text/html",
+                    "url": "http://www.bco-dmo.org/search",
+                    "urlTemplate": "http://www.bco-dmo.org/search?keywords={query_string}",
+                    "description": "Search the BCO-DMO catalog",
+                    "httpMethod": "GET"
                 }
             }
-        }
-    ],
-    "gdx:subjectArea": [
-        {
-            "@type": ["gdx:SubjectArea", "schema:Thing"],
-            "s:name": "Biological Oceanography"
         },
         {
-            "@type": ["gdx:SubjectArea", "schema:Thing"],
-            "s:name": "Chemical Oceanography"
+            "@type": "ServiceChannel",
+            "additionalType": "gdx:SubmissionService",
+            "availableLanguage": "en-US",
+            "serviceUrl": "http://www.bco-dmo.org/how-get-started",
+            "description": "Submit data to BCO-DMO"
         }
     ]
 }

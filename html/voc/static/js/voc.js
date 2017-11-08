@@ -1,7 +1,11 @@
-var vocab=$("#vocab").html();
-var json=JSON.parse(vocab);
-
+// GLOBALS
+var voc_base_uri="http://geodex.org/voc/";
+var voc_prefix="gdx:";
+var page_title="Geodex Web Vocabulary";
+var objectProperties={};
+var datatypeProperties={};
 var uiLanguage="en";
+var isValueOfProperty="_:isValueOf";
 var uiText=[];
 uiText["Exact match:"] = "Exact match:";
 uiText["Close match:"] = "Close match:";
@@ -14,14 +18,22 @@ uiText["See also:"] = "See also:";
 uiText["Properties of"] = "Properties of";
 uiText["A subclass of"] = "A subclass of";
 uiText["Has subclasses"] = "Has subclasses";
+var graph='';
+var nodeTypes;
 
-
-var objectProperties={};
-var datatypeProperties={};
-var graph=json["@graph"];
-
-var nodeTypes=getNodeTypes();
-
+// Get the vocabulary.
+$(function() {
+  $.ajax({
+      method: "GET",
+      cache: true,
+      url: $("#vocab").attr('src'),
+      dataType: "text"
+  }).done(function(data, textStatus, jqXHR){
+    displayVocabulary(data);
+  }).fail(function(jqXHR, textStatus, errorThrown){
+    alert("Could not load the vocabulary: " + $("#vocab").attr('src'));
+  });
+});
 
 function doSearch() {
   var searchTerm=$('#searchTerm').val();
@@ -31,10 +43,13 @@ function doSearch() {
   var searchTermLC=searchTerm.toLowerCase();
   var classes={};
   var properties={};
+  var namedIndividuals={};
   var typecodes={};
   var typecodeinstances={};
+
   var foundClass=false;
   var foundProperty=false;
+  var foundNamedIndividuals=false;
   var foundTypecode=false;
   var foundTypecodeinstance=false;
   $.each(graph, function( index, value ) {
@@ -57,6 +72,10 @@ function doSearch() {
           properties[id]=value;
           foundProperty=true;
           break;
+        case "NamedIndividual":
+          namedIndividuals[id]=value;
+          foundNamedIndividuals=true;
+          break;
         case "TypeCode":
           typecodes[id]=value;
           foundTypecode=true;
@@ -65,85 +84,55 @@ function doSearch() {
           typecodeinstances[id]=value;
           foundTypecodeinstance=true;
           break;
-        }
+      }
     }
 
   });
 
   if (foundClass) {
-  var tableContents=tabulateClasses(classes);
-  $("#classResultsDetails").html(tableContents);
-  $("#classResults").show();
+    var tableContents=tabulateClasses(classes);
+    $("#classResultsDetails").html(tableContents);
+    $("#classResults").show();
   } else {
-  $("#classResults").hide();
+    $("#classResults").hide();
   }
 
   if (foundProperty) {
-  var tableContents=tabulateProperties(properties,true,true);
-  $("#propertyResultsDetails").html(tableContents);
-  $("#propertyResults").show();
+    var tableContents=tabulateProperties(properties,true,true);
+    $("#propertyResultsDetails").html(tableContents);
+    $("#propertyResults").show();
   } else {
-  $("#propertyResults").hide();
+    $("#propertyResults").hide();
+  }
+
+  if (foundNamedIndividuals) {
+    var tableContents=tabulateNamedIndividuals(namedIndividuals);
+    $("#namedIndividualResultsDetails").html(tableContents);
+    $("#namedIndividualResults").show();
+  } else {
+    $("#namedIndividualResults").hide();
   }
 
   if (foundTypecode) {
-  var tableContents=tabulateTypeCodes(typecodes);
-  $("#typecodeResultsDetails").html(tableContents);
-  $("#typecodeResults").show();
+    var tableContents=tabulateTypeCodes(typecodes);
+    $("#typecodeResultsDetails").html(tableContents);
+    $("#typecodeResults").show();
   } else {
-  $("#typecodeResults").hide();
+    $("#typecodeResults").hide();
   }
 
   if (foundTypecodeinstance) {
-  var tableContents=tabulateInstances(typecodeinstances);
-  $("#typecodeinstanceResultsDetails").html(tableContents);
-  $("#typecodeinstanceResults").show();
+    var tableContents=tabulateInstances(typecodeinstances);
+    $("#typecodeinstanceResultsDetails").html(tableContents);
+    $("#typecodeinstanceResults").show();
   } else {
-  $("#typecodeinstanceResults").hide();
+    $("#typecodeinstanceResults").hide();
   }
 
-  if (foundClass || foundProperty || foundTypecode || foundTypecodeinstance ) {
-  $(".searchresults").show();
+  if (foundClass || foundProperty || foundNamedIndividuals || foundTypecode || foundTypecodeinstance ) {
+    $(".searchresults").show();
   }
-
-
-  }
-
-  $("#classResults").hide();
-  $("#propertyResults").hide();
-  $("#typecodeResults").hide();
-  $("#typecodeinstanceResults").hide();
-
-  $('#doSearch').attr('type','button');
-
-
-  var searchTermBox = document.getElementById("searchTerm");
-
-
-  searchTermBox.addEventListener("keydown", function(event) {
-    if (event.keyCode == 13) { event.preventDefault(); }
-  });
-
-  searchTermBox.addEventListener("keyup", function(event) {
-      if (($("#searchTerm").val().length > 2)) {
-          doSearch();
-          return false;
-      }
-  });
-
-  searchTermBox.addEventListener("change", function(event) {
-      if (($("#searchTerm").val().length > 2)) {
-          doSearch();
-          return false;
-      }
-  });
-
-
-
-
-  $('#doSearch').click( function() {
-  doSearch();
-  });
+}
 
 function getAllClasses() {
   var classes={};
@@ -157,8 +146,6 @@ function getAllClasses() {
   return classes;
 }
 
-
-
 function getAllProperties() {
   var properties={};
   $.each(graph, function( index, value ) {
@@ -171,12 +158,24 @@ function getAllProperties() {
   return properties;
 }
 
+function getAllNamedIndividuals() {
+  var namedIndividuals={};
+  $.each(graph, function( index, value ) {
+    var id=value["@id"];
+    var type=value["@type"] || [];
+    if (type.indexOf("owl:NamedIndividual") > -1) {
+      namedIndividuals[value["@id"]]=value;
+    }
+  });
+  return namedIndividuals;
+}
+
 function getAllTypeCodes() {
   var typecodes={};
   $.each(graph, function( index, value ) {
     var id=value["@id"];
-    var type=value["rdfs:subClassOf"] || [];
-    if ((type !== null) && (type["@id"]=="gdx:TypeCode")) {
+    var type=value["rdf:subClassOf"] || [];
+    if ((type !== null) && (type["@id"]==voc_prefix+"TypeCode")) {
       typecodes[value["@id"]]=value;
     }
   });
@@ -201,8 +200,6 @@ function getLinkedIDarray(obj,filter) {
   return r;
 }
 
-
-
 function getSubClasses(val) {
   // get class nodes that are subclasses of specified class
   return getNodes(val,"rdfs:subClassOf");
@@ -211,7 +208,6 @@ function getSubClasses(val) {
 function getProperties(val) {
   // get property nodes that have specified class as their domain
   return getNodes(val,"rdfs:domain");
-
 }
 
 function getProperties2(term) {
@@ -226,7 +222,47 @@ function getProperties2(term) {
   return props;
 }
 
-
+function getNamedIndividualProperties(ni, term) {
+  var props={};
+  $.each(ni, function( key, val ) {
+    if (!key.startsWith("rdf") && !key.startsWith("@")) {
+      props[key]=val;
+    }
+  });
+  var isValueOf = {};
+  $.each(graph, function( index, resource ) {
+    $.each(resource, function( key, val ) {
+      var resource_id = resource["@id"] || "";
+      if (!resource_id.startsWith('_:')) {
+        if(Array.isArray(val)) {
+          $.each(val, function ( i, ref ) {
+            if (typeof ref === "object") {
+              var ref_id = ref["@id"] || "";
+              if (ref_id == term) {
+                if (undefined == isValueOf[key]) {
+                  isValueOf[key] = [];
+                }
+                isValueOf[key].push(resource_id);
+              }
+            }
+          });
+        } else if (typeof val === "object") {
+          var ref_id = val["@id"] || "";
+          if (ref_id == term) {
+            if (undefined == isValueOf[key]) {
+              isValueOf[key] = [];
+            }
+            isValueOf[key].push(resource_id);
+          }
+        }
+      }
+    });
+  });
+  if(!isEmptyObject(isValueOf)) {
+    props[isValueOfProperty] = isValueOf;
+  }
+  return props;
+}
 
 function getPropertiesOfType(val) {
   // get property nodes that have specified class as their domain
@@ -250,8 +286,6 @@ function getNodeTypes() {
   });
   return nodetypes;
 }
-
-
 
 function getNode(val) {
   var nodes={};
@@ -278,7 +312,6 @@ function getSuperClasses(val) {
   return superclasses;
 }
 
-
 function getNodes(val,predicate) {
   // builds an object (associative array) {@nodeid: node} for all matching nodes where nodeid predicate val
   var nodes={};
@@ -302,7 +335,6 @@ function getNodes(val,predicate) {
   return nodes;
 }
 
-
 function getNodes2(val,predicate) {
   // builds an object (associative array) {@nodeid: node} for all matching nodes where nodeid predicate val
   var nodes={};
@@ -324,7 +356,6 @@ function getNodes2(val,predicate) {
   });
   return nodes;
 }
-
 
 function listValues(obj) {
   var sortedKeys=Object.keys(obj).sort();
@@ -391,12 +422,13 @@ function prepareLink(val) {
   var target;
   var link=val;
   if ((val !== undefined) && (val !== null)) {
-    if (val.indexOf("http://geodex.org/voc/") == 0) {
+    if (val.indexOf(voc_base_uri) == 0) {
       url=val.replace(/^http:\/\/geodex\.org\/voc\//g , "");
-      link='<a href="'+url+'" class="link">gdx:'+url+'</a>';
+      link='<a href="'+url+'" class="link">'+voc_prefix+url+'</a>';
     }
-    if (val.indexOf("gdx:") == 0) {
-      url=val.replace(/^gdx:/g , "");
+    if (val.indexOf(voc_prefix) == 0) {
+      var regex = new RegExp(voc_prefix, "g");
+      url=val.replace(regex, "");
       link='<a href="'+url+'" class="link">'+val+'</a>';
     }
     if (val.indexOf("rdf:") == 0) {
@@ -412,11 +444,11 @@ function prepareLink(val) {
       link='<a href="'+url+'"  class="link" target="_blank">'+val+'</a>';
     }
     if (val.indexOf("dcterms:") == 0) {
-      url=val.replace(/^vcard:/g , "http://purl.org/dc/terms/");
+      url=val.replace(/^dcterms:/g , "http://purl.org/dc/terms/");
       link='<a href="'+url+'"  class="link" target="_blank">'+val+'</a>';
     }
     if (val.indexOf("skos:") == 0) {
-      url=val.replace(/^vcard:/g , "http://www.w3.org/2004/02/skos/core#");
+      url=val.replace(/^skos:/g , "http://www.w3.org/2004/02/skos/core#");
       link='<a href="'+url+'"  class="link" target="_blank">'+val+'</a>';
     }
     if (val.indexOf("schema:") == 0) {
@@ -432,12 +464,14 @@ function prepareLink2(val,label) {
   var target;
   var link=val;
   if ((val !== undefined) && (val !== null)) {
-    if (val.indexOf("http://geodex.org/voc/") == 0) {
+    if (val.indexOf(voc_base_uri) == 0) {
       url=val.replace(/^http:\/\/geodex\.org\/voc\//g , "");
       link='<a href="'+url+'" class="link">'+label+'</a>';
     }
-    if (val.indexOf("gdx:") == 0) {
-      url=val.replace(/^gdx:/g , "");
+    if (val.indexOf(voc_prefix) == 0) {
+      //url=val.replace(/^opp:/g , "");
+      var regex = new RegExp(voc_prefix, "g");
+      url=val.replace(regex, "");
       link='<a href="'+url+'" class="link">'+label+'</a>';
     }
     if (val.indexOf("rdf:") == 0) {
@@ -453,11 +487,11 @@ function prepareLink2(val,label) {
       link='<a href="'+url+'"  class="link" target="_blank">'+val+'</a>';
     }
     if (val.indexOf("dcterms:") == 0) {
-      url=val.replace(/^vcard:/g , "http://purl.org/dc/terms/");
+      url=val.replace(/^dcterms:/g , "http://purl.org/dc/terms/");
       link='<a href="'+url+'"  class="link" target="_blank">'+val+'</a>';
     }
     if (val.indexOf("skos:") == 0) {
-      url=val.replace(/^vcard:/g , "http://www.w3.org/2004/02/skos/core#");
+      url=val.replace(/^skos:/g , "http://www.w3.org/2004/02/skos/core#");
       link='<a href="'+url+'"  class="link" target="_blank">'+val+'</a>';
     }
     if (val.indexOf("schema:") == 0) {
@@ -467,7 +501,6 @@ function prepareLink2(val,label) {
   }
   return link;
 }
-
 
 function determineType(val) {
   var type=null;
@@ -479,11 +512,14 @@ function determineType(val) {
   if ( (first.indexOf('rdf:Property') > -1) || (first.indexOf('owl:ObjectProperty') > -1) || (first.indexOf('owl:DatatypeProperty') > -1) ) {
     type="property";
   }
-  if ( first.indexOf('gdx:TypeCode') > -1  ) {
+  if ( first.indexOf('owl:NamedIndividual') > -1 ) {
+    type="NamedIndividual";
+  }
+  if ( first.indexOf(voc_prefix+'TypeCode') > -1  ) {
     type="TypeCode";
   }
 
-  if ( second.indexOf('gdx:TypeCode') > -1  ) {
+  if ( second.indexOf(voc_prefix+'TypeCode') > -1  ) {
     type="typeCodeInstance";
   }
   return type;
@@ -610,9 +646,6 @@ function prepareSubclassList(obj) {
   return list.join(", ");
 }
 
-
-
-
 function tabulateSubclasses(obj) {
   var tableContents="";
   var sortedKeys=Object.keys(obj).sort();
@@ -687,6 +720,31 @@ function tabulateClasses(obj) {
   });
   return tableContents;
 }
+function tabulateNamedIndividuals(obj) {
+  var tableContents="";
+  var sortedKeys=Object.keys(obj).sort();
+  $.each(sortedKeys, function(index,keyname) {
+    var tableRow="";
+    var value=obj[keyname];
+    var comment=value["rdfs:comment"] || [];
+    var url=value["@id"] || "";
+    var label=value["rdfs:label"];
+    var types = "";
+    $.each(value["@type"], function (index, type) {
+      if (type != "owl:NamedIndividual") {
+        types += type + '</br>';
+      }
+    });
+    tableRow+='<tr>';
+    tableRow+='<td class="firstCol2">'+prepareLink(url)+'</td>';
+    tableRow+='<td class="thirdCol3">'+types+'</td>';
+    tableRow+='<td class="secondCol2">'+selectLanguage(label,uiLanguage);
+    tableRow+='</td>';
+    tableRow+='</tr>';
+    tableContents+=tableRow;
+  });
+  return tableContents;
+}
 
 function tabulateTypeCodes(obj) {
   var tableContents="";
@@ -712,17 +770,22 @@ function populateBreadcrumbTrail(val,type,node,label) {
   var html="";
   switch (type) {
     case "Class" :
-      html+='<li><a href="./" class="link">Geodex Web Vocabulary</a></li>';
+      html+='<li><a href="./" class="link">'+page_title+'</a></li>';
       html+='<li><a href="./?show=classes" class="link">All Classes</a></li>';
       html+='<li id="currentClass">'+label+'</li>';
       break;
     case "property" :
-      html+='<li><a href="./" class="link">Geodex Web Vocabulary</a></li>';
+      html+='<li><a href="./" class="link">'+page_title+'</a></li>';
       html+='<li><a href="./?show=properties" class="link">All Properties</a></li>';
       html+='<li id="currentClass">'+label+'</li>';
       break;
+    case "NamedIndividual" :
+      html+='<li><a href="./" class="link">'+page_title+'</a></li>';
+      html+='<li><a href="./?show=namedindividuals" class="link">All Named Individuals</a></li>';
+      html+='<li id="currentClass">'+label+'</li>';
+      break;
     case "TypeCode" :
-      html+='<li><a href="./" class="link">Geodex Web Vocabulary</a></li>';
+      html+='<li><a href="./" class="link">'+page_title+'</a></li>';
       html+='<li><a href="./?show=typecodes" class="link">All Type Codes</a></li>';
       html+='<li id="currentClass">'+label+'</li>';
   }
@@ -744,9 +807,11 @@ function tabulateProperties(obj,linkMiddle,includeMiddle) {
     var tableRow="";
     var value=obj[keyname];
     var range= [];
+    /*
     if (value["rdfs:range"] == undefined) {
       console.log(value);
     }
+    */
     var range=value["rdfs:range"]["@id"] || [];
     var comment=value["rdfs:comment"] || [];
     var url=value["@id"] || "";
@@ -796,8 +861,57 @@ function tabulateInstances(obj) {
   return tableContents;
 }
 
-function expandGeodexPrefix(val) {
-  return val.replace(/^gdx:/g, "http://geodex.org/voc/");
+function tabulateNamedIndividualProperties(obj) {
+  var tableContents="";
+  var sortedKeys=Object.keys(obj).sort();
+  var isValueOf = null;
+  $.each(sortedKeys, function(index,keyname) {
+    if (keyname == isValueOfProperty) {
+      isValueOf = obj[keyname];
+    }
+    else {
+      var tableRow="";
+      var resource="";
+      var value=obj[keyname];
+      if (Array.isArray(value)) {
+        $.each(value, function( index, item ) {
+          resource += prepareLink(item["@id"]) + "<br/>";
+        });
+      }
+      else {
+        resource=prepareLink(value["@id"] || "");
+      }
+      tableRow+='<tr>';
+      tableRow+='<td class="firstCol3">'+prepareLink2(keyname)+'</td>';
+      tableRow+='<td class="thirdCol3"><div class="code-value-uri">'+resource+'</div>';
+      tableRow+='<td class="thirdCol3"><div class="code-value-uri"></div>';
+      tableRow+='</td>';
+      tableRow+='</tr>';
+      tableContents+=tableRow;
+    }
+  });
+  if (undefined != isValueOf) {
+    $.each(isValueOf, function (property, ids) {
+      var tableRow="";
+      var resource="";
+      $.each(ids, function( index, item ) {
+        resource += prepareLink(item) + "<br/>";
+      });
+      tableRow+='<tr>';
+      tableRow+='<td class="firstCol3">'+prepareLink2(property)+'</td>';
+      tableRow+='<td class="thirdCol3"><div class="code-value-uri"></div>';
+      tableRow+='<td class="thirdCol3"><div class="code-value-uri">'+resource+'</div>';
+      tableRow+='</td>';
+      tableRow+='</tr>';
+      tableContents+=tableRow;
+    });
+  }
+  return tableContents;
+}
+
+function expandOppPrefix(val) {
+  var regex = new RegExp(voc_prefix, "g");
+  return val.replace(regex, voc_base_uri);
 }
 
 function selectLanguage(obj,langTag) {
@@ -821,17 +935,19 @@ function selectLanguage(obj,langTag) {
 function updatestate2(val) {
   val = val.replace(/^\.\//g,"");
   if (val == "") {
-    $(document).prop('title', 'Geodex web vocabulary');
-    $("#termName").html("Geodex Web Vocabulary");
-    $('#breadcrumbTrail').html('<li id="currentClass">Geodex Web Vocabulary</li>');
+    $(document).prop('title', page_title);
+    $("#termName").html(page_title);
+    $('#breadcrumbTrail').html('<li id="currentClass">'+page_title+'</li>');
     $('#breadcrumbTrail').show();
     $('#intro').show();
     $('#termComment').html('');
     $('#termComment').hide();
-    $('#termURL').html('http://geodex.org/voc/');
+    $('#termURL').html(voc_base_uri);
     $('#allClasses').hide();
     $('#allProperties').hide();
+    $('#allNamedIndividuals').hide();
     $('#allTypecodes').hide();
+    $("#propertiesOfNI").hide();
     $('#propertiesOfClass').hide();
     $('#propertiesOfParentClass').hide();
     $('#propertiesOfGrandparentClass').hide();
@@ -847,16 +963,16 @@ function updatestate2(val) {
     $("#subclassNote").hide();
     $(".termschema").hide();
   } else {
-    $(document).prop('title', 'gdx:'+val);
+    $(document).prop('title', voc_prefix+val);
     $('#intro').hide();
     $('#termComment').show();
     $('#breadcrumbTrail').show();
     $("#termName").html(val);
-    var term="gdx:"+val;
+    var term=voc_prefix+val;
     var node=getSingleNode(term);
     var type=determineType(term);
     if (node !== null) {
-      var termURL=expandGeodexPrefix(node["@id"]);
+      var termURL=expandOppPrefix(node["@id"]);
       $("#termURL").html(termURL);
       var termComment = node["rdfs:comment"];
       var termLabel = node["rdfs:label"];
@@ -868,9 +984,11 @@ function updatestate2(val) {
         case "?show=classes":
           $('#triple').hide();
           $('#termComment').hide();
-          $('#termURL').html('http://geodex.org/voc/');
+          $('#termURL').html(voc_base_uri);
           $('#allClasses').show();
           $('#allProperties').hide();
+          $('#allNamedIndividuals').hide();
+          $("#propertiesOfNI").hide();
           $('#allTypecodes').hide();
           $('#propertiesOfClass').hide();
           $('#propertiesOfParentClass').hide();
@@ -881,7 +999,7 @@ function updatestate2(val) {
           $('#subclassNote').hide();
           $('#superclassNote').hide();
           $("#termName").html("All Classes");
-          $('#breadcrumbTrail').html('<li><a href="./" class="link">Geodex Web Vocabulary</a></li><li id="currentClass">All Classes</a></li>');
+          $('#breadcrumbTrail').html('<li><a href="./" class="link">'+page_title+'</a></li><li id="currentClass">All Classes</a></li>');
           var classes=getAllClasses();
           var tableContents=tabulateClasses(classes);
           $("#termMemberDetails1").html(tableContents);
@@ -890,11 +1008,13 @@ function updatestate2(val) {
         case "?show=properties":
           $('#triple').hide();
           $('#termComment').hide();
-          $('#termURL').html('http://geodex.org/voc/');
+          $('#termURL').html(voc_base_uri);
           $('#subclassNote').hide();
           $('#superclassNote').hide();
           $('#allClasses').hide();
           $('#allProperties').show();
+          $('#allNamedIndividuals').hide();
+          $("#propertiesOfNI").hide();
           $('#allTypecodes').hide();
           $('#propertiesOfClass').hide();
           $('#propertiesOfParentClass').hide();
@@ -903,16 +1023,42 @@ function updatestate2(val) {
           $('.searchresults').hide();
           $(".termschema").hide();
           $("#termName").html("All Properties");
-          $('#breadcrumbTrail').html('<li><a href="./" class="link">Geodex Web Vocabulary</a></li><li id="currentClass">All Properties</a></li>');
+          $('#breadcrumbTrail').html('<li><a href="./" class="link">'+page_title+'</a></li><li id="currentClass">All Properties</a></li>');
           var properties=getAllProperties();
           var tableContents=tabulateProperties(properties,true,false);
           $("#termMemberDetails2").html(tableContents);
+          break;
+
+        case "?show=namedindividuals":
+          $('#triple').hide();
+          $('#allClasses').hide();
+          $('#allProperties').hide();
+          $('#allNamedIndividuals').show();
+          $("#propertiesOfNI").hide();
+          $('#allTypecodes').hide();
+          $('#propertiesOfClass').hide();
+          $('#propertiesOfParentClass').hide();
+          $('#propertiesOfGrandparentClass').hide();
+          $('#definedTypecodeinstances').hide();
+          $('.searchresults').hide();
+          $(".termschema").hide();
+          $('#termComment').hide();
+          $('#subclassNote').hide();
+          $('#superclassNote').hide();
+          $('#termURL').html(voc_base_uri);
+          $("#termName").html("All Named Individuals");
+          $('#breadcrumbTrail').html('<li><a href="./" class="link">'+page_title+'</a></li><li id="currentClass">All Named Individuals</a></li>');
+          var namedIndividuals=getAllNamedIndividuals();
+          var tableContents=tabulateNamedIndividuals(namedIndividuals);
+          $("#termMemberDetailsNI").html(tableContents);
           break;
 
         case "?show=typecodes":
           $('#triple').hide();
           $('#allClasses').hide();
           $('#allProperties').hide();
+          $('#allNamedIndividuals').hide();
+          $("#propertiesOfNI").hide();
           $('#allTypecodes').show();
           $('#propertiesOfClass').hide();
           $('#propertiesOfParentClass').hide();
@@ -923,9 +1069,9 @@ function updatestate2(val) {
           $('#termComment').hide();
           $('#subclassNote').hide();
           $('#superclassNote').hide();
-          $('#termURL').html('http://geodex.org/voc/');
+          $('#termURL').html(voc_base_uri);
           $("#termName").html("All Type Codes");
-          $('#breadcrumbTrail').html('<li><a href="./" class="link">Geodex Web Vocabulary</a></li><li id="currentClass">All Type Codes</a></li>');
+          $('#breadcrumbTrail').html('<li><a href="./" class="link">'+page_title+'</a></li><li id="currentClass">All Type Codes</a></li>');
           var typecodes=getAllTypeCodes();
           var tableContents=tabulateTypeCodes(typecodes);
           $("#termMemberDetails3").html(tableContents);
@@ -936,6 +1082,8 @@ function updatestate2(val) {
           $("#termName").html("Not found! ["+val+"]");
           $('#allClasses').hide();
           $('#allProperties').hide();
+          $('#allNamedIndividuals').hide();
+          $("#propertiesOfNI").hide();
           $('#allTypecodes').hide();
           $('#propertiesOfClass').hide();
           $('#propertiesOfParentClass').hide();
@@ -1008,6 +1156,8 @@ function updatestate2(val) {
 
       $("#allClasses").hide();
       $("#allProperties").hide();
+      $('#allNamedIndividuals').hide();
+      $("#propertiesOfNI").hide();
       $("#allTypecodes").hide();
       $("#propertiesOfClass").show();
       $("#propertiesOfParentClass").hide();
@@ -1032,7 +1182,7 @@ function updatestate2(val) {
         parentName=superClasses[0];
         if (parentName !== "") {
           var scNote='&#x21E7; '+uiText["A subclass of"]+' '+prepareLink(parentName);
-          if (parentName.indexOf("gdx:") > -1) {
+          if (parentName.indexOf(voc_prefix) > -1) {
             $('#propertiesOfParentClass').show();
           }
           $("#superclassNote").html(scNote);
@@ -1090,6 +1240,35 @@ function updatestate2(val) {
       $('#siblinginfo').hide();
     }
 
+    if (type == "NamedIndividual") {
+      $(".termschema").hide();
+      $("#termComment").html(selectLanguage(termComment,uiLanguage));
+      $('#triple').hide();
+      var properties=getNamedIndividualProperties(node, term);
+      var tableContents=tabulateNamedIndividualProperties(properties);
+      if (!isEmptyObject(properties)) {
+        $("#propertiesOfNI").show();
+      } else {
+        $("#propertiesOfNI").hide();
+      }
+      $("#termMemberDetailsNIProperties").html(tableContents);
+      $('#havingrangeinfo').hide();
+      $('#allClasses').hide();
+      $('#allProperties').hide();
+      $('#allNamedIndividuals').hide();
+
+      $('#allTypecodes').hide();
+      $('#propertiesOfClass').hide();
+      $('#propertiesOfParentClass').hide();
+      $('#propertiesOfGrandparentClass').hide();
+      $('#definedTypecodeinstances').hide();
+      $('#subclasses').hide();
+      $('#superclasses').hide();
+      $('#rangeinfo').hide();
+      $('#domaininfo').hide();
+      $('#siblinginfo').hide();
+    }
+
     if (type == "TypeCode") {
       $("#superclassNote").hide();
       $("#subclassNote").hide();
@@ -1111,6 +1290,8 @@ function updatestate2(val) {
 
       $('#allClasses').hide();
       $('#allProperties').hide();
+      $("#propertiesOfNI").hide();
+      $('#allNamedIndividuals').hide();
       $('#allTypecodes').hide();
       $('#propertiesOfClass').hide();
       $('#propertiesOfParentClass').hide();
@@ -1198,6 +1379,8 @@ function updatestate2(val) {
 
       $('#allClasses').hide();
       $('#allProperties').hide();
+      $('#allNamedIndividuals').hide();
+      $("#propertiesOfNI").hide();
       $('#allTypecodes').hide();
       $('#propertiesOfClass').hide();
       $('#propertiesOfParentClass').hide();
@@ -1225,10 +1408,12 @@ function updatestate2(val) {
       var termCommentText = selectLanguage(termComment,uiLanguage);
       $("#termComment").html(termCommentText);
 
-      $("#breadcrumbTrail").html('<li><a href="./" class="link">Geodex Web Vocabulary</a></li><li><a href="./?show=typecodes" class="link">All Type Codes</a></li><li>'+prepareLink2(typecode,typecodelabeltext)+'</li><li id="currentClass">'+termLabelen+'</li>');
+      $("#breadcrumbTrail").html('<li><a href="./" class="link">'+page_title+'</a></li><li><a href="./?show=typecodes" class="link">All Type Codes</a></li><li>'+prepareLink2(typecode,typecodelabeltext)+'</li><li id="currentClass">'+termLabelen+'</li>');
 
       $('#allClasses').hide();
       $('#allProperties').hide();
+      $('#allNamedIndividuals').hide();
+      $("#propertiesOfNI").hide();
       $('#allTypecodes').hide();
       $('#propertiesOfClass').hide();
       $('#propertiesOfParentClass').hide();
@@ -1244,6 +1429,27 @@ function updatestate2(val) {
   }
   refreshCatchLinks();
   window.scrollTo(0, 0);
+}
+
+function isEmptyObject(obj) {
+  // null and undefined are "empty"
+  if (obj == null) return true;
+
+  // Assume if it has a length property with a non-zero value
+  // that that property is correct.
+  if (obj.length > 0)    return false;
+  if (obj.length === 0)  return true;
+
+  // If it isn't an object at this point
+  // it is empty, but it can't be anything *but* empty
+  // Is it empty?  Depends on your application.
+  if (typeof obj !== "object") return true;
+
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) return false;
+  }
+
+  return true;
 }
 
 function show(url) {
@@ -1262,8 +1468,6 @@ function refreshCatchLinks() {
   });
 }
 
-refreshCatchLinks();
-
 function getTerm() {
   var url=window.location.href;
   var ilastslash=url.lastIndexOf("/");
@@ -1272,11 +1476,65 @@ function getTerm() {
   return term;
 }
 
+function getVersionInfo() {
+  $.each(graph, function( index, value ) {
+    var type=value["@type"] || [];
+    if ((type.indexOf("owl:Ontology") > -1)) {
+      if(undefined != value["owl:versionInfo"]) {
+        $("#version-info").html(value["owl:versionInfo"]);
+      }
+      if (undefined != value["dcterms:issued"] && undefined != value["dcterms:issued"]["@value"]) {
+        $("#issued-date").html(value["dcterms:issued"]["@value"]);
+      }
+    }
+    else {
+      $("#version-label").addClass('hide');
+    }
+  });
+}
 
-var term=getTerm();
-updatestate2(term);
+function displayVocabulary(vocab) {
+  var json=JSON.parse(vocab);
+  graph=json["@graph"];
+  nodeTypes=getNodeTypes();
 
-window.onpopstate = function(event){
+  //console.log(nodeTypes);
+  getVersionInfo();
+
+  $("#classResults").hide();
+  $("#propertyResults").hide();
+  $("#namedIndividualResults").hide();
+  $("#typecodeResults").hide();
+  $("#typecodeinstanceResults").hide();
+
+  // Search.
+  $('#doSearch').attr('type','button');
+  var searchTermBox = document.getElementById("searchTerm");
+  searchTermBox.addEventListener("keydown", function(event) {
+    if (event.keyCode == 13) { event.preventDefault(); }
+  });
+  searchTermBox.addEventListener("keyup", function(event) {
+      if (($("#searchTerm").val().length > 2)) {
+        doSearch();
+        return false;
+      }
+  });
+  searchTermBox.addEventListener("change", function(event) {
+      if (($("#searchTerm").val().length > 2)) {
+        doSearch();
+        return false;
+      }
+  });
+  $('#doSearch').click( function() {
+    doSearch();
+  });
+
+  refreshCatchLinks();
+
   var term=getTerm();
   updatestate2(term);
-};
+  window.onpopstate = function(event){
+    var term=getTerm();
+    updatestate2(term);
+  };
+}

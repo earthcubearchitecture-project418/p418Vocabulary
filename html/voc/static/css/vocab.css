@@ -92,3 +92,4 @@ position: relative; padding-top: 6em; bottom: 4px; left: 4px; font-size: 0.8em;
 }
 
 .italic {font-style: italic; color: #999999;}
+.label {font-size: 100%; font-weight: 700;color: #000000;}
