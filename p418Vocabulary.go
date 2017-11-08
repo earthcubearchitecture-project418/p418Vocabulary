@@ -21,6 +21,12 @@ func main() {
   htmlRouter.HandleFunc("/voc/examples", func(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, "./html/voc/examples.html")
   })
+  htmlRouter.HandleFunc("/voc/examples/minimal", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/examples/required.jsonld")
+  })
+  htmlRouter.HandleFunc("/voc/examples/full", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/examples/full.jsonld")
+  })
   htmlRouter.HandleFunc("/voc/schema.rdf", func(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
   })
