@@ -99,35 +99,42 @@
     <rdfs:comment xml:lang="en-US">A service provided for syndicating resources from the catalog.</rdfs:comment>
   </owl:namedIndividual>
 
-  <owl:namedIndividual rdf:about="gdx:ProtocolType-Access">
+  <owl:namedIndividual rdf:about="gdx:Protocol-Access">
     <rdf:type rdf:resource="schema:DigitalDocument"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">Access Protocol</rdfs:label>
     <rdfs:comment xml:lang="en-US">An access regulation.</rdfs:comment>
   </owl:namedIndividual>
 
-  <owl:namedIndividual rdf:about="gdx:ProtocolType-PreservationPolicy">
+  <owl:namedIndividual rdf:about="gdx:Protocol-PreservationPolicy">
     <rdf:type rdf:resource="schema:DigitalDocument"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">Preservation Policy</rdfs:label>
     <rdfs:comment xml:lang="en-US">A policy describing a preservation protocol.</rdfs:comment>
   </owl:namedIndividual>
 
-  <owl:namedIndividual rdf:about="gdx:ProtocolType-ResourceSubmissionPolicy">
+  <owl:namedIndividual rdf:about="gdx:Protocol-ResourceSubmissionPolicy">
     <rdf:type rdf:resource="schema:DigitalDocument"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">Resource Submission Policy</rdfs:label>
     <rdfs:comment xml:lang="en-US">A policy describing the protocols for submitting resources to the repository.</rdfs:comment>
   </owl:namedIndividual>
 
-  <owl:namedIndividual rdf:about="gdx:ProtocolType-TermsOfUse">
+  <owl:namedIndividual rdf:about="gdx:Protocol-TermsOfUse">
     <rdf:type rdf:resource="schema:DigitalDocument"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">Terms of Use</rdfs:label>
     <rdfs:comment xml:lang="en-US">A policy describing the Terms of Use.</rdfs:comment>
   </owl:namedIndividual>
 
-  <owl:namedIndividual rdf:about="gdx:ProtocolType-License">
+  <owl:namedIndividual rdf:about="gdx:Protocol-License">
+    <rdf:type rdf:resource="schema:DigitalDocument"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en-US">License</rdfs:label>
+    <rdfs:comment xml:lang="en-US">An applicable license.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:SitemapXML">
     <rdf:type rdf:resource="schema:DigitalDocument"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">License</rdfs:label>

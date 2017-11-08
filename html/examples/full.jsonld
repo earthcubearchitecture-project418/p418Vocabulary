@@ -84,13 +84,13 @@
         "publishingPrinciples": [
             {
                 "@type": "DigitalDocument",
-                "additionalType": "gdx:ProtocolType-Access",
+                "additionalType": "gdx:Protocol-Access",
                 "name": "Open Access Policy",
                 "url": "http://www.bco-dmo.org/open-access-policy"
             },
             {
                 "@type": "DigitalDocument",
-                "additionalType": "gdx:ProtocolType-PreservationPolicy",
+                "additionalType": "gdx:Protocol-PreservationPolicy",
                 "name": "Preservation Policy",
                 "url": "http://www.bco-dmo.org/preservation-policy"
             }
@@ -100,10 +100,14 @@
         "@type": "OfferCatalog",
         "additionalType": "gdx:ResearchResourceCatalog",
         "name": "BCO-DMO Resource Catalog",
-        "description": "A sitemap.xml file where all datasets available from BCO-DMO are listed.",
         "itemListElement": [{
             "@type": "DataCatalog",
-            "name": "BCO-DMO Data Catalog"
+            "name": "BCO-DMO Data Catalog",
+            "audience": {
+                "@type": "Audience",
+                "audienceType": "public",
+                "name": "General Public"
+            }
         }]
     },
     "availableChannel": [
@@ -161,13 +165,6 @@
         {
             "@type": "ServiceChannel",
             "additionalType": "gdx:SyndicationService",
-            "name": "Sitemap",
-            "serviceUrl": "https://www.bco-dmo.org/sitemap.xml",
-            "description": "Listing of datasets and other resources available from the BCO-DMO data service"
-        },
-        {
-            "@type": "ServiceChannel",
-            "additionalType": "gdx:SyndicationService",
             "availableLanguage": "en-US",
             "name": "RSS Feed of Recently Added Datasets",
             "url": "http://www.bco-dmo.org/how-get-started",
@@ -181,5 +178,12 @@
             "serviceUrl": "http://www.bco-dmo.org/how-get-started",
             "description": "Submit data to BCO-DMO"
         }
-    ]
+    ],
+    "subjectOf": {
+        "@type": "DigitalDocument",
+        "additionalType": "gdx:SitemapXML",
+        "name": "Sitemap XML for www.bco-dmo.org",
+        "url": "https://www.bco-dmo.org/sitemap.xml",
+        "description": "Listing of datasets and other resources available from the BCO-DMO data service"
+    }
 }
