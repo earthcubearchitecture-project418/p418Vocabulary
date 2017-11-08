@@ -12,77 +12,7 @@
   },
   "@graph": [
     {
-      "@id": "_:N4c1f48c5fe6f4d529f583a0548264427",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "gdx:subjectArea"
-      }
-    },
-    {
-      "@id": "gdx:ProtocolType-License",
-      "@type": [
-        "gdx:protocolType",
-        "owl:namedIndividual"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "An applicable license."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "License"
-      }
-    },
-    {
-      "@id": "gdx:ProtocolType",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Identifies the type of Protocol."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Protocol Type"
-      },
-      "rdfs:subClassOf": {
-        "@id": "schema:Enumeration"
-      }
-    },
-    {
-      "@id": "_:Nd0dc4ba0585549bf8f0a853ca276041f",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "gdx:searchService"
-      }
-    },
-    {
-      "@id": "gdx:",
-      "@type": "owl:Ontology",
-      "dc:creator": "EarthCube Registry Working Group",
-      "dc:description": "Schema.org extension for a Information Resource Service",
-      "dc:title": "Information Resource Service Vocabulary",
-      "dcterms:issued": {
-        "@type": "xsd:date",
-        "@value": "2017-10-16"
-      },
-      "owl:versionInfo": "0.1.0"
-    },
-    {
-      "@id": "_:Nafc935c159d348ccbc5fd886f6cbeec2",
+      "@id": "_:Nd9f9d89f7dd94913ba77fa5bc5d3ff0b",
       "@type": "owl:Restriction",
       "owl:minCardinality": {
         "@type": "xsd:nonNegativeInteger",
@@ -93,339 +23,7 @@
       }
     },
     {
-      "@id": "gdx:ProtocolType-Access",
-      "@type": [
-        "gdx:protocolType",
-        "owl:namedIndividual"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "An access regulation."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Access Protocol"
-      }
-    },
-    {
-      "@id": "_:N91c401d0b4104edbb73ecf039cfb509e",
-      "@type": "owl:Restriction",
-      "owl:cardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "gdx:protocolType"
-      }
-    },
-    {
-      "@id": "gdx:submissionService",
-      "@type": [
-        "rdf:Property",
-        "owl:ObjectProperty"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Provides a channel for submitting research resources to a respository."
-      },
-      "rdfs:domain": {
-        "@id": "gdx:ResearchRepositoryService"
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "submissionService"
-      },
-      "rdfs:range": {
-        "@id": "schema:ServiceChannel"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "schema:availableChannel"
-      }
-    },
-    {
-      "@id": "gdx:subjectArea",
-      "@type": [
-        "owl:ObjectProperty",
-        "rdf:Property"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "The disciplinary focus of the repository."
-      },
-      "rdfs:domain": {
-        "@id": "gdx:ResearchRepositoryService"
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "subjectArea"
-      },
-      "rdfs:range": {
-        "@id": "gdx:SubjectArea"
-      },
-      "skos:closeMatch": {
-        "@id": "schema:keywords"
-      }
-    },
-    {
-      "@id": "gdx:followsProtocol",
-      "@type": [
-        "owl:ObjectProperty",
-        "rdf:Property"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Defines a Protocol to interacting with either the repository or with specific offerings of the repository."
-      },
-      "rdfs:domain": {
-        "@id": "_:N217f0189efbe498993ed148422af2ae3"
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "followsProtocol"
-      },
-      "rdfs:range": {
-        "@id": "gdx:Protocol"
-      }
-    },
-    {
-      "@id": "gdx:searchService",
-      "@type": [
-        "rdf:Property",
-        "owl:ObjectProperty"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Provides a channel for searching for research resources at a respository."
-      },
-      "rdfs:domain": {
-        "@id": "gdx:ResearchRepositoryService"
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "searchService"
-      },
-      "rdfs:range": {
-        "@id": "schema:ServiceChannel"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "schema:availableChannel"
-      }
-    },
-    {
-      "@id": "gdx:ResearchRepositoryService",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A service providing access to products developed from research activities such as data, software and other research outputs."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Research Repository Service"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "_:N4c1f48c5fe6f4d529f583a0548264427"
-        },
-        {
-          "@id": "_:N56461b99e869493eab43f6cf598519e4"
-        },
-        {
-          "@id": "_:Nd0dc4ba0585549bf8f0a853ca276041f"
-        },
-        {
-          "@id": "_:N19a4c50b20754887a6d18b71f13f8c67"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "_:N08cb3a03c84e48ea9716652886a92389"
-        },
-        {
-          "@id": "_:Nafc935c159d348ccbc5fd886f6cbeec2"
-        },
-        {
-          "@id": "_:N9faef85de8b54f09b1c20172829a1a2b"
-        }
-      ]
-    },
-    {
-      "@id": "_:N08cb3a03c84e48ea9716652886a92389",
-      "@type": "owl:Restriction",
-      "owl:cardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "schema:url"
-      }
-    },
-    {
-      "@id": "_:N56461b99e869493eab43f6cf598519e4",
-      "@type": "owl:Restriction",
-      "owl:maxCardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "schema:description"
-      }
-    },
-    {
-      "@id": "gdx:ProtocolType-PreservationPolicy",
-      "@type": [
-        "owl:namedIndividual",
-        "gdx:protocolType"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A policy describing a preservation protocol."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Preservation Policy"
-      }
-    },
-    {
-      "@id": "_:Nbbc8d5a87fea49f09f0c4cfe76cdf3e7",
-      "@type": "owl:Restriction",
-      "owl:cardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "schema:url"
-      }
-    },
-    {
-      "@id": "_:N19a4c50b20754887a6d18b71f13f8c67",
-      "@type": "owl:Restriction",
-      "owl:cardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "schema:name"
-      }
-    },
-    {
-      "@id": "gdx:SubjectArea",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A disciplinary focus for the contents of the respository."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Subject Area"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "_:Nb6bc931832e54eac84a5fb15cdefae3b"
-        },
-        {
-          "@id": "schema:Thing"
-        }
-      ]
-    },
-    {
-      "@id": "gdx:hasResourceCatalog",
-      "@type": [
-        "owl:ObjectProperty",
-        "rdf:Property"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Indicates an OfferCatalog listing of CreativeWorks for this Service."
-      },
-      "rdfs:domain": {
-        "@id": "gdx:ResearchRepositoryService"
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "hasResourceCatalog"
-      },
-      "rdfs:range": {
-        "@id": "gdx:ResearchResourceCatalog"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "schema:hasOfferCatalog"
-      }
-    },
-    {
-      "@id": "gdx:syndicationService",
-      "@type": [
-        "owl:ObjectProperty",
-        "rdf:Property"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Provides a channel for alerting the user community of updates at a repository."
-      },
-      "rdfs:domain": {
-        "@id": "gdx:ResearchRepositoryService"
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "syndicationService"
-      },
-      "rdfs:range": {
-        "@id": "schema:ServiceChannel"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "schema:availableChannel"
-      }
-    },
-    {
-      "@id": "gdx:ProtocolType-ResourceSubmissionPolicy",
-      "@type": [
-        "owl:namedIndividual",
-        "gdx:protocolType"
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A policy describing the protocols for submitting resources to the repository."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Resource Submission Policy"
-      }
-    },
-    {
-      "@id": "_:N9faef85de8b54f09b1c20172829a1a2b",
+      "@id": "_:N981b5663ddc34c3796615192a939b220",
       "@type": "owl:Restriction",
       "owl:minCardinality": {
         "@type": "xsd:nonNegativeInteger",
@@ -436,147 +34,320 @@
       }
     },
     {
-      "@id": "gdx:Protocol",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Digital document explaining the expectations for interacting with the repository or its resources."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Protocol"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "_:N077842869f5041eb8f12f8e1708c79bd"
-        },
-        {
-          "@id": "schema:DigitalDocument"
-        },
-        {
-          "@id": "_:N91c401d0b4104edbb73ecf039cfb509e"
-        },
-        {
-          "@id": "_:Nbbc8d5a87fea49f09f0c4cfe76cdf3e7"
-        }
-      ]
-    },
-    {
-      "@id": "_:Nd4d174735dce42edab9330ea2d2c8730",
-      "@type": "owl:Restriction",
-      "owl:allValuesFrom": {
-        "@id": "schema:CreativeWork"
-      },
-      "owl:onProperty": {
-        "@id": "schema:itemListElement"
-      }
-    },
-    {
-      "@id": "_:N217f0189efbe498993ed148422af2ae3",
-      "@type": "owl:Class",
-      "owl:unionOf": {
-        "@list": [
-          {
-            "@id": "gdx:ResearchRepositoryService"
-          },
-          {
-            "@id": "schema:CreativeWork"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "gdx:protocolType",
+      "@id": "gdx:SyndicationService",
       "@type": [
-        "rdf:Property",
-        "owl:ObjectProperty"
+        "schema:ServiceChannel",
+        "owl:namedIndividual"
       ],
       "rdfs:comment": {
-        "@language": "en",
-        "@value": "Specifies the type of Protocol."
-      },
-      "rdfs:domain": {
-        "@id": "gdx:Protocol"
+        "@language": "en-US",
+        "@value": "A service provided for syndicating resources from the catalog."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
       },
       "rdfs:label": {
-        "@language": "en",
-        "@value": "protocolType"
-      },
-      "rdfs:range": {
-        "@id": "gdx:ProtocolType"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "schema:additionalType"
+        "@language": "en-US",
+        "@value": "Syndication Service Channel"
       }
     },
     {
-      "@id": "gdx:ResearchResourceCatalog",
+      "@id": "_:N4c78981138d04380b00730714ff748ec",
+      "@type": "owl:Restriction",
+      "owl:cardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "schema:name"
+      }
+    },
+    {
+      "@id": "gdx:SubmissionService",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:ServiceChannel"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A service provided for submitting resources to the catalog."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Submssions Service Channel"
+      }
+    },
+    {
+      "@id": "gdx:ResearchRepositoryService",
       "@type": "owl:Class",
       "rdfs:comment": {
-        "@language": "en",
+        "@language": "en-US",
         "@value": "A service providing access to products developed from research activities such as data, software and other research outputs."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
       },
       "rdfs:label": {
-        "@language": "en",
+        "@language": "en-US",
         "@value": "Research Repository Service"
       },
       "rdfs:subClassOf": [
         {
-          "@id": "_:Nd4d174735dce42edab9330ea2d2c8730"
+          "@id": "_:N4c78981138d04380b00730714ff748ec"
         },
         {
-          "@id": "schema:OfferCatalog"
+          "@id": "_:N693db955280a4644bd766430c9476cff"
+        },
+        {
+          "@id": "_:N9812a29abe554508b1b7847e76170d9a"
+        },
+        {
+          "@id": "_:Nd9f9d89f7dd94913ba77fa5bc5d3ff0b"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "_:N981b5663ddc34c3796615192a939b220"
         }
       ]
     },
     {
-      "@id": "gdx:ProtocolType-TermsOfUse",
+      "@id": "gdx:ResearchResourceCatalog",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A service providing access to products developed from research activities such as data, software and other research outputs."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Research Repository Service"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:OfferCatalog"
+        },
+        {
+          "@id": "_:Nf1bb0001d09f4bbd82fe449cccba3cff"
+        }
+      ]
+    },
+    {
+      "@id": "gdx:hasResourceCatalog",
       "@type": [
-        "gdx:protocolType",
-        "owl:namedIndividual"
+        "owl:ObjectProperty",
+        "rdf:Property"
       ],
       "rdfs:comment": {
-        "@language": "en",
+        "@language": "en-US",
+        "@value": "Indicates an OfferCatalog listing of CreativeWorks for this Service."
+      },
+      "rdfs:domain": {
+        "@id": "gdx:ResearchRepositoryService"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "hasResourceCatalog"
+      },
+      "rdfs:range": {
+        "@id": "gdx:ResearchResourceCatalog"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "schema:hasOfferCatalog"
+      }
+    },
+    {
+      "@id": "_:N9812a29abe554508b1b7847e76170d9a",
+      "@type": "owl:Restriction",
+      "owl:cardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "schema:url"
+      }
+    },
+    {
+      "@id": "gdx:Protocol-Access",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:DigitalDocument"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "An access regulation."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Access Protocol"
+      }
+    },
+    {
+      "@id": "gdx:Protocol-TermsOfUse",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:DigitalDocument"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
         "@value": "A policy describing the Terms of Use."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
       },
       "rdfs:label": {
-        "@language": "en",
+        "@language": "en-US",
         "@value": "Terms of Use"
       }
     },
     {
-      "@id": "_:Nb6bc931832e54eac84a5fb15cdefae3b",
-      "@type": "owl:Restriction",
-      "owl:cardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
+      "@id": "gdx:Protocol-PreservationPolicy",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:DigitalDocument"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A policy describing a preservation protocol."
       },
-      "owl:onProperty": {
-        "@id": "schema:name"
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Preservation Policy"
       }
     },
     {
-      "@id": "_:N077842869f5041eb8f12f8e1708c79bd",
+      "@id": "gdx:SitemapXML",
+      "@type": [
+        "schema:DigitalDocument",
+        "owl:namedIndividual"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "An applicable license."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "License"
+      }
+    },
+    {
+      "@id": "gdx:SearchService",
+      "@type": [
+        "schema:ServiceChannel",
+        "owl:namedIndividual"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A service provided for searching the resource catalog."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Search Service Channel"
+      }
+    },
+    {
+      "@id": "gdx:Protocol-ResourceSubmissionPolicy",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:DigitalDocument"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A policy describing the protocols for submitting resources to the repository."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Resource Submission Policy"
+      }
+    },
+    {
+      "@id": "_:N693db955280a4644bd766430c9476cff",
       "@type": "owl:Restriction",
-      "owl:cardinality": {
+      "owl:maxCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
       },
       "owl:onProperty": {
-        "@id": "schema:name"
+        "@id": "schema:description"
+      }
+    },
+    {
+      "@id": "gdx:Protocol-License",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:DigitalDocument"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "An applicable license."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "License"
+      }
+    },
+    {
+      "@id": "gdx:",
+      "@type": "owl:Ontology",
+      "dc:creator": {
+        "@language": "en-US",
+        "@value": "EarthCube Registry Working Group"
+      },
+      "dc:description": {
+        "@language": "en-US",
+        "@value": ">Schema.org extension for a Information Resource Service"
+      },
+      "dc:title": {
+        "@language": "en-US",
+        "@value": ">Research Repository Service Vocabulary"
+      },
+      "dcterms:issued": {
+        "@type": "xsd:date",
+        "@value": "2017-10-16"
+      },
+      "dcterms:source": {
+        "@type": "xsd:anyURI",
+        "@value": "https://github.com/earthcubearchitecture-project418"
+      },
+      "owl:versionInfo": "0.7.0"
+    },
+    {
+      "@id": "_:Nf1bb0001d09f4bbd82fe449cccba3cff",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "schema:itemListElement"
+      },
+      "owl:someValuesFrom": {
+        "@id": "schema:CreativeWork"
       }
     }
   ]
 }
+

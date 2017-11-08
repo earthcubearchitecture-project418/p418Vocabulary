@@ -1,0 +1,4 @@
+p418vocab:
+  image: earthcube/p418vocab:latest
+  ports:
+   - "9900:9900"
