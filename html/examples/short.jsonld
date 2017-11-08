@@ -80,7 +80,21 @@
                 "postalCode": "02543",
                 "addressCountry": "USA"
             }
-        }
+        },
+        "publishingPrinciples": [
+            {
+                "@type": "DigitalDocument",
+                "additionalType": "gdx:ProtocolType-Access",
+                "name": "Open Access Policy",
+                "url": "http://www.bco-dmo.org/open-access-policy"
+            },
+            {
+                "@type": "DigitalDocument",
+                "additionalType": "gdx:ProtocolType-PreservationPolicy",
+                "name": "Preservation Policy",
+                "url": "http://www.bco-dmo.org/preservation-policy"
+            }
+        ]
     },
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
