@@ -75,7 +75,7 @@
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">Research Repository Service</rdfs:label>
-    <rdfs:comment xml:lang="en-US">A service providing access to products developed from research activities such as data, software and other research outputs.</rdfs:comment>
+    <rdfs:comment xml:lang="en-US">A catalog of research resources made accessible by this services. These resources should be CreativeWorks such as schema:DataCatalog, schema:Dataset, schema:SoftwareApplications, schema:WebAPI, etc.</rdfs:comment>
   </owl:Class>
 
   <owl:namedIndividual rdf:about="gdx:SearchService">
@@ -138,6 +138,6 @@
     <rdf:type rdf:resource="schema:DigitalDocument"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">Sitemap XML File</rdfs:label>
-    <rdfs:comment xml:lang="en-US">A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester.</rdfs:comment>
+    <rdfs:comment xml:lang="en-US">A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the gdx:ResearchResourceCatalog.</rdfs:comment>
   </owl:namedIndividual>
 </rdf:RDF>

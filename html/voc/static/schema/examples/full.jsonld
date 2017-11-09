@@ -84,15 +84,17 @@
         "publishingPrinciples": [
             {
                 "@type": "DigitalDocument",
-                "additionalType": "gdx:Protocol-Access",
-                "name": "Open Access Policy",
-                "url": "http://www.bco-dmo.org/open-access-policy"
+                "@id": "http://www.bco-dmo.org/terms-use",
+                "additionalType": "gdx:Protocol-TermsOfUse",
+                "name": "Terms of Use",
+                "url": "http://www.bco-dmo.org/terms-use"
             },
             {
                 "@type": "DigitalDocument",
-                "additionalType": "gdx:Protocol-PreservationPolicy",
-                "name": "Preservation Policy",
-                "url": "http://www.bco-dmo.org/preservation-policy"
+                "@id": "http://www.bco-dmo.org/how-get-started",
+                "additionalType": "gdx:Protocol-ResourceSubmissionPolicy",
+                "name": "How to Get Started Contributing Data",
+                "url": "http://www.bco-dmo.org/how-get-started"
             }
         ]
     },
@@ -102,6 +104,7 @@
         "name": "BCO-DMO Resource Catalog",
         "itemListElement": [{
             "@type": "DataCatalog",
+            "@id": "http://www.bco-dmo.org/datasets",
             "name": "BCO-DMO Data Catalog",
             "audience": {
                 "@type": "Audience",
@@ -113,6 +116,7 @@
     "availableChannel": [
         {
             "@type": "ServiceChannel",
+            "@id": "http://www.bco-dmo.org/search",
             "additionalType": "gdx:SearchService",
             "name": "Website Search",
             "serviceUrl": "http://www.bco-dmo.org/search",
@@ -130,6 +134,7 @@
         },
         {
             "@type": "ServiceChannel",
+            "@id": "http://lod.bco-dmo.org/sparql",
             "additionalType": "gdx:SearchService",
             "name": "SPARQL Endpoint",
             "serviceUrl": "http://lod.bco-dmo.org/sparql",
@@ -147,6 +152,7 @@
         },
         {
             "@type": "ServiceChannel",
+            "@id": "http://www.bco-dmo.org/services/oai",
             "additionalType": "gdx:SearchService",
             "name": "OAI-PMH Endpoint",
             "serviceUrl": "http://www.bco-dmo.org/services/oai",
@@ -164,26 +170,37 @@
         },
         {
             "@type": "ServiceChannel",
+            "@id": "http://www.bco-dmo.org/rss/datasets/recent.xml",
             "additionalType": "gdx:SyndicationService",
             "availableLanguage": "en-US",
-            "name": "RSS Feed of Recently Added Datasets",
-            "url": "http://www.bco-dmo.org/how-get-started",
-            "description": "Submit data to BCO-DMO",
+            "name": "Recently Added Datasets",
+            "description": "List of recently added datasets to the BCO-DMO catalog",
             "serviceUrl": "http://www.bco-dmo.org/rss/datasets/recent.xml"
         },
         {
             "@type": "ServiceChannel",
+            "@id": "http://www.bco-dmo.org/how-get-started",
             "additionalType": "gdx:SubmissionService",
             "availableLanguage": "en-US",
+            "name": "Submit Data to BCO-DMO",
             "serviceUrl": "http://www.bco-dmo.org/how-get-started",
             "description": "Submit data to BCO-DMO"
+        },
+        {
+            "@type": "ServiceChannel",
+            "@id": "http://www.bco-dmo.org/faq-page",
+            "availableLanguage": "en-US",
+            "name": "FAQs",
+            "serviceUrl": "http://www.bco-dmo.org/faq-page",
+            "description": "List of frequently asked questions about BCO-DMO"
         }
     ],
     "subjectOf": {
         "@type": "DigitalDocument",
+        "@id": "https://www.bco-dmo.org/sitemap.xml",
         "additionalType": "gdx:SitemapXML",
-        "name": "Sitemap XML for www.bco-dmo.org",
+        "name": "sitemap.xml",
         "url": "https://www.bco-dmo.org/sitemap.xml",
-        "description": "Listing of datasets and other resources available from the BCO-DMO data service"
+        "description": "Sitemap.xml file that list datasets and other resources available from the BCO-DMO data service"
     }
 }

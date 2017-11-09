@@ -120,7 +120,7 @@
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en-US",
-        "@value": "A service providing access to products developed from research activities such as data, software and other research outputs."
+        "@value": "A catalog of research resources made accessible by this services. These resources should be CreativeWorks such as schema:DataCatalog, schema:Dataset, schema:SoftwareApplications, schema:WebAPI, etc."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
@@ -238,7 +238,7 @@
       ],
       "rdfs:comment": {
         "@language": "en-US",
-        "@value": "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester."
+        "@value": "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the gdx:ResearchResourceCatalog."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
