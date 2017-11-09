@@ -336,7 +336,7 @@
         "@type": "xsd:anyURI",
         "@value": "https://github.com/earthcubearchitecture-project418"
       },
-      "owl:versionInfo": "0.7.0"
+      "owl:versionInfo": "0.7.5"
     },
     {
       "@id": "_:Nf1bb0001d09f4bbd82fe449cccba3cff",

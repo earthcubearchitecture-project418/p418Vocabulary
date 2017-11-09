@@ -13,7 +13,7 @@
   dc11:creator "EarthCube Registry Working Group"@en-US ;
   dc:source "https://github.com/earthcubearchitecture-project418"^^xsd:anyURI ;
   dc:issued "2017-10-16"^^xsd:date ;
-  owl:versionInfo "0.7.0" .
+  owl:versionInfo "0.7.5" .
 
 <gdx:ResearchRepositoryService>
   a owl:Class ;

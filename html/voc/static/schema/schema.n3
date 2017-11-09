@@ -15,7 +15,7 @@
     dc:title ">Research Repository Service Vocabulary"@en-US ;
     dcterms:issued "2017-10-16"^^<xsd:date> ;
     dcterms:source "https://github.com/earthcubearchitecture-project418"^^<xsd:anyURI> ;
-    owl:versionInfo "0.7.0" .
+    owl:versionInfo "0.7.5" .
 
 <gdx:ResearchRepositoryService> a owl:Class ;
     rdfs:label "Research Repository Service"@en-US ;
