@@ -2,6 +2,7 @@ package main
 
 import (
   "log"
+  "strings"
   "net/http"
 
   "github.com/gorilla/mux"
@@ -27,30 +28,8 @@ func main() {
   htmlRouter.HandleFunc("/voc/examples/full", func(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, "./html/voc/static/schema/examples/full.jsonld")
   })
-  htmlRouter.HandleFunc("/voc/schema.rdf", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
-  })
-  htmlRouter.HandleFunc("/voc/schema.xml", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
-  })
-  htmlRouter.HandleFunc("/voc/schema.owl", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
-  })
-  htmlRouter.HandleFunc("/voc/schema.json", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
-  })
-  htmlRouter.HandleFunc("/voc/schema.jsonld", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
-  })
-  htmlRouter.HandleFunc("/voc/schema.jsonld", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
-  })
-  htmlRouter.HandleFunc("/voc/schema.ttl", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/schema.ttl")
-  })
-  htmlRouter.HandleFunc("/voc/schema.n3", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/schema.n3")
-  })
+  htmlRouter.HandleFunc("/voc/schema", Conneg)
+  htmlRouter.HandleFunc("/voc/schema.{ext}", Conneg)
   htmlRouter.PathPrefix("/voc/static").Handler(http.StripPrefix("/voc/static", http.FileServer(http.Dir("./html/voc/static"))))
   htmlRouter.HandleFunc("/voc/", func(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, "./html/voc/index.html")
@@ -83,3 +62,67 @@ func addDefaultHeaders(fn http.HandlerFunc) http.HandlerFunc {
     fn(w, r)
   }
 }
+
+// Conneg handles content negotiation for RDF requests
+func Conneg(w http.ResponseWriter, r *http.Request) {
+  vars := mux.Vars(r)
+  fileExtension := vars["ext"]
+
+  //log.Printf("File Extension: '" + fileExtension + "'")
+  switch fileExtension {
+    case "owl":
+      http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
+      break
+    case "rdf":
+      http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
+      break
+    case "xml":
+      http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
+      break
+    case "ttl":
+      http.ServeFile(w, r, "./html/voc/static/schema/schema.ttl")
+      break
+    case "n3":
+      http.ServeFile(w, r, "./html/voc/static/schema/schema.n3")
+      break
+    case "json":
+      http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
+      break
+    case "jsonld":
+      http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
+      break
+    default:
+      // Check for Accept header
+      accept := r.Header.Get("Accept")
+      //log.Printf("Accept: '" + accept + "'")
+      switch {
+        case CaseInsensitiveContains(accept, "application/rdf+xml"):
+          http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
+          break
+        case CaseInsensitiveContains(accept, "application/xml"):
+          http.ServeFile(w, r, "./html/voc/static/schema/schema.owl")
+          break
+        case CaseInsensitiveContains(accept, "application/rdf+turtle"):
+          http.ServeFile(w, r, "./html/voc/static/schema/schema.ttl")
+          break
+        case CaseInsensitiveContains(accept, "application/rdf+n3"):
+          http.ServeFile(w, r, "./html/voc/static/schema/schema.n3")
+          break
+        case CaseInsensitiveContains(accept, "application/json"):
+          http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
+          break
+        case CaseInsensitiveContains(accept, "application/ld+json"):
+          http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
+          break
+        default:
+          http.ServeFile(w, r, "./html/voc/static/schema/schema.jsonld")
+          break
+      }
+  }
+}
+
+func CaseInsensitiveContains(s, substr string) bool {
+    s, substr = strings.ToUpper(s), strings.ToUpper(substr)
+    return strings.Contains(s, substr)
+}
+
