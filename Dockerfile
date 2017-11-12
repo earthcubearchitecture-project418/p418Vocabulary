@@ -1,6 +1,7 @@
 # Start from scratch image and add in a precompiled binary
-# docker build  --tag="earthcube/p418vocab:0.1.0"  .
-# docker run -d -p 9900:9900  earthcube/p418vocab:0.1.0
+# docker build --tag="earthcube/p418vocab:latest" --tag="earthcube/p418vocab:" .
+# docker run -d -p 9900:9900  earthcube/p418vocab:latest
+# docker save earthcube/p418vocab:latest | bzip2 | ssh root@geodex.org 'bunzip2 | docker load'
 FROM scratch
 
 # Add in the static elements (could also mount these from local filesystem)
