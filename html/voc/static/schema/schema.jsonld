@@ -322,11 +322,11 @@
       },
       "dc:description": {
         "@language": "en-US",
-        "@value": ">Schema.org extension for a Information Resource Service"
+        "@value": "Schema.org extension for a Information Resource Service"
       },
       "dc:title": {
         "@language": "en-US",
-        "@value": ">Research Repository Service Vocabulary"
+        "@value": "Research Repository Service Vocabulary"
       },
       "dcterms:issued": {
         "@type": "xsd:date",

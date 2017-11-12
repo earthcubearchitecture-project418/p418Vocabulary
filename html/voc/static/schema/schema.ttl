@@ -8,8 +8,8 @@
 
 <gdx:>
   a owl:Ontology ;
-  dc11:description ">Schema.org extension for a Information Resource Service"@en-US ;
-  dc11:title ">Research Repository Service Vocabulary"@en-US ;
+  dc11:description "Schema.org extension for a Information Resource Service"@en-US ;
+  dc11:title "Research Repository Service Vocabulary"@en-US ;
   dc11:creator "EarthCube Registry Working Group"@en-US ;
   dc:source "https://github.com/earthcubearchitecture-project418"^^xsd:anyURI ;
   dc:issued "2017-10-16"^^xsd:date ;

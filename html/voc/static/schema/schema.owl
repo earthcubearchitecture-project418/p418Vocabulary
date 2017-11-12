@@ -10,8 +10,8 @@
          xmlns:gdx="http://geodex.org/voc/">
 
   <owl:Ontology rdf:about="gdx:">
-    <dc:description xml:lang="en-US">>Schema.org extension for a Information Resource Service</dc:description>
-    <dc:title xml:lang="en-US">>Research Repository Service Vocabulary</dc:title>
+    <dc:description xml:lang="en-US">Schema.org extension for a Information Resource Service</dc:description>
+    <dc:title xml:lang="en-US">Research Repository Service Vocabulary</dc:title>
     <dc:creator xml:lang="en-US">EarthCube Registry Working Group</dc:creator>
     <dcterms:source rdf:datatype="xsd:anyURI">https://github.com/earthcubearchitecture-project418</dcterms:source>
     <dcterms:issued rdf:datatype="xsd:date">2017-10-16</dcterms:issued>
