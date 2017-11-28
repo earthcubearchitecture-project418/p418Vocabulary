@@ -100,7 +100,6 @@
     },
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "additionalType": "gdx:ResearchResourceCatalog",
         "name": "BCO-DMO Resource Catalog",
         "itemListElement": [{
             "@type": "DataCatalog",

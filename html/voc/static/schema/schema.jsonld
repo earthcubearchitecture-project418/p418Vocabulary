@@ -12,54 +12,32 @@
   },
   "@graph": [
     {
-      "@id": "_:Nd9f9d89f7dd94913ba77fa5bc5d3ff0b",
+      "@id": "_:Nadd5a40fbcfe4262a29a51cf898b565a",
       "@type": "owl:Restriction",
       "owl:minCardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
       },
       "owl:onProperty": {
-        "@id": "schema:provider"
+        "@id": "schema:OfferCatalog"
       }
     },
     {
-      "@id": "_:N981b5663ddc34c3796615192a939b220",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "gdx:hasResourceCatalog"
-      }
-    },
-    {
-      "@id": "gdx:SyndicationService",
+      "@id": "gdx:SitemapXML",
       "@type": [
-        "schema:ServiceChannel",
-        "owl:namedIndividual"
+        "owl:namedIndividual",
+        "schema:DigitalDocument"
       ],
       "rdfs:comment": {
         "@language": "en-US",
-        "@value": "A service provided for syndicating resources from the catalog."
+        "@value": "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en-US",
-        "@value": "Syndication Service Channel"
-      }
-    },
-    {
-      "@id": "_:N4c78981138d04380b00730714ff748ec",
-      "@type": "owl:Restriction",
-      "owl:cardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "schema:name"
+        "@value": "Sitemap XML File"
       }
     },
     {
@@ -96,84 +74,70 @@
       },
       "rdfs:subClassOf": [
         {
-          "@id": "_:N4c78981138d04380b00730714ff748ec"
+          "@id": "_:N18be5b7f86bb46d7b74dc08b5acc763c"
         },
         {
-          "@id": "_:N693db955280a4644bd766430c9476cff"
+          "@id": "_:N7668bdfe17284b128fd7ebe110425a98"
         },
         {
-          "@id": "_:N9812a29abe554508b1b7847e76170d9a"
+          "@id": "_:N034a44330e3a477da43626ca640ddf9b"
         },
         {
-          "@id": "_:Nd9f9d89f7dd94913ba77fa5bc5d3ff0b"
+          "@id": "_:Nadd5a40fbcfe4262a29a51cf898b565a"
+        },
+        {
+          "@id": "_:N42904a851d0949f08b1a48a369ec5690"
         },
         {
           "@id": "schema:Service"
-        },
-        {
-          "@id": "_:N981b5663ddc34c3796615192a939b220"
         }
       ]
     },
     {
-      "@id": "gdx:ResearchResourceCatalog",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en-US",
-        "@value": "A catalog of research resources made accessible by this services. These resources should be CreativeWorks such as schema:DataCatalog, schema:Dataset, schema:SoftwareApplications, schema:WebAPI, etc."
+      "@id": "_:N42904a851d0949f08b1a48a369ec5690",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
       },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en-US",
-        "@value": "Research Repository Service"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "schema:OfferCatalog"
-        },
-        {
-          "@id": "_:Nf1bb0001d09f4bbd82fe449cccba3cff"
-        }
-      ]
-    },
-    {
-      "@id": "gdx:hasResourceCatalog",
-      "@type": [
-        "owl:ObjectProperty",
-        "rdf:Property"
-      ],
-      "rdfs:comment": {
-        "@language": "en-US",
-        "@value": "Indicates an OfferCatalog listing of CreativeWorks for this Service."
-      },
-      "rdfs:domain": {
-        "@id": "gdx:ResearchRepositoryService"
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en-US",
-        "@value": "hasResourceCatalog"
-      },
-      "rdfs:range": {
-        "@id": "gdx:ResearchResourceCatalog"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "schema:hasOfferCatalog"
+      "owl:onProperty": {
+        "@id": "schema:description"
       }
     },
     {
-      "@id": "_:N9812a29abe554508b1b7847e76170d9a",
+      "@id": "gdx:",
+      "@type": "owl:Ontology",
+      "dc:creator": {
+        "@language": "en-US",
+        "@value": "EarthCube Registry Working Group"
+      },
+      "dc:description": {
+        "@language": "en-US",
+        "@value": "Schema.org extension for a Information Resource Service"
+      },
+      "dc:title": {
+        "@language": "en-US",
+        "@value": "Research Repository Service Vocabulary"
+      },
+      "dcterms:issued": {
+        "@type": "xsd:date",
+        "@value": "2017-11-27"
+      },
+      "dcterms:source": {
+        "@type": "xsd:anyURI",
+        "@value": "https://github.com/earthcubearchitecture-project418"
+      },
+      "owl:versionInfo": "0.8.0"
+    },
+    {
+      "@id": "_:N7668bdfe17284b128fd7ebe110425a98",
       "@type": "owl:Restriction",
       "owl:cardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
       },
       "owl:onProperty": {
-        "@id": "schema:url"
+        "@id": "schema:name"
       }
     },
     {
@@ -231,28 +195,10 @@
       }
     },
     {
-      "@id": "gdx:SitemapXML",
-      "@type": [
-        "schema:DigitalDocument",
-        "owl:namedIndividual"
-      ],
-      "rdfs:comment": {
-        "@language": "en-US",
-        "@value": "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the gdx:ResearchResourceCatalog."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en-US",
-        "@value": "Sitemap XML File"
-      }
-    },
-    {
       "@id": "gdx:SearchService",
       "@type": [
-        "schema:ServiceChannel",
-        "owl:namedIndividual"
+        "owl:namedIndividual",
+        "schema:ServiceChannel"
       ],
       "rdfs:comment": {
         "@language": "en-US",
@@ -285,21 +231,28 @@
       }
     },
     {
-      "@id": "_:N693db955280a4644bd766430c9476cff",
-      "@type": "owl:Restriction",
-      "owl:maxCardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
+      "@id": "gdx:SyndicationService",
+      "@type": [
+        "schema:ServiceChannel",
+        "owl:namedIndividual"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A service provided for syndicating resources from the catalog."
       },
-      "owl:onProperty": {
-        "@id": "schema:description"
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Syndication Service Channel"
       }
     },
     {
       "@id": "gdx:Protocol-License",
       "@type": [
-        "owl:namedIndividual",
-        "schema:DigitalDocument"
+        "schema:DigitalDocument",
+        "owl:namedIndividual"
       ],
       "rdfs:comment": {
         "@language": "en-US",
@@ -314,38 +267,25 @@
       }
     },
     {
-      "@id": "gdx:",
-      "@type": "owl:Ontology",
-      "dc:creator": {
-        "@language": "en-US",
-        "@value": "EarthCube Registry Working Group"
+      "@id": "_:N034a44330e3a477da43626ca640ddf9b",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
       },
-      "dc:description": {
-        "@language": "en-US",
-        "@value": "Schema.org extension for a Information Resource Service"
-      },
-      "dc:title": {
-        "@language": "en-US",
-        "@value": "Research Repository Service Vocabulary"
-      },
-      "dcterms:issued": {
-        "@type": "xsd:date",
-        "@value": "2017-10-16"
-      },
-      "dcterms:source": {
-        "@type": "xsd:anyURI",
-        "@value": "https://github.com/earthcubearchitecture-project418"
-      },
-      "owl:versionInfo": "0.7.5"
+      "owl:onProperty": {
+        "@id": "schema:provider"
+      }
     },
     {
-      "@id": "_:Nf1bb0001d09f4bbd82fe449cccba3cff",
+      "@id": "_:N18be5b7f86bb46d7b74dc08b5acc763c",
       "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "schema:itemListElement"
+      "owl:cardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
       },
-      "owl:someValuesFrom": {
-        "@id": "schema:CreativeWork"
+      "owl:onProperty": {
+        "@id": "schema:url"
       }
     }
   ]
