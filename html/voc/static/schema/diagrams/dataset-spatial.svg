@@ -221,7 +221,7 @@
       </g>
     </g>
     <g id="y.edge.4">
-      <g stroke-linecap="round" transform="matrix(1,0,0,1,506,-202)" stroke-dashoffset="2" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke-dasharray="0,4" stroke-miterlimit="1.45">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,506,-202)" stroke-linecap="butt">
         <path fill="none" d="M500.7271 395.3029 L590.6088 395.3029 L590.6088 395.3029 L640.1573 395.3029"/>
         <path d="M648.1573 395.3029 L636.1573 390.3029 L639.1573 395.3029 L636.1573 400.3029 Z" stroke="none"/>
       </g>
@@ -287,7 +287,7 @@
       </g>
     </g>
     <g id="y.edge.10">
-      <g stroke-linecap="round" transform="matrix(1,0,0,1,506,-202)" stroke-dashoffset="2" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke-dasharray="0,4" stroke-miterlimit="1.45">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,506,-202)" stroke-linecap="butt">
         <path fill="none" d="M-35.6885 279 L-193.7021 279"/>
         <path d="M-201.7021 279 L-189.7021 284 L-192.7021 279 L-189.7021 274 Z" stroke="none"/>
       </g>
