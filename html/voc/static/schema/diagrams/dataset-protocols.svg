@@ -202,8 +202,8 @@
     </g>
     <g id="y.edge.7">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-480,-337)" stroke-linecap="butt">
-        <path fill="none" d="M850.0117 472.9719 L850.0117 529.4742 L849.114 529.4742 L849.114 577.9485"/>
-        <path d="M849.114 585.9485 L854.114 573.9485 L849.114 576.9485 L844.114 573.9485 Z" stroke="none"/>
+        <path fill="none" d="M850.0117 472.9719 L850.0117 577.9824"/>
+        <path d="M850.0117 585.9824 L855.0117 573.9824 L850.0117 576.9824 L845.0117 573.9824 Z" stroke="none"/>
       </g>
       <g>
         <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-480,-337)" stroke-linecap="butt">

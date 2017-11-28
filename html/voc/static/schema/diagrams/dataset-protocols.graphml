@@ -316,10 +316,7 @@ schema:description<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRight
     <edge id="e7" source="n1" target="n8">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-34.403329793689636" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="850.0117092688104" y="529.4742287711641"/>
-            <y:Point x="849.1140113015774" y="529.4742287711641"/>
-          </y:Path>
+          <y:Path sx="-34.403329793689636" sy="0.0" tx="0.8976979672329435" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
           <y:EdgeLabel alignment="left" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" horizontalTextPosition="center" iconTextGap="4" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="97.052734375" x="-101.1206102093447" y="30.24723593702595">schema:url,
