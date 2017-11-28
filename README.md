@@ -1,7 +1,10 @@
 <a id="top"></a>
 
 * [About](#about)
-* [Diagram](#diagram)
+* [Diagrams](#diagrams)
+  * [Repository](#repository-diagram)
+  * [Dataset](#dataset-diagram)
+  * [Graphical Notation](#graphical-notation)
 * [Examples](#examples)
 * [Issues](#issues)
 
@@ -10,15 +13,25 @@
 
 Serves the vocabulary in JSON-LD at https://geodex.org/voc/
 
-<a id="diagram"></a>
-#### Diagram
+<a id="diagrams"></a>
+### Diagram
 
+<a id="repository-diagram"></a>
+#### Repository
 ![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")
-![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/dataset.png "Dataset")
+
+<a id="dataset-diagram"></a>
+#### Dataset
+![Dataset](html/voc/static/schema/diagrams/dataset.png "Dataset")
+
+<a id="graphical-notation"></a>
+#### Graphical Notation
 ![Graphical Notation](html/voc/static/schema/diagrams/graphical-notation.png "Graphical Notation")
 
+Back to [top](#top)
+
 <a id="examples"></a>
-#### Examples
+### Examples
 
 All examples can be found at: https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/examples/
 
