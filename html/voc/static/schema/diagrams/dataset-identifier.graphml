@@ -15,6 +15,7 @@
   <graph edgedefault="directed" id="G">
     <data key="d0"/>
     <node id="n0">
+      <data key="d4"><![CDATA[https://schema.org/Dataset]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="106.044921875" x="553.0552089654126" y="217.0"/>
@@ -32,6 +33,7 @@
       </data>
     </node>
     <node id="n1">
+      <data key="d4"><![CDATA[https://schema.org/PropertyValue]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="142.91796875" x="783.6533203125" y="217.0"/>
@@ -49,6 +51,7 @@
       </data>
     </node>
     <node id="n2">
+      <data key="d4"><![CDATA[http://www.sparontologies.net/ontologies/datacite/source.html#Identifier]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="41.0" width="146.826171875" x="1109.9326171875" y="211.5"/>
@@ -148,7 +151,6 @@ geolink:Identifier<y:LabelModel>
       </data>
     </edge>
     <edge id="e2" source="n1" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-39.16570274575247" sy="0.0" tx="0.0" ty="0.0">
@@ -163,7 +165,6 @@ geolink:Identifier<y:LabelModel>
       </data>
     </edge>
     <edge id="e3" source="n1" target="n5">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="45.26633608919906" sy="0.0" tx="0.0" ty="0.0">
@@ -178,7 +179,6 @@ geolink:Identifier<y:LabelModel>
       </data>
     </edge>
     <edge id="e4" source="n1" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>

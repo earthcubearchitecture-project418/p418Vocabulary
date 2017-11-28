@@ -32,6 +32,7 @@
       </data>
     </node>
     <node id="n1">
+      <data key="d4"><![CDATA[http://schema.geolink.org/1.0/base/main#Organization]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="136.2734375" x="805.1630859375" y="681.0"/>
@@ -49,6 +50,7 @@
       </data>
     </node>
     <node id="n2">
+      <data key="d4"><![CDATA[https://schema.org/Dataset]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="106.044921875" x="500.9775390625" y="522.0"/>
@@ -66,6 +68,7 @@
       </data>
     </node>
     <node id="n3">
+      <data key="d4"><![CDATA[https://schema.org/Organization]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="137.5625" x="804.5185546875" y="595.0"/>
@@ -138,7 +141,6 @@ schema:provider<y:LabelModel>
       </data>
     </edge>
     <edge id="e1" source="n0" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -157,7 +159,6 @@ schema:provider<y:LabelModel>
       </data>
     </edge>
     <edge id="e2" source="n3" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="42.65533980582529" sy="0.0" tx="0.0" ty="0.0">
@@ -179,7 +180,6 @@ schema:name<y:LabelModel>
       </data>
     </edge>
     <edge id="e3" source="n3" target="n5">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="15.31184579793694" sy="0.0" tx="0.0" ty="0.0">

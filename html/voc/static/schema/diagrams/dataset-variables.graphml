@@ -15,6 +15,7 @@
   <graph edgedefault="directed" id="G">
     <data key="d0"/>
     <node id="n0">
+      <data key="d4"><![CDATA[https://schema.org/PropertyValue]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="142.91796875" x="212.4736328125" y="582.2046042564302"/>
@@ -32,6 +33,7 @@
       </data>
     </node>
     <node id="n1">
+      <data key="d4"><![CDATA[https://schema.org/PropertyValue]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="142.91796875" x="-33.158203125" y="582.2046042564302"/>
@@ -49,6 +51,7 @@
       </data>
     </node>
     <node id="n2">
+      <data key="d4"><![CDATA[https://library.ucar.edu/earthcollab/schema#Parameter]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="141.359375" x="213.2529296875" y="692.3094586253624"/>
@@ -66,6 +69,7 @@
       </data>
     </node>
     <node id="n3">
+      <data key="d4"><![CDATA[http://www.geoscienceontology.org/geo-upper#Variable]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="127.61328125" x="-25.505859375" y="692.3094586253624"/>
@@ -151,6 +155,7 @@
       </data>
     </node>
     <node id="n8">
+      <data key="d4"><![CDATA[https://schema.org/Dataset]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="106.044921875" x="475.8984375" y="365.5"/>

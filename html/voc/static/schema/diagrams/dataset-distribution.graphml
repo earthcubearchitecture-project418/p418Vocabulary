@@ -15,6 +15,7 @@
   <graph edgedefault="directed" id="G">
     <data key="d0"/>
     <node id="n0">
+      <data key="d4"><![CDATA[https://schema.org/Dataset]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="106.044921875" x="455.9775390625" y="217.0"/>
@@ -32,6 +33,7 @@
       </data>
     </node>
     <node id="n1">
+      <data key="d4"><![CDATA[https://schema.org/DataDownload]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="146.826171875" x="182.64453125" y="487.70460425643023"/>
@@ -103,7 +105,6 @@
       </data>
     </edge>
     <edge id="e1" source="n1" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="58.94100879685766" sy="0.0" tx="0.0" ty="0.0">
@@ -124,7 +125,6 @@
       </data>
     </edge>
     <edge id="e2" source="n1" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="38.94100879685766" sy="0.0" tx="0.0" ty="0.0">
