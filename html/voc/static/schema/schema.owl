@@ -56,23 +56,26 @@
   </owl:Class>
 
   <owl:namedIndividual rdf:about="gdx:SearchService">
-    <rdf:type rdf:resource="schema:ServiceChannel"/>
+    <rdf:type rdf:resource="schema:Service"/>
+    <skos:related rdf:resource="schema:SearchAction"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en-US">Search Service Channel</rdfs:label>
+    <rdfs:label xml:lang="en-US">Search Service</rdfs:label>
     <rdfs:comment xml:lang="en-US">A service provided for searching the resource catalog.</rdfs:comment>
   </owl:namedIndividual>
 
   <owl:namedIndividual rdf:about="gdx:SubmissionService">
-    <rdf:type rdf:resource="schema:ServiceChannel"/>
+    <rdf:type rdf:resource="schema:Service"/>
+    <skos:related rdf:resource="schema:CreateAction"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en-US">Submssions Service Channel</rdfs:label>
+    <rdfs:label xml:lang="en-US">Submssions Service</rdfs:label>
     <rdfs:comment xml:lang="en-US">A service provided for submitting resources to the catalog.</rdfs:comment>
   </owl:namedIndividual>
 
   <owl:namedIndividual rdf:about="gdx:SyndicationService">
-    <rdf:type rdf:resource="schema:ServiceChannel"/>
+    <rdf:type rdf:resource="schema:Service"/>
+    <skos:related rdf:resource="schema:ConsumeAction"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en-US">Syndication Service Channel</rdfs:label>
+    <rdfs:label xml:lang="en-US">Syndication Service</rdfs:label>
     <rdfs:comment xml:lang="en-US">A service provided for syndicating resources from the catalog.</rdfs:comment>
   </owl:namedIndividual>
 
@@ -111,10 +114,11 @@
     <rdfs:comment xml:lang="en-US">An applicable license.</rdfs:comment>
   </owl:namedIndividual>
 
-  <owl:namedIndividual rdf:about="gdx:SitemapXML">
-    <rdf:type rdf:resource="schema:DigitalDocument"/>
+  <owl:namedIndividual rdf:about="gdx:EntryPoint-SitemapXML">
+    <rdf:type rdf:resource="schema:EntryPoint"/>
+    <skos:related rdf:resource="gdx:SyndicationService"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
-    <rdfs:label xml:lang="en-US">Sitemap XML File</rdfs:label>
-    <rdfs:comment xml:lang="en-US">A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Sitemap XML</rdfs:label>
+    <rdfs:comment xml:lang="en-US">A sitemap.xml syndication entry point for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog.</rdfs:comment>
   </owl:namedIndividual>
 </rdf:RDF>
