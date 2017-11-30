@@ -23,14 +23,44 @@
 <a id="about"></a>
 ## About
 
-Serves the vocabulary in JSON-LD at https://geodex.org/voc/
+Serves the vocabulary in JSON-LD at https://geodex.org/voc/.
 
-<a id="diagrams"></a>
-## Diagram
+## Goals
+
+1) To produce quality schema.org markup with additional extensions to schema.org classes to help improve harvesting technologies.
+
+2) Produced markup will pass the [Google Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/u/0/) with 0 errors.
+
+## Approach
+
+To produce quality schema.org, all extensions to schema.org classes will be made through the use of the recommended property [schema:additionalType](https://schema.org/additionalType). The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal ontology, but in schema.org this doesn't translate into the use of JSON-LD's [@type](https://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords) as traditional RDF publishing would encourage.
+
+### Prefix
+
+| Prefix        | Vocabulary URI |
+| ------------- |----------------|
+| schema:       | [<https://schema.org/>](https://schema.org/) |
+| gdx:          | [<https://geodex.org/voc/>](https://geodex.org/voc/) |
+| earthcollab:  | [<https://library.ucar.edu/earthcollab/schema#>](https://library.ucar.edu/earthcollab/schema#) |
+| geolink:      | [<http://schema.geolink.org/1.0/base/main#>](http://schema.geolink.org/1.0/base/main#) |
+| vivo:         | [<http://vivoweb.org/ontology/core#>](http://vivoweb.org/ontology/core#) |
+| geo-upper:    | [<http://www.geoscienceontology.org/geo-upper#>](http://www.geoscienceontology.org/geo-upper#) |
+| dbpedia:      | [<http://dbpedia.org/resource/>](http://dbpedia.org/resource/) |
+ 
+schema: the defacto vocabulary for publishing structured data in web pages for search engine harvesting
+gdx: the P418 project's vocabulary
+earthcollab: an EarthCube Building Block focusing on extensions to the ViVO ontology
+vivo: the ViVO ontology
+geo-upper: a segment of the Geoscience Standard Names Ontology, an EarthCube product
+dbpedia: Structured data for Wikipedia resources
 
 <a id="repository-diagram"></a>
-### Repository
-![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")
+### Publishing metadata about a Repository
+
+Because the organizational and governance structures of all repositories vary, this vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions. In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service), and to uniquely identify repositories curating research products, this vocabulary defines an extension to schema:Service as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
+
+![Research Repository Service Vocabulary](https://cdn.rawgit.com/earthcubearchitecture-project418/p418Vocabulary/master/html/voc/static/schema/diagrams/repository.svg "Research Repository Service")
+
 
 <a id="dataset-diagram"></a>
 ### Dataset
