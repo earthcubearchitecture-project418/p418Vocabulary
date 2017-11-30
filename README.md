@@ -3,22 +3,23 @@
 * [About](#about)
 * [Goals](#goals)
 * [Approach](#approach)
-* [Diagrams](#diagrams)
-  * [Repository](#repository-diagram)
+* [Vocabulary Prefixes](#prefixes)
+* [Graphical Notation](#graphical-notation)
+* [Publishing schema.org JSON-LD](#schemaorg-jsonld)
+  * [Describing a Repository](#repository)
   * [Dataset](#dataset-diagram)
-    * [Variables](#dataset-variables)
-    * [Spatial](#dataset-spatial)
-    * [Temporal](#dataset-temporal)
-    * [Identifiers](#dataset-identifiers)
-    * [Creators/Contributors](#dataset-creator_contributor)
-    * [Publisher/Provider](#dataset-publisher_provider)
-    * [Distributions](#dataset-distros)
-    * [Protocols](#dataset-protocols)
-    * [Funding](#dataset-funding)
-    * [Deployment]($dataset-deployment)
-    * [Project](#dataset-project)
-    * [DataCatalog](#dataset-catalog)
-  * [Graphical Notation](#graphical-notation)
+  * [Variables](#dataset-variables)
+  * [Spatial](#dataset-spatial)
+  * [Temporal](#dataset-temporal)
+  * [Identifiers](#dataset-identifiers)
+  * [Creators/Contributors](#dataset-creator_contributor)
+  * [Publisher/Provider](#dataset-publisher_provider)
+  * [Distributions](#dataset-distros)
+  * [Protocols](#dataset-protocols)
+  * [Funding](#dataset-funding)
+  * [Deployment]($dataset-deployment)
+  * [Project](#dataset-project)
+  * [DataCatalog](#dataset-catalog)
 * [Examples](#examples)
 * [Issues](#issues)
 
@@ -40,7 +41,8 @@ To produce quality schema.org, all extensions to schema.org classes will be made
 
 The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal ontology, but in schema.org this doesn't translate into the use of JSON-LD's [@type](https://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords) as traditional RDF publishing would encourage.
 
-### Prefix
+<a id="prefixes"></a>
+## Vocabulary Prefixes
 
 | Prefix        | Vocabulary URI |
 | ------------- |----------------|
@@ -64,15 +66,29 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 
 [dbpedia:](http://dbpedia.org/resource/) Structured data for Wikipedia resources
 
+<a id="graphical-notation"></a>
+## Graphical Notation
 
-<a id="repository-diagram"></a>
-### Publishing metadata about a Repository
+The graphs display the classes, properties and literals for producing valid schema.org markup. 
+
+![Graphical Notation](html/voc/static/schema/diagrams/graphical-notation.png "Graphical Notation")
+
+Back to [top](#top)
+
+<a id="schemaorg-jsonld"></a>
+## Schema.org JSON-LD
+
+Schema.org's preferred format for markup is JSON-LD.....describe tools that help publish schema.org
+
+<a id="repository"></a>
+## Describing a Repository
 
 Because the organizational and governance structures of all repositories vary, this vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions. 
 In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service), and to uniquely identify repositories curating research products, this vocabulary defines an extension to schema:Service as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
 
 ![Research Repository Service Vocabulary](https://cdn.rawgit.com/earthcubearchitecture-project418/p418Vocabulary/master/html/voc/static/schema/diagrams/repository.svg "Research Repository Service")
 
+Back to [top](#top)
 
 <a id="dataset-diagram"></a>
 ### Dataset
@@ -136,11 +152,6 @@ In schema.org, this *function* is best described as a [schema:Service](https://s
 <a id="dataset-catalog"></a>
 #### DataCatalog
 ![DataCatalog](html/voc/static/schema/diagrams/dataset-catalog.png "Dataset - Catalog")
-
-
-<a id="graphical-notation"></a>
-#### Graphical Notation
-![Graphical Notation](html/voc/static/schema/diagrams/graphical-notation.png "Graphical Notation")
 
 Back to [top](#top)
 
