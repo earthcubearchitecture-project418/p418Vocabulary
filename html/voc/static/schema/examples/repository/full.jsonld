@@ -20,7 +20,6 @@
     "provider": {
         "@type": "Organization",
         "@id": "http://www.bco-dmo.org/affiliation/191",
-        "identifier": "http://lod.bco-dmo.org/id/affiliation/191",
         "legalName": "Biological and Chemical Data Management Office",
         "name": "BCO-DMO",
         "url": "http://www.bco-dmo.org",
@@ -87,14 +86,16 @@
                 "@id": "http://www.bco-dmo.org/terms-use",
                 "additionalType": "gdx:Protocol-TermsOfUse",
                 "name": "Terms of Use",
-                "url": "http://www.bco-dmo.org/terms-use"
+                "url": "http://www.bco-dmo.org/terms-use",
+                "fileFormat": "text/html"
             },
             {
                 "@type": "DigitalDocument",
                 "@id": "http://www.bco-dmo.org/how-get-started",
                 "additionalType": "gdx:Protocol-ResourceSubmissionPolicy",
                 "name": "How to Get Started Contributing Data",
-                "url": "http://www.bco-dmo.org/how-get-started"
+                "url": "http://www.bco-dmo.org/how-get-started",
+                "fileFormat": "text/html"
             }
         ]
     },
