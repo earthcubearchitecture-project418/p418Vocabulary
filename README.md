@@ -86,7 +86,7 @@ Schema.org's preferred format for markup is JSON-LD.....describe tools that help
 Because the organizational and governance structures of all repositories vary, this vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions. 
 In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service), and to uniquely identify repositories curating research products, this vocabulary defines an extension to schema:Service as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
 
-![Research Repository Service Vocabulary](https://cdn.rawgit.com/earthcubearchitecture-project418/p418Vocabulary/master/html/voc/static/schema/diagrams/repository.svg "Research Repository Service")
+![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")
 
 Back to [top](#top)
 
