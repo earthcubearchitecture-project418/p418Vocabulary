@@ -41,6 +41,8 @@ Serves the vocabulary in JSON-LD at https://geodex.org/voc/.
 
 ## Approach
 
+The preferred format for schema.org markup by its harvesters is JSON-LD. For a primer on JSON-LD, see [https://json-ld.org/](https://json-ld.org/)
+
 To produce quality schema.org, all extensions to schema.org classes will be made through the use of the recommended property [schema:additionalType](https://schema.org/additionalType). 
 
 The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal ontology, but in schema.org this doesn't translate into the use of JSON-LD's [@type](https://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords) as traditional RDF publishing would encourage.
@@ -89,6 +91,59 @@ Schema.org's preferred format for markup is JSON-LD.....describe tools that help
 
 Because the organizational and governance structures of all repositories vary, this vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions. 
 In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service), and to uniquely identify repositories curating research products, this vocabulary defines an extension to schema:Service as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  <strong>"@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService"</strong>,
+  "name": "Sample Data Repository Service",
+}
+</pre>
+
+The [schema:provider](https://schema.org/provider) property of schema:Service can then be used to describe the [schema:Organization](https://schema.org/Organization).
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "name": "Sample Data Repository Service",
+  <strong>"provider": {
+    "@type": "Organization",
+    "legalName": "Sample Data Repository Office"
+  }</strong>
+}
+</pre>
+
+If a repository is comprised of multiple organziations, for example a collaborative award to different institutions, multiple [schema:Organization](https://schema.org/Organization) records can be described.
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "name": "Sample Data Repository Service",
+  <strong>"provider": [
+    {
+      "@type": "Organization",
+      "legalName": "Sample Data Repository Office"
+    },
+    {
+      "@type": "Organization",
+      "legalName": "Sample Data Repository Technology Operators Office"
+    }
+  ]</strong>
+}
+</pre>
+
 
 [![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")](#)
 
