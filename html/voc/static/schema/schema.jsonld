@@ -280,14 +280,14 @@
       }
     },
     {
-      "@id": "gdx:EntryPoint-SitemapXML",
+      "@id": "gdx:SitemapXML",
       "@type": [
-        "schema:EntryPoint",
+        "schema:DigitalDocument",
         "owl:namedIndividual"
       ],
       "rdfs:comment": {
         "@language": "en-US",
-        "@value": "A sitemap.xml syndication entry point for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog."
+        "@value": "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"

@@ -114,11 +114,11 @@
     <rdfs:comment xml:lang="en-US">An applicable license.</rdfs:comment>
   </owl:namedIndividual>
 
-  <owl:namedIndividual rdf:about="gdx:EntryPoint-SitemapXML">
-    <rdf:type rdf:resource="schema:EntryPoint"/>
+  <owl:namedIndividual rdf:about="gdx:SitemapXML">
+    <rdf:type rdf:resource="schema:DigitalDocument"/>
     <skos:related rdf:resource="gdx:SyndicationService"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">Sitemap XML</rdfs:label>
-    <rdfs:comment xml:lang="en-US">A sitemap.xml syndication entry point for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog.</rdfs:comment>
+    <rdfs:comment xml:lang="en-US">A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog.</rdfs:comment>
   </owl:namedIndividual>
 </rdf:RDF>

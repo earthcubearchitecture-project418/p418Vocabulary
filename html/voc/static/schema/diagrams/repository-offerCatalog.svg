@@ -134,16 +134,16 @@
       </a>
     </g>
     <g id="y.node.8">
-      <a target="_blank" xlink:type="simple" xlink:href="http://schema.org/Thing" xlink:show="new">
+      <a target="_blank" xlink:type="simple" xlink:href="http://schema.org/CreativeWork" xlink:show="new">
         <g fill="rgb(204,255,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke="rgb(204,255,204)">
-          <rect x="592.2432" width="95.457" height="30" y="-282.2215" stroke="none"/>
+          <rect x="570.4902" width="138.9629" height="30" y="-282.2215" stroke="none"/>
         </g>
         <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-          <rect fill="none" x="592.2432" width="95.457" height="30" y="-282.2215"/>
+          <rect fill="none" x="570.4902" width="138.9629" height="30" y="-282.2215"/>
         </g>
         <g>
           <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-            <text x="599.2432" xml:space="preserve" y="-262.6864" stroke="none">schema:Thing</text>
+            <text x="577.4902" xml:space="preserve" y="-262.6864" stroke="none">schema:CreativeWork</text>
           </g>
         </g>
       </a>
@@ -194,21 +194,6 @@
       </a>
     </g>
     <g id="y.node.12">
-      <a target="_blank" xlink:type="simple" xlink:href="http://schema.org/WebAPI" xlink:show="new">
-        <g fill="rgb(204,255,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke="rgb(204,255,204)">
-          <rect x="729.1787" width="104.8965" height="30" y="-132.7237" stroke="none"/>
-        </g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-          <rect fill="none" x="729.1787" width="104.8965" height="30" y="-132.7237"/>
-        </g>
-        <g>
-          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-            <text x="736.1787" xml:space="preserve" y="-113.1886" stroke="none">schema:WebAPI</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.13">
       <g fill="rgb(0,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke="rgb(0,204,255)">
         <ellipse rx="20.0605" ry="15" cx="839.918" cy="-375.2658" stroke="none"/>
       </g>
@@ -221,7 +206,7 @@
         </g>
       </g>
     </g>
-    <g id="y.node.14">
+    <g id="y.node.13">
       <a target="_blank" xlink:type="simple" xlink:href="http://schema.org/Dataset" xlink:show="new">
         <g fill="rgb(204,255,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke="rgb(204,255,204)">
           <rect x="351.353" width="115.7363" height="30" y="-342.2658" stroke="none"/>
@@ -236,7 +221,7 @@
         </g>
       </a>
     </g>
-    <g id="y.node.15">
+    <g id="y.node.14">
       <g fill="rgb(0,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke="rgb(0,204,255)">
         <ellipse rx="20.0605" ry="15" cx="430.853" cy="-395.5317" stroke="none"/>
       </g>
@@ -249,7 +234,7 @@
         </g>
       </g>
     </g>
-    <g id="y.node.16">
+    <g id="y.node.15">
       <g fill="rgb(0,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke="rgb(0,204,255)">
         <ellipse rx="20.0605" ry="15" cx="219.688" cy="-250.8482" stroke="none"/>
       </g>
@@ -262,7 +247,7 @@
         </g>
       </g>
     </g>
-    <g id="y.node.17">
+    <g id="y.node.16">
       <g fill="rgb(0,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke="rgb(0,204,255)">
         <ellipse rx="18.1504" ry="15" cx="284.7486" cy="-137.5609" stroke="none"/>
       </g>
@@ -327,8 +312,8 @@
     </g>
     <g id="y.edge.4">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-        <path fill="none" d="M660 -360.2634 L660 -290.1904"/>
-        <path d="M660 -282.1904 L665 -294.1904 L660 -291.1904 L655 -294.1904 Z" stroke="none"/>
+        <path fill="none" d="M660 -360.2983 L660 -290.2132"/>
+        <path d="M660 -282.2132 L665 -294.2132 L660 -291.2132 L655 -294.2132 Z" stroke="none"/>
       </g>
       <g>
         <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
@@ -338,16 +323,16 @@
     </g>
     <g id="y.edge.7">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-        <path fill="none" d="M592.2329 -267.8925 L572.2432 -267.8925 L572.2432 -244.8482 L470.0268 -244.8482"/>
-        <path d="M462.0268 -244.8482 L474.0268 -239.8482 L471.0268 -244.8482 L474.0268 -249.8482 Z" stroke="none"/>
+        <path fill="none" d="M570.4714 -267.8925 L563.2432 -267.8925 L563.2432 -244.8482 L470.0235 -244.8482"/>
+        <path d="M462.0235 -244.8482 L474.0235 -239.8482 L471.0235 -244.8482 L474.0235 -249.8482 Z" stroke="none"/>
       </g>
       <g>
         <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-          <text x="399.3125" xml:space="preserve" y="-269.4648" stroke="none">schema:publishingPrinciples</text>
+          <text x="392.5198" xml:space="preserve" y="-269.4648" stroke="none">schema:publishingPrinciples</text>
         </g>
       </g>
     </g>
-    <g id="y.edge.11">
+    <g id="y.edge.10">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
         <path fill="none" d="M676.2729 -445.1885 L759.8574 -445.1885"/>
         <path d="M767.8574 -445.1885 L755.8574 -450.1885 L758.8574 -445.1885 L755.8574 -440.1885 Z" stroke="none"/>
@@ -364,7 +349,11 @@
         <path fill="white" d="M639.9717 -252.2215 L633.9717 -236.2215 L645.9717 -236.2215 Z" stroke="none"/>
         <path stroke-dasharray="none" fill="none" d="M639.9717 -252.2215 L633.9717 -236.2215 L645.9717 -236.2215 Z"/>
       </g>
-      <g/>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
+          <text x="657.2056" xml:space="preserve" y="-230.6421" stroke="none">rdfs:subClassOf</text>
+        </g>
+      </g>
     </g>
     <g id="y.edge.9">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-dasharray="6,2" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
@@ -374,19 +363,7 @@
       </g>
       <g/>
     </g>
-    <g id="y.edge.10">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-dasharray="6,2" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-        <path fill="none" d="M729.1787 -117.7237 L639.9717 -117.7237 L639.9717 -237.2399"/>
-        <path fill="white" d="M639.9717 -252.2399 L633.9717 -236.2399 L645.9717 -236.2399 Z" stroke="none"/>
-        <path stroke-dasharray="none" fill="none" d="M639.9717 -252.2399 L633.9717 -236.2399 L645.9717 -236.2399 Z"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-          <text x="657.3149" xml:space="preserve" y="-233.62" stroke="none">rdfs:subClassOf</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.12">
+    <g id="y.edge.11">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
         <path fill="none" d="M692.4519 -375.2658 L811.8574 -375.2658"/>
         <path d="M819.8574 -375.2658 L807.8574 -380.2658 L810.8574 -375.2658 L807.8574 -370.2658 Z" stroke="none"/>
@@ -397,18 +374,18 @@
         </g>
       </g>
     </g>
-    <g id="y.edge.13">
+    <g id="y.edge.12">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-        <path fill="none" d="M609.9009 -282.1951 L609.9009 -327.2658 L475.0893 -327.2658"/>
+        <path fill="none" d="M609.9009 -282.2136 L609.9009 -327.2658 L475.0893 -327.2658"/>
         <path d="M467.0893 -327.2658 L479.0893 -322.2658 L476.0893 -327.2658 L479.0893 -332.2658 Z" stroke="none"/>
       </g>
       <g>
         <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
-          <text x="483.958" xml:space="preserve" y="-333.4648" stroke="none">schema:audience</text>
+          <text x="483.958" xml:space="preserve" y="-336.4648" stroke="none">schema:audience</text>
         </g>
       </g>
     </g>
-    <g id="y.edge.14">
+    <g id="y.edge.13">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
         <path fill="none" d="M430.853 -342.299 L430.853 -372.5317"/>
         <path d="M430.853 -380.5317 L425.853 -368.5317 L430.853 -371.5317 L435.853 -368.5317 Z" stroke="none"/>
@@ -419,7 +396,7 @@
         </g>
       </g>
     </g>
-    <g id="y.edge.15">
+    <g id="y.edge.14">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
         <path fill="none" d="M302.2231 -250.8482 L247.7486 -250.8482"/>
         <path d="M239.7486 -250.8482 L251.7486 -245.8482 L248.7486 -250.8482 L251.7486 -255.8482 Z" stroke="none"/>
@@ -431,7 +408,7 @@
         </g>
       </g>
     </g>
-    <g id="y.edge.16">
+    <g id="y.edge.15">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-184,500)" stroke-linecap="butt">
         <path fill="none" d="M302.2441 -244.8482 L284.7486 -244.8482 L284.7486 -160.5609"/>
         <path d="M284.7486 -152.5609 L289.7486 -164.5609 L284.7486 -161.5609 L279.7486 -164.5609 Z" stroke="none"/>

@@ -151,14 +151,14 @@
     <g id="y.node.9">
       <a target="_blank" xlink:type="simple" xlink:href="http://schema.org/Thing" xlink:show="new">
         <g fill="rgb(204,255,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke="rgb(204,255,204)">
-          <rect x="583.3953" width="95.457" height="30" y="-315.2614" stroke="none"/>
+          <rect x="561.6423" width="138.9629" height="30" y="-315.2614" stroke="none"/>
         </g>
         <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-          <rect fill="none" x="583.3953" width="95.457" height="30" y="-315.2614"/>
+          <rect fill="none" x="561.6423" width="138.9629" height="30" y="-315.2614"/>
         </g>
         <g>
           <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-            <text x="590.3953" xml:space="preserve" y="-295.7263" stroke="none">schema:Thing</text>
+            <text x="568.6423" xml:space="preserve" y="-295.7263" stroke="none">schema:CreativeWork</text>
           </g>
         </g>
       </a>
@@ -299,21 +299,6 @@
       </a>
     </g>
     <g id="y.node.19">
-      <a target="_blank" xlink:type="simple" xlink:href="http://schema.org/WebAPI" xlink:show="new">
-        <g fill="rgb(204,255,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke="rgb(204,255,204)">
-          <rect x="684.4968" width="104.8965" height="30" y="-154.2752" stroke="none"/>
-        </g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-          <rect fill="none" x="684.4968" width="104.8965" height="30" y="-154.2752"/>
-        </g>
-        <g>
-          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-            <text x="691.4968" xml:space="preserve" y="-134.7401" stroke="none">schema:WebAPI</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.20">
       <a target="_blank" xlink:type="simple" xlink:href="http://schema.org/Service" xlink:show="new">
         <g fill="rgb(204,255,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke="rgb(204,255,204)">
           <rect x="776.1387" width="102.5938" height="30" y="-435.6069" stroke="none"/>
@@ -391,8 +376,8 @@
     </g>
     <g id="y.edge.5">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-        <path fill="none" d="M619.3177 -370.8397 L619.3177 -323.2524"/>
-        <path d="M619.3177 -315.2524 L624.3177 -327.2524 L619.3177 -324.2524 L614.3177 -327.2524 Z" stroke="none"/>
+        <path fill="none" d="M619.3177 -370.7945 L619.3177 -323.2849"/>
+        <path d="M619.3177 -315.2849 L624.3177 -327.2849 L619.3177 -324.2849 L614.3177 -327.2849 Z" stroke="none"/>
       </g>
       <g>
         <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
@@ -402,12 +387,12 @@
     </g>
     <g id="y.edge.13">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-        <path fill="none" d="M583.3775 -303.3825 L395.862 -303.3825"/>
-        <path d="M387.862 -303.3825 L399.862 -298.3825 L396.862 -303.3825 L399.862 -308.3825 Z" stroke="none"/>
+        <path fill="none" d="M561.6426 -303.3825 L395.872 -303.3825"/>
+        <path d="M387.872 -303.3825 L399.872 -298.3825 L396.872 -303.3825 L399.872 -308.3825 Z" stroke="none"/>
       </g>
       <g>
         <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-          <text x="409.0508" xml:space="preserve" y="-313.9149" stroke="none">schema:publishingPrinciples</text>
+          <text x="394.3125" xml:space="preserve" y="-321.9648" stroke="none">schema:publishingPrinciples</text>
         </g>
       </g>
     </g>
@@ -455,7 +440,7 @@
         </g>
       </g>
     </g>
-    <g id="y.edge.19">
+    <g id="y.edge.18">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
         <path fill="none" d="M676.2729 -583.1885 L811.8574 -583.1885"/>
         <path d="M819.8574 -583.1885 L807.8574 -588.1885 L810.8574 -583.1885 L807.8574 -578.1885 Z" stroke="none"/>
@@ -472,7 +457,11 @@
         <path fill="white" d="M631.1238 -285.2614 L625.1238 -269.2614 L637.1238 -269.2614 Z" stroke="none"/>
         <path stroke-dasharray="none" fill="none" d="M631.1238 -285.2614 L625.1238 -269.2614 L637.1238 -269.2614 Z"/>
       </g>
-      <g/>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
+          <text x="669.4407" xml:space="preserve" y="-261.1764" stroke="none">rdfs:subClassOf</text>
+        </g>
+      </g>
     </g>
     <g id="y.edge.17">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-dasharray="6,2" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
@@ -481,18 +470,6 @@
         <path stroke-dasharray="none" fill="none" d="M631.1238 -285.2786 L625.1238 -269.2786 L637.1238 -269.2786 Z"/>
       </g>
       <g/>
-    </g>
-    <g id="y.edge.18">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-dasharray="6,2" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-        <path fill="none" d="M684.4968 -139.2752 L631.1238 -139.2752 L631.1238 -270.2659"/>
-        <path fill="white" d="M631.1238 -285.2659 L625.1238 -269.2659 L637.1238 -269.2659 Z" stroke="none"/>
-        <path stroke-dasharray="none" fill="none" d="M631.1238 -285.2659 L625.1238 -269.2659 L637.1238 -269.2659 Z"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
-          <text x="645.0154" xml:space="preserve" y="-256.4648" stroke="none">rdfs:subClassOf</text>
-        </g>
-      </g>
     </g>
     <g id="y.edge.9">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
@@ -519,7 +496,7 @@
       </g>
       <g/>
     </g>
-    <g id="y.edge.20">
+    <g id="y.edge.19">
       <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-148,638)" stroke-linecap="butt">
         <path fill="none" d="M803.7227 -491.5782 L803.7227 -443.612"/>
         <path d="M803.7227 -435.612 L808.7227 -447.612 L803.7227 -444.612 L798.7227 -447.612 Z" stroke="none"/>

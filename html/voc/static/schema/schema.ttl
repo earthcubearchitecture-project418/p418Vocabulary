@@ -93,9 +93,9 @@
   rdfs:label "License"@en-US ;
   rdfs:comment "An applicable license."@en-US .
 
-<gdx:EntryPoint-SitemapXML>
-  a owl:namedIndividual, schema:EntryPoint ;
+<gdx:SitemapXML>
+  a owl:namedIndividual, schema:DigitalDocument ;
   skos:related <gdx:SyndicationService> ;
   rdfs:isDefinedBy <gdx:> ;
   rdfs:label "Sitemap XML"@en-US ;
-  rdfs:comment "A sitemap.xml syndication entry point for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog."@en-US .
+  rdfs:comment "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog."@en-US .
