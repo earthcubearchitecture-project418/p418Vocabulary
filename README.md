@@ -7,6 +7,7 @@
 * [Graphical Notation](#graphical-notation)
 * [Publishing schema.org JSON-LD](#schemaorg-jsonld)
   * [Describing a Repository](#repository)
+    * [Repository - Fields](#repository-fields)
     * [Repository - Offer Catalog](#repository-offercatalog)
     * [Repository - Provider](#repository-provider)
     * [Repository - Services](#repository-services)
@@ -90,6 +91,9 @@ Because the organizational and governance structures of all repositories vary, t
 In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service), and to uniquely identify repositories curating research products, this vocabulary defines an extension to schema:Service as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
 
 [![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")](#)
+
+<a id="repository-fields"></a>
+[![Research Repository Service - Fields](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
 
 <a id="repository-provider"></a>
 ### Describing a Repository's Provider(s)
