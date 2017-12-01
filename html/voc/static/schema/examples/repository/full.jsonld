@@ -102,16 +102,62 @@
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "BCO-DMO Resource Catalog",
-        "itemListElement": [{
-            "@type": "DataCatalog",
-            "@id": "http://www.bco-dmo.org/datasets",
-            "name": "BCO-DMO Data Catalog",
-            "audience": {
-                "@type": "Audience",
-                "audienceType": "public",
-                "name": "General Public"
+        "itemListElement": [
+            {
+                "@type": "DataCatalog",
+                "@id": "http://www.bco-dmo.org/datasets",
+                "name": "BCO-DMO Data Catalog",
+                "publishingPrinciples": [
+                    {
+                        "@type": "DigitalDocument",
+                        "@id": "http://www.bco-dmo.org/terms-use",
+                        "additionalType": "gdx:Protocol-TermsOfUse",
+                        "name": "Terms of Use",
+                        "url": "http://www.bco-dmo.org/terms-use",
+                        "fileFormat": "text/html"
+                    },
+                    {
+                        "@type": "DigitalDocument",
+                        "additionalType": "gdx:Protocol-Access",
+                        "name": "Accessing Data",
+                        "url": "http://www.bco-dmo.org/data",
+                        "fileFormat": "text/html"
+                    }
+                ],
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "public",
+                    "name": "General Public"
+                }
+            },
+            {
+                "@type": "WebAPI",
+                "@id": "http://api.bco-dmo.org",
+                "name": "Data Access API",
+                "publishingPrinciples": [
+                    {
+                        "@type": "DigitalDocument",
+                        "@id": "http://www.bco-dmo.org/terms-use",
+                        "additionalType": "gdx:Protocol-TermsOfUse",
+                        "name": "Terms of Use",
+                        "url": "http://www.bco-dmo.org/terms-use",
+                        "fileFormat": "text/html"
+                    },
+                    {
+                        "@type": "DigitalDocument",
+                        "additionalType": "gdx:Protocol-Access",
+                        "name": "Accessing Data",
+                        "url": "http://www.bco-dmo.org/data",
+                        "fileFormat": "text/html"
+                    }
+                ],
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "public",
+                    "name": "General Public"
+                }
             }
-        }]
+        ]
     },
     "availableChannel": [
         {
