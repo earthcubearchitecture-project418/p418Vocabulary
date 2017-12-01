@@ -7,19 +7,22 @@
 * [Graphical Notation](#graphical-notation)
 * [Publishing schema.org JSON-LD](#schemaorg-jsonld)
   * [Describing a Repository](#repository)
+    * [Repository - Offer Catalog](#repository-offercatalog)
+    * [Repository - Provider](#repository-provider)
+    * [Repository - Services](#repository-services)
   * [Dataset](#dataset-diagram)
-  * [Variables](#dataset-variables)
-  * [Spatial](#dataset-spatial)
-  * [Temporal](#dataset-temporal)
-  * [Identifiers](#dataset-identifiers)
-  * [Creators/Contributors](#dataset-creator_contributor)
-  * [Publisher/Provider](#dataset-publisher_provider)
-  * [Distributions](#dataset-distros)
-  * [Protocols](#dataset-protocols)
-  * [Funding](#dataset-funding)
-  * [Deployment]($dataset-deployment)
-  * [Project](#dataset-project)
-  * [DataCatalog](#dataset-catalog)
+    * [Variables](#dataset-variables)
+    * [Spatial](#dataset-spatial)
+    * [Temporal](#dataset-temporal)
+    * [Identifiers](#dataset-identifiers)
+    * [Creators/Contributors](#dataset-creator_contributor)
+    * [Publisher/Provider](#dataset-publisher_provider)
+    * [Distributions](#dataset-distros)
+    * [Protocols](#dataset-protocols)
+    * [Funding](#dataset-funding)
+    * [Deployment]($dataset-deployment)
+    * [Project](#dataset-project)
+    * [DataCatalog](#dataset-catalog)
 * [Examples](#examples)
 * [Issues](#issues)
 
@@ -71,7 +74,7 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 
 The graphs display the classes, properties and literals for producing valid schema.org markup. 
 
-![Graphical Notation](html/voc/static/schema/diagrams/graphical-notation.png "Graphical Notation")
+[![Graphical Notation](html/voc/static/schema/diagrams/graphical-notation.png "Graphical Notation")](#)
 
 Back to [top](#top)
 
@@ -86,7 +89,22 @@ Schema.org's preferred format for markup is JSON-LD.....describe tools that help
 Because the organizational and governance structures of all repositories vary, this vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions. 
 In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service), and to uniquely identify repositories curating research products, this vocabulary defines an extension to schema:Service as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
 
-![Research Repository Service Vocabulary](https://cdn.rawgit.com/earthcubearchitecture-project418/p418Vocabulary/master/html/voc/static/schema/diagrams/repository.svg "Research Repository Service")
+[![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")](#)
+
+<a id="repository-provider"></a>
+### Describing a Repository's Provider(s)
+
+[![Research Repository Service - Provider](html/voc/static/schema/diagrams/repository-provider.png "Research Repository Service - Provider")](#)
+
+<a id="repository-services"></a>
+### Describing a Repository's Services
+
+[![Research Repository Service - Service Channel](html/voc/static/schema/diagrams/repository-servicechannel.png "Research Repository Service - Service Channel")](#)
+
+<a id="repository-offercatalog"></a>
+### Describing a Repository's Offer Catalog
+
+[![Research Repository Service - Offer Catalog](html/voc/static/schema/diagrams/repository-offerCatalog.png "Research Repository Service - Offer Catalog")](#)
 
 Back to [top](#top)
 
