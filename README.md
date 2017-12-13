@@ -43,7 +43,7 @@ Serves the vocabulary in JSON-LD at https://geodex.org/voc/.
 
 The preferred format for schema.org markup by its harvesters is JSON-LD. For a primer on JSON-LD, see [https://json-ld.org/](https://json-ld.org/)
 
-To produce quality schema.org, all extensions to schema.org classes will be made through the use of the recommended property [schema:additionalType](https://schema.org/additionalType). 
+To produce quality schema.org, all extensions to schema.org classes will be made through the use of the recommended property [schema:additionalType](https://schema.org/additionalType).
 
 The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal ontology, but in schema.org this doesn't translate into the use of JSON-LD's [@type](https://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords) as traditional RDF publishing would encourage.
 
@@ -59,7 +59,7 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 | vivo:         | [<http://vivoweb.org/ontology/core#>](http://vivoweb.org/ontology/core#) |
 | geo-upper:    | [<http://www.geoscienceontology.org/geo-upper#>](http://www.geoscienceontology.org/geo-upper#) |
 | dbpedia:      | [<http://dbpedia.org/resource/>](http://dbpedia.org/resource/) |
- 
+
 [schema:](https://schema.org/) the defacto vocabulary for publishing structured data in web pages for search engine harvesting
 
 [gdx:](https://geodex.org/voc/) the P418 project's vocabulary
@@ -75,7 +75,7 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 <a id="graphical-notation"></a>
 ## Graphical Notation
 
-The graphs display the classes, properties and literals for producing valid schema.org markup. 
+The graphs display the classes, properties and literals for producing valid schema.org markup.
 
 [![Graphical Notation](html/voc/static/schema/diagrams/graphical-notation.png "Graphical Notation")](#)
 
@@ -89,8 +89,10 @@ Schema.org's preferred format for markup is JSON-LD.....describe tools that help
 <a id="repository"></a>
 ## Describing a Repository
 
-Because the organizational and governance structures of all repositories vary, this vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions. 
-In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service), and to uniquely identify repositories curating research products, this vocabulary defines an extension to schema:Service as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
+[![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")](#)
+
+Because the organizational and governance structures of all repositories vary, this vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions.
+In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service). This service is [provided](https://schema.org/provider) by one or many [Organizations](https://schema.org/Organization). At first, this may seem strange, but if you think about the homepage of many repositories they describe the ways, or service channels, a user can interact with at that repository - finding data, submitting data, etc. Often, these homepages link to an 'About' page that describes the team and organizations providing the service of the repository. We recognize the value of this distiction between the service a repository provides to a community and the organization(s) that provide that service. Becuase the Service class in schema.org is very broad, to uniquely identify repositories curating research products, this vocabulary defines an extension to [schema:Service](https://schema.org/Service) as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
 
 <pre>
 {
@@ -144,11 +146,74 @@ If a repository is comprised of multiple organziations, for example a collaborat
 }
 </pre>
 
-
-[![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")](#)
-
+Looking at the properties of a [schema:Service](https://schema.org/Service), we highlight the following fields to describe the research repository service 
 <a id="repository-fields"></a>
-[![Research Repository Service - Fields](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
+[![Research Repository Service - Identifier](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "provider": {
+      "@type": "Organization",
+      "legalName": "Sample Data Repository Office"
+  },
+  <strong>"name": "Sample Data Repository Service",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "url": "https://www.sample-data-repository.org"
+  </strong>
+}
+</pre>
+
+The schema.org/category field can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. For a repository with a focus on a single domain, say 'Biological Oceanography', the category field can be published like this:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "provider": {
+      "@type": "Organization",
+      "legalName": "Sample Data Repository Office"
+  },
+  "name": "Sample Data Repository Service",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "url": "https://www.sample-data-repository.org",
+  <strong>"category": "Biological Oceanography"</strong>
+}
+</pre>
+
+For a mutliple multiple domains in one repository, the category field, like other multi-valued fields, can be published as an array of values like this:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "provider": {
+      "@type": "Organization",
+      "legalName": "Sample Data Repository Office"
+  },
+  "name": "Sample Data Repository Service",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "url": "https://www.sample-data-repository.org",
+  <strong>"category": [
+    "Biological Oceanography",
+    "Chemical Oceanography",
+  ]
+  </strong>
+}
+</pre>
 
 <a id="repository-provider"></a>
 ### Describing a Repository's Provider(s)
