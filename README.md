@@ -258,7 +258,7 @@ Back to [top](#top)
 
 <a id="dataset-creator_contributor"></a>
 #### Creators/Contributors
-![Variables](html/voc/static/schema/diagrams/dataset-variables.png "Dataset - Variables")
+![Variables](html/voc/static/schema/diagrams/dataset-creator_contributor.png "Dataset - Creator/Contributor")
 
 
 <a id="dataset-publisher_provider"></a>
