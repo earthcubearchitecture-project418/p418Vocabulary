@@ -129,33 +129,6 @@
                     "audienceType": "public",
                     "name": "General Public"
                 }
-            },
-            {
-                "@type": "WebAPI",
-                "@id": "http://api.bco-dmo.org",
-                "name": "Data Access API",
-                "publishingPrinciples": [
-                    {
-                        "@type": "DigitalDocument",
-                        "@id": "http://www.bco-dmo.org/terms-use",
-                        "additionalType": "gdx:Protocol-TermsOfUse",
-                        "name": "Terms of Use",
-                        "url": "http://www.bco-dmo.org/terms-use",
-                        "fileFormat": "text/html"
-                    },
-                    {
-                        "@type": "DigitalDocument",
-                        "additionalType": "gdx:Protocol-Access",
-                        "name": "Accessing Data",
-                        "url": "http://www.bco-dmo.org/data",
-                        "fileFormat": "text/html"
-                    }
-                ],
-                "audience": {
-                    "@type": "Audience",
-                    "audienceType": "public",
-                    "name": "General Public"
-                }
             }
         ]
     },
@@ -222,14 +195,6 @@
                         "additionalType": "gdx:SitemapXML",
                         "url": "https://www.bco-dmo.org/sitemap.xml",
                         "urlTemplate": "https://www.bco-dmo.org/sitemap.xml?page={page}"
-                    },
-                    "query-input": {
-                        "@type": "PropertyValueSpecification",
-                        "description": "A page number specifying the desired page of the sitemap"
-                        "valueRequired": false,
-                        "valueName": "page",
-                        "valuePattern": "^[1-9][0-9]*$",
-                        "minValue": 1
                     }
                 }
             }
@@ -248,6 +213,7 @@
                     "@type": "ConsumeAction",
                     "target": "http://www.bco-dmo.org/rss/datasets/recent.xml"
                 }
+            }
         },
         {
             "@type": "ServiceChannel",
