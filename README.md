@@ -300,11 +300,11 @@ Back to [top](#top)
 <a id="examples"></a>
 ### Examples
 
-All examples can be found at: https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/examples/
+All examples can be found at: https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/
 
-A [minimal record](https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/examples/required.jsonld) to satisfy the Research Repository Service.
+Repository Examples: https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/repository
 
-A [full record](https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/examples/full.jsonld).
+Dataset Examples: https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/resource
 
 <a id="issues"></a>
 #### Issues
