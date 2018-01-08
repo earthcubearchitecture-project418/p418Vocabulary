@@ -58,6 +58,7 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 | geolink:      | [<http://schema.geolink.org/1.0/base/main#>](http://schema.geolink.org/1.0/base/main#) |
 | vivo:         | [<http://vivoweb.org/ontology/core#>](http://vivoweb.org/ontology/core#) |
 | geo-upper:    | [<http://www.geoscienceontology.org/geo-upper#>](http://www.geoscienceontology.org/geo-upper#) |
+| sweet-data:   | [<http://sweetontology.net/reprDataProduct/>](http://sweetontology.net/reprDataProduct/) |
 | dbpedia:      | [<http://dbpedia.org/resource/>](http://dbpedia.org/resource/) |
 
 [schema:](https://schema.org/) the defacto vocabulary for publishing structured data in web pages for search engine harvesting
