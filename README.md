@@ -71,6 +71,8 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 
 [geo-upper:](http://www.geoscienceontology.org/geo-upper#) a segment of the Geoscience Standard Names Ontology, an EarthCube product
 
+[sweet-data"](http://sweetontology.net/reprDataProduct/) a segment of the [SWEET Ontology](http://sweetontology.net) specific to describing data
+
 [dbpedia:](http://dbpedia.org/resource/) Structured data for Wikipedia resources
 
 <a id="graphical-notation"></a>
