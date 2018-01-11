@@ -268,9 +268,10 @@ If this Organization has a parent entity such as a college, university or resear
     ...
     <strong>"parentOrganization": {
       "@type": "Organization",
-      "@id": "http://www.someintsitute.edu",
-      "name": "Some Istitute",
-      "url": "http://www.someintsitute.edu",
+      "@id": "http://www.someinstitute.edu",
+      "legalName": "Some Institute",
+      "name": "SI",
+      "url": "http://www.someinstitute.edu",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "234 Main St.",
