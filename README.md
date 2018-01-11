@@ -93,9 +93,7 @@ Schema.org's preferred format for markup is JSON-LD.....describe tools that help
 ## Describing a Repository
 
 [![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")](#)
-
-Because the organizational and governance structures of all repositories vary, this vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions.
-In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service). This service is [provided](https://schema.org/provider) by one or many [Organizations](https://schema.org/Organization). At first, this may seem strange, but if you think about the homepage of many repositories they describe the ways, or service channels, a user can interact with at that repository - finding data, submitting data, etc. Often, these homepages link to an 'About' page that describes the team and organizations providing the service of the repository. We recognize the value of this distiction between the service a repository provides to a community and the organization(s) that provide that service. Becuase the Service class in schema.org is very broad, to uniquely identify repositories curating research products, this vocabulary defines an extension to [schema:Service](https://schema.org/Service) as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
+This vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions. In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service). This service is [provided](https://schema.org/provider) by one or many [Organizations](https://schema.org/Organization). At first, this may seem strange, but if you think about the homepage of many repositories they describe the ways, or service channels, a user can interact with at that repository - finding data, submitting data, etc. Often, these homepages link to an 'About' page that describes the team and organizations providing the service of the repository. We recognize the value of this distiction between the service a repository provides to a community and the organization(s) that provide that service. Becuase the Service class in schema.org is very broad, to uniquely identify repositories curating research products, this vocabulary defines an extension to [schema:Service](https://schema.org/Service) as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
 
 <pre>
 {
@@ -105,11 +103,14 @@ In schema.org, this *function* is best described as a [schema:Service](https://s
   },
   <strong>"@type": "Service",
   "additionalType": "gdx:ResearchRepositoryService"</strong>,
-  "name": "Sample Data Repository Service",
+  "name": "Sample Data Repository Service"
+  </strong>
 }
 </pre>
 
-The [schema:provider](https://schema.org/provider) property of schema:Service can then be used to describe the [schema:Organization](https://schema.org/Organization).
+This service will descrine to 2 main items - 1) the [Organization](#repository-provider) providing the service, 2) the channels setup for interacting with the repository (searching the repository and submitting resources, etc). But, it also has other fields that you can to describe a repository: 
+[schema:url](https://schema.org/url), [schema:description](https://schema.org/description), [schema:category](https://schema.org/category)
+
 <pre>
 {
   "@context": {
@@ -119,6 +120,44 @@ The [schema:provider](https://schema.org/provider) property of schema:Service ca
   "@type": "Service",
   "additionalType": "gdx:ResearchRepositoryService",
   "name": "Sample Data Repository Service",
+  <strong>"url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ]
+  </strong>
+}
+</pre>
+
+* [schema:url](https://schema.org/url) should be the url of your repository's homepage, 
+* [schema:description](https://schema.org/description) should be text describing your repository, 
+* [schema:category](https://schema.org/category)  can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. 
+
+(See [advanced publishing techniques](#advanced-publishing) for how to [describe categories/disciplines in more detail](#advanced-publishing-category) than just simple text.)
+
+<a id="repository-fields"></a>
+[![Research Repository Service - Identifier](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
+
+<a id="repository-provider"></a>
+### Describing a Repository's Provider(s)
+
+The [schema:provider](https://schema.org/provider) field of schema:Service can then be used to describe the [schema:Organization](https://schema.org/Organization).
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "name": "Sample Data Repository Service",
+  "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
   <strong>"provider": {
     "@type": "Organization",
     "legalName": "Sample Data Repository Office"
@@ -126,32 +165,7 @@ The [schema:provider](https://schema.org/provider) property of schema:Service ca
 }
 </pre>
 
-If a repository wants to represent multiple organziations as the provider of the service, the [schema:provider](https://schema.org/provider) can be described. in this way:
-<pre>
-{
-  "@context": {
-    "@vocab": "http://schema.org/",
-    "gdx": "https://geodex.org/voc/"
-  },
-  "@type": "Service",
-  "additionalType": "gdx:ResearchRepositoryService",
-  "name": "Sample Data Repository Service",
-  <strong>"provider": [
-    {
-      "@type": "Organization",
-      "legalName": "Sample Data Repository Office"
-    },
-    {
-      "@type": "Organization",
-      "legalName": "Sample Data Repository Technology Operators Office"
-    }
-  ]</strong>
-}
-</pre>
-
-Looking at the properties of a [schema:Service](https://schema.org/Service), we highlight the following fields to describe the research repository service 
-<a id="repository-fields"></a>
-[![Research Repository Service - Identifier](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
+[![Research Repository Service - Provider](html/voc/static/schema/diagrams/repository-provider.png "Research Repository Service - Provider")](#)
 
 <pre>
 {
@@ -172,53 +186,7 @@ Looking at the properties of a [schema:Service](https://schema.org/Service), we 
 }
 </pre>
 
-The [schema:category](https://schema.org/category) field can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. For a repository with a focus on a single domain, say 'Biological Oceanography', the category field can be published like this:
 
-<pre>
-{
-  "@context": {
-    "@vocab": "http://schema.org/",
-    "gdx": "https://geodex.org/voc/"
-  },
-  "@type": "Service",
-  "additionalType": "gdx:ResearchRepositoryService",
-  "provider": {
-      "@type": "Organization",
-      "legalName": "Sample Data Repository Office"
-  },
-  "name": "Sample Data Repository Service",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
-  "url": "https://www.sample-data-repository.org",
-  <strong>"category": "Biological Oceanography"</strong>
-}
-</pre>
-
-For a mutliple multiple domains in one repository, the category field, like other multi-valued fields, can be published as an array of values like this:
-
-<pre>
-{
-  "@context": {
-    "@vocab": "http://schema.org/",
-    "gdx": "https://geodex.org/voc/"
-  },
-  "@type": "Service",
-  "additionalType": "gdx:ResearchRepositoryService",
-  "provider": {
-      "@type": "Organization",
-      "legalName": "Sample Data Repository Office"
-  },
-  "name": "Sample Data Repository Service",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
-  "url": "https://www.sample-data-repository.org",
-  <strong>"category": [
-    "Biological Oceanography",
-    "Chemical Oceanography"
-  ]
-  </strong>
-}
-</pre>
-
-See [advanced publishing techniques](#advanced-publishing) for how to [publish resources](#advanced-publishing-category) for categories/disciplines a repository addresses.
 
 Some organizations may have a persistent identifier (DOI) assigned to their organization from authorities like the Registry of Research Data Repositories (re3data.org). The way to describe these organizational identifiers is to use the [schema:identifier](https://schema.org/identifier) property in this way:
 
@@ -267,11 +235,6 @@ http://dx.doi.org/10.17616/R37P4C
 https://dx.doi.org/10.17616/R37P4C
 
 So, the best practice is to provide the scheme and value for an identifier, but you can also provide a URL representation using the [schema:url](https://schema.org/url) property.
-
-<a id="repository-provider"></a>
-### Describing a Repository's Provider(s)
-
-[![Research Repository Service - Provider](html/voc/static/schema/diagrams/repository-provider.png "Research Repository Service - Provider")](#)
 
 <a id="repository-services"></a>
 ### Describing a Repository's Services
