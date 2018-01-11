@@ -242,13 +242,12 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
     "Biological Oceanography",
     "Chemical Oceanography"
   ],
-  <strong>
-  "identifier": {
+  <strong>"identifier": {
     "@type": "PropertyValue",
     "propertyID": "datacite:doi",
     "value": "10.17616/R37P4C",
     "url": "http://doi.org/10.17616/R37P4C"
-  },
+  }
   </strong>
 }
 </pre>
