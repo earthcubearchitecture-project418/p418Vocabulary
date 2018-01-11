@@ -155,7 +155,7 @@ This service will descrine to 3 main items - 1) the [Organization](#repository-p
   "additionalType": "gdx:ResearchRepositoryService",
   "name": "Sample Data Repository Service",
   <strong>"url": "https://www.sample-data-repository.org",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "category": [
     "Biological Oceanography",
     "Chemical Oceanography"
@@ -180,7 +180,7 @@ The [schema:provider](https://schema.org/provider) field of schema:Service can t
   "additionalType": "gdx:ResearchRepositoryService",
   "name": "Sample Data Repository Service",
   "url": "https://www.sample-data-repository.org",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "category": [
     "Biological Oceanography",
     "Chemical Oceanography"
@@ -195,6 +195,8 @@ The [schema:provider](https://schema.org/provider) field of schema:Service can t
 
 [![Research Repository Service - Provider](html/voc/static/schema/diagrams/repository-provider.png "Research Repository Service - Provider")](#)
 
+Adding additional fields of [schema:Organization](https://schema.org/Organization):
+
 <pre>
 {
   "@context": {
@@ -205,22 +207,102 @@ The [schema:provider](https://schema.org/provider) field of schema:Service can t
   "additionalType": "gdx:ResearchRepositoryService",
   "name": "Sample Data Repository Service",
   "url": "https://www.sample-data-repository.org",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "category": [
     "Biological Oceanography",
     "Chemical Oceanography"
   ],
-  <strong>"provider": {
+  "provider": {
+    "@type": "Organization",
+    "legalName": "Sample Data Repository Office",
+    "name": "SDRO",
+    <strong>"url": "https://www.sample-data-repository.org/"
+    "description": "The Sample Data Repository Office provides access to data from an imaginary domain accessible from this website.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.sample-data-repository.org/images/logo.jpg"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "name": "Support",
+      "email": "info@bco-dmo.org",
+      "url": "https://www.sample-data-repository.org/about-us",
+      "contactType": "customer support"
+    },
+    "foundingDate": "2006-09-01",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main St.",
+      "addressLocality": "Anytown",
+      "addressRegion": "ST",
+      "postalCode": "12345",
+      "addressCountry": "USA"
+    }
+    </strong>
+  }
+}
+</pre>
+
+If this Organization has a parent entity such as a college, university or research center, that information can be provided using the [schema:parentOrganization](https://schema.org/parentOrganization) property:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "name": "Sample Data Repository Service",
+  "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
+  "provider": {
     "@type": "Organization",
     "legalName": "Sample Data Repository Office",
     "name": "SDRO",
     "url": "https://www.sample-data-repository.org/"
-    "description": "The Sample Data Repository Office provides access to data from an imaginary domain accessible from this website....",
+    "description": "The Sample Data Repository Office provides access to data from an imaginary domain accessible from this website.",
     "logo": {
       "@type": "ImageObject",
       "url": "https://www.sample-data-repository.org/images/logo.jpg"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "name": "Support",
+      "email": "info@bco-dmo.org",
+      "url": "https://www.sample-data-repository.org/about-us",
+      "contactType": "customer support"
+    },
+    "foundingDate": "2006-09-01",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main St., Mailbox 9876",
+      "addressLocality": "Anytown",
+      "addressRegion": "ST",
+      "postalCode": "12345",
+      "addressCountry": "USA"
+    },
+    <strong>
+    "parentOrganization": {
+      "@type": "Organization",
+      "@id": "http://www.someintsitute.edu",
+      "name": "Some Istitute",
+      "url": "http://www.someintsitute.edu",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "234 Main St.",
+        "addressLocality": "Anytown",
+        "addressRegion": "ST",
+        "postalCode": "12345",
+        "addressCountry": "USA"
+      }
     }
-  }</strong>
+    </strong>
+  }
 }
 </pre>
 
@@ -240,7 +322,7 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
   "@type": "Service",
   "additionalType": "gdx:ResearchRepositoryService",
   "name": "Sample Data Repository Service",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "url": "https://www.sample-data-repository.org",
   "category": [
     "Biological Oceanography",
@@ -251,11 +333,7 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
     "legalName": "Sample Data Repository Office",
     "name": "SDRO",
     "url": "https://www.sample-data-repository.org/"
-    "description": "The Sample Data Repository Office provides access to data from an imaginary domain accessible from this website....",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.sample-data-repository.org/images/logo.jpg"
-    }
+    ...
     <strong>"identifier": {
       "@type": "PropertyValue",
       "propertyID": "datacite:doi",
