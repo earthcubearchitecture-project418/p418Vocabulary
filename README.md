@@ -58,7 +58,7 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 | geolink:      | [<http://schema.geolink.org/1.0/base/main#>](http://schema.geolink.org/1.0/base/main#) |
 | vivo:         | [<http://vivoweb.org/ontology/core#>](http://vivoweb.org/ontology/core#) |
 | geo-upper:    | [<http://www.geoscienceontology.org/geo-upper#>](http://www.geoscienceontology.org/geo-upper#) |
-| sweet-data:   | [<http://sweetontology.net/reprDataProduct/>](http://sweetontology.net/reprDataProduct/) |
+| datacite      | [<http://purl.org/spar/datacite/>](http://purl.org/spar/datacite/) |
 | dbpedia:      | [<http://dbpedia.org/resource/>](http://dbpedia.org/resource/) |
 
 [schema:](https://schema.org/) the defacto vocabulary for publishing structured data in web pages for search engine harvesting
@@ -71,7 +71,7 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 
 [geo-upper:](http://www.geoscienceontology.org/geo-upper#) a segment of the Geoscience Standard Names Ontology, an EarthCube product
 
-[sweet-data"](http://sweetontology.net/reprDataProduct/) a segment of the [SWEET Ontology](http://sweetontology.net) specific to describing data
+[datacite:](http://purl.org/spar/datacite/) describes persistent identifier schemes like DOI, ARK, URI for helping to represent PIDs. 
 
 [dbpedia:](http://dbpedia.org/resource/) Structured data for Wikipedia resources
 
@@ -172,7 +172,7 @@ Looking at the properties of a [schema:Service](https://schema.org/Service), we 
 }
 </pre>
 
-The schema.org/category field can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. For a repository with a focus on a single domain, say 'Biological Oceanography', the category field can be published like this:
+The [schema:category](https://schema.org/category) field can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. For a repository with a focus on a single domain, say 'Biological Oceanography', the category field can be published like this:
 
 <pre>
 {
@@ -219,6 +219,55 @@ For a mutliple multiple domains in one repository, the category field, like othe
 </pre>
 
 See [advanced publishing techniques](#advanced-publishing) for how to [publish resources](#advanced-publishing-category) for categories/disciplines a repository addresses.
+
+Some organizations may have a persistent identifier (DOI) assigned to their organization from authorities like the Registry of Research Data Repositories (re3data.org). The way to describe these organizational identifiers is to use the [schema:identifier](https://schema.org/identifier) property in this way:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "provider": {
+      "@type": "Organization",
+      "legalName": "Sample Data Repository Office"
+  },
+  "name": "Sample Data Repository Service",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "url": "https://www.sample-data-repository.org",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
+  <strong>
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "datacite:doi",
+    "value": "10.17616/R37P4C",
+    "url": "http://doi.org/10.17616/R37P4C"
+  },
+  </strong>
+}
+</pre>
+
+We add the `datacite` vocabulary to the `@context` because the Datacite Ontology available at [http://purl.org/spar/datacite/](http://purl.org/spar/datacite/) has URIs to describe a DOI, ORCiD, ARK, URI, URN - all identifier scheme that help for disamiguating identifiers. To properly disambiguate a globally unique identifier, 2 pieces of information are needed - 1) the identifier value and 2) the scheme that on which that identifier exists. Some examples of this concept for common identifiers  are:
+
+| Scheme | Value |
+| ------ | ----- |
+| DOI    | 10.17616/R37P4C |
+| ORCiD  | 0000-0002-6059-4651 |
+
+When describing PIDs, it's important to include both of these pieces for downstream activities like searching and linking resources. FOor example, a user may want to query for all repositories with a DOI identifier or all Datasets authored by a researcher with an ORCiD. These types of filters become more difficult when only the URL to these identifiers are provided. The reason here is that there are multiple URLs for an persistent identifier. On example is the DOI:
+
+http://doi.org/10.17616/R37P4C
+https://doi.org/10.17616/R37P4C
+http://dx.doi.org/10.17616/R37P4C
+https://dx.doi.org/10.17616/R37P4C
+
+So, the best practice is to provide the scheme and value for an identifier, but you can also provide a URL representation using the [schema:url](https://schema.org/url) property.
 
 <a id="repository-provider"></a>
 ### Describing a Repository's Provider(s)
