@@ -265,29 +265,8 @@ If this Organization has a parent entity such as a college, university or resear
     "legalName": "Sample Data Repository Office",
     "name": "SDRO",
     "url": "https://www.sample-data-repository.org/"
-    "description": "The Sample Data Repository Office provides access to data from an imaginary domain accessible from this website.",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.sample-data-repository.org/images/logo.jpg"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "name": "Support",
-      "email": "info@bco-dmo.org",
-      "url": "https://www.sample-data-repository.org/about-us",
-      "contactType": "customer support"
-    },
-    "foundingDate": "2006-09-01",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Main St., Mailbox 9876",
-      "addressLocality": "Anytown",
-      "addressRegion": "ST",
-      "postalCode": "12345",
-      "addressCountry": "USA"
-    },
-    <strong>
-    "parentOrganization": {
+    ...
+    <strong>"parentOrganization": {
       "@type": "Organization",
       "@id": "http://www.someintsitute.edu",
       "name": "Some Istitute",
@@ -300,8 +279,7 @@ If this Organization has a parent entity such as a college, university or resear
         "postalCode": "12345",
         "addressCountry": "USA"
       }
-    }
-    </strong>
+    }</strong>
   }
 }
 </pre>
