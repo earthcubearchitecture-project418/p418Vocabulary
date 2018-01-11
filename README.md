@@ -8,9 +8,9 @@
 * [Publishing schema.org JSON-LD](#schemaorg-jsonld)
   * [Describing a Repository](#repository)
     * [Repository - Fields](#repository-fields)
-    * [Repository - Offer Catalog](#repository-offercatalog)
     * [Repository - Provider](#repository-provider)
     * [Repository - Services](#repository-services)
+    * [Repository - Offer Catalog](#repository-offercatalog)
   * [Dataset](#dataset-diagram)
     * [Variables](#dataset-variables)
     * [Spatial](#dataset-spatial)
@@ -108,8 +108,16 @@ This vocabulary has split apart the *function* of the repository from the organi
 }
 </pre>
 
-This service will descrine to 2 main items - 1) the [Organization](#repository-provider) providing the service, 2) the channels setup for interacting with the repository (searching the repository and submitting resources, etc). But, it also has other fields that you can to describe a repository: 
-[schema:url](https://schema.org/url), [schema:description](https://schema.org/description), [schema:category](https://schema.org/category)
+
+
+This service will descrine to 3 main items - 1) the [Organization](#repository-provider) providing the service, 2) the services available for interacting with the repository (searching the repository and submitting resources, etc), and 3) the catalog of resources curated by the repository. But, it also has other fields that you can to describe a repository
+
+<a id="repository-fields"></a>
+[![Research Repository Service - Identifier](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
+
+* [schema:url](https://schema.org/url) should be the url of your repository's homepage, 
+* [schema:description](https://schema.org/description) should be text describing your repository, 
+* [schema:category](https://schema.org/category)  can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. 
 
 <pre>
 {
@@ -130,14 +138,7 @@ This service will descrine to 2 main items - 1) the [Organization](#repository-p
 }
 </pre>
 
-* [schema:url](https://schema.org/url) should be the url of your repository's homepage, 
-* [schema:description](https://schema.org/description) should be text describing your repository, 
-* [schema:category](https://schema.org/category)  can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. 
-
 (See [advanced publishing techniques](#advanced-publishing) for how to [describe categories/disciplines in more detail](#advanced-publishing-category) than just simple text.)
-
-<a id="repository-fields"></a>
-[![Research Repository Service - Identifier](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
 
 <a id="repository-provider"></a>
 ### Describing a Repository's Provider(s)
