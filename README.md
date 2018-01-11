@@ -187,12 +187,42 @@ The [schema:provider](https://schema.org/provider) field of schema:Service can t
   ],
   <strong>"provider": {
     "@type": "Organization",
-    "legalName": "Sample Data Repository Office"
+    "legalName": "Sample Data Repository Office",
+    "name": "SDRO"
   }</strong>
 }
 </pre>
 
 [![Research Repository Service - Provider](html/voc/static/schema/diagrams/repository-provider.png "Research Repository Service - Provider")](#)
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "name": "Sample Data Repository Service",
+  "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
+  <strong>"provider": {
+    "@type": "Organization",
+    "legalName": "Sample Data Repository Office",
+    "name": "SDRO",
+    "url": "https://www.sample-data-repository.org/"
+    "description": "The Sample Data Repository Office provides access to data from an imaginary domain accessible from this website....",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.sample-data-repository.org/images/logo.jpg"
+    }
+  }</strong>
+}
+</pre>
 
 <a id="repository-provider-identifier"></a>
 ### Describing a Repository's Provider Identifier
@@ -219,6 +249,13 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
   "provider": {
     "@type": "Organization",
     "legalName": "Sample Data Repository Office",
+    "name": "SDRO",
+    "url": "https://www.sample-data-repository.org/"
+    "description": "The Sample Data Repository Office provides access to data from an imaginary domain accessible from this website....",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.sample-data-repository.org/images/logo.jpg"
+    }
     <strong>"identifier": {
       "@type": "PropertyValue",
       "propertyID": "datacite:doi",
