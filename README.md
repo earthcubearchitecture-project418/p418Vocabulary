@@ -126,7 +126,7 @@ The [schema:provider](https://schema.org/provider) property of schema:Service ca
 }
 </pre>
 
-If a repository is comprised of multiple organziations, for example a collaborative award to different institutions, multiple [schema:Organization](https://schema.org/Organization) records can be described.
+If a repository wants to represent multiple organziations as the provider of the service, the [schema:provider](https://schema.org/provider) can be described. in this way:
 <pre>
 {
   "@context": {
@@ -212,11 +212,13 @@ For a mutliple multiple domains in one repository, the category field, like othe
   "url": "https://www.sample-data-repository.org",
   <strong>"category": [
     "Biological Oceanography",
-    "Chemical Oceanography",
+    "Chemical Oceanography"
   ]
   </strong>
 }
 </pre>
+
+See [advanced publishing techniques](#advanced-publishing) for how to [publish resources](#advanced-publishing-category) for categories/disciplines a repository addresses.
 
 <a id="repository-provider"></a>
 ### Describing a Repository's Provider(s)
@@ -313,5 +315,38 @@ Dataset Examples: https://github.com/earthcubearchitecture-project418/p418Vocabu
 #### Issues
 
 https://stackoverflow.com/questions/38243521/schema-org-contacttype-validation-issue-the-value-provided-for-office-must-be
+
+<a id="advanced-publishing"></a>
+### Advanced Publishing Techniques
+
+<a id="advanced-publishing-category"></a>
+#### How to publish resources for the categories/disciplines at repository services.
+
+The SWEET ontology defines a number of science disciplines and a repository could reference those, or another vocabuary's resources, by adding the vocabular to the `@context` attribute of the JSON-LD markup. 
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    "sweet-rel": "http://sweetontology.net/rela/",
+    "sweet-kd": "http://sweetontology.net/humanKnowledgeDomain/"
+  },
+  "@type": "Service",
+  "additionalType": "gdx:ResearchRepositoryService",
+  "provider": {
+      "@type": "Organization",
+      "legalName": "Sample Data Repository Office"
+  },
+  "name": "Sample Data Repository Service",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "url": "https://www.sample-data-repository.org",
+  <strong>"sweet-rel:hasRealm": [
+    { "@id": "sweet-kd:Biogeochemistry" },
+    { "@id": "sweet-kd:Oceanography" }
+  ]
+  </strong>
+}
+</pre>
 
 Back to [top](#top)
