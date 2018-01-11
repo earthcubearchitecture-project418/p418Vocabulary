@@ -88,7 +88,32 @@ Back to [top](#top)
 <a id="schemaorg-jsonld"></a>
 ## Schema.org JSON-LD
 
-Schema.org's preferred format for markup is JSON-LD.....describe tools that help publish schema.org
+Schema.org's preferred format for markup is JSON-LD. THere are a number of tools that will help build valid schema.org JSON-LD.
+* Web UI for constructing schema.org: [https://schema.pythonanywhere.com/](https://schema.pythonanywhere.com/)
+  * Jumpstart into specific Types:
+    * [Service](https://schema.pythonanywhere.com/Service)
+      * [Organization](https://schema.pythonanywhere.com/Organization)
+        * [ContactPoint](https://schema.pythonanywhere.com/ContactPoint)
+        * [PropertyValue](https://schema.pythonanywhere.com/PropertyValue) aka Identifier
+      * [DigitalDocument](https://schema.pythonanywhere.com/DigitalDocument)
+      * [OfferCatalog](https://schema.pythonanywhere.com/OfferCatalog)
+      * [ServiceChannel](https://schema.pythonanywhere.com/ServiceChannel)
+        * [Service](https://schema.pythonanywhere.com/Service)
+    * [Dataset](https://schema.pythonanywhere.com/Dataset)
+      * [DataDownload](https://schema.pythonanywhere.com/DataDownload)
+      * [DataCatalog](https://schema.pythonanywhere.com/DataCatalog)
+      * [Person](https://schema.pythonanywhere.com/Person) aka Author/Contributor
+      * [Organization](https://schema.pythonanywhere.com/Organization) aka Publisher, Provider, Funder
+      * [Place](https://schema.pythonanywhere.com/Place)
+        * [GeoShape](https://schema.pythonanywhere.com/GeoShape)
+        * [GeoCoordinates](https://schema.pythonanywhere.com/GeoCoordinates)
+      * [PropertyValue](https://schema.pythonanywhere.com/PropertyValue) aka Variable, Identifier
+      * [Event](https://schema.pythonanywhere.com/Event)
+        * [CreativeWork](https://schema.pythonanywhere.com/CreativeWork)
+          * [Vehicle](https://schema.pythonanywhere.com/Vehicle)
+      
+* Google Testing Tool for schema.org: [https://search.google.com/structured-data/testing-tool/u/0/](https://search.google.com/structured-data/testing-tool/u/0/)
+  * Error Guide: [https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/](https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/)
 
 <a id="repository"></a>
 ## Describing a Repository
