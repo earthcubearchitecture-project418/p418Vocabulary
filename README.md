@@ -9,6 +9,7 @@
   * [Describing a Repository](#repository)
     * [Repository - Fields](#repository-fields)
     * [Repository - Provider](#repository-provider)
+      * [Repository - Provider - Identifier](#repository-provider-identifier)
     * [Repository - Services](#repository-services)
     * [Repository - Offer Catalog](#repository-offercatalog)
   * [Dataset](#dataset-diagram)
@@ -168,27 +169,10 @@ The [schema:provider](https://schema.org/provider) field of schema:Service can t
 
 [![Research Repository Service - Provider](html/voc/static/schema/diagrams/repository-provider.png "Research Repository Service - Provider")](#)
 
-<pre>
-{
-  "@context": {
-    "@vocab": "http://schema.org/",
-    "gdx": "https://geodex.org/voc/"
-  },
-  "@type": "Service",
-  "additionalType": "gdx:ResearchRepositoryService",
-  "provider": {
-      "@type": "Organization",
-      "legalName": "Sample Data Repository Office"
-  },
-  <strong>"name": "Sample Data Repository Service",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
-  "url": "https://www.sample-data-repository.org"
-  </strong>
-}
-</pre>
+<a id="repository-provider-identifier"></a>
+### Describing a Repository's Provider Identifier
 
-
-
+#repository-provider-identifier
 Some organizations may have a persistent identifier (DOI) assigned to their organization from authorities like the Registry of Research Data Repositories (re3data.org). The way to describe these organizational identifiers is to use the [schema:identifier](https://schema.org/identifier) property in this way:
 
 <pre>
@@ -200,10 +184,6 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
   },
   "@type": "Service",
   "additionalType": "gdx:ResearchRepositoryService",
-  "provider": {
-      "@type": "Organization",
-      "legalName": "Sample Data Repository Office"
-  },
   "name": "Sample Data Repository Service",
   "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
   "url": "https://www.sample-data-repository.org",
@@ -211,13 +191,16 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
     "Biological Oceanography",
     "Chemical Oceanography"
   ],
-  <strong>"identifier": {
-    "@type": "PropertyValue",
-    "propertyID": "datacite:doi",
-    "value": "10.17616/R37P4C",
-    "url": "http://doi.org/10.17616/R37P4C"
+  "provider": {
+    "@type": "Organization",
+    "legalName": "Sample Data Repository Office",
+    <strong>"identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "datacite:doi",
+      "value": "10.17616/R37P4C",
+      "url": "http://doi.org/10.17616/R37P4C"
+    }</strong>
   }
-  </strong>
 }
 </pre>
 
