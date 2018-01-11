@@ -440,24 +440,6 @@ geolink:Identifier<y:LabelModel>
       </data>
     </node>
     <node id="n24">
-      <data key="d4"><![CDATA[https://schema.org/PropertyValue]]></data>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="142.91796875" x="808.6865803246362" y="242.93089566718078"/>
-          <y:Fill color="#CCFFCC" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="132.91796875" x="5.0" y="5.93359375">schema:PropertyValue<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n25">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="41.0" width="91.23828125" x="992.6964616937565" y="-356.91578179768584"/>
@@ -474,7 +456,7 @@ geolink:Identifier<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n26">
+    <node id="n25">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="40.12109375" x="992.6964616937565" y="-304.004415890858"/>
@@ -491,7 +473,7 @@ geolink:Identifier<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n27">
+    <node id="n26">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="36.30078125" x="992.6964616937565" y="-258.382489247909"/>
@@ -508,7 +490,7 @@ geolink:Identifier<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n28">
+    <node id="n27">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="41.0" width="91.23828125" x="48.773763702032454" y="-298.882489247909"/>
@@ -525,7 +507,7 @@ geolink:Identifier<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n29">
+    <node id="n28">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="36.30078125" x="343.7206369875245" y="-273.2765988720134"/>
@@ -542,7 +524,7 @@ geolink:Identifier<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n30">
+    <node id="n29">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="40.12109375" x="155.75532235457456" y="-255.79981163442778"/>
@@ -559,7 +541,7 @@ geolink:Identifier<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n31">
+    <node id="n30">
       <data key="d4"><![CDATA[https://schema.org/PropertyValue]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -577,7 +559,7 @@ geolink:Identifier<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n32">
+    <node id="n31">
       <data key="d4"><![CDATA[http://www.sparontologies.net/ontologies/datacite/source.html#Identifier]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -992,7 +974,7 @@ schema:alternateName<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRig
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e25" source="n22" target="n25">
+    <edge id="e25" source="n22" target="n24">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="61.5347990207556" sy="-2.4621139406260113" tx="0.0" ty="0.0">
@@ -1006,7 +988,7 @@ schema:alternateName<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRig
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e26" source="n22" target="n27">
+    <edge id="e26" source="n22" target="n26">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="44.5347990207556" sy="3.5378860593739887" tx="0.0" ty="0.0">
@@ -1020,7 +1002,7 @@ schema:alternateName<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRig
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e27" source="n22" target="n26">
+    <edge id="e27" source="n22" target="n25">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="53.16794197700892" sy="2.5378860593739887" tx="-17.410831026233154" ty="0.0">
@@ -1034,7 +1016,7 @@ schema:alternateName<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRig
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e28" source="n31" target="n32">
+    <edge id="e28" source="n30" target="n31">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="43.8876953125" sy="0.0" tx="58.063688347138566" ty="0.0"/>
@@ -1046,7 +1028,7 @@ schema:alternateName<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRig
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e29" source="n31" target="n28">
+    <edge id="e29" source="n30" target="n27">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="14.621452094163033" ty="0.0">
@@ -1060,7 +1042,7 @@ schema:alternateName<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRig
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e30" source="n31" target="n29">
+    <edge id="e30" source="n30" target="n28">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="62.26633608919906" sy="0.0" tx="-4.1186505742279" ty="0.0"/>
@@ -1072,7 +1054,7 @@ schema:alternateName<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRig
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e31" source="n31" target="n30">
+    <edge id="e31" source="n30" target="n29">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="15.710843373493958" sy="0.0" tx="0.0" ty="0.0">
@@ -1086,7 +1068,7 @@ schema:alternateName<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRig
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e32" source="n7" target="n31">
+    <edge id="e32" source="n7" target="n30">
       <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
