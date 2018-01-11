@@ -213,10 +213,10 @@ We add the `datacite` vocabulary to the `@context` because the Datacite Ontology
 
 When describing PIDs, it's important to include both of these pieces for downstream activities like searching and linking resources. FOor example, a user may want to query for all repositories with a DOI identifier or all Datasets authored by a researcher with an ORCiD. These types of filters become more difficult when only the URL to these identifiers are provided. The reason here is that there are multiple URLs for an persistent identifier. On example is the DOI:
 
-http://doi.org/10.17616/R37P4C
-https://doi.org/10.17616/R37P4C
-http://dx.doi.org/10.17616/R37P4C
-https://dx.doi.org/10.17616/R37P4C
+* http://doi.org/10.17616/R37P4C
+* https://doi.org/10.17616/R37P4C
+* http://dx.doi.org/10.17616/R37P4C
+* https://dx.doi.org/10.17616/R37P4C
 
 So, the best practice is to provide the scheme and value for an identifier, but you can also provide a URL representation using the [schema:url](https://schema.org/url) property.
 
