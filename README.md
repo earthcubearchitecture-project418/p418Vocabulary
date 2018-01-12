@@ -369,48 +369,34 @@ So, the best practice is to provide the scheme and value for an identifier, but 
 
 [![Research Repository Service - Policies](html/voc/static/schema/diagrams/repository-policies.png "Research Repository Service - Policies")](#)
 
-If your repository has policy documents about access control, terms of use, etc. You can provide those using the [schema:publishingPrinciples](https://schema.org/publishingPrinciples) field. Becuase schema.org does not make a distiction for the types of these documents, P418 has created some class names for some common policy document types. THese will help make it clear to users what types of policies you have. A growing list can be found at: http://geodex.org/voc/?show=namedindividuals and if you would like us to add more, please let us know by creating an [Issue](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/new)
+If your repository has policy documents about access control, terms of use, etc. You can provide those using the [schema:publishingPrinciples](https://schema.org/publishingPrinciples) field. Becuase schema.org does not make a distiction for the types of these documents, P418 has created some class names for some common policy document types. THese will help make it clear to users what types of policies you have. If you would like us to add more, please let us know by creating an [Issue](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/new).
 
 <pre>
 {
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
-    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+    "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
   "additionalType": "gdx:ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
-  "category": [
-    "Biological Oceanography",
-    "Chemical Oceanography"
-  ],
-  "provider": {
-    "@id": "https://www.sample-data-repository.org"
-  },
-  "identifier": {
-    "@type": "PropertyValue",
-    "name": "Re3data DOI for this repository",
-    "propertyID": "datacite:doi",
-    "value": "10.17616/R37P4C",
-    "url": "http://doi.org/10.17616/R37P4C"
-  },
+  ...
   <strong>"publishingPrinciples": [
       {
         "@type": "DigitalDocument",
         "additionalType": "gdx:Protocol-TermsOfUse",
         "name": "Terms of Use",
-        "url": "https://www.bco-dmo.org/terms-use",
+        "url": "https://www.sample-data-repository.org/terms-of-use",
         "fileFormat": "text/html"
       },
       {
         "@type": "DigitalDocument",
         "additionalType": "gdx:Protocol-ResourceSubmissionPolicy",
         "name": "How to Get Started Contributing Data",
-        "url": "https://www.bco-dmo.org/how-get-started",
+        "url": "https://www.sample-data-repository.org/submit-data",
         "fileFormat": "text/html"
       }
     ],
@@ -423,44 +409,181 @@ If your repository has policy documents about access control, terms of use, etc.
 
 [![Research Repository Service - Service Channel](html/voc/static/schema/diagrams/repository-servicechannel.png "Research Repository Service - Service Channel")](#)
 
+For repositories might offer services for accessing data as opposed to directly accessing data files. The [schema:Service](https://schema.org/Service) allows us to describe these services as well as repository searches, data submission services, and syndication services. In this first example, we describe a search service at the repository using [schema:ServiceChannel](https://schema.org/ServiceChannel).
 
 <pre>
 {
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
-    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+    "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
   "additionalType": "gdx:ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
-  "category": [
-    "Biological Oceanography",
-    "Chemical Oceanography"
-  ],
-  "provider": {
-    "@id": "https://www.sample-data-repository.org"
-  },
-  "identifier": {
-    "@type": "PropertyValue",
-    "name": "Re3data DOI for this repository",
-    "propertyID": "datacite:doi",
-    "value": "10.17616/R37P4C",
-    "url": "http://doi.org/10.17616/R37P4C"
-  },
+  ...
   <strong>"availableChannel": [
-    
-  ]</strong>
+    {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://www.sample-data-repository.org/search",
+      "providesService": {
+        "@type": "Service",
+        "additionalType": "gdx:SearchService",
+        "name": "SDRO Website Search",
+        "description": "Search for webpages, datasets, authors, funding awards, instrumentation and measurements",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.sample-data-repository.org/search?keywords={query_string}",
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "query_string"
+          }
+        }
+      }
+    }</strong>,
+    {
+       "@type": "ServiceChannel",
+       "serviceUrl": "https://www.sample-data-repository.org/sitemap.xml",
+       "providesService": {
+         "@type": "Service",
+         "additionalType": "gdx:SyndicationService",
+         "name": "Sitemap XML",
+         "description": "A Sitemap XML providing access to all of the resources for harvesting",
+         "potentialAction": {
+           "@type": "ConsumeAction",
+           "target": {
+             "@type": "EntryPoint",
+             "additionalType": "gdx:SitemapXML",
+             "url": "https://www.sample-data-repository.org/sitemap.xml",
+             "urlTemplate": "https://www.sample-data-repository.org/sitemap.xml?page={page}"
+           },
+           "object": {
+             "@type": "DigitalDocument",
+             "url": "https://www.sample-data-repository.org/sitemap.xml",
+             "fileFormat": "application/xml"
+           }
+         }
+       }
+     }
+  ]
+}
+</pre>
+
+By specifying the [schema:potentialAction(https://schema.org/potentialAction), we create a machine-actionable way to execute searches. This means that an EarthCube Registry could take a user submitted query, and pass it along to the repository for the EarthCube Registry user.
+
+If your repository does have datasets or other resources with schema.org JSON-LD markup on their landing pages, Google recommends that all URLs be put inside a sitemap.xml file. To create a sitemap.xml, go here. To describe your sitemap.xml, add a [schema:ServiceChannel](https://schema.org/ServiceChannel) similar to the following markup:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    "datacite": "http://purl.org/spar/datacite/"
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  ...
+  "availableChannel": [
+    {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://www.sample-data-repository.org/search",
+      "providesService": {
+        "@type": "Service",
+        "additionalType": "gdx:SearchService",
+        "name": "SDRO Website Search",
+        "description": "Search for webpages, datasets, authors, funding awards, instrumentation and measurements",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.sample-data-repository.org/search?keywords={query_string}",
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "query_string"
+          }
+        }
+      }
+    },
+    <strong>{
+       "@type": "ServiceChannel",
+       "serviceUrl": "https://www.sample-data-repository.org/sitemap.xml",
+       "providesService": {
+         "@type": "Service",
+         "additionalType": "gdx:SyndicationService",
+         "name": "Sitemap XML",
+         "description": "A Sitemap XML providing access to all of the resources for harvesting",
+         "potentialAction": {
+           "@type": "ConsumeAction",
+           "target": {
+             "@type": "EntryPoint",
+             "additionalType": "gdx:SitemapXML",
+             "url": "https://www.sample-data-repository.org/sitemap.xml",
+             "urlTemplate": "https://www.sample-data-repository.org/sitemap.xml?page={page}"
+           },
+           "object": {
+             "@type": "DigitalDocument",
+             "url": "https://www.sample-data-repository.org/sitemap.xml",
+             "fileFormat": "application/xml"
+           }
+         }
+       }
+     }</strong>
+  ]
 }
 </pre>
 
 <a id="repository-offercatalog"></a>
 ### Describing a Repository's Offer Catalog
 
+If your repository has a number of collections
 [![Research Repository Service - Offer Catalog](html/voc/static/schema/diagrams/repository-offerCatalog.png "Research Repository Service - Offer Catalog")](#)
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    "datacite": "http://purl.org/spar/datacite/"
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  ...
+  <strong>"hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Sample Data Repository Resource Catalog",
+    "itemListElement": [
+      {
+        "@type": "DataCatalog",
+        "@id": "https://www.sample-data-repository.org/collection/biological-data",
+        "name": "Biological Data",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "public",
+          "name": "General Public"
+        }
+      },
+      {
+        "@type": "DataCatalog",
+        "@id": "https://www.sample-data-repository.org/collection/geological-data",
+        "name": "Geological Data",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "public",
+          "name": "General Public"
+        }
+      }
+    ]
+  }</strong>
+}
+</pre>
 
 Back to [top](#top)
 
