@@ -9,6 +9,7 @@
   * [Describing a Repository](#repository)
     * [Repository - Fields](#repository-fields)
     * [Repository - Identifier](#repository-identifier)
+    * [Repository - Policies](#repository-policies)
     * [Repository - Services](#repository-services)
     * [Repository - Offer Catalog](#repository-offercatalog)
   * [Dataset](#dataset-diagram)
@@ -134,7 +135,7 @@ In schema.org, we model a repository as both an [schema:Organization](https://sc
 }
 </pre>
 
-The other fields you can use to describe hte Organziation and the Service are: 
+The other fields you can use to describe the Organziation and the Service are: 
 
 <a id="repository-fields"></a>
 [![Research Repository Service - Fields](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
@@ -143,7 +144,7 @@ The other fields you can use to describe hte Organziation and the Service are:
 * [schema:name](https://schema.org/name) can be an acronym or the name typcially used for the repository, 
 * [schema:url](https://schema.org/url) should be the url of your repository's homepage, 
 * [schema:description](https://schema.org/description) should be text describing your repository, 
-* [schema:category](https://schema.org/category)  can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. 
+* [schema:category](https://schema.org/category) can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. 
 
 <pre>
 {
@@ -338,6 +339,7 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
   },
   <strong>"identifier": {
     "@type": "PropertyValue",
+    "name": "Re3data DOI for this repository",
     "propertyID": "datacite:doi",
     "value": "10.17616/R37P4C",
     "url": "http://doi.org/10.17616/R37P4C"
@@ -361,10 +363,99 @@ When describing PIDs, it's important to include both of these pieces for downstr
 
 So, the best practice is to provide the scheme and value for an identifier, but you can also provide a URL representation using the [schema:url](https://schema.org/url) property.
 
+
+<a id="repository-policies"></a>
+### Describing a Repository's Policies
+
+[![Research Repository Service - Policies](html/voc/static/schema/diagrams/repository-policies.png "Research Repository Service - Policies")](#)
+
+If your repository has policy documents about access control, terms of use, etc. You can provide those using the [schema:publishingPrinciples](https://schema.org/publishingPrinciples) field. Becuase schema.org does not make a distiction for the types of these documents, P418 has created some class names for some common policy document types. THese will help make it clear to users what types of policies you have. A growing list can be found at: http://geodex.org/voc/?show=namedindividuals and if you would like us to add more, please let us know by creating an [Issue](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/new)
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
+  "provider": {
+    "@id": "https://www.sample-data-repository.org"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Re3data DOI for this repository",
+    "propertyID": "datacite:doi",
+    "value": "10.17616/R37P4C",
+    "url": "http://doi.org/10.17616/R37P4C"
+  },
+  <strong>"publishingPrinciples": [
+      {
+        "@type": "DigitalDocument",
+        "additionalType": "gdx:Protocol-TermsOfUse",
+        "name": "Terms of Use",
+        "url": "https://www.bco-dmo.org/terms-use",
+        "fileFormat": "text/html"
+      },
+      {
+        "@type": "DigitalDocument",
+        "additionalType": "gdx:Protocol-ResourceSubmissionPolicy",
+        "name": "How to Get Started Contributing Data",
+        "url": "https://www.bco-dmo.org/how-get-started",
+        "fileFormat": "text/html"
+      }
+    ],
+  ]</strong>
+}
+</pre>
+
 <a id="repository-services"></a>
 ### Describing a Repository's Services
 
 [![Research Repository Service - Service Channel](html/voc/static/schema/diagrams/repository-servicechannel.png "Research Repository Service - Service Channel")](#)
+
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
+  "provider": {
+    "@id": "https://www.sample-data-repository.org"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Re3data DOI for this repository",
+    "propertyID": "datacite:doi",
+    "value": "10.17616/R37P4C",
+    "url": "http://doi.org/10.17616/R37P4C"
+  },
+  <strong>"availableChannel": [
+    
+  ]</strong>
+}
+</pre>
 
 <a id="repository-offercatalog"></a>
 ### Describing a Repository's Offer Catalog
