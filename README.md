@@ -8,8 +8,7 @@
 * [Publishing schema.org JSON-LD](#schemaorg-jsonld)
   * [Describing a Repository](#repository)
     * [Repository - Fields](#repository-fields)
-    * [Repository - Provider](#repository-provider)
-      * [Repository - Provider - Identifier](#repository-provider-identifier)
+    * [Repository - Identifier](#repository-identifier)
     * [Repository - Services](#repository-services)
     * [Repository - Offer Catalog](#repository-offercatalog)
   * [Dataset](#dataset-diagram)
@@ -92,13 +91,13 @@ Schema.org's preferred format for markup is JSON-LD. THere are a number of tools
 * Web UI for constructing schema.org: [https://schema.pythonanywhere.com/](https://schema.pythonanywhere.com/)
   * Jumpstart into specific Types:
     * [Service](https://schema.pythonanywhere.com/Service)
-      * [Organization](https://schema.pythonanywhere.com/Organization)
-        * [ContactPoint](https://schema.pythonanywhere.com/ContactPoint)
-        * [PropertyValue](https://schema.pythonanywhere.com/PropertyValue) aka Identifier
-      * [DigitalDocument](https://schema.pythonanywhere.com/DigitalDocument)
-      * [OfferCatalog](https://schema.pythonanywhere.com/OfferCatalog)
-      * [ServiceChannel](https://schema.pythonanywhere.com/ServiceChannel)
-        * [Service](https://schema.pythonanywhere.com/Service)
+    * [Organization](https://schema.pythonanywhere.com/Organization)
+      * [ContactPoint](https://schema.pythonanywhere.com/ContactPoint)
+      * [PropertyValue](https://schema.pythonanywhere.com/PropertyValue) aka Identifier
+    * [DigitalDocument](https://schema.pythonanywhere.com/DigitalDocument)
+    * [OfferCatalog](https://schema.pythonanywhere.com/OfferCatalog)
+    * [ServiceChannel](https://schema.pythonanywhere.com/ServiceChannel)
+      * [Service](https://schema.pythonanywhere.com/Service)
     * [Dataset](https://schema.pythonanywhere.com/Dataset)
       * [DataDownload](https://schema.pythonanywhere.com/DataDownload)
       * [DataCatalog](https://schema.pythonanywhere.com/DataCatalog)
@@ -119,7 +118,7 @@ Schema.org's preferred format for markup is JSON-LD. THere are a number of tools
 ## Describing a Repository
 
 [![Research Repository Service Vocabulary](html/voc/static/schema/diagrams/repository.png "Research Repository Service")](#)
-This vocabulary has split apart the *function* of the repository from the organization(s) that operate/provide those functions. In schema.org, this *function* is best described as a [schema:Service](https://schema.org/Service). This service is [provided](https://schema.org/provider) by one or many [Organizations](https://schema.org/Organization). At first, this may seem strange, but if you think about the homepage of many repositories they describe the ways, or service channels, a user can interact with at that repository - finding data, submitting data, etc. Often, these homepages link to an 'About' page that describes the team and organizations providing the service of the repository. We recognize the value of this distiction between the service a repository provides to a community and the organization(s) that provide that service. Becuase the Service class in schema.org is very broad, to uniquely identify repositories curating research products, this vocabulary defines an extension to [schema:Service](https://schema.org/Service) as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
+In schema.org, we model a repository as both an [schema:Organization](https://schema.org/Organization) and a [schema:Service](https://schema.org/Service). This double-typing gives us the most flexibility in describing the characteristics of the organization providing the service and the services offered by the organization. Becuase the Service class in schema.org is very broad, to uniquely identify repositories curating research products, this vocabulary defines an extension to [schema:Service](https://schema.org/Service) as [gdx:ResearchRepositoryService](https://geodex.org/voc/ResearchRepositoryService).
 
 <pre>
 {
@@ -127,20 +126,21 @@ This vocabulary has split apart the *function* of the repository from the organi
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
-  <strong>"@type": "Service",
+  <strong>"@type": ["Service", "Organization"],
   "additionalType": "gdx:ResearchRepositoryService"</strong>,
-  "name": "Sample Data Repository Service"
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO"
   </strong>
 }
 </pre>
 
-
-
-This service will descrine to 3 main items - 1) the [Organization](#repository-provider) providing the service, 2) the services available for interacting with the repository (searching the repository and submitting resources, etc), and 3) the catalog of resources curated by the repository. But, it also has other fields that you can to describe a repository
+The other fields you can use to describe hte Organziation and the Service are: 
 
 <a id="repository-fields"></a>
-[![Research Repository Service - Identifier](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
+[![Research Repository Service - Fields](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
 
+* [schema:legalName](https://schema.org/legalName) should be the official name of the  repository, 
+* [schema:name](https://schema.org/name) can be an acronym or the name typcially used for the repository, 
 * [schema:url](https://schema.org/url) should be the url of your repository's homepage, 
 * [schema:description](https://schema.org/description) should be text describing your repository, 
 * [schema:category](https://schema.org/category)  can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. 
@@ -151,9 +151,10 @@ This service will descrine to 3 main items - 1) the [Organization](#repository-p
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
-  "@type": "Service",
+  "@type": ["Service", "Organization"],
   "additionalType": "gdx:ResearchRepositoryService",
-  "name": "Sample Data Repository Service",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
   <strong>"url": "https://www.sample-data-repository.org",
   "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "category": [
@@ -166,19 +167,18 @@ This service will descrine to 3 main items - 1) the [Organization](#repository-p
 
 (See [advanced publishing techniques](#advanced-publishing) for how to [describe categories/disciplines in more detail](#advanced-publishing-category) than just simple text.)
 
-<a id="repository-provider"></a>
-### Describing a Repository's Provider(s)
-
-The [schema:provider](https://schema.org/provider) field of schema:Service can then be used to describe the [schema:Organization](https://schema.org/Organization).
+If you are using the "@id" attribute for your Repository, you can specify the [schema:provider](https://schema.org/provider)  of the [schema:Service](https://schema.org/Service) in this way:
 <pre>
 {
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
-  "@type": "Service",
+  "@type": ["Service", "Organization"],
+  <strong>"@id": "https://www.sample-data-repository.org",</strong>
   "additionalType": "gdx:ResearchRepositoryService",
-  "name": "Sample Data Repository Service",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
   "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "category": [
@@ -186,14 +186,45 @@ The [schema:provider](https://schema.org/provider) field of schema:Service can t
     "Chemical Oceanography"
   ],
   <strong>"provider": {
-    "@type": "Organization",
-    "legalName": "Sample Data Repository Office",
-    "name": "SDRO"
+    "@id": "https://www.sample-data-repository.org"
   }</strong>
 }
 </pre>
 
-[![Research Repository Service - Provider](html/voc/static/schema/diagrams/repository-provider.png "Research Repository Service - Provider")](#)
+However, if your repository has a situation where multiple organizations act as the provider or you want to recognize a different organization as the provider of the repository's service, [schema:provider](https://schema.org/provider) can be used in this way:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
+  <strong>"provider": [
+    {
+      "@type": "Organization",
+      "name": "SDRO Technical Office",
+      "description": "We provide all the infrastructure for the SDRO"
+      ...
+    },
+    {
+      "@type": "Organization",
+      "name": "SDRO Science Support Office",
+      "description": "We provide all the science support functionality for the SDRO"
+      ...
+    }
+  ]</strong>
+}
+</pre>
 
 Adding additional fields of [schema:Organization](https://schema.org/Organization):
 
@@ -203,9 +234,10 @@ Adding additional fields of [schema:Organization](https://schema.org/Organizatio
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
-  "@type": "Service",
+  "@type": ["Service", "Organization"],
   "additionalType": "gdx:ResearchRepositoryService",
-  "name": "Sample Data Repository Service",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
   "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "category": [
@@ -213,33 +245,28 @@ Adding additional fields of [schema:Organization](https://schema.org/Organizatio
     "Chemical Oceanography"
   ],
   "provider": {
-    "@type": "Organization",
-    "legalName": "Sample Data Repository Office",
-    "name": "SDRO",
-    <strong>"url": "https://www.sample-data-repository.org/"
-    "description": "The Sample Data Repository Office provides access to data from an imaginary domain accessible from this website.",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.sample-data-repository.org/images/logo.jpg"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "name": "Support",
-      "email": "info@bco-dmo.org",
-      "url": "https://www.sample-data-repository.org/about-us",
-      "contactType": "customer support"
-    },
-    "foundingDate": "2006-09-01",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Main St.",
-      "addressLocality": "Anytown",
-      "addressRegion": "ST",
-      "postalCode": "12345",
-      "addressCountry": "USA"
-    }
-    </strong>
+    "@id": "https://www.sample-data-repository.org"
   }
+  <strong>"logo": {
+    "@type": "ImageObject",
+    "url": "https://www.sample-data-repository.org/images/logo.jpg"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "name": "Support",
+    "email": "info@bco-dmo.org",
+    "url": "https://www.sample-data-repository.org/about-us",
+    "contactType": "customer support"
+  },
+  "foundingDate": "2006-09-01",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main St.",
+    "addressLocality": "Anytown",
+    "addressRegion": "ST",
+    "postalCode": "12345",
+    "addressCountry": "USA"
+  }</strong>
 }
 </pre>
 
@@ -251,9 +278,10 @@ If this Organization has a parent entity such as a college, university or resear
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
-  "@type": "Service",
+  "@type": ["Service", "Organization"],
   "additionalType": "gdx:ResearchRepositoryService",
-  "name": "Sample Data Repository Service",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
   "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "category": [
@@ -261,32 +289,29 @@ If this Organization has a parent entity such as a college, university or resear
     "Chemical Oceanography"
   ],
   "provider": {
-    "@type": "Organization",
-    "legalName": "Sample Data Repository Office",
-    "name": "SDRO",
-    "url": "https://www.sample-data-repository.org/"
-    ...
-    <strong>"parentOrganization": {
-      "@type": "Organization",
-      "@id": "http://www.someinstitute.edu",
-      "legalName": "Some Institute",
-      "name": "SI",
-      "url": "http://www.someinstitute.edu",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "234 Main St.",
-        "addressLocality": "Anytown",
-        "addressRegion": "ST",
-        "postalCode": "12345",
-        "addressCountry": "USA"
-      }
-    }</strong>
+    "@id": "https://www.sample-data-repository.org"
+  },
+   <strong>"parentOrganization": {
+     "@type": "Organization",
+     "@id": "http://www.someinstitute.edu",
+     "legalName": "Some Institute",
+     "name": "SI",
+     "url": "http://www.someinstitute.edu",
+     "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "234 Main St.",
+       "addressLocality": "Anytown",
+       "addressRegion": "ST",
+       "postalCode": "12345",
+       "addressCountry": "USA"
+     }
+   }</strong>
   }
 }
 </pre>
 
-<a id="repository-provider-identifier"></a>
-### Describing a Repository's Provider Identifier
+<a id="repository-identifier"></a>
+### Describing a Repository's Identifier
 
 #repository-provider-identifier
 Some organizations may have a persistent identifier (DOI) assigned to their organization from authorities like the Registry of Research Data Repositories (re3data.org). The way to describe these organizational identifiers is to use the [schema:identifier](https://schema.org/identifier) property in this way:
@@ -298,28 +323,25 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
     "gdx": "https://geodex.org/voc/",
     <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
   },
-  "@type": "Service",
+  "@type": ["Service", "Organization"],
   "additionalType": "gdx:ResearchRepositoryService",
-  "name": "Sample Data Repository Service",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   "category": [
     "Biological Oceanography",
     "Chemical Oceanography"
   ],
   "provider": {
-    "@type": "Organization",
-    "legalName": "Sample Data Repository Office",
-    "name": "SDRO",
-    "url": "https://www.sample-data-repository.org/"
-    ...
-    <strong>"identifier": {
-      "@type": "PropertyValue",
-      "propertyID": "datacite:doi",
-      "value": "10.17616/R37P4C",
-      "url": "http://doi.org/10.17616/R37P4C"
-    }</strong>
-  }
+    "@id": "https://www.sample-data-repository.org"
+  },
+  <strong>"identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "datacite:doi",
+    "value": "10.17616/R37P4C",
+    "url": "http://doi.org/10.17616/R37P4C"
+  }</strong>
 }
 </pre>
 
@@ -443,18 +465,15 @@ The SWEET ontology defines a number of science disciplines and a repository coul
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
-    "sweet-rel": "http://sweetontology.net/rela/",
-    "sweet-kd": "http://sweetontology.net/humanKnowledgeDomain/"
+    <strong>"sweet-rel": "http://sweetontology.net/rela/",
+    "sweet-kd": "http://sweetontology.net/humanKnowledgeDomain/"</strong>
   },
-  "@type": "Service",
+  "@type": ["Service", "Organization"],
   "additionalType": "gdx:ResearchRepositoryService",
-  "provider": {
-      "@type": "Organization",
-      "legalName": "Sample Data Repository Office"
-  },
-  "name": "Sample Data Repository Service",
-  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website....",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
   <strong>"sweet-rel:hasRealm": [
     { "@id": "sweet-kd:Biogeochemistry" },
     { "@id": "sweet-kd:Oceanography" }
