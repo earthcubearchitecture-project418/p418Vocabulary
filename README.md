@@ -540,7 +540,8 @@ If your repository does have datasets or other resources with schema.org JSON-LD
 <a id="repository-offercatalog"></a>
 ### Describing a Repository's Offer Catalog
 
-If your repository has a number of collections
+If your repository has some number of data collections, and you would like to represent those collections the [schema:DataCatalog](https://schema.org/DataCatalog) allows us to describe these collections and the [schema:OfferCatalog](https://schema.org/OfferCatalog).links those to the repository service.
+
 [![Research Repository Service - Offer Catalog](html/voc/static/schema/diagrams/repository-offerCatalog.png "Research Repository Service - Offer Catalog")](#)
 
 <pre>
