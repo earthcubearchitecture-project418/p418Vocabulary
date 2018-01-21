@@ -17,7 +17,7 @@ To-do:
     * [Repository - Policies](#repository-policies)
     * [Repository - Services](#repository-services)
     * [Repository - Offer Catalog](#repository-offercatalog)
-  * [Dataset](#dataset-diagram)
+  * [Describing a Dataset](#dataset-diagram)
     * [Variables](#dataset-variables)
     * [Spatial](#dataset-spatial)
     * [Temporal](#dataset-temporal)
@@ -462,7 +462,6 @@ For repositories might offer services for accessing data as opposed to directly 
            "target": {
              "@type": "EntryPoint",
              "additionalType": "gdx:SitemapXML",
-             "url": "https://www.sample-data-repository.org/sitemap.xml",
              "urlTemplate": "https://www.sample-data-repository.org/sitemap.xml?page={page}"
            },
            "object": {
@@ -527,7 +526,6 @@ If your repository does have datasets or other resources with schema.org JSON-LD
            "target": {
              "@type": "EntryPoint",
              "additionalType": "gdx:SitemapXML",
-             "url": "https://www.sample-data-repository.org/sitemap.xml",
              "urlTemplate": "https://www.sample-data-repository.org/sitemap.xml?page={page}"
            },
            "object": {
@@ -594,8 +592,26 @@ If your repository has some number of data collections, and you would like to re
 Back to [top](#top)
 
 <a id="dataset-diagram"></a>
-### Dataset
+### Describing a Dataset
+
+The [schema:Dataset](https://schema.org/Dataset) is a very expressive type within schema.org. 
+
 ![Dataset](html/voc/static/schema/diagrams/dataset.png "Dataset")
+
+However, Google has drafted a [guide to help publishers](https://developers.google.com/search/docs/data-types/dataset). THe guide describes the only required fields as - name and description.
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  <strong>"name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. "</strong>
+}
+</pre>
+
 
 <a id="dataset-variables"></a>
 #### Variables
