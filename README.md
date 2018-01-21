@@ -645,10 +645,10 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
 }
 </pre>
 
+<a id="dataset-identifiers"></a>
 Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
 
-<a id="dataset-identifiers"></a>
-#### Identifier
+#### Describing a Dataset Identifier
 ![Identifiers](html/voc/static/schema/diagrams/dataset-identifier.png "Dataset - Identifiers")
 
 In it's most basic form, the identifier as a [schema:PropertyValue](https://schema.org/PropertyValue) can be published as:
@@ -702,10 +702,10 @@ The Persistent Identifier, such as a DOI, ARK, URL, etc as a [schema:PropertyVal
 }
 </pre>
 
+<a id="dataset-variables"></a>
 Adding the [schema:variableMeasured](https://schema.org/variableMeasured) field can be done in two ways - a text description of each variable or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the variable in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
 
-<a id="dataset-variables"></a>
-#### Variables
+#### Describing a Dataset's Variables
 ![Variables](html/voc/static/schema/diagrams/dataset-variables.png "Dataset - Variables")
 
 In it's most basic form, the variable as a [schema:PropertyValue](https://schema.org/PropertyValue) can be published as:
@@ -795,53 +795,49 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
 }
 </pre>
 
-<a id="dataset-spatial"></a>
-#### Spatial
-![Spatial](html/voc/static/schema/diagrams/dataset-spatial.png "Dataset - Spatial")
+<a id="dataset-catalog"></a>
+#### Describing a Dataset's Catalog
+![DataCatalog](html/voc/static/schema/diagrams/dataset-catalog.png "Dataset - Catalog")
 
+<a id="dataset-distros"></a>
+#### Describing a Dataset's Distributions
+![Distributions](html/voc/static/schema/diagrams/dataset-distribution.png "Dataset - Distributions")
 
 <a id="dataset-temporal"></a>
-#### Temporal
+#### Describing a Dataset's Temporal Coverage
 ![Temporal](html/voc/static/schema/diagrams/dataset-temporal.png "Dataset - Temporal")
 
+<a id="dataset-spatial"></a>
+#### Describing a Dataset's Spatial Coverage
+![Spatial](html/voc/static/schema/diagrams/dataset-spatial.png "Dataset - Spatial")
+
 <a id="dataset-creator_contributor"></a>
-#### Creators/Contributors
+#### Describing a Dataset's Creators/Contributors
 ![Variables](html/voc/static/schema/diagrams/dataset-creator_contributor.png "Dataset - Creator/Contributor")
 
 
 <a id="dataset-publisher_provider"></a>
-#### Publisher/Provider
+#### Describing a Dataset's Publisher/Provider
 ![Publisher/Provider](html/voc/static/schema/diagrams/dataset-publisher_provider.png "Dataset - Publisher/Provider")
 
-
-<a id="dataset-distros"></a>
-#### Distributions
-![Distributions](html/voc/static/schema/diagrams/dataset-distribution.png "Dataset - Distributions")
-
-
 <a id="dataset-protocols"></a>
-#### Protocols
+#### Describing a Dataset's Protocols
 ![Protocols](html/voc/static/schema/diagrams/dataset-protocols.png "Dataset - Protocols")
 
 
 <a id="dataset-funding"></a>
-#### Funding
+#### Describing a Dataset's Funding
 ![Funding](html/voc/static/schema/diagrams/dataset-funding.png "Dataset - Funding")
 
 
 <a id="dataset-deployment"></a>
-#### Deployment
+#### Describing a Dataset's Deployment
 ![Deployment](html/voc/static/schema/diagrams/dataset-deployment.png "Dataset - Deployment")
 
 
 <a id="dataset-project"></a>
-#### Project
+#### Describing a Dataset's Project
 ![Project](html/voc/static/schema/diagrams/dataset-project.png "Dataset - Project")
-
-
-<a id="dataset-catalog"></a>
-#### DataCatalog
-![DataCatalog](html/voc/static/schema/diagrams/dataset-catalog.png "Dataset - Catalog")
 
 Back to [top](#top)
 
