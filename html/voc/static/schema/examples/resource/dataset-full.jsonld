@@ -14,6 +14,8 @@
     "geolink:Dataset",
     "vivo:Dataset"
   ],
+  "version": "12345567",
+  "license":"http://creativecommons.org/licenses/by/4.0/",
   "alternateName": "Data Set 3A: Utilization of dissolved organic carbon by a natural bacterial community as a function of pCO2",
   "citation": "Passow, U., Brzezinski, M., Carlson, C. (2016) Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016. Biological and Chemical Oceanography Data Management Office (BCO-DMO). Dataset version 2013-11-21 [if applicable, indicate subset used]. doi:10.1575/1912/bco-dmo.665253 [access date]",
   "creator": [
