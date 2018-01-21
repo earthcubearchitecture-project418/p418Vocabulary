@@ -18,18 +18,19 @@ To-do:
     * [Repository - Services](#repository-services)
     * [Repository - Offer Catalog](#repository-offercatalog)
   * [Describing a Dataset](#dataset-diagram)
-    * [Variables](#dataset-variables)
-    * [Spatial](#dataset-spatial)
-    * [Temporal](#dataset-temporal)
-    * [Identifiers](#dataset-identifiers)
-    * [Creators/Contributors](#dataset-creator_contributor)
-    * [Publisher/Provider](#dataset-publisher_provider)
-    * [Distributions](#dataset-distros)
-    * [Protocols](#dataset-protocols)
-    * [Funding](#dataset-funding)
-    * [Deployment]($dataset-deployment)
-    * [Project](#dataset-project)
-    * [DataCatalog](#dataset-catalog)
+    * [Dataset - Identifier](#dataset-identifiers)
+    * [Dataset - Variables](#dataset-variables)
+    * [Dataset - DataCatalog](#dataset-catalog)
+    * [Dataset - Distributions](#dataset-distros)
+    * [Dataset - Temporal](#dataset-temporal)
+    * [Dataset - Spatial](#dataset-spatial)
+    * [Dataset - Creators/Contributors](#dataset-creator_contributor)
+    * [Dataset - Publisher/Provider](#dataset-publisher_provider)
+    * [Dataset - Protocols](#dataset-protocols)
+    * [Dataset - Funding](#dataset-funding)
+    * [Dataset - Deployment]($dataset-deployment)
+    * [Dataset - Project](#dataset-project)
+    
 * [Examples](#examples)
 * [Issues](#issues)
 
@@ -64,7 +65,7 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 | geolink:      | [<http://schema.geolink.org/1.0/base/main#>](http://schema.geolink.org/1.0/base/main#) |
 | vivo:         | [<http://vivoweb.org/ontology/core#>](http://vivoweb.org/ontology/core#) |
 | geo-upper:    | [<http://www.geoscienceontology.org/geo-upper#>](http://www.geoscienceontology.org/geo-upper#) |
-| datacite      | [<http://purl.org/spar/datacite/>](http://purl.org/spar/datacite/) |
+| datacite      | [<http://purl.org/spar/datacite/>](http://purl.org/spar/datacite) |
 | dbpedia:      | [<http://dbpedia.org/resource/>](http://dbpedia.org/resource/) |
 
 [schema:](https://schema.org/) the defacto vocabulary for publishing structured data in web pages for search engine harvesting
@@ -77,7 +78,7 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 
 [geo-upper:](http://www.geoscienceontology.org/geo-upper#) a segment of the Geoscience Standard Names Ontology, an EarthCube product
 
-[datacite:](http://purl.org/spar/datacite/) describes persistent identifier schemes like DOI, ARK, URI for helping to represent PIDs. 
+[datacite:](http://purl.org/spar/datacite) describes persistent identifier schemes like DOI, ARK, URI for helping to represent PIDs. 
 
 [dbpedia:](http://dbpedia.org/resource/) Structured data for Wikipedia resources
 
@@ -647,7 +648,7 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
 Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
 
 <a id="dataset-identifiers"></a>
-#### Identifiers
+#### Identifier
 ![Identifiers](html/voc/static/schema/diagrams/dataset-identifier.png "Dataset - Identifiers")
 
 In it's most basic form, the identifier as a [schema:PropertyValue](https://schema.org/PropertyValue) can be published as:
@@ -657,8 +658,7 @@ In it's most basic form, the identifier as a [schema:PropertyValue](https://sche
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
-    "vivo": "http://vivoweb.org/ontology/core#",
-    <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#"</strong>
+    "vivo": "http://vivoweb.org/ontology/core#"
   },
   "@type": "Dataset",
   "additionalType": ["geolink:Dataset", "vivo:Dataset"],
@@ -673,7 +673,7 @@ In it's most basic form, the identifier as a [schema:PropertyValue](https://sche
 }
 </pre>
 
-The Persistent Identifier, such as a DOI, ARK, URL, etc as a [schema:PropertyValue](https://schema.org/PropertyValue) can be published using the DataCite Ontology to define the identifier as:
+The Persistent Identifier, such as a DOI, ARK, URL, etc as a [schema:PropertyValue](https://schema.org/PropertyValue) can be published using the [DataCite Ontology Resource Identifier Scheme](https://sparontologies.github.io/datacite/current/datacite.html#d4e638) to define the identifier as:
 
 <pre>
 {
@@ -681,7 +681,7 @@ The Persistent Identifier, such as a DOI, ARK, URL, etc as a [schema:PropertyVal
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
     "vivo": "http://vivoweb.org/ontology/core#",
-    <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#"</strong>
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
   },
   "@type": "Dataset",
   "additionalType": ["geolink:Dataset", "vivo:Dataset"],
