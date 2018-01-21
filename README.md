@@ -706,7 +706,7 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
       "unitText": "decimal degrees",
       "valueReference": {
         "@type": "PropertyValue",
-        "additionalType": "geo-upper:Variable",
+        "additionalType": ["geo-upper:Variable", "geolink:MeasurementType"],
         "value": "latitude"
         "url": ["http://www.geoscienceontology.org/geo-lower/quantity#latitude", "https://www.sample-data-repository.org/parameter/730"],
         "description": "Latitude, in decimal degrees, North is positive, negative denotes South; Reported in some datasets as degrees, minutes",
