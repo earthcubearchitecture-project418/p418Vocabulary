@@ -617,9 +617,11 @@ However, Google has drafted a [guide to help publishers](https://developers.goog
 The [guide](https://developers.google.com/search/docs/data-types/dataset) suggests the following recommended fields:
 
 * [url](https://schema.org/url) - Location of a page describing the dataset.
-* [sameAs](https://schema.org/sameAs) - Other URLs that can be used to access the dataset page. This is helpful if you know of the same dataset at an aggregator's site, etc.
+* [sameAs](https://schema.org/sameAs) - Other URLs that can be used to access the dataset page. A link to a page that provides more information about the same dataset, usually in a different repository.
 * [version](https://schema.org/version) - The version number or identifier for this dataset (text or numeric).
 * [keywords](https://schema.org/keywords) - Keywords summarizing the dataset.
+* [license](https://schema.org/license) - A license under which the dataset is distributed (text or URL).
+* [identifier](https://schema.org/identifier) - An identifier for the dataset, such as a DOI. (text,URL, or PropertyValue).
 * [variableMeasured](https://schema.org/variableMeasured) - What does the dataset measure? (e.g., temperature, pressure)
 
 <pre>
@@ -627,7 +629,8 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
   "@context": {
     "@vocab": "http://schema.org/",
     <strong>"geolink": "http://schema.geolink.org/1.0/base/main#",
-    "vivo": "http://vivoweb.org/ontology/core#",</strong>
+    "vivo": "http://vivoweb.org/ontology/core#",
+    "datacite": "http://purl.org/spar/datacite/"</strong>
   },
   "@type": "Dataset",
   "additionalType": ["geolink:Dataset", "vivo:Dataset"],
@@ -637,7 +640,65 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
   "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
   "version": "2013-11-21",
   "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
-  </strong>
+  "license": "http://creativecommons.org/licenses/by/4.0/"</strong>
+}
+</pre>
+
+Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
+
+<a id="dataset-identifiers"></a>
+#### Identifiers
+![Identifiers](html/voc/static/schema/diagrams/dataset-identifier.png "Dataset - Identifiers")
+
+In it's most basic form, the identifier as a [schema:PropertyValue](https://schema.org/PropertyValue) can be published as:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#"</strong>
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  "url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  <strong>"identifier": "urn:sdro:dataset:472032"</strong>
+}
+</pre>
+
+The Persistent Identifier, such as a DOI, ARK, URL, etc as a [schema:PropertyValue](https://schema.org/PropertyValue) can be published using the DataCite Ontology to define the identifier as:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#"</strong>
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  "url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  <strong>"identifier": {
+    "@type": "PropertyValue",
+    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
+    "propertyID": "datacite:doi",
+    "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
+    "value": "10.1575/1912/bco-dmo.665253"
+  }</strong>
 }
 </pre>
 
@@ -665,6 +726,14 @@ In it's most basic form, the variable as a [schema:PropertyValue](https://schema
   "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
   "version": "2013-11-21",
   "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "identifier": {
+    "@type": "PropertyValue",
+    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
+    "propertyID": "datacite:doi",
+    "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
+    "value": "10.1575/1912/bco-dmo.665253"
+  },
   <strong>"variableMeasured": [
     {
       "@type": "PropertyValue",
@@ -696,6 +765,14 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
   "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
   "version": "2013-11-21",
   "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "identifier": {
+    "@type": "PropertyValue",
+    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
+    "propertyID": "datacite:doi",
+    "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
+    "value": "10.1575/1912/bco-dmo.665253"
+  },
   <strong>"variableMeasured": [
     {
       "@type": "PropertyValue",
@@ -726,12 +803,6 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
 <a id="dataset-temporal"></a>
 #### Temporal
 ![Temporal](html/voc/static/schema/diagrams/dataset-temporal.png "Dataset - Temporal")
-
-
-<a id="dataset-identifiers"></a>
-#### Identifiers
-![Identifiers](html/voc/static/schema/diagrams/dataset-identifier.png "Dataset - Identifiers")
-
 
 <a id="dataset-creator_contributor"></a>
 #### Creators/Contributors
