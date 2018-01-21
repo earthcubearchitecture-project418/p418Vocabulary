@@ -599,6 +599,8 @@ The [schema:Dataset](https://schema.org/Dataset) is a very expressive type withi
 ![Dataset](html/voc/static/schema/diagrams/dataset.png "Dataset")
 
 However, Google has drafted a [guide to help publishers](https://developers.google.com/search/docs/data-types/dataset). THe guide describes the only required fields as - name and description.
+* [name](https://schema.org/name) - A descriptive name of a dataset (e.g., “Snow depth in Northern Hemisphere”)
+* [description](https://schema.org/description) - A short summary describing a dataset.
 
 <pre>
 {
@@ -612,11 +614,109 @@ However, Google has drafted a [guide to help publishers](https://developers.goog
 }
 </pre>
 
+The [guide](https://developers.google.com/search/docs/data-types/dataset) suggests the following recommended fields:
+
+* [url](https://schema.org/url) - Location of a page describing the dataset.
+* [sameAs](https://schema.org/sameAs) - Other URLs that can be used to access the dataset page. This is helpful if you know of the same dataset at an aggregator's site, etc.
+* [version](https://schema.org/version) - The version number or identifier for this dataset (text or numeric).
+* [keywords](https://schema.org/keywords) - Keywords summarizing the dataset.
+* [variableMeasured](https://schema.org/variableMeasured) - What does the dataset measure? (e.g., temperature, pressure)
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",</strong>
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  <strong>"url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  </strong>
+}
+</pre>
+
+Adding the [schema:variableMeasured](https://schema.org/variableMeasured) field can be done in two ways - a text description of each variable or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the variable in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
 
 <a id="dataset-variables"></a>
 #### Variables
 ![Variables](html/voc/static/schema/diagrams/dataset-variables.png "Dataset - Variables")
 
+In it's most basic form, the variable as a [schema:PropertyValue](https://schema.org/PropertyValue) can be published as:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#"</strong>
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  "url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  <strong>"variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "additionalType": "earthcollab:Parameter",
+      "description": "Bottle identifier",
+      "value": "bottle_number"
+    },
+    ...
+  ]</strong>
+}
+</pre>
+
+A fully-fleshed out example that uses a vocabulary to describe the variable can be published as:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"</strong>
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  "url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  <strong>"variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "additionalType": "earthcollab:Parameter",
+      "value": "latitude",
+      "url": "https://www.sample-data-repository.org/dataset-parameter/665787",
+      "description": "Latitude where water samples were collected; north is positive.",
+      "unitText": "decimal degrees",
+      "valueReference": {
+        "@type": "PropertyValue",
+        "additionalType": "geo-upper:Variable",
+        "value": "latitude"
+        "url": ["http://www.geoscienceontology.org/geo-lower/quantity#latitude", "https://www.sample-data-repository.org/parameter/730"],
+        "description": "Latitude, in decimal degrees, North is positive, negative denotes South; Reported in some datasets as degrees, minutes",
+        "unitText": "decimal degrees",
+      }
+    },
+    ...
+  ]</strong>
+}
+</pre>
 
 <a id="dataset-spatial"></a>
 #### Spatial
