@@ -24,6 +24,8 @@ To-do:
     * [Dataset - Distributions](#dataset-distros)
     * [Dataset - Temporal](#dataset-temporal)
     * [Dataset - Spatial](#dataset-spatial)
+      * [GeoCoordinates](#dataset-spatial-point)
+      * [GeoShape](#dataset-spatial-shape)
     * [Dataset - Creators/Contributors](#dataset-creator_contributor)
     * [Dataset - Publisher/Provider](#dataset-publisher_provider)
     * [Dataset - Protocols](#dataset-protocols)
@@ -33,6 +35,7 @@ To-do:
     
 * [Examples](#examples)
 * [Issues](#issues)
+* [Advanced Publishing Techniques](#advanced-publishing-techniques)
 
 <a id="about"></a>
 ## About
@@ -855,7 +858,7 @@ Back to [top](#top)
 <a id="dataset-temporal"></a>
 #### Describing a Dataset's Temporal Coverage
 
-Temporal coverage is a difficult concept to cover across all the possible scenarios. Schema.org uses [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601) to describe time intervals and time points, but doesn't provide capabilities for geologic time scales or dynamically generated data up to present time. We ask for your [feedback on any temporal coverages you may have that don't currently fit into schema.org](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues).
+Temporal coverage is a difficult concept to cover across all the possible scenarios. Schema.org uses [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601) to describe time intervals and time points, but doesn't provide capabilities for geologic time scales or dynamically generated data up to present time. We ask for your [feedback on any temporal coverages you may have that don't currently fit into schema.org](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues). You can follow [similar issues at the schema.org Github issue] queue(https://github.com/schemaorg/schemaorg/issues/242)
 
 ![Temporal](html/voc/static/schema/diagrams/dataset-temporal.png "Dataset - Temporal")
 
@@ -893,10 +896,13 @@ Or a date range:
 }
 </pre>
 
+
 Back to [top](#top)
 
 <a id="dataset-spatial"></a>
 #### Describing a Dataset's Spatial Coverage
+
+![Spatial](html/voc/static/schema/diagrams/dataset-spatial.png "Dataset - Spatial")
 
 The types of spatial coverages in schema.org are 
 
@@ -909,6 +915,8 @@ The following shapes use the [schema:GeoShape](https://schema.org/GeoShape) type
 * [box](https://schema.org/polboxygon) - two points separated by a space character where the first point is the lower corner and the second point is the upper corner.
 * [circle](https://schema.org/circle) - a point followed by a radius in meters.
 
+
+<a id="dataset-spatial-point"></a>
 A point, or coordinate, would defined in this way:
 
 <pre>
@@ -935,6 +943,7 @@ A point, or coordinate, would defined in this way:
 }
 </pre>
 
+<a id="dataset-spatial-shape"></a>
 All other shapes, are defined using the [schema:GeoShape](https://schema.org/GeoShape):
 
 <pre>
@@ -963,8 +972,23 @@ A 2-meter radius circle at lat/lon 39.3280/120.1633:
   <strong>"circle": "39.3280,120.1633 2"</strong>
 </pre>
 
+For Project418, we feel the defined spatial coverages are inadequate for the needs of our community, but we also recognize that schema.org continues to hear the needs of its schema.org publishers on these [issues](https://github.com/schemaorg/schemaorg/issues/1548).
 
-![Spatial](html/voc/static/schema/diagrams/dataset-spatial.png "Dataset - Spatial")
+To alleviate some of the pain of converting spatial information into these defined shapes, Project418 offers support for GeoJSON by using the [schema:subjectOf](https://schema.org/subjectOf) property of the [schema:Place](https://schema.org/Place) type. The [schema:fileFormat](https://schema.org/fileFormat) property should have the value of the GeoJSON mime type `application\/vnd.geo+json` and the [schema:text](https://schema.org/text) property should be the encoded value of the GeoJSON itself:
+
+<pre>
+"spatialCoverage": {
+    "@type": "Place",
+    <strong>"subjectOf": {
+      "@type": "CreativeWork",
+      "fileFormat": "application\/vnd.geo+json",
+      "text":"{\u0022type\u0022:\u0022Feature\u0022,\u0022geometry\u0022: {\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-64.6353,34.407],[-149.8727,34.407],[-149.8727,-17.45],[-64.6353,-17.45],[-64.6353,34.407]]],\u0022properties\u0022:[]}}"
+    }</strong>
+  }
+</pre>
+
+We also recognize that there is no defined property for specifying a Croodinate Reference System, but we see from the [schema.org issue queue](https://github.com/schemaorg/schemaorg/issues) that this has been mentioned.
+
 
 Back to [top](#top)
 
