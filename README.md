@@ -30,8 +30,6 @@ To-do:
     * [Dataset - Publisher/Provider](#dataset-publisher_provider)
     * [Dataset - Protocols](#dataset-protocols)
     * [Dataset - Funding](#dataset-funding)
-    * [Dataset - Deployment]($dataset-deployment)
-    * [Dataset - Project](#dataset-project)
     
 * [Examples](#examples)
 * [Issues](#issues)
@@ -1046,17 +1044,6 @@ Back to [top](#top)
 <a id="dataset-funding"></a>
 #### Describing a Dataset's Funding
 ![Funding](html/voc/static/schema/diagrams/dataset-funding.png "Dataset - Funding")
-
-Back to [top](#top)
-
-<a id="dataset-deployment"></a>
-#### Describing a Dataset's Deployment
-![Deployment](html/voc/static/schema/diagrams/dataset-deployment.png "Dataset - Deployment")
-
-
-<a id="dataset-project"></a>
-#### Describing a Dataset's Project
-![Project](html/voc/static/schema/diagrams/dataset-project.png "Dataset - Project")
 
 Back to [top](#top)
 
