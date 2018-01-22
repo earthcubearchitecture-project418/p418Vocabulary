@@ -121,6 +121,8 @@ Schema.org's preferred format for markup is JSON-LD. THere are a number of tools
 * Google Testing Tool for schema.org: [https://search.google.com/structured-data/testing-tool/u/0/](https://search.google.com/structured-data/testing-tool/u/0/)
   * Error Guide: [https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/](https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/)
 
+Back to [top](#top)
+
 <a id="repository"></a>
 ## Describing a Repository
 
@@ -317,6 +319,8 @@ If this Organization has a parent entity such as a college, university or resear
 }
 </pre>
 
+Back to [top](#top)
+
 <a id="repository-identifier"></a>
 ### Describing a Repository's Identifier
 
@@ -369,6 +373,7 @@ When describing PIDs, it's important to include both of these pieces for downstr
 
 So, the best practice is to provide the scheme and value for an identifier, but you can also provide a URL representation using the [schema:url](https://schema.org/url) property.
 
+Back to [top](#top)
 
 <a id="repository-policies"></a>
 ### Describing a Repository's Policies
@@ -409,6 +414,8 @@ If your repository has policy documents about access control, terms of use, etc.
   ]</strong>
 }
 </pre>
+
+Back to [top](#top)
 
 <a id="repository-services"></a>
 ### Describing a Repository's Services
@@ -541,6 +548,8 @@ If your repository does have datasets or other resources with schema.org JSON-LD
 }
 </pre>
 
+Back to [top](#top)
+
 <a id="repository-offercatalog"></a>
 ### Describing a Repository's Offer Catalog
 
@@ -645,6 +654,8 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
 }
 </pre>
 
+Back to [top](#top)
+
 <a id="dataset-identifiers"></a>
 Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
 
@@ -701,6 +712,8 @@ The Persistent Identifier, such as a DOI, ARK, URL, etc as a [schema:PropertyVal
   }</strong>
 }
 </pre>
+
+Back to [top](#top)
 
 <a id="dataset-variables"></a>
 Adding the [schema:variableMeasured](https://schema.org/variableMeasured) field can be done in two ways - a text description of each variable or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the variable in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
@@ -795,40 +808,84 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
 }
 </pre>
 
+Back to [top](#top)
+
 <a id="dataset-catalog"></a>
+
+For some repositories, defining a one or many data collections helps contextualize the datasets. In schema.org, you define these collections using [schema:DataCatalog](https://schema.org/DataCatalog).
+
 #### Describing a Dataset's Catalog
 ![DataCatalog](html/voc/static/schema/diagrams/dataset-catalog.png "Dataset - Catalog")
+
+The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an ["offering" of your repository[(#repository-offercatalog) and including the `@id` property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a [schema:DataCatalog](https://schema.org/DataCatalog) with the `"@id": "https://www.sample-data-repository.org/collection/biological-data"`. In the dataset JSON-LD, we reuse that `@id` to say a dataset belongs in that catalog:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  "url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  <strong>"includedInDataCatalog": { 
+    "@id": "https://www.sample-data-repository.org/collection/biological-data"
+  }</strong>
+}
+</pre>
+
+Back to [top](#top)
 
 <a id="dataset-distros"></a>
 #### Describing a Dataset's Distributions
 ![Distributions](html/voc/static/schema/diagrams/dataset-distribution.png "Dataset - Distributions")
 
+Back to [top](#top)
+
 <a id="dataset-temporal"></a>
 #### Describing a Dataset's Temporal Coverage
 ![Temporal](html/voc/static/schema/diagrams/dataset-temporal.png "Dataset - Temporal")
+
+Back to [top](#top)
 
 <a id="dataset-spatial"></a>
 #### Describing a Dataset's Spatial Coverage
 ![Spatial](html/voc/static/schema/diagrams/dataset-spatial.png "Dataset - Spatial")
 
+Back to [top](#top)
+
 <a id="dataset-creator_contributor"></a>
 #### Describing a Dataset's Creators/Contributors
 ![Variables](html/voc/static/schema/diagrams/dataset-creator_contributor.png "Dataset - Creator/Contributor")
 
+Back to [top](#top)
 
 <a id="dataset-publisher_provider"></a>
 #### Describing a Dataset's Publisher/Provider
 ![Publisher/Provider](html/voc/static/schema/diagrams/dataset-publisher_provider.png "Dataset - Publisher/Provider")
 
+Back to [top](#top)
+
 <a id="dataset-protocols"></a>
 #### Describing a Dataset's Protocols
 ![Protocols](html/voc/static/schema/diagrams/dataset-protocols.png "Dataset - Protocols")
 
+Back to [top](#top)
 
 <a id="dataset-funding"></a>
 #### Describing a Dataset's Funding
 ![Funding](html/voc/static/schema/diagrams/dataset-funding.png "Dataset - Funding")
 
+Back to [top](#top)
 
 <a id="dataset-deployment"></a>
 #### Describing a Dataset's Deployment
@@ -852,10 +909,14 @@ All examples can be found at: https://github.com/earthcubearchitecture-project41
   * See [BCO-DMO homepage](https://www.bco-dmo.org) (view source of the page to see the schema.org JSON-LD)
 * [Dataset Examples](https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/resource)
 
+Back to [top](#top)
+
 <a id="issues"></a>
 #### Issues
 
 https://stackoverflow.com/questions/38243521/schema-org-contacttype-validation-issue-the-value-provided-for-office-must-be
+
+Back to [top](#top)
 
 <a id="advanced-publishing"></a>
 ### Advanced Publishing Techniques
