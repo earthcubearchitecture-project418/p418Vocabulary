@@ -716,6 +716,39 @@ The Persistent Identifier, such as a DOI, ARK, URL, etc as a [schema:PropertyVal
 }
 </pre>
 
+[schema:Dataset](https://schema.org/Dataset) also defines a field for the [schema:citation](https://schema.org/citation) as either text or a [schema:CreativeWork](https://schema.org/CreativeWork). To provide citation text:
+
+NOTE: If you have a DOI, the citation text can be [automatically generated](https://citation.crosscite.org/docs.html#sec-4-1) for you by querying a DOI URL with the Accept Header of 'text/x-bibliography'. 
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  "url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "identifier": {
+    "@id": "https://doi.org/10.1575/1912/bco-dmo.665253",
+    "@type": "PropertyValue",
+    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
+    "propertyID": "datacite:doi",
+    "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
+    "value": "10.1575/1912/bco-dmo.665253"
+   },
+   <strong>"citation": "J.Smith 'How I created an awesome dataset’, Journal of Data Science, 1966"</strong>
+}
+</pre>
+
 Back to [top](#top)
 
 <a id="dataset-variables"></a>
@@ -987,7 +1020,7 @@ To alleviate some of the pain of converting spatial information into these defin
   }
 </pre>
 
-We also recognize that there is no defined property for specifying a Croodinate Reference System, but we see from the [schema.org issue queue](https://github.com/schemaorg/schemaorg/issues) that this has been mentioned.
+We also recognize that there is no defined property for specifying a Coordinate Reference System, but we see from the [schema.org issue queue](https://github.com/schemaorg/schemaorg/issues) that this has been mentioned.
 
 
 Back to [top](#top)
