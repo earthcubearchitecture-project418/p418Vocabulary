@@ -811,13 +811,17 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
 Back to [top](#top)
 
 <a id="dataset-catalog"></a>
+#### Describing a Dataset's Catalog
 
 For some repositories, defining a one or many data collections helps contextualize the datasets. In schema.org, you define these collections using [schema:DataCatalog](https://schema.org/DataCatalog).
 
-#### Describing a Dataset's Catalog
 ![DataCatalog](html/voc/static/schema/diagrams/dataset-catalog.png "Dataset - Catalog")
 
-The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an ["offering" of your repository[(#repository-offercatalog) and including the `@id` property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a [schema:DataCatalog](https://schema.org/DataCatalog) with the `"@id": "https://www.sample-data-repository.org/collection/biological-data"`. In the dataset JSON-LD, we reuse that `@id` to say a dataset belongs in that catalog:
+The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an ["offering" of your repository[(#repository-offercatalog) and including the `@id` property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a [schema:DataCatalog](https://schema.org/DataCatalog) with the 
+
+`"@id": "https://www.sample-data-repository.org/collection/biological-data"`. 
+
+In the dataset JSON-LD, we reuse that `@id` to say a dataset belongs in that catalog:
 
 <pre>
 {
@@ -837,6 +841,14 @@ The most optimal way to use these DataCatalogs for a repository is to define the
   "version": "2013-11-21",
   "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
   "license": "http://creativecommons.org/licenses/by/4.0/",
+  "identifier": {
+    "@type": "PropertyValue",
+    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
+    "propertyID": "datacite:doi",
+    "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
+    "value": "10.1575/1912/bco-dmo.665253"
+  },
+  ...
   <strong>"includedInDataCatalog": { 
     "@id": "https://www.sample-data-repository.org/collection/biological-data"
   }</strong>
@@ -847,13 +859,102 @@ Back to [top](#top)
 
 <a id="dataset-distros"></a>
 #### Describing a Dataset's Distributions
+
+Where the [schema:url](https://schema.org/url) property of the Dataset should point to a landing page, the way to describe how to download the data in a specific format is through the [schema:distribution](https://schema.org/distribution) property. The "distribution" property describes where to get the data and in what format by using the [schema:DataDownload](https://schema.org/DataDownload) type.
+
 ![Distributions](html/voc/static/schema/diagrams/dataset-distribution.png "Dataset - Distributions")
+
+For data available in multipe formats, there will be multiple values of the [schema:DataDownload](https://schema.org/DataDownload):
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  "url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "identifier": {
+    "@type": "PropertyValue",
+    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
+    "propertyID": "datacite:doi",
+    "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
+    "value": "10.1575/1912/bco-dmo.665253"
+  },
+  ...
+  <strong>"distribution": {
+    "@type": "DataDownload",
+    "contentUrl": "https://www.sample-data-repository.org/dataset/472032.tsv",
+    "encodingFormat": "text/tab-separated-values"
+  },</strong>
+}
+</pre>
 
 Back to [top](#top)
 
 <a id="dataset-temporal"></a>
 #### Describing a Dataset's Temporal Coverage
+
+Temporal coverage is a difficult concept to cover across all the possible scenarios. Schema.org uses [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601) to describe time intervals and time points, but doesn't provide capabilities for geologic time scales or dynamically generated data up to present time. We ask for your [feedback on any temporal coverages you may have that don't currently fit into schema.org](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues).
+
 ![Temporal](html/voc/static/schema/diagrams/dataset-temporal.png "Dataset - Temporal")
+
+To represent a single date and time:
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
+  "url": "https://www.sample-data-repository.org/dataset/472032",
+  "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
+  "version": "2013-11-21",
+  "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "identifier": {
+    "@type": "PropertyValue",
+    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
+    "propertyID": "datacite:doi",
+    "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
+    "value": "10.1575/1912/bco-dmo.665253"
+  },
+  ...
+  <strong>"temporalCoverage": "2018-01-22T14:51:12+00:00"</strong>
+}
+</pre>
+
+Or a single date:
+<pre>
+{
+  ...
+  <strong>"temporalCoverage": "2018-01-22"</strong>
+}
+</pre>
+
+Or a date range:
+<pre>
+{
+  ...
+  <strong>"temporalCoverage": "2012-09-20/2016-01-22"</strong>
+}
+</pre>
 
 Back to [top](#top)
 
