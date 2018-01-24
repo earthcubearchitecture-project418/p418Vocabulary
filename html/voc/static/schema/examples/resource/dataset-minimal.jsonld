@@ -20,7 +20,7 @@
       "@id": "https://www.bco-dmo.org/dataset-parameter/665785",
       "@type": "PropertyValue",
       "additionalType": "earthcollab:Parameter",
-      "value": "experiment"
+      "value": "experiment",
       "description": "Experiment identifier"
     },
     {
