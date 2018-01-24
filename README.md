@@ -381,7 +381,7 @@ Back to [top](#top)
 
 [![Research Repository Service - Policies](html/voc/static/schema/diagrams/repository-policies.png "Research Repository Service - Policies")](#)
 
-If your repository has policy documents about access control, terms of use, etc. You can provide those using the [schema:publishingPrinciples](https://schema.org/publishingPrinciples) field. Becuase schema.org does not make a distiction for the types of these documents, P418 has created some class names for some common policy document types. THese will help make it clear to users what types of policies you have. If you would like us to add more, please let us know by creating an [Issue](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/new).
+If your repository has policy documents about access control, terms of use, etc. You can provide those using the [schema:publishingPrinciples](https://schema.org/publishingPrinciples) field. Becuase schema.org does not make a distiction for the types of these documents, P418 has created some class names for some common policy document types. These will help make it clear to users what types of policies you have. If you would like us to add more, please let us know by creating an [Issue](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/new).
 
 <pre>
 {
@@ -1068,7 +1068,8 @@ People can be linked to datasets iusing three fields: author, creator, and contr
         "value": "0000-0003-3432-2297",
         "url": "https://orcid.org/0000-0003-3432-2297" 
       }
-    },</strong>
+    }
+  ]</strong>
 }
 </pre>
 
@@ -1076,13 +1077,107 @@ Back to [top](#top)
 
 <a id="dataset-publisher_provider"></a>
 #### Describing a Dataset's Publisher/Provider
+
 ![Publisher/Provider](html/voc/static/schema/diagrams/dataset-publisher_provider.png "Dataset - Publisher/Provider")
+
+If your repository is the publisher and/or provider of the dataset then you don't have to describe your repository as a [schema:Organziation](https://schema.org/Organization) **if** your repository markup includes the **`@id`**. For example, if you published repository markup such as:
+<pre>
+{
+  "@context": {...},
+  "@type": ["Service", "Organization"],
+  ...
+  <strong>"@id": "https://www.sample-data-repository.org"</strong>
+  ...
+}
+</pre>
+
+then you can reuse that `@id` here. Harvesters such as Google and Project418 will make the appropriate linkages and your dataset publisher/provider can be published in this way:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  ...
+<strong>"provider": {
+    "@id": "https://www.sample-data-repository.org"
+  },
+  "publisher": {
+    "@id": "https://www.sample-data-repository.org"
+  }</strong>
+}
+</pre>
+
+Otherwise, you can define the organization inline in this way:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  ...
+<strong>"provider": {
+    "@id": "https://www.sample-data-repository.org",
+    "@type": "Organization",
+    "additionalType": "geolink:Organization",
+    "legalName": "Sample Data Repository Office",
+    "name": "SDRO",
+    "sameAs": "http://www.re3data.org/repository/r3dxxxxxxxxx",
+    "url": "https://www.sample-data-repository.org"
+  },
+  "publisher": {
+    "@id": "https://www.sample-data-repository.org"
+  }</strong>
+}
+</pre>
 
 Back to [top](#top)
 
 <a id="dataset-protocols"></a>
 #### Describing a Dataset's Protocols
+
+Datasets can have a number of policies and protocols attached to them - Terms of Use, access restrictions, certain licenses, etc. If you want to represent one or more of these protocols and there is a URL at which a user can read that protocol, we can use the [schema:DigitalDocument](https://schema.org/DigitalDocument) to describe the protocol using the [schema:publishingPrinciples](https://schema.org/publishingPrinciples) field.
+
 ![Protocols](html/voc/static/schema/diagrams/dataset-protocols.png "Dataset - Protocols")
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  ...
+<strong>"publishingPrinciples": {
+    "@id": "http://creativecommons.org/licenses/by/4.0/",
+    "@type": "DigitalDocument",
+    "additionalType": "gdx:Protocol-License",
+    "name": "Dataset Usage License",
+    "url": "http://creativecommons.org/licenses/by/4.0/"
+  },</strong>
+}
+</pre>
+
+P418 has created some class names for some common protocol document types. These will help make it clear to users what types of policies you have. If you would like us to add more, please let us know by creating an [Issue](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/new).
 
 Back to [top](#top)
 
@@ -1102,6 +1197,8 @@ All examples can be found at: https://github.com/earthcubearchitecture-project41
   * [Minimal Example by BCO-DMO](https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/repository/minimal.jsonld)
   * See [BCO-DMO homepage](https://www.bco-dmo.org) (view source of the page to see the schema.org JSON-LD)
 * [Dataset Examples](https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/resource)
+  * [Full Example by BCO-DMO](https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/resource/dataset-full.jsonld)
+  * [Minimal Example by BCO-DMO](https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/resource/dataset-minimal.jsonld)
 
 Back to [top](#top)
 
