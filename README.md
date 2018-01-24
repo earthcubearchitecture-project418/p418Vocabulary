@@ -1026,7 +1026,7 @@ Back to [top](#top)
 <a id="dataset-creator_contributor"></a>
 #### Describing a Dataset's Creators/Contributors
 
-
+People can be linked to datasets iusing three fields: author, creator, and contributor. Since  [schema:contributor](https://schema.org/contributor) is defined as a secondary author, and [schema:Creator](https://schema.org/creator) is defined as being synonymous with the [schema:author](https://schema.org/author) field, we recommend using the more expressive fields of creator and contribulds of creator and contributor. But using any of these fields are okay.
 
 ![Variables](html/voc/static/schema/diagrams/dataset-creator_contributor.png "Dataset - Creator/Contributor")
 
@@ -1047,14 +1047,20 @@ Back to [top](#top)
     {
       "@type": "Person",
       "additionalType": "geolink:Person",
-      "name": "Dr Uta Passow",
-      "url": "https://www.sample-data-repository.org/person/51317"
+      "name": "Dr. Uta Passow",
+      "url": "https://www.sample-data-repository.org/person/51317",
+      "familyName": "Passow",
+      "givenName": "Uta",
+      "honorificPrefix": "Dr."
     },
     {
       "@type": "Person",
       "additionalType": "geolink:Person",
-      "name": "Dr Mark Brzezinski",
+      "name": "Dr. Mark Brzezinski",
       "url": "https://www.sample-data-repository.org/person/50663",
+      "familyName": "Brzezinski",
+      "givenName": "Mark",
+      "honorificPrefix": "Dr.",
       "identifier": {
         "@type": "PropertyValue",
         "additionalType": ["geolink:Identifier","datacite:Identifier"],
