@@ -34,6 +34,8 @@ To-do:
 * [Examples](#examples)
 * [Issues](#issues)
 * [Advanced Publishing Techniques](#advanced-publishing-techniques)
+  * [How to use external vocabularies](#advanced-publishing-category)
+  * [Publishing more detail for categories/disciplines for a repository](#advanced-publishing-category)
 
 <a id="about"></a>
 ## About
@@ -1173,7 +1175,7 @@ Datasets can have a number of policies and protocols attached to them - Terms of
     "additionalType": "gdx:Protocol-License",
     "name": "Dataset Usage License",
     "url": "http://creativecommons.org/licenses/by/4.0/"
-  },</strong>
+  }</strong>
 }
 </pre>
 
@@ -1182,8 +1184,89 @@ P418 has created some class names for some common protocol document types. These
 Back to [top](#top)
 
 <a id="dataset-funding"></a>
+
+Trying to describe a Dataset's funding award is one area of schema.org that doesn't fit all that well. There is a lot of [discussion](https://github.com/schemaorg/schemaorg/issues/383) on this topic already happening with schema.org governance.
+Schema.org's most recent communication with P418 recommended that the award be something generated from the [schema:funder](https://schema.org/funder). We feel the best class to classify as an Award **until this is addressed by schema.org** is the [schema:Offer](https://schema.org/Offer).
+
 #### Describing a Dataset's Funding
 ![Funding](html/voc/static/schema/diagrams/dataset-funding.png "Dataset - Funding")
+
+* [schema:name]() - The award title
+* [schema:description]() - The award description/abstract
+* [schema:identifier]() - The award identifier,number,etc.
+* [schema:validFrom]() - The award start date
+* [schema:validThrough]() - The award end date
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#",
+    "geolink-vocab": "http://schema.geolink.org/1.0/voc/local#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  ...
+<strong>"funder": {
+    "@type": "Organization",
+    "additionalType": "geolink:Organization",
+    "legalName": "NSF Division of Ocean Sciences",
+    "name": "NSF OCE",
+    "url": "https://www.nsf.gov/div/index.jsp?div=OCE",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "datacite:doi",
+      "value": "10.13039/100000141",
+      "url": "https://doi.org/10.13039/100000141"
+    },
+    "makesOffer": {
+      "@type": "Offer",
+      "additionalType": "geolink:Award",
+      "name": "EarthCube Science Support Office (ESSO)",
+      "description": "EarthCube is a community-driven effort with the goal of transforming the conduct of geoscience research and education by creating a well-integrated and facile environment to share scientific data, information tools and services, and knowledge in an open, transparent, and inclusive manner....[truncated]",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "NSF Award Number",
+        "value": "1623751",
+        "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1623751"
+      },
+      "validFrom": "2016-05-01",
+      "validThrough": "2019-04-30",
+      "offeredBy": {
+        "@type": "Person",
+        "additionalType": "geolink-vocab:roletype_program_manager",
+        "name": "Eva E. Zanzerkia"
+      }
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "legalName": "Directorate for Geosciences",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "datacite:doi",
+        "value": "10.13039/100000085",
+        "url": "https://doi.org/10.13039/100000085"
+       },
+      "parentOrganization": {
+        "@type": "Organization",
+        "legalName": "National Science Foundation",
+        "url": "http://www.nsf.gov",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "datacite:doi",
+          "value": "10.13039/100000001",
+          "url": "https://doi.org/10.13039/100000001"
+        }
+      }
+    }
+  }</strong>
+ }
+</pre>
+
 
 Back to [top](#top)
 
@@ -1214,6 +1297,7 @@ Back to [top](#top)
 
 <a id="advanced-publishing-category"></a>
 #### How to publish resources for the categories/disciplines at repository services.
+#### & How to use external vocabularies
 
 The SWEET ontology defines a number of science disciplines and a repository could reference those, or another vocabuary's resources, by adding the vocabular to the `@context` attribute of the JSON-LD markup. 
 
