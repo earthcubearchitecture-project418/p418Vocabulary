@@ -1,8 +1,4 @@
 <a id="top"></a>
-To-do:
-* Finish Repository documentation [completed: Jan 12, 2018]
-* Finish Dataset documentation
-
 # Table of Contents
 
 * [About](#about)
