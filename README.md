@@ -788,7 +788,7 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
     "geolink": "http://schema.geolink.org/1.0/base/main#",
     "vivo": "http://vivoweb.org/ontology/core#",
     <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#",
-    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"</strong>
+    "gsn-quantity": "http://www.geoscienceontology.org/geo-lower/quantity#"</strong>
   },
   "@type": "Dataset",
   "additionalType": ["geolink:Dataset", "vivo:Dataset"],
@@ -804,7 +804,7 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
       "unitText": "decimal degrees",
       "valueReference": {
         "@type": "PropertyValue",
-        "additionalType": ["geo-upper:Quantity", "geolink:MeasurementType"],
+        "additionalType": ["gsn-quantity:latitude", "geolink:MeasurementType"],
         "value": "latitude"
         "url": "http://www.geoscienceontology.org/geo-lower/quantity#latitude",
         "description": "Latitude, in decimal degrees, North is positive, negative denotes South; Reported in some datasets as degrees, minutes",
