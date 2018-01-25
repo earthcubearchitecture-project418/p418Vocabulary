@@ -942,8 +942,8 @@ The following shapes use the [schema:GeoShape](https://schema.org/GeoShape) type
 * [line](https://schema.org/line) - a series of two or more point objects separated by space.
 * [polygon](https://schema.org/polygon) - a series of four or more space delimited points where the first and final points are identical.
 * [box](https://schema.org/polboxygon) - two points separated by a space character where the first point is the lower corner and the second point is the upper corner.
-* [circle](https://schema.org/circle) - a point followed by a radius in meters.
 
+These spatial definitiosn were added to schema.org very early on in its [development](https://github.com/schemaorg/schemaorg/issues/8#issuecomment-97667478) where they decided to follow the [GeoRSS specification](http://www.georss.org/simple). While this is not ideal, there are ongoing conversations about improving this in schema.org.
 
 <a id="dataset-spatial-point"></a>
 A point, or coordinate, would defined in this way:
@@ -988,17 +988,12 @@ All other shapes, are defined using the [schema:GeoShape](https://schema.org/Geo
 
 A polygon
 <pre>
-  <strong>"polygon": "39.3280,120.1633 40.445,123.7878 41,121 39.77,122.42 39.3280,120.1633"</strong>
+  <strong>"polygon": "39.3280 120.1633 40.445 123.7878 41 121 39.77 122.42 39.3280 120.1633"</strong>
 </pre>
 
 A box where 'lower-left' corner is 39.3280/120.1633 and 'upper-right' corner is 40.445/123.7878
 <pre>
-  <strong>"box": "39.3280,120.1633 40.445,123.7878"</strong>
-</pre>
-
-A 2-meter radius circle at lat/lon 39.3280/120.1633:
-<pre>
-  <strong>"circle": "39.3280,120.1633 2"</strong>
+  <strong>"box": "39.3280 120.1633 40.445 123.7878"</strong>
 </pre>
 
 For Project418, we feel the defined spatial coverages are inadequate for the needs of our community, but we also recognize that schema.org continues to hear the needs of its schema.org publishers on these [issues](https://github.com/schemaorg/schemaorg/issues/1548).
