@@ -778,7 +778,7 @@ In it's most basic form, the variable as a [schema:PropertyValue](https://schema
   ]</strong>
 }
 </pre>
-
+<a id="gsn-example"></a>
 A fully-fleshed out example that uses a vocabulary to describe the variable can be published as:
 
 <pre>
