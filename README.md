@@ -1032,7 +1032,7 @@ If access to the data requires some input parameters before a download can occur
 }
 </pre>
 
-Here, we use the [scheam:SearchAction](https://schema.org/SearchAction) type becuase it lets you define the query parameters and HTTP methods so that machines can build user interfaces to collect those query parmaeters and actuate a request to provide the user what they are looking for.
+Here, we use the [schema:SearchAction](https://schema.org/SearchAction) type becuase it lets you define the query parameters and HTTP methods so that machines can build user interfaces to collect those query parmaeters and actuate a request to provide the user what they are looking for.
 
 Back to [top](#top)
 
