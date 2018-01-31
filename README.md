@@ -152,6 +152,7 @@ The other fields you can use to describe the Organziation and the Service are:
 * [schema:name](https://schema.org/name) can be an acronym or the name typcially used for the repository, 
 * [schema:url](https://schema.org/url) should be the url of your repository's homepage, 
 * [schema:description](https://schema.org/description) should be text describing your repository, 
+* [schema:sameAs](https://schema.org/sameAs) can be used to link the repository to other URLs such as Re3Data, Twitter, LinkedIn, etc.,
 * [schema:category](https://schema.org/category) can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. 
 
 <pre>
@@ -166,11 +167,15 @@ The other fields you can use to describe the Organziation and the Service are:
   "name": "SDRO",
   <strong>"url": "https://www.sample-data-repository.org",
   "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
+  "sameAs": [
+        "http://www.re3data.org/repository/r3d1000000xx",
+        "https://twitter.com/SDRO",
+        "https://www.linkedin.com/company/123456789/"
+    ],
   "category": [
     "Biological Oceanography",
     "Chemical Oceanography"
-  ]
-  </strong>
+  ]</strong>
 }
 </pre>
 
