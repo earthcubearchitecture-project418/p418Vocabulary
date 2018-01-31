@@ -1003,7 +1003,8 @@ If access to the data requires some input parameters before a download can occur
         "valueName": "format",
         "description": "The desired format requested either 'application/x-netcdf' or 'text/tab-separated-values'",
         "valueRequired": true,
-        "defaultValue": "application/x-netcdf"
+        "defaultValue": "application/x-netcdf",
+        "valuePattern": "(application\/x\-netcdf|text\/tab-separated\-values"
       },
       {
         "@type": "PropertyValueSpecification",
