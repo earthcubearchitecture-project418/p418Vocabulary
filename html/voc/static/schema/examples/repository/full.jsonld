@@ -1,10 +1,11 @@
+<script type="application/ld+json">
 {
     "@context": {
         "@vocab": "http://schema.org/",
         "gdx": "https://geodex.org/voc/",
         "datacite": "http://purl.org/spar/datacite/"
     },
-    "@type": ["Service", "Organization"],
+    "@type": ["Service", "Organization", "WebSite", "WebPage"],
     "@id": "http://lod.bco-dmo.org/id/affiliation/191",
     "additionalType": "gdx:ResearchRepositoryService",
     "legalName": "Biological and Chemical Data Management Office",
@@ -12,7 +13,11 @@
     "url": "https://www.bco-dmo.org",
     "category": ["Biological Oceanography", "Chemical Oceanography"],
     "description": "The BCO-DMO resource catalog offers free and open access to publicly funded research products whose field of study are biological and chemical oceanography.",
-    "sameAs": "http://www.re3data.org/repository/r3d100000012",
+    "sameAs": [
+        "http://www.re3data.org/repository/r3d100000012",
+        "https://twitter.com/BCODMO",
+        "https://www.linkedin.com/company/6378439/"
+    ],
     "identifier": {
         "@type": "PropertyValue",
         "propertyID": "datacite:doi",
@@ -150,19 +155,10 @@
             "serviceUrl": "https://www.bco-dmo.org/search",
             "providesService": {
                 "@type": "Service",
-                "@id": "https://www.bco-dmo.org/search",
                 "additionalType": "gdx:SearchService",
                 "name": "BCO-DMO Website Search",
                 "description": "Search for webpages, datasets, people, projects, funding awards, deployments, instrumentation and measurements",
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://www.bco-dmo.org/search?keywords={query_string}",
-                    "query-input": {
-                        "@type": "PropertyValueSpecification",
-                        "valueRequired": true,
-                        "valueName": "query_string"
-                    }
-                }
+                "potentialAction": { "@id": "https://www.bco-dmo.org/search" }
             }
         },
         {
@@ -271,5 +267,60 @@
                 "description": "List of frequently asked questions about BCO-DMO"
             }
         }
+    ],
+    "potentialAction": {
+        "@id": "https://www.bco-dmo.org/search",
+        "@type": "SearchAction",
+        "target": "https://www.bco-dmo.org/search?keywords={query_string}",
+        "query-input": {
+            "@type": "PropertyValueSpecification",
+            "valueRequired": true,
+            "valueName": "query_string"
+        }
+    },
+    "mainContentOfPage": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Search",
+          "description": "Search the BCO-DMO catalog.",
+          "url": "https://www.bco-dmo.org/search"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Contribute Data",
+          "description": "Contribute metadata and data from appropriate NSF OCE funded projects.",
+          "url": "https://www.bco-dmo.org/how-get-started"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Data Management Plans",
+          "description": "Develop your data management plan.",
+          "url": "https://www.bco-dmo.org/nsf-two-page-data-management-plan"
+        },
+        {
+            "@type":"SiteNavigationElement",
+            "position": 4,
+            "name": "Datasets",
+            "description": "Browse Datasets.",
+          "url": "https://www.bco-dmo.org/datasets"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "About Us",
+          "description": "Learn about BCO-DMO.",
+          "url": "https://www.bco-dmo.org/about-us"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 6,
+          "name": "Resources",
+          "description": "Information about Data Management and BCO-DMO.",
+          "url": "https://www.bco-dmo.org/how-get-started"
+        }
     ]
 }
+</script>
