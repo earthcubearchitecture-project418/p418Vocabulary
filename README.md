@@ -1010,21 +1010,21 @@ If access to the data requires some input parameters before a download can occur
         "valueName": "start",
         "description": "A UTC ISO DateTime",
         "valueRequired": false,
-        "valuePattern": "^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])(\D?([01]\d|2[0-3])\D?([0-5]\d)\D?([0-5]\d)?\D?(\d{3})?)?$"
+        "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?"
       },
       {
         "@type": "PropertyValueSpecification",
         "valueName": "end",
         "description": "A UTC ISO DateTime",
         "valueRequired": false,
-        "valuePattern": "^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])(\D?([01]\d|2[0-3])\D?([0-5]\d)\D?([0-5]\d)?\D?(\d{3})?)?$"
+        "valuePattern": "(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(.[0-9]+)?(Z)?"
       },
       {
         "@type": "PropertyValueSpecification",
         "valueName": "bbox",
         "description": "Two points in decimal degrees that create a bounding box fomatted at 'lon,lat' of the lower-left corner and 'lon,lat' of the upper-right",
         "valueRequired": false,
-        "valuePattern": "[\-\.0-9],[\-\.0-9] [\-\.0-9],[\-\.0-9]"
+        "valuePattern": "(-?[0-9]+(.[0-9]+)?),[ ]*(-?[0-9]+(.[0-9]+)?)[ ]*(-?[0-9]+(.[0-9]+)?),[ ]*(-?[0-9]+(.[0-9]+)?)"
       }
     ]
   }</strong>
