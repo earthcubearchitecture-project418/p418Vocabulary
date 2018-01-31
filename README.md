@@ -19,7 +19,7 @@
     * [Dataset - Variables](#dataset-variables)
     * [Dataset - DataCatalog](#dataset-catalog)
     * [Dataset - Distributions](#dataset-distros)
-       * [Accessing data through a service](#dataset-services)
+       * [Accessing Data through a Service Endpoint](#dataset-service-endpoint)
     * [Dataset - Temporal](#dataset-temporal)
     * [Dataset - Spatial](#dataset-spatial)
       * [GeoCoordinates](#dataset-spatial-point)
@@ -943,7 +943,7 @@ Back to [top](#top)
 <a id="dataset-distros"></a>
 #### Describing a Dataset's Distributions
 
-Where the [schema:url](https://schema.org/url) property of the Dataset should point to a landing page, the way to describe how to download the data in a specific format is through the [schema:distribution](https://schema.org/distribution) property. The "distribution" property describes where to get the data and in what format by using the [schema:DataDownload](https://schema.org/DataDownload) type. If your dataset is not accessible through a direct download URL, but rather through a service URL that may need input parameters jump to the next section [Accessing data through a service](#dataset-services).
+Where the [schema:url](https://schema.org/url) property of the Dataset should point to a landing page, the way to describe how to download the data in a specific format is through the [schema:distribution](https://schema.org/distribution) property. The "distribution" property describes where to get the data and in what format by using the [schema:DataDownload](https://schema.org/DataDownload) type. If your dataset is not accessible through a direct download URL, but rather through a service URL that may need input parameters jump to the next section [Accessing Data through a Service Endpoint](#dataset-service-endpoint).
 
 ![Distributions](html/voc/static/schema/diagrams/dataset-distribution.png "Dataset - Distributions")
 
@@ -970,8 +970,8 @@ For data available in multipe formats, there will be multiple values of the [sch
 }
 </pre>
 
-<a id="dataset-services"></a>
-##### Accessing data through a Service
+<a id="dataset-service-endpoint"></a>
+##### Accessing Data through a Service Endpoint
 
 If access to the data requires some input parameters before a download can occur, we can use the [schema:potentialAction](https://schema.org/potentialAction) in this way:
 
