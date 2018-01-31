@@ -1205,14 +1205,14 @@ Schema.org's most recent communication with P418 recommended that the award be s
 <strong>"funder": {
     "@type": "Organization",
     "additionalType": "geolink:Organization",
-    "legalName": "NSF Division of Ocean Sciences",
-    "name": "NSF OCE",
-    "url": "https://www.nsf.gov/div/index.jsp?div=OCE",
+    "legalName": "National Science Foundation",
+    "name": "NSF",
+    "url": "https://www.nsf.gov",
     "identifier": {
       "@type": "PropertyValue",
       "propertyID": "datacite:doi",
       "value": "10.13039/100000141",
-      "url": "https://doi.org/10.13039/100000141"
+      "url": "https://doi.org/10.13039/100000001"
     },
     "makesOffer": {
       "@type": "Offer",
