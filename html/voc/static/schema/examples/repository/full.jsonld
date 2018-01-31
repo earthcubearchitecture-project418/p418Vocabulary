@@ -174,7 +174,7 @@
                     "@type": "SearchAction",
                     "target": {
                         "@type": "EntryPoint",
-                        "contentType": "application/sparql-query",
+                        "contentType": ["application/sparql-results+json", "application/sparql-results+xml"],
                         "urlTemplate": "http://lod.bco-dmo.org/sparql?default-graph-uri={graph_iri}&query={sparql_query}&output={format}&timeout={timeout_sec}&debug={on_or_off}",
                         "description": "Search BCO-DMO RDF through its SPARQL Endpoint",
                         "httpMethod": ["GET", "POST"]
