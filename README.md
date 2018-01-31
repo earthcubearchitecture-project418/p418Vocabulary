@@ -9,6 +9,7 @@
 * [Publishing schema.org JSON-LD](#schemaorg-jsonld)
   * [Describing a Repository](#repository)
     * [Repository - Fields](#repository-fields)
+    * [Repository - Funding Source](#repository-funding-source)
     * [Repository - Identifier](#repository-identifier)
     * [Repository - Policies](#repository-policies)
     * [Repository - Services](#repository-services)
@@ -320,10 +321,91 @@ If this Organization has a parent entity such as a college, university or resear
 
 Back to [top](#top)
 
+<a id="repository-funding-source"></a>
+### Describing a Repository's Funding Source
+
+To describe the funding source of a repository, you use the [schema:funder](https://schema.org/funder) property of [schema:Organization](https://schema.org/Organization):
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
+  "provider": {
+    "@id": "https://www.sample-data-repository.org"
+  },
+   "parentOrganization": {
+     "@type": "Organization",
+     "@id": "http://www.someinstitute.edu",
+     "legalName": "Some Institute",
+     "name": "SI",
+     "url": "http://www.someinstitute.edu",
+     "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "234 Main St.",
+       "addressLocality": "Anytown",
+       "addressRegion": "ST",
+       "postalCode": "12345",
+       "addressCountry": "USA"
+     },
+     <strong>"funder": {
+      "@type": "Organization",
+      "@id": "https://dx.doi.org/10.13039/100000141",
+      "legalName": "Division of Ocean Sciences",
+      "alternateName": "OCE",
+      "url": "https://www.nsf.gov/div/index.jsp?div=OCE",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "datacite:doi",
+        "value": "10.13039/100000141",
+        "url": "https://doi.org/10.13039/100000141"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "http://dx.doi.org/10.13039/100000085",
+        "legalName": "Directorate for Geosciences",
+        "alternateName": "NSF-GEO",
+        "url": "http://www.nsf.gov",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "datacite:doi",
+          "value": "10.13039/100000085",
+          "url": "https://doi.org/10.13039/100000085"
+         },
+        "parentOrganization": {
+          "@type": "Organization",
+          "@id": "http://dx.doi.org/10.13039/100000001",
+          "legalName": "National Science Foundation",
+          "alternateName": "NSF",
+          "url": "http://www.nsf.gov",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "datacite:doi",
+            "value": "10.13039/100000001",
+            "url": "https://doi.org/10.13039/100000001"
+          }
+        }
+      }</strong>
+    }
+  }
+}
+</pre>
+
+
 <a id="repository-identifier"></a>
 ### Describing a Repository's Identifier
 
-#repository-provider-identifier
 Some organizations may have a persistent identifier (DOI) assigned to their organization from authorities like the Registry of Research Data Repositories (re3data.org). The way to describe these organizational identifiers is to use the [schema:identifier](https://schema.org/identifier) property in this way:
 
 <pre>
