@@ -19,6 +19,7 @@
     * [Dataset - Variables](#dataset-variables)
     * [Dataset - DataCatalog](#dataset-catalog)
     * [Dataset - Distributions](#dataset-distros)
+       * [Accessing data through a service](#dataset-services)
     * [Dataset - Temporal](#dataset-temporal)
     * [Dataset - Spatial](#dataset-spatial)
       * [GeoCoordinates](#dataset-spatial-point)
@@ -942,7 +943,7 @@ Back to [top](#top)
 <a id="dataset-distros"></a>
 #### Describing a Dataset's Distributions
 
-Where the [schema:url](https://schema.org/url) property of the Dataset should point to a landing page, the way to describe how to download the data in a specific format is through the [schema:distribution](https://schema.org/distribution) property. The "distribution" property describes where to get the data and in what format by using the [schema:DataDownload](https://schema.org/DataDownload) type.
+Where the [schema:url](https://schema.org/url) property of the Dataset should point to a landing page, the way to describe how to download the data in a specific format is through the [schema:distribution](https://schema.org/distribution) property. The "distribution" property describes where to get the data and in what format by using the [schema:DataDownload](https://schema.org/DataDownload) type. If your dataset is not accessible through a direct download URL, but rather through a service URL that may need input parameters jump to the next section [Accessing data through a service](#dataset-services).
 
 ![Distributions](html/voc/static/schema/diagrams/dataset-distribution.png "Dataset - Distributions")
 
@@ -965,9 +966,72 @@ For data available in multipe formats, there will be multiple values of the [sch
     "@type": "DataDownload",
     "contentUrl": "https://www.sample-data-repository.org/dataset/472032.tsv",
     "encodingFormat": "text/tab-separated-values"
-  },</strong>
+  }</strong>
 }
 </pre>
+
+<a id="dataset-services"></a>
+##### Accessing data through a Service
+
+If access to the data requires some input parameters before a download can occur, we can use the [schema:potentialAction](https://schema.org/potentialAction) in this way:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  ...
+  <strong>"potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+        "@type": "EntryPoint",
+        "contentType": ["application/x-netcdf", "text/tab-separated-values"],
+        "urlTemplate": "https://www.sample-data-repository.org/dataset/1234/download?format={format}&startDateTime={start}&endDateTime={end}&bounds={bbox}",
+        "description": "Download dataset 1234 based on the requested format, start/end dates and bounding box",
+        "httpMethod": ["GET", "POST"]
+    },
+    "query-input": [
+      {
+        "@type": "PropertyValueSpecification",
+        "valueName": "format",
+        "description": "The desired format requested either 'application/x-netcdf' or 'text/tab-separated-values'",
+        "valueRequired": true,
+        "defaultValue": "application/x-netcdf"
+      },
+      {
+        "@type": "PropertyValueSpecification",
+        "valueName": "start",
+        "description": "A UTC ISO DateTime",
+        "valueRequired": false,
+        "valuePattern": "^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])(\D?([01]\d|2[0-3])\D?([0-5]\d)\D?([0-5]\d)?\D?(\d{3})?)?$"
+      },
+      {
+        "@type": "PropertyValueSpecification",
+        "valueName": "end",
+        "description": "A UTC ISO DateTime",
+        "valueRequired": false,
+        "valuePattern": "^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])(\D?([01]\d|2[0-3])\D?([0-5]\d)\D?([0-5]\d)?\D?(\d{3})?)?$"
+      },
+      {
+        "@type": "PropertyValueSpecification",
+        "valueName": "bbox",
+        "description": "Two points in decimal degrees that create a bounding box fomatted at 'lon,lat' of the lower-left corner and 'lon,lat' of the upper-right",
+        "valueRequired": false,
+        "valuePattern": "[\-\.0-9],[\-\.0-9] [\-\.0-9],[\-\.0-9]"
+      }
+    ]
+  }</strong>
+}
+</pre>
+
+Here, we use the [scheam:SearchAction](https://schema.org/SearchAction) type becuase it lets you define the query parameters and HTTP methods so that machines can build user interfaces to collect those query parmaeters and actuate a request to provide the user what they are looking for.
 
 Back to [top](#top)
 
