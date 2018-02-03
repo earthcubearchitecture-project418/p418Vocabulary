@@ -1446,7 +1446,7 @@ Back to [top](#top)
 <a id="dataset-funding"></a>
 
 Trying to describe a Dataset's funding award is one area of schema.org that doesn't fit all that well. There is a lot of [discussion](https://github.com/schemaorg/schemaorg/issues/383) on this topic already happening with schema.org governance.
-Schema.org's most recent communication with P418 recommended that the award be something generated from the [schema:funder](https://schema.org/funder). We feel the best class to classify as an Award **until this is addressed by schema.org** is the [schema:Offer](https://schema.org/Offer).
+Schema.org's most recent communication with P418 recommended that the award be something generated from the [schema:funder](https://schema.org/funder). We feel the best class to classify as an Award **until this is addressed by schema.org** is the [schema:Offer](https://schema.org/Offer). If you specify an Award, you **should** also use the `gdx:fundedBy` property to directly link the Dataset to the Award in this way.
 
 #### Describing a Dataset's Funding
 ![Funding](html/voc/static/schema/diagrams/dataset-funding.png "Dataset - Funding")
@@ -1485,6 +1485,7 @@ Schema.org's most recent communication with P418 recommended that the award be s
     },
     "makesOffer": {
       "@type": "Offer",
+      "@id": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1623751",
       "additionalType": "geolink:Award",
       "name": "EarthCube Science Support Office (ESSO)",
       "description": "EarthCube is a community-driven effort with the goal of transforming the conduct of geoscience research and education by creating a well-integrated and facile environment to share scientific data, information tools and services, and knowledge in an open, transparent, and inclusive manner....[truncated]",
@@ -1523,7 +1524,8 @@ Schema.org's most recent communication with P418 recommended that the award be s
         }
       }
     }
-  }</strong>
+  },
+  "gdx:fundedBy": { "@id": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1623751" }</strong>
  }
 </pre>
 
