@@ -4,6 +4,7 @@
     "datacite": "http://purl.org/spar/datacite/",
     "earthcollab": "https://library.ucar.edu/earthcollab/schema#",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "geolink-vocab":"http:\/\/schema.geolink.org\/1.0\/voc\/local#",
     "vivo": "http://vivoweb.org/ontology/core#",
     "dbpedia": "http://dbpedia.org/resource/",
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
@@ -388,12 +389,22 @@
     "makesOffer": {
       "@type": "Offer",
       "additionalType": "geolink:Award",
-      ""
+      "@id": "https://www.bco-dmo.org/award/55209",
+      "name": "OCE-1041038",
+      "url": "https://www.bco-dmo.org/award/55209",
+      "sameAs": "http://www.nsf.gov/awardsearch/showAward?AWD_ID=1041038\u0026HistoricalAwards=false",
+      "offeredBy": {
+        "@type": "Person",
+        "additionalType": "geolink-vocab:roletype_program_manager",
+        "name": "Dr Donald  L. Rice",
+        "url": "https://www.bco-dmo.org/person/51467"
+      }
     },
     "name": "NSF OCE",
     "sameAs": "http://www.re3data.org/repository/r3d100000012",
     "url": "https://www.bco-dmo.org/funding-source/355"
   },
+  "gdx:fundedBy": { "@id": "https://www.bco-dmo.org/award/55209" },
   "publishingPrinciples": {
     "@id": "http://creativecommons.org/licenses/by/4.0/",
     "@type": "DigitalDocument",

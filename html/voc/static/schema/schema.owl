@@ -153,6 +153,7 @@
   </owl:namedIndividual>
 
   <owl:ObjectProperty rdf:about="gdx:fundedBy">
+    <rdf:type rdf:resource="rdf:Property"/>
     <rdfs:isDefinedBy rdf:resource="gdx:"/>
     <rdfs:label xml:lang="en-US">fundedBy</rdfs:label>
     <rdfs:comment xml:lang="en-US">A funding award that facilitated the generation of a creative work.</rdfs:comment>

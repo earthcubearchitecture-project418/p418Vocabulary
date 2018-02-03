@@ -128,7 +128,7 @@
   rdfs:comment "A user support activity offered by a ResearchRepositoryService."@en-US .
 
 <gdx:fundedBy>
-  a owl:ObjectProperty ;
+  a owl:ObjectProperty, rdf:Property ;
   rdfs:isDefinedBy <gdx:> ;
   rdfs:label "fundedBy"@en-US ;
   rdfs:comment "A funding award that facilitated the generation of a creative work."@en-US ;

@@ -16,17 +16,23 @@ type MyServer struct {
 func main() {
 
   htmlRouter := mux.NewRouter().StrictSlash(true)
-  htmlRouter.HandleFunc("/voc/diagram", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/diagram.html")
+  htmlRouter.HandleFunc("/voc/documentation", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/documentation.html")
   })
   htmlRouter.HandleFunc("/voc/examples", func(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, "./html/voc/examples.html")
   })
-  htmlRouter.HandleFunc("/voc/examples/minimal", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/examples/required.jsonld")
+  htmlRouter.HandleFunc("/voc/examples/repository/minimal", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/examples/repository/minimal.jsonld")
   })
-  htmlRouter.HandleFunc("/voc/examples/full", func(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "./html/voc/static/schema/examples/full.jsonld")
+  htmlRouter.HandleFunc("/voc/examples/repository/full", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/examples/repository/full.jsonld")
+  })
+  htmlRouter.HandleFunc("/voc/examples/dataset/minimal", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/examples/resource/dataset-minimal.jsonld")
+  })
+  htmlRouter.HandleFunc("/voc/examples/dataset/full", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./html/voc/static/schema/examples/resource/dataset-full.jsonld")
   })
   htmlRouter.HandleFunc("/voc/schema", Conneg)
   htmlRouter.HandleFunc("/voc/schema.{ext}", Conneg)

@@ -109,7 +109,8 @@
     rdfs:isDefinedBy <gdx:> ;
     skos:related <schema:CreateAction> .
 
-<gdx:fundedBy> a owl:ObjectProperty ;
+<gdx:fundedBy> a owl:ObjectProperty,
+        <rdf:Property> ;
     rdfs:label "fundedBy"@en-US ;
     rdfs:comment "A funding award that facilitated the generation of a creative work."@en-US ;
     rdfs:domain <schema:CreativeWork> ;

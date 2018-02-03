@@ -1,7 +1,7 @@
 {
     "@context": {
         "@vocab": "http://schema.org/",
-        "gdx": "https://geodex.org/voc/",
+        "gdx": "https://geodex.org/voc/"
     },
     "@type": ["Service", "Organization"],
     "additionalType": "gdx:ResearchRepositoryService",

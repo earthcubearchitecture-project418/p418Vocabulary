@@ -1,4 +1,3 @@
-<script type="application/ld+json">
 {
     "@context": {
         "@vocab": "http://schema.org/",
@@ -101,6 +100,7 @@
         "addressCountry": "USA"
       }
     },
+
     "publishingPrinciples": [
       {
         "@type": "DigitalDocument",
@@ -117,7 +117,34 @@
         "fileFormat": "text/html"
       }
     ],
-    "hasOfferCatalog": {
+    "hasOfferCatalog": [
+      {
+        "@type": "OfferCatalog",
+        "additionalType": "gdx:ResearchResourceTypes",
+        "itemListElement": [
+          {"@type": "Thing", "@id": "schema:Dataset", "name": "Dataset"}
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "additionalType": "gdx:OutreachActivities",
+        "itemListElement": [
+          {
+            "@type": "Action",
+            "@id": "gdx:OutreachActivity-UserWorkshop",
+            "additionalType": "gdx:OutreachActivity-UserWorkshop",
+            "name": "BCO-DMO Tutorial",
+            "description": "The BCO-DMO tutorial is usually delvierd as part of the annual OCB Workshop",
+            "subjectOf": {
+              "@type": "DigitalDocument",
+              "name": "Data Access Tutorial",
+              "url": "https://www.bco-dmo.org/files/bcodmo/OCB-Tutorial.pdf",
+              "fileFormat": "application/pdf"
+            }
+          }
+        ]
+      },
+      {
         "@type": "OfferCatalog",
         "name": "BCO-DMO Resource Catalog",
         "itemListElement": [
@@ -148,7 +175,8 @@
                 }
             }
         ]
-    },
+      }
+    ],
     "availableChannel": [
         {
             "@type": "ServiceChannel",
@@ -323,4 +351,3 @@
         }
     ]
 }
-</script>

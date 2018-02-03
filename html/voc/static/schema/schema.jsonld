@@ -381,7 +381,7 @@
     },
     {
       "@id": "gdx:fundedBy",
-      "@type": "owl:ObjectProperty",
+      "@type": ["owl:ObjectProperty", "rdf:Property"],
       "rdfs:comment": {
         "@language": "en-US",
         "@value": "A funding award that facilitated the generation of a creative work."
