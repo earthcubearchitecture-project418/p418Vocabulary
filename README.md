@@ -15,6 +15,7 @@
     * [Repository - Identifier](#repository-identifier)
     * [Repository - Policies](#repository-policies)
     * [Repository - Services](#repository-services)
+    * [Repository - Data Collections](#repository-data-collections)
   * [Describing a Dataset](#dataset-diagram)
     * [Dataset - Identifier](#dataset-identifiers)
     * [Dataset - Variables](#dataset-variables)
@@ -747,6 +748,57 @@ If your repository does have datasets or other resources with schema.org JSON-LD
        }
      }</strong>
   ]
+}
+</pre>
+
+Back to [top](#top)
+
+<a id="repository-data-collections"></a>
+### Describing a Repository's Data Collections
+
+If your repository has a concept of a data collection, some grouping of a number of datasets, we can use the [schema:DataCatalog](https://schema.org/DataCatalog) to describe these collections using the [schema:OfferCatalog](https://schema.org/OfferCatalog). One exampel of a DataCatalog might be to group datasets by a categorization such as 'biological data' or 'chemical data'. Or a catalog could be grouped by instrument, parameter or whatever logical grouping a repository may have.
+
+[![Research Repository Service - Offer Catalog](html/voc/static/schema/diagrams/repository-offerCatalog.png "Research Repository Service - Offer Catalog")](#)
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    "datacite": "http://purl.org/spar/datacite/"
+  },
+  "@type": ["Service", "Organization"],
+ "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  ...
+  <strong>"hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Sample Data Repository Resource Catalog",
+    "itemListElement": [
+      {
+       "@type": "DataCatalog",
+        "@id": "https://www.sample-data-repository.org/collection/biological-data",
+        "name": "Biological Data",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "public",
+          "name": "General Public"
+        }
+      },
+      {
+        "@type": "DataCatalog",
+        "@id": "https://www.sample-data-repository.org/collection/geological-data",
+        "name": "Geological Data",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "public",
+          "name": "General Public"
+        }
+      }
+    ]
+  }</strong>
 }
 </pre>
 
