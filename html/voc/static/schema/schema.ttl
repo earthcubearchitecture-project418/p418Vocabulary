@@ -31,10 +31,6 @@
     owl:maxCardinality "1"^^xsd:nonNegativeInteger
   ], [
     a owl:Restriction ;
-    owl:onProperty schema:OfferCatalog ;
-    owl:minCardinality "1"^^xsd:nonNegativeInteger
-  ], [
-    a owl:Restriction ;
     owl:onProperty schema:provider ;
     owl:minCardinality "1"^^xsd:nonNegativeInteger
   ] ;
@@ -99,3 +95,42 @@
   rdfs:isDefinedBy <gdx:> ;
   rdfs:label "Sitemap XML"@en-US ;
   rdfs:comment "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog."@en-US .
+
+<gdx:ResearchResourceTypes>
+  a owl:namedIndividual, schema:OfferCatalog ;
+  rdfs:isDefinedBy <gdx:> ;
+  skos:related schema:CreativeWork ;
+  rdfs:label "Research Resource Types"@en-US ;
+  rdfs:comment "A list of research resource types (aka schema:CreativeWork) offered by a ResearchRepositoryService."@en-US .
+
+<gdx:OutreachActivities>
+  a owl:namedIndividual, schema:OfferCatalog ;
+  rdfs:isDefinedBy <gdx:> ;
+  rdfs:label "Outreach Activity"@en-US ;
+  rdfs:comment "A list of outreach activities offered by a ResearchRepositoryService."@en-US .
+
+<gdx:OutreachActivity-Training>
+  a owl:namedIndividual, schema:Action ;
+  rdfs:isDefinedBy <gdx:> ;
+  rdfs:label "Training Outreach Activity"@en-US ;
+  rdfs:comment "A training activity offered by a ResearchRepositoryService."@en-US .
+
+<gdx:OutreachActivity-UserWorkshop>
+  a owl:namedIndividual, schema:Action ;
+  rdfs:isDefinedBy <gdx:> ;
+  rdfs:label "User Workshop Outreach Activity"@en-US ;
+  rdfs:comment "A user workshop activity offered by a ResearchRepositoryService."@en-US .
+
+<gdx:OutreachActivity-UserSupport>
+  a owl:namedIndividual, schema:Action ;
+  rdfs:isDefinedBy <gdx:> ;
+  rdfs:label "User Support Outreach Activity"@en-US ;
+  rdfs:comment "A user support activity offered by a ResearchRepositoryService."@en-US .
+
+<gdx:fundedBy>
+  a owl:ObjectProperty ;
+  rdfs:isDefinedBy <gdx:> ;
+  rdfs:label "fundedBy"@en-US ;
+  rdfs:comment "A funding award that facilitated the generation of a creative work."@en-US ;
+  rdfs:domain schema:CreativeWork ;
+  rdfs:range schema:Offer .

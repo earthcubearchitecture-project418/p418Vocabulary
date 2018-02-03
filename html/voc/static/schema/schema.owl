@@ -40,12 +40,6 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="schema:OfferCatalog"/>
-        <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:onProperty rdf:resource="schema:provider"/>
         <owl:minCardinality rdf:datatype="xsd:nonNegativeInteger">1</owl:minCardinality>
       </owl:Restriction>
@@ -121,4 +115,49 @@
     <rdfs:label xml:lang="en-US">Sitemap XML</rdfs:label>
     <rdfs:comment xml:lang="en-US">A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog.</rdfs:comment>
   </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:ResearchResourceTypes">
+    <rdf:type rdf:resource="schema:OfferCatalog"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <skos:related rdf:resource="schema:CreativeWork"/>
+    <rdfs:label xml:lang="en-US">Research Resource Types</rdfs:label>
+    <rdfs:comment xml:lang="en-US">A list of research resource types (aka schema:CreativeWork) offered by a ResearchRepositoryService.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:OutreachActivities">
+    <rdf:type rdf:resource="schema:OfferCatalog"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en-US">Outreach Activity</rdfs:label>
+    <rdfs:comment xml:lang="en-US">A list of outreach activities offered by a ResearchRepositoryService.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:OutreachActivity-Training">
+    <rdf:type rdf:resource="schema:Action"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en-US">Training Outreach Activity</rdfs:label>
+    <rdfs:comment xml:lang="en-US">A training activity offered by a ResearchRepositoryService.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:OutreachActivity-UserWorkshop">
+    <rdf:type rdf:resource="schema:Action"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en-US">User Workshop Outreach Activity</rdfs:label>
+    <rdfs:comment xml:lang="en-US">A user workshop activity offered by a ResearchRepositoryService.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:namedIndividual rdf:about="gdx:OutreachActivity-UserSupport">
+    <rdf:type rdf:resource="schema:Action"/>
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en-US">User Support Outreach Activity</rdfs:label>
+    <rdfs:comment xml:lang="en-US">A user support activity offered by a ResearchRepositoryService.</rdfs:comment>
+  </owl:namedIndividual>
+
+  <owl:ObjectProperty rdf:about="gdx:fundedBy">
+    <rdfs:isDefinedBy rdf:resource="gdx:"/>
+    <rdfs:label xml:lang="en-US">fundedBy</rdfs:label>
+    <rdfs:comment xml:lang="en-US">A funding award that facilitated the generation of a creative work.</rdfs:comment>
+    <rdfs:domain rdf:resource="schema:CreativeWork"/>
+    <rdfs:range rdf:resource="schema:Offer"/>
+  </owl:ObjectProperty>
+
 </rdf:RDF>

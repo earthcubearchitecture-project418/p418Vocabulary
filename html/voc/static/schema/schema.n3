@@ -9,6 +9,30 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<gdx:OutreachActivities> a owl:namedIndividual,
+        <schema:OfferCatalog> ;
+    rdfs:label "Outreach Activity"@en-US ;
+    rdfs:comment "A list of outreach activities offered by a ResearchRepositoryService."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:OutreachActivity-Training> a owl:namedIndividual,
+        <schema:Action> ;
+    rdfs:label "Training Outreach Activity"@en-US ;
+    rdfs:comment "A training activity offered by a ResearchRepositoryService."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:OutreachActivity-UserSupport> a owl:namedIndividual,
+        <schema:Action> ;
+    rdfs:label "User Support Outreach Activity"@en-US ;
+    rdfs:comment "A user support activity offered by a ResearchRepositoryService."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
+<gdx:OutreachActivity-UserWorkshop> a owl:namedIndividual,
+        <schema:Action> ;
+    rdfs:label "User Workshop Outreach Activity"@en-US ;
+    rdfs:comment "A user workshop activity offered by a ResearchRepositoryService."@en-US ;
+    rdfs:isDefinedBy <gdx:> .
+
 <gdx:Protocol-Access> a owl:namedIndividual,
         <schema:DigitalDocument> ;
     rdfs:label "Access Protocol"@en-US ;
@@ -44,21 +68,25 @@
     rdfs:comment "A service providing access to products developed from research activities such as data, software and other research outputs."@en-US ;
     rdfs:isDefinedBy <gdx:> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality "1"^^<xsd:nonNegativeInteger> ;
-            owl:onProperty <schema:description> ],
-        [ a owl:Restriction ;
             owl:cardinality "1"^^<xsd:nonNegativeInteger> ;
             owl:onProperty <schema:url> ],
         [ a owl:Restriction ;
             owl:minCardinality "1"^^<xsd:nonNegativeInteger> ;
             owl:onProperty <schema:provider> ],
         [ a owl:Restriction ;
-            owl:minCardinality "1"^^<xsd:nonNegativeInteger> ;
-            owl:onProperty <schema:OfferCatalog> ],
-        [ a owl:Restriction ;
             owl:cardinality "1"^^<xsd:nonNegativeInteger> ;
             owl:onProperty <schema:name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^<xsd:nonNegativeInteger> ;
+            owl:onProperty <schema:description> ],
         <schema:Service> .
+
+<gdx:ResearchResourceTypes> a owl:namedIndividual,
+        <schema:OfferCatalog> ;
+    rdfs:label "Research Resource Types"@en-US ;
+    rdfs:comment "A list of research resource types (aka schema:CreativeWork) offered by a ResearchRepositoryService."@en-US ;
+    rdfs:isDefinedBy <gdx:> ;
+    skos:related <schema:CreativeWork> .
 
 <gdx:SearchService> a owl:namedIndividual,
         <schema:Service> ;
@@ -80,6 +108,13 @@
     rdfs:comment "A service provided for submitting resources to the catalog."@en-US ;
     rdfs:isDefinedBy <gdx:> ;
     skos:related <schema:CreateAction> .
+
+<gdx:fundedBy> a owl:ObjectProperty ;
+    rdfs:label "fundedBy"@en-US ;
+    rdfs:comment "A funding award that facilitated the generation of a creative work."@en-US ;
+    rdfs:domain <schema:CreativeWork> ;
+    rdfs:isDefinedBy <gdx:> ;
+    rdfs:range <schema:Offer> .
 
 <gdx:SyndicationService> a owl:namedIndividual,
         <schema:Service> ;

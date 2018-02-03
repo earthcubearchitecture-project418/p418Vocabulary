@@ -12,14 +12,43 @@
   },
   "@graph": [
     {
-      "@id": "_:Ne2efa58046c646a9930f742b61830147",
+      "@id": "gdx:Protocol-Access",
+      "@type": [
+        "schema:DigitalDocument",
+        "owl:namedIndividual"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "An access regulation."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Access Protocol"
+      }
+    },
+    {
+      "@id": "_:N842ffc5b0fa4411fb3c3a5b467a971dd",
       "@type": "owl:Restriction",
-      "owl:minCardinality": {
+      "owl:cardinality": {
         "@type": "xsd:nonNegativeInteger",
         "@value": "1"
       },
       "owl:onProperty": {
-        "@id": "schema:provider"
+        "@id": "schema:url"
+      }
+    },
+    {
+      "@id": "_:Ncd0b0e4e0b5b42c482524cd7a510f11c",
+      "@type": "owl:Restriction",
+      "owl:cardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "schema:name"
       }
     },
     {
@@ -77,131 +106,38 @@
       },
       "rdfs:subClassOf": [
         {
-          "@id": "_:N1dbf09f54573430685adeca081fcd6d3"
+          "@id": "_:Na4bcc7b46aa14de7ab0f20fec34534dd"
         },
         {
-          "@id": "_:Ndc4a00a1b5594a49a380f44f7d5a777b"
+          "@id": "_:N842ffc5b0fa4411fb3c3a5b467a971dd"
+        },
+        {
+          "@id": "_:Ncd0b0e4e0b5b42c482524cd7a510f11c"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "_:Ne2efa58046c646a9930f742b61830147"
-        },
-        {
-          "@id": "_:N9fc53f8d60ad4142b130d3b9c2675a58"
-        },
-        {
-          "@id": "_:Nab28e05fd6a4419aa603a471ac8fd54a"
+          "@id": "_:N1056eda8c72b486d89fa2721e235a882"
         }
       ]
     },
     {
-      "@id": "gdx:Protocol-ResourceSubmissionPolicy",
+      "@id": "gdx:OutreachActivity-UserSupport",
       "@type": [
-        "owl:namedIndividual",
-        "schema:DigitalDocument"
-      ],
-      "rdfs:comment": {
-        "@language": "en-US",
-        "@value": "A policy describing the protocols for submitting resources to the repository."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en-US",
-        "@value": "Resource Submission Policy"
-      }
-    },
-    {
-      "@id": "_:Ndc4a00a1b5594a49a380f44f7d5a777b",
-      "@type": "owl:Restriction",
-      "owl:maxCardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "schema:description"
-      }
-    },
-    {
-      "@id": "gdx:Protocol-Access",
-      "@type": [
-        "owl:namedIndividual",
-        "schema:DigitalDocument"
-      ],
-      "rdfs:comment": {
-        "@language": "en-US",
-        "@value": "An access regulation."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en-US",
-        "@value": "Access Protocol"
-      }
-    },
-    {
-      "@id": "_:Nab28e05fd6a4419aa603a471ac8fd54a",
-      "@type": "owl:Restriction",
-      "owl:cardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "schema:url"
-      }
-    },
-    {
-      "@id": "gdx:Protocol-PreservationPolicy",
-      "@type": [
-        "schema:DigitalDocument",
+        "schema:Action",
         "owl:namedIndividual"
       ],
       "rdfs:comment": {
         "@language": "en-US",
-        "@value": "A policy describing a preservation protocol."
+        "@value": "A user support activity offered by a ResearchRepositoryService."
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en-US",
-        "@value": "Preservation Policy"
-      }
-    },
-    {
-      "@id": "_:N1dbf09f54573430685adeca081fcd6d3",
-      "@type": "owl:Restriction",
-      "owl:cardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "schema:name"
-      }
-    },
-    {
-      "@id": "gdx:SearchService",
-      "@type": [
-        "schema:Service",
-        "owl:namedIndividual"
-      ],
-      "rdfs:comment": {
-        "@language": "en-US",
-        "@value": "A service provided for searching the resource catalog."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "gdx:"
-      },
-      "rdfs:label": {
-        "@language": "en-US",
-        "@value": "Search Service"
-      },
-      "skos:related": {
-        "@id": "schema:SearchAction"
+        "@value": "User Support Outreach Activity"
       }
     },
     {
@@ -230,6 +166,121 @@
       "owl:versionInfo": "0.8.0"
     },
     {
+      "@id": "_:Na4bcc7b46aa14de7ab0f20fec34534dd",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "schema:description"
+      }
+    },
+    {
+      "@id": "gdx:OutreachActivity-UserWorkshop",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:Action"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A user workshop activity offered by a ResearchRepositoryService."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "User Workshop Outreach Activity"
+      }
+    },
+    {
+      "@id": "_:N1056eda8c72b486d89fa2721e235a882",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "schema:provider"
+      }
+    },
+    {
+      "@id": "gdx:Protocol-PreservationPolicy",
+      "@type": [
+        "schema:DigitalDocument",
+        "owl:namedIndividual"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A policy describing a preservation protocol."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Preservation Policy"
+      }
+    },
+    {
+      "@id": "gdx:OutreachActivities",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:OfferCatalog"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A list of outreach activities offered by a ResearchRepositoryService."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Outreach Activity"
+      }
+    },
+    {
+      "@id": "gdx:SearchService",
+      "@type": [
+        "schema:Service",
+        "owl:namedIndividual"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A service provided for searching the resource catalog."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Search Service"
+      },
+      "skos:related": {
+        "@id": "schema:SearchAction"
+      }
+    },
+    {
+      "@id": "gdx:Protocol-ResourceSubmissionPolicy",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:DigitalDocument"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A policy describing the protocols for submitting resources to the repository."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Resource Submission Policy"
+      }
+    },
+    {
       "@id": "gdx:SyndicationService",
       "@type": [
         "schema:Service",
@@ -251,14 +302,63 @@
       }
     },
     {
-      "@id": "_:N9fc53f8d60ad4142b130d3b9c2675a58",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:nonNegativeInteger",
-        "@value": "1"
+      "@id": "gdx:OutreachActivity-Training",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:Action"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A training activity offered by a ResearchRepositoryService."
       },
-      "owl:onProperty": {
-        "@id": "schema:OfferCatalog"
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Training Outreach Activity"
+      }
+    },
+    {
+      "@id": "gdx:SitemapXML",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:DigitalDocument"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Sitemap XML"
+      },
+      "skos:related": {
+        "@id": "gdx:SyndicationService"
+      }
+    },
+    {
+      "@id": "gdx:ResearchResourceTypes",
+      "@type": [
+        "owl:namedIndividual",
+        "schema:OfferCatalog"
+      ],
+      "rdfs:comment": {
+        "@language": "en-US",
+        "@value": "A list of research resource types (aka schema:CreativeWork) offered by a ResearchRepositoryService."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "gdx:"
+      },
+      "rdfs:label": {
+        "@language": "en-US",
+        "@value": "Research Resource Types"
+      },
+      "skos:related": {
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -280,24 +380,24 @@
       }
     },
     {
-      "@id": "gdx:SitemapXML",
-      "@type": [
-        "schema:DigitalDocument",
-        "owl:namedIndividual"
-      ],
+      "@id": "gdx:fundedBy",
+      "@type": "owl:ObjectProperty",
       "rdfs:comment": {
         "@language": "en-US",
-        "@value": "A sitemap.xml file for a website that exposes URLs that should be indexed by a search engine harvester. A sitemap.xml file is one way to provide access to all resources offered by the catalog."
+        "@value": "A funding award that facilitated the generation of a creative work."
+      },
+      "rdfs:domain": {
+        "@id": "schema:CreativeWork"
       },
       "rdfs:isDefinedBy": {
         "@id": "gdx:"
       },
       "rdfs:label": {
         "@language": "en-US",
-        "@value": "Sitemap XML"
+        "@value": "fundedBy"
       },
-      "skos:related": {
-        "@id": "gdx:SyndicationService"
+      "rdfs:range": {
+        "@id": "schema:Offer"
       }
     }
   ]
