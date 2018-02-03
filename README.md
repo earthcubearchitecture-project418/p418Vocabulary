@@ -10,10 +10,11 @@
   * [Describing a Repository](#repository)
     * [Repository - Fields](#repository-fields)
     * [Repository - Funding Source](#repository-funding-source)
+    * [Repository - Types of Resources](#repository-resource-types)
+    * [Repository - Outreach Activities](#repository-outreach-activities)
     * [Repository - Identifier](#repository-identifier)
     * [Repository - Policies](#repository-policies)
     * [Repository - Services](#repository-services)
-    * [Repository - Offer Catalog](#repository-offercatalog)
   * [Describing a Dataset](#dataset-diagram)
     * [Dataset - Identifier](#dataset-identifiers)
     * [Dataset - Variables](#dataset-variables)
@@ -408,7 +409,6 @@ To describe the funding source of a repository, you use the [schema:funder](http
 }
 </pre>
 
-
 <a id="repository-identifier"></a>
 ### Describing a Repository's Identifier
 
@@ -461,6 +461,121 @@ When describing PIDs, it's important to include both of these pieces for downstr
 So, the best practice is to provide the scheme and value for an identifier, but you can also provide a URL representation using the [schema:url](https://schema.org/url) property.
 
 Back to [top](#top)
+
+
+<a id="repository-resource-types"></a>
+### Describing a Repository's Types of Resources
+
+[![Research Repository Service - Types of Resources](html/voc/static/schema/diagrams/repository-resource-types.png "Research Repository Service - Types of Resources")](#)
+
+To describe the types of research resources a repository curates, we use the [schema:OfferCatalog](https://schema.org/OfferCatalog). With an extension of gdx:ResearchResourceTypes, we define that the OfferCatalog will be a list of types that are dervied from [schema:CreativeWork](https://schema.org/CreativeWork). 
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    "datacite": "http://purl.org/spar/datacite/",
+    <strong>"geolink": "http://schema.geolink.org/1.0/base/main#",
+    "schema": "http://schema.org/"</strong>
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  ...
+  <strong>"hasOfferCatalog":{
+    "@type": "OfferCatalog",
+    "additionalType": "gdx:ResearchResourceTypes",
+    "itemListElement": [
+      {"@type": "Thing", "@id": "schema:Dataset", "name": "Dataset"},
+      {"@type": "Thing", "@id": "geolink:PhysicalSample", "name": "Physical Sample" }
+    ]    
+  }</strong>
+}
+</pre>
+
+Notice, that we use `@id` to describe the type of resource. To reference schema.org classes using `@id` properly, we must add schema.org to the `@context` with a prefix name. Here, we chose `schema:` in the `@context`, thus we use `schema:Dataset` to say that our repository curates resource types of [schema.org/Dataset](https://schema.org/Dataset). 
+
+Because schema.org does not have a class for a Physical Sample yet, we use teh calss definition from the [EarthCube GeoLink vocabulary](http://schema.geolink.org) to specify that this repository curates physical samples. We add `geolink:` to the `@context` section, and then specify `geolink:PhysicalSample` as another `@id` offered by this repository.
+
+<a id="repository-outreach-activities"></a>
+### Describing a Repository's Outreach Activities
+
+[![Research Repository Service - Outreach Activities](html/voc/static/schema/diagrams/repository-outreach-activities.png "Research Repository Service - Outreach Activities")](#)
+
+To describe the outreach activities of a repository, we again use the [schema:OfferCatalog](https://schema.org/OfferCatalog) but specify it's [schema:additionalType](https://schema.org/additionalType) to be `gdx:OutreachActivities`:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    "datacite": "http://purl.org/spar/datacite/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "schema": "http://schema.org/"
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "gdx:ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  ...
+  <strong>"hasOfferCatalog":[</strong>
+    {
+      "@type": "OfferCatalog",
+      "additionalType": "gdx:ResearchResourceTypes",
+      "itemListElement": [
+        {"@type": "Thing", "@id": "schema:Dataset", "name": "Dataset"},
+        {"@type": "Thing", "@id": "geolink:PhysicalSample", "name": "Physical Sample" }
+      ]    
+    },
+    <strong>{
+      "@type": "OfferCatalog",
+      "additionalType": "gdx:OutreachActivities",
+      "itemListElement": [
+        {
+          "@type": "Action",
+          "@id": "gdx:OutreachActivity-Training",
+          "additionalType": "gdx:OutreachActivity-Training",
+          "name": "User Training",
+          "description": "...",
+          "url": "https://sample-data-repository.org/training/user-training"
+        },
+        {
+          "@type": "Action",
+          "@id": "gdx:OutreachActivity-UserSupport",
+          "additionalType": "gdx:OutreachActivity-UserWorkshop",
+          "name": "User Workshops",
+          "description": "...",
+          "url": "https://sample-data-repository.org/workshops/data-submission-workshops"
+        },
+        {
+          "@type": "Action",
+          "@id": "gdx:OutreachActivity-UserSupport",
+          "additionalType": "gdx:OutreachActivity-UserSupport",
+          "name": "User Support",
+          "description": "...",
+          "url": "https://sample-data-repository.org/support/user-support"
+        },
+      ]    
+    }</strong>
+}
+</pre>
+
+These `Action` items above are not instances of actual events, but specify the type of potential events a repository may hold. To describe a specific [schema:Event](https://schema.org/Event) related to one of these activities, you could publish on a different web page in this way:
+
+<pre>
+{
+  "@context": { "@vocab": "http://schema.org/" },
+  "@type": "Event",
+  "name": "SDRO Data Submission Workshop - Summer 2018",
+  "url": "https://sample-data-repository.org/workshops/data-submission-workshops/summer-2018",
+  <strong>"about": { "@id": "gdx:OutreachActivity-UserSupport" </strong>
+  ... goes on to describe the schema.org/Event
+}
+</pre>
 
 <a id="repository-policies"></a>
 ### Describing a Repository's Policies
@@ -637,57 +752,6 @@ If your repository does have datasets or other resources with schema.org JSON-LD
 
 Back to [top](#top)
 
-<a id="repository-offercatalog"></a>
-### Describing a Repository's Offer Catalog
-
-If your repository has some number of data collections, and you would like to represent those collections the [schema:DataCatalog](https://schema.org/DataCatalog) allows us to describe these collections and the [schema:OfferCatalog](https://schema.org/OfferCatalog).links those to the repository service.
-
-[![Research Repository Service - Offer Catalog](html/voc/static/schema/diagrams/repository-offerCatalog.png "Research Repository Service - Offer Catalog")](#)
-
-<pre>
-{
-  "@context": {
-    "@vocab": "http://schema.org/",
-    "gdx": "https://geodex.org/voc/",
-    "datacite": "http://purl.org/spar/datacite/"
-  },
-  "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
-  "legalName": "Sample Data Repository Office",
-  "name": "SDRO",
-  "url": "https://www.sample-data-repository.org",
-  ...
-  <strong>"hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Sample Data Repository Resource Catalog",
-    "itemListElement": [
-      {
-        "@type": "DataCatalog",
-        "@id": "https://www.sample-data-repository.org/collection/biological-data",
-        "name": "Biological Data",
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "public",
-          "name": "General Public"
-        }
-      },
-      {
-        "@type": "DataCatalog",
-        "@id": "https://www.sample-data-repository.org/collection/geological-data",
-        "name": "Geological Data",
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "public",
-          "name": "General Public"
-        }
-      }
-    ]
-  }</strong>
-}
-</pre>
-
-Back to [top](#top)
-
 <a id="dataset-diagram"></a>
 ### Describing a Dataset
 
@@ -702,7 +766,8 @@ However, Google has drafted a [guide to help publishers](https://developers.goog
 <pre>
 {
   "@context": {
-    "@vocab": "http://schema.org/"
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#"
   },
   "@type": "Dataset",
   "additionalType": ["geolink:Dataset", "vivo:Dataset"],
