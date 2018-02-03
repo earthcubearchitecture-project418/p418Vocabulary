@@ -573,7 +573,7 @@ These `Action` items above are not instances of actual events, but specify the t
   "@type": "Event",
   "name": "SDRO Data Submission Workshop - Summer 2018",
   "url": "https://sample-data-repository.org/workshops/data-submission-workshops/summer-2018",
-  <strong>"about": { "@id": "gdx:OutreachActivity-UserSupport" </strong>
+  <strong>"about": { "@id": "gdx:OutreachActivity-UserSupport" }</strong>
   ... goes on to describe the schema.org/Event
 }
 </pre>
