@@ -546,7 +546,7 @@ To describe the outreach activities of a repository, we again use the [schema:Of
         },
         {
           "@type": "Action",
-          "@id": "gdx:OutreachActivity-UserSupport",
+          "@id": "gdx:OutreachActivity-UserWorkshop",
           "additionalType": "gdx:OutreachActivity-UserWorkshop",
           "name": "User Workshops",
           "description": "...",
