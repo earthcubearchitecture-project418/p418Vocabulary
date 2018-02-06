@@ -5,6 +5,7 @@
 * [Goals](#goals)
 * [Approach](#approach)
 * [Vocabulary Prefixes](#prefixes)
+* [schema.org Extensions](#extensions)
 * [Graphical Notation](#graphical-notation)
 * [Publishing schema.org JSON-LD](#schemaorg-jsonld)
   * [Describing a Repository](#repository)
@@ -64,26 +65,68 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 | ------------- |----------------|
 | schema:       | [<https://schema.org/>](https://schema.org/) |
 | gdx:          | [<https://geodex.org/voc/>](https://geodex.org/voc/) |
-| earthcollab:  | [<https://library.ucar.edu/earthcollab/schema#>](https://library.ucar.edu/earthcollab/schema#) |
 | geolink:      | [<http://schema.geolink.org/1.0/base/main#>](http://schema.geolink.org/1.0/base/main#) |
+| earthcollab:  | [<https://library.ucar.edu/earthcollab/schema#>](https://library.ucar.edu/earthcollab/schema#) |
 | vivo:         | [<http://vivoweb.org/ontology/core#>](http://vivoweb.org/ontology/core#) |
 | geo-upper:    | [<http://www.geoscienceontology.org/geo-upper#>](http://www.geoscienceontology.org/geo-upper#) |
-| datacite      | [<http://purl.org/spar/datacite/>](http://purl.org/spar/datacite) |
-| dbpedia:      | [<http://dbpedia.org/resource/>](http://dbpedia.org/resource/) |
+| datacite:      | [<http://purl.org/spar/datacite/>](http://purl.org/spar/datacite) |
 
 [schema:](https://schema.org/) the defacto vocabulary for publishing structured data in web pages for search engine harvesting
 
 [gdx:](https://geodex.org/voc/) the P418 project's vocabulary
 
+[geolink:](http://schema.geolink.org/1.0/base/main) an EarthCube Building Block focusing on describing discovery-level metadata for datasets
+
 [earthcollab:](https://library.ucar.edu/earthcollab/schema#) an EarthCube Building Block focusing on extensions to the ViVO ontology
 
 [vivo:](http://vivoweb.org/ontology/core#) the ViVO ontology
 
-[geo-upper:](http://www.geoscienceontology.org/geo-upper#) a segment of the Geoscience Standard Names Ontology, an EarthCube product
+[geo-upper:](http://www.geoscienceontology.org/geo-upper#) a segment of the Geoscience Standard Names Ontology, an EarthCube product. This ontology could be used when describing dataset variables. 
 
 [datacite:](http://purl.org/spar/datacite) describes persistent identifier schemes like DOI, ARK, URI for helping to represent PIDs. 
 
-[dbpedia:](http://dbpedia.org/resource/) Structured data for Wikipedia resources
+<a id="extensions"></a>
+## Schema.org Extensions 
+From P418, the vocabulary we built specifically for addressing gaps in schema.org and other EarthCube and community ontologies, we have:
+
+**P418**: http://geodex.org/voc/
+* Classes: http://geodex.org/voc/?show=classes
+  * gdx:ResearchRepositoryService
+* Properties: http://geodex.org/voc/?show=properties
+  * [gdx:fundedBy](http://geodex.org/voc/fundedBy)
+* NamedIndividuals (these are classes but tightly coupled to existing schema.org classes): http://geodex.org/voc/?show=namedindividuals
+  * [gdx:OutreachActivities](http://geodex.org/voc/OutreachActivities)
+  * [gdx:OutreachActivity-Training](http://geodex.org/voc/OutreachActivity-Training)
+  * [gdx:OutreachActivity-UserSupport](http://geodex.org/voc/OutreachActivity-UserSupport)
+  * [gdx:OutreachActivity-UserWorkshop](http://geodex.org/voc/OutreachActivity-UserWorkshop)
+  * [gdx:Protocol-Access](http://geodex.org/voc/Protocol-Access)
+  * [gdx:Protocol-License](http://geodex.org/voc/Protocol-License)
+  * [gdx:Protocol-PreservationPolicy](http://geodex.org/voc/Protocol-PreservationPolicy)
+  * [gdx:Protocol-ResourceSubmissionPolicy](http://geodex.org/voc/Protocol-ResourceSubmissionPolicy)
+  * [gdx:Protocol-TermsOfUse](http://geodex.org/voc/Protocol-TermsOfUse)
+  * [gdx:ResearchResourceTypes](http://geodex.org/voc/ResearchResourceTypes)
+  * [gdx:SearchService](http://geodex.org/voc/SearchService)
+  * [gdx:SitemapXML](http://geodex.org/voc/SitemapXML)
+  * [gdx:SubmissionService](http://geodex.org/voc/SubmissionService)
+  * [gdx:SyndicationService](http://geodex.org/voc/SyndicationService)
+
+We also use terms from other vocabularies:
+
+**GeoLink**
+* Classes: [Dataset](http://schema.geolink.org/1.0/base/main#Dataset), [PhysicalSample](http://schema.geolink.org/1.0/base/main#PhysicalSample), [Identifier](http://schema.geolink.org/1.0/base/main#Identifier, [MeasurementType](http://schema.geolink.org/1.0/base/main#MeasurementType, [Person](http://schema.geolink.org/1.0/base/main#Person, [Organization](http://schema.geolink.org/1.0/base/main#Organization), [Award](http://schema.geolink.org/1.0/base/main#Award)
+
+**EarthCollab**
+* Classes: [Parameter](https://library.ucar.edu/earthcollab/schema#Parameter)
+
+**ViVO** (part of EarthCollab)
+* Classes: [Dataset](http://vivoweb.org/ontology/core#Dataset)
+
+**GeoStandardNames**
+* Classes: we give an example of how to use one of his terms (http://www.geoscienceontology.org/geo-lower/quantity#longitude)
+
+**DataCite**
+* Classes: Identifier
+* NamedIndividual: [DOI](https://sparontologies.github.io/datacite/current/datacite.html#d4e756), [ORCID](https://sparontologies.github.io/datacite/current/datacite.html#d4e1116)
 
 <a id="graphical-notation"></a>
 ## Graphical Notation
