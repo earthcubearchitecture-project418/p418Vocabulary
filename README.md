@@ -91,7 +91,7 @@ From P418, the vocabulary we built specifically for addressing gaps in schema.or
 
 **P418**: http://geodex.org/voc/
 * Classes: http://geodex.org/voc/?show=classes
-  * gdx:ResearchRepositoryService
+  * [gdx:ResearchRepositoryService](http://geodex.org/voc/ResearchRepositoryService)
 * Properties: http://geodex.org/voc/?show=properties
   * [gdx:fundedBy](http://geodex.org/voc/fundedBy)
 * NamedIndividuals (these are classes but tightly coupled to existing schema.org classes): http://geodex.org/voc/?show=namedindividuals
@@ -113,7 +113,7 @@ From P418, the vocabulary we built specifically for addressing gaps in schema.or
 We also use terms from other vocabularies:
 
 **GeoLink**
-* Classes: [Dataset](http://schema.geolink.org/1.0/base/main#Dataset), [PhysicalSample](http://schema.geolink.org/1.0/base/main#PhysicalSample), [Identifier](http://schema.geolink.org/1.0/base/main#Identifier, [MeasurementType](http://schema.geolink.org/1.0/base/main#MeasurementType, [Person](http://schema.geolink.org/1.0/base/main#Person, [Organization](http://schema.geolink.org/1.0/base/main#Organization), [Award](http://schema.geolink.org/1.0/base/main#Award)
+* Classes: [Dataset](http://schema.geolink.org/1.0/base/main#Dataset), [PhysicalSample](http://schema.geolink.org/1.0/base/main#PhysicalSample), [Identifier](http://schema.geolink.org/1.0/base/main#Identifier), [MeasurementType](http://schema.geolink.org/1.0/base/main#MeasurementType), [Person](http://schema.geolink.org/1.0/base/main#Person), [Organization](http://schema.geolink.org/1.0/base/main#Organization), [Award](http://schema.geolink.org/1.0/base/main#Award)
 
 **EarthCollab**
 * Classes: [Parameter](https://library.ucar.edu/earthcollab/schema#Parameter)
