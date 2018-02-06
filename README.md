@@ -125,7 +125,7 @@ We also use terms from other vocabularies:
 * Classes: we give an example of how to use one of his terms (http://www.geoscienceontology.org/geo-lower/quantity#longitude)
 
 **DataCite**
-* Classes: Identifier
+* Classes: [Identifier](https://sparontologies.github.io/datacite/current/datacite.html#d4e416)
 * NamedIndividual: [DOI](https://sparontologies.github.io/datacite/current/datacite.html#d4e756), [ORCID](https://sparontologies.github.io/datacite/current/datacite.html#d4e1116)
 
 <a id="graphical-notation"></a>
