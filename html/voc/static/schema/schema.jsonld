@@ -157,13 +157,13 @@
       },
       "dcterms:issued": {
         "@type": "xsd:date",
-        "@value": "2017-11-27"
+        "@value": "2017-02-03"
       },
       "dcterms:source": {
         "@type": "xsd:anyURI",
-        "@value": "https://github.com/earthcubearchitecture-project418"
+        "@value": "https://github.com/earthcubearchitecture-project418/p418Vocabulary"
       },
-      "owl:versionInfo": "0.8.0"
+      "owl:versionInfo": "1.0.0"
     },
     {
       "@id": "_:Na4bcc7b46aa14de7ab0f20fec34534dd",

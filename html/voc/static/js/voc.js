@@ -1498,11 +1498,15 @@ function getVersionInfo() {
   $.each(graph, function( index, value ) {
     var type=value["@type"] || [];
     if ((type.indexOf("owl:Ontology") > -1)) {
+      console.log(value);
       if(undefined != value["owl:versionInfo"]) {
         $("#version-info").html(value["owl:versionInfo"]);
       }
       if (undefined != value["dcterms:issued"] && undefined != value["dcterms:issued"]["@value"]) {
         $("#issued-date").html(value["dcterms:issued"]["@value"]);
+      }
+      if (undefined != value["dcterms:source"] && undefined != value["dcterms:source"]["@value"]) {
+        $("#source-url").html(value["dcterms:source"]["@value"]).attr('href',value["dcterms:source"]["@value"]);
       }
     }
     else {

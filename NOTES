@@ -8,3 +8,9 @@ README.html file is made by:
   	<!-- END OF Markdown -->
 
 
+Build Golang:
+CGO_ENABLED=0 env GOOS=linux go build .
+
+Build Docker:
+docker build -t "earthcube/p418vocab:latest" -t "earthcube/p418vocab:(semver)" .
+docker save "earthcube/p418vocab:latest" | bzip2 | ssh <geodex> 'bunzip2 | docker load'

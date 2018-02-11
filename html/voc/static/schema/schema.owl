@@ -13,9 +13,9 @@
     <dc:description xml:lang="en-US">Schema.org extension for a Information Resource Service</dc:description>
     <dc:title xml:lang="en-US">Research Repository Service Vocabulary</dc:title>
     <dc:creator xml:lang="en-US">EarthCube Registry Working Group</dc:creator>
-    <dcterms:source rdf:datatype="xsd:anyURI">https://github.com/earthcubearchitecture-project418</dcterms:source>
-    <dcterms:issued rdf:datatype="xsd:date">2017-11-27</dcterms:issued>
-    <owl:versionInfo>0.8.0</owl:versionInfo>
+    <dcterms:source rdf:datatype="xsd:anyURI">https://github.com/earthcubearchitecture-project418/p418Vocabulary</dcterms:source>
+    <dcterms:issued rdf:datatype="xsd:date">2017-02-03</dcterms:issued>
+    <owl:versionInfo>1.0.0</owl:versionInfo>
   </owl:Ontology>
 
   <owl:Class rdf:about="gdx:ResearchRepositoryService">

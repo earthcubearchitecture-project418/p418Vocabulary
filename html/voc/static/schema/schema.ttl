@@ -11,9 +11,9 @@
   dc11:description "Schema.org extension for a Information Resource Service"@en-US ;
   dc11:title "Research Repository Service Vocabulary"@en-US ;
   dc11:creator "EarthCube Registry Working Group"@en-US ;
-  dc:source "https://github.com/earthcubearchitecture-project418"^^xsd:anyURI ;
-  dc:issued "2017-11-27"^^xsd:date ;
-  owl:versionInfo "0.8.0" .
+  dc:source "https://github.com/earthcubearchitecture-project418/p418Vocabulary"^^xsd:anyURI ;
+  dc:issued "2017-02-03"^^xsd:date ;
+  owl:versionInfo "1.0.0" .
 
 <gdx:ResearchRepositoryService>
   a owl:Class ;
