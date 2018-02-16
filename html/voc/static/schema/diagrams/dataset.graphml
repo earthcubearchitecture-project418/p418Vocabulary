@@ -501,49 +501,14 @@ vivo:Dataset<y:LabelModel>
       </data>
     </node>
     <node id="n27">
-      <data key="d4"><![CDATA[PropertyValue]]></data>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="30.0" width="142.91796875" x="254.86314069378915" y="621.9830574487529"/>
-          <y:Fill color="#CCFFCC" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="132.91796875" x="5.0" y="5.93359375">schema:PropertyValue<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n28">
       <data key="d4"><![CDATA[https://library.ucar.edu/earthcollab/schema#Parameter]]></data>
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="141.359375" x="67.67673365128933" y="550.2953957435698"/>
+          <y:Geometry height="53.16581196581194" width="166.25" x="211.78778745449347" y="617.3824876958454"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="131.359375" x="5.0" y="5.93359375">earthcollab:Parameter<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n29">
-      <data key="d4"><![CDATA[http://www.geoscienceontology.org/geo-upper#Variable]]></data>
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="37.0" width="164.88594541201277" x="61.498022713789354" y="618.4830574487529"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="157.462890625" x="3.711527393506401" y="2.3671875">geo-upper:Variable,
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="157.462890625" x="4.393554687500014" y="3.3836872329059133">earthcollab:Parameter,
+geo-upper:Variable,
 geolink:MeasurementType<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -795,14 +760,14 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
     <edge id="e14" source="n26" target="n27">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="7.65234375" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="23.75699386429565" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="139.708984375" x="7.6924796362056895" y="9.664135989680744">schema:valueReference<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="138.19140625" x="-144.7045426396147" y="9.742299227629701">schema:additionalType<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
-              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="77.54695979202592" distanceToCenter="true" position="left" ratio="0.34531936829449533" segment="-1"/>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="75.6088515462944" distanceToCenter="true" position="right" ratio="0.529614210231593" segment="-1"/>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
@@ -810,43 +775,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e15" source="n26" target="n28">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="20.200143185176955" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="138.19140625" x="-107.2703946446091" y="-38.34364827735067">schema:additionalType<y:LabelModel>
-              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="29.277227614670437" distanceToCenter="true" position="right" ratio="1.0" segment="-1"/>
-            </y:ModelParameter>
-            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
-          </y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e16" source="n27" target="n29">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="138.19140625" x="-97.98907509362635" y="-35.56818709315371">schema:additionalType<y:LabelModel>
-              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="26.501806065344113" distanceToCenter="true" position="right" ratio="13.653782457523562" segment="-1"/>
-            </y:ModelParameter>
-            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
-          </y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e17" source="n0" target="n26">
+    <edge id="e15" source="n0" target="n26">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-10.013592233009717" sy="0.0" tx="0.0" ty="0.0">
@@ -866,7 +795,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e18" source="n0" target="n12">
+    <edge id="e16" source="n0" target="n12">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -884,7 +813,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e19" source="n9" target="n23">
+    <edge id="e17" source="n9" target="n23">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="39.230561023622045" sy="0.0" tx="20.05189836871085" ty="0.0">
@@ -898,7 +827,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e20" source="n22" target="n21">
+    <edge id="e18" source="n22" target="n21">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -916,7 +845,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e21" source="n7" target="n19">
+    <edge id="e19" source="n7" target="n19">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-52.1899606299213" sy="0.0" tx="-52.1899606299213" ty="0.0"/>
@@ -928,7 +857,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e22" source="n2" target="n13">
+    <edge id="e20" source="n2" target="n13">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -940,7 +869,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e23" source="n1" target="n11">
+    <edge id="e21" source="n1" target="n11">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -952,8 +881,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e24" source="n3" target="n14">
-      <data key="d9"/>
+    <edge id="e22" source="n3" target="n14">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -965,8 +893,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e25" source="n3" target="n18">
-      <data key="d9"/>
+    <edge id="e23" source="n3" target="n18">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -988,8 +915,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e26" source="n3" target="n15">
-      <data key="d9"/>
+    <edge id="e24" source="n3" target="n15">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1011,8 +937,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e27" source="n3" target="n16">
-      <data key="d9"/>
+    <edge id="e25" source="n3" target="n16">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1034,8 +959,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e28" source="n3" target="n17">
-      <data key="d9"/>
+    <edge id="e26" source="n3" target="n17">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1057,8 +981,7 @@ schema:funder<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide=
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e29" source="n0" target="n24">
-      <data key="d9"/>
+    <edge id="e27" source="n0" target="n24">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-33.0" sy="0.0" tx="0.0" ty="0.0">
