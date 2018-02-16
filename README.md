@@ -1019,8 +1019,8 @@ In it's most basic form, the variable as a [schema:PropertyValue](https://schema
     {
       "@type": "PropertyValue",
       "additionalType": "earthcollab:Parameter",
-      "description": "Bottle identifier",
-      "value": "bottle_number"
+      "name": "Bottle identifier",
+      "description": "The bottle number for each associated measurement."
     },
     ...
   ]</strong>
@@ -1035,32 +1035,23 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
     "vivo": "http://vivoweb.org/ontology/core#",
-    <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#",
-    "gsn-quantity": "http://www.geoscienceontology.org/geo-lower/quantity#"</strong>
+    <strong>"gsn-quantity": "http://www.geoscienceontology.org/geo-lower/quantity#"</strong>
   },
   "@type": "Dataset",
   "additionalType": ["geolink:Dataset", "vivo:Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
-  <strong>"variableMeasured": [
+  "variableMeasured": [
     {
       "@type": "PropertyValue",
-      "additionalType": "earthcollab:Parameter",
+      <strong>"additionalType": ["gsn-quantity:latitude"],</strong>
       "value": "latitude",
       "url": "https://www.sample-data-repository.org/dataset-parameter/665787",
       "description": "Latitude where water samples were collected; north is positive.",
       "unitText": "decimal degrees",
-      "valueReference": {
-        "@type": "PropertyValue",
-        "additionalType": ["gsn-quantity:latitude", "geolink:MeasurementType"],
-        "value": "latitude"
-        "url": "http://www.geoscienceontology.org/geo-lower/quantity#latitude",
-        "description": "Latitude, in decimal degrees, North is positive, negative denotes South; Reported in some datasets as degrees, minutes",
-        "unitText": "decimal degrees",
-      }
     },
     ...
-  ]</strong>
+  ]
 }
 </pre>
 
