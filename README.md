@@ -1045,10 +1045,12 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
     {
       "@type": "PropertyValue",
       <strong>"additionalType": ["gsn-quantity:latitude"],</strong>
-      "value": "latitude",
+      "name": "latitude",
       "url": "https://www.sample-data-repository.org/dataset-parameter/665787",
       "description": "Latitude where water samples were collected; north is positive.",
       "unitText": "decimal degrees",
+      "minValue": "45.0",
+      "maxValue": "15.0"
     },
     ...
   ]
