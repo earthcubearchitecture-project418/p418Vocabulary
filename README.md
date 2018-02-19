@@ -1345,33 +1345,145 @@ People can be linked to datasets iusing three fields: author, creator, and contr
   ...
   <strong>"creator": [
     {
-      "@type": "Person",
-      "additionalType": "geolink:Person",
-      "name": "Dr. Uta Passow",
-      "url": "https://www.sample-data-repository.org/person/51317",
-      "familyName": "Passow",
-      "givenName": "Uta",
-      "honorificPrefix": "Dr."
+      "@id": "http://lod.bco-dmo.org/id/person-role/472036",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Principal Investigator",
+      "url": "http://lod.bco-dmo.org/id/person-role/472036",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/51317",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Dr Uta Passow",
+        "givenName": "Uta",
+        "familyName": "Passow",
+        "url": "https://www.bco-dmo.org/person/51317"
+      }
     },
     {
-      "@type": "Person",
-      "additionalType": "geolink:Person",
-      "name": "Dr. Mark Brzezinski",
-      "url": "https://www.sample-data-repository.org/person/50663",
-      "familyName": "Brzezinski",
-      "givenName": "Mark",
-      "honorificPrefix": "Dr.",
-      "identifier": {
-        "@type": "PropertyValue",
-        "additionalType": ["geolink:Identifier","datacite:Identifier"],
-        "propertyID": "datacite:orcid",
-        "value": "0000-0003-3432-2297",
-        "url": "https://orcid.org/0000-0003-3432-2297" 
+      "@id": "http://lod.bco-dmo.org/id/person-role/472038",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Co-Principal Investigator",
+      "url": "https://www.bco-dmo.org/person-role/472038",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/50663",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "identifier": {
+          "@type": "PropertyValue",
+          "additionalType": [
+            "geolink:Identifier",
+            "datacite:Identifier"
+          ],
+          "propertyID": "datacite:orcid",
+          "url": "https://orcid.org/0000-0003-3432-2297",
+          "value": "0000-0003-3432-2297"
+        },
+        "name": "Dr Mark Brzezinski",
+        "url": "https://www.bco-dmo.org/person/50663"
       }
-    }
-  ]</strong>
+    }</strong>
 }
 </pre>
+NOTE that the Role inherits the property `creator` and `contributor` from the Dataset when pointing to the [schema:Person](https://schema.org/Person). 
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    ...
+  },
+  <strong>"@type": "Dataset"</strong>,
+  ...
+  <strong>"creator"</strong>: [
+    {
+      "@id": "http://lod.bco-dmo.org/id/person-role/472036",
+      <strong>"@type": "Role"</strong>,
+      "additionalType": "geolink:Participant",
+      "roleName": "Principal Investigator",
+      "url": "http://lod.bco-dmo.org/id/person-role/472036",
+      <strong>"creator":</strong> {
+        "@id": "https://www.bco-dmo.org/person/51317",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Dr Uta Passow",
+        "givenName": "Uta",
+        "familyName": "Passow",
+        "url": "https://www.bco-dmo.org/person/51317"
+      }
+    }
+}
+</pre>
+
+If a single Person plays multiple roles on a Dataset, each role should be explicitly defined in this way:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  ...
+  "creator": [
+    {
+      "@id": "http://lod.bco-dmo.org/id/person-role/472036",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Principal Investigator",
+      "url": "http://lod.bco-dmo.org/id/person-role/472036",
+      "creator": {
+        <strong>"@id": "https://www.bco-dmo.org/person/51317"</strong>,
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Dr Uta Passow",
+        "givenName": "Uta",
+        "familyName": "Passow",
+        "url": "https://www.bco-dmo.org/person/51317"
+      }
+    },
+    <strong>{
+      "@id": "https://www.bco-dmo.org/person-role/472037",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Contact",
+      "url": "https://www.bco-dmo.org/person-role/472037",
+      "creator": { "@id": "https://www.bco-dmo.org/person/51317" }
+    }</strong>,
+    {
+      "@id": "http://lod.bco-dmo.org/id/person-role/472038",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Co-Principal Investigator",
+      "url": "https://www.bco-dmo.org/person-role/472038",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/50663",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "identifier": {
+          "@type": "PropertyValue",
+          "additionalType": [
+            "geolink:Identifier",
+            "datacite:Identifier"
+          ],
+          "propertyID": "datacite:orcid",
+          "url": "https://orcid.org/0000-0003-3432-2297",
+          "value": "0000-0003-3432-2297"
+        },
+        "name": "Dr Mark Brzezinski",
+        "url": "https://www.bco-dmo.org/person/50663"
+      }
+    }
+}
+</pre>
+
+Notice that since Uta Passow has already been defined in the document with `"@id": "https://www.bco-dmo.org/person/51317"` for her role as Principal Investigator, the `@id` can be used for her role as Contact by defining the Role's creator as `"creator": { "@id": "https://www.bco-dmo.org/person/51317" }`.
 
 Back to [top](#top)
 
