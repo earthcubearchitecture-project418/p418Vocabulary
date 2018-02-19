@@ -322,7 +322,7 @@
       "@id": "http://lod.bco-dmo.org/id/person-role/472036",
       "@type": "Role",
       "additionalType": "geolink:Participant",
-      "roleName": ["Principal Investigator", "Contact"],
+      "roleName": "Principal Investigator",
       "url": "http://lod.bco-dmo.org/id/person-role/472036",
       "creator": {
         "@id": "https://www.bco-dmo.org/person/51317",
