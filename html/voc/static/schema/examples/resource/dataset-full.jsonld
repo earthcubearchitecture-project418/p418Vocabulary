@@ -319,52 +319,97 @@
   "datePublished": "2016-12-05",
   "creator": [
     {
-      "@id": "https://www.bco-dmo.org/person/51317",
-      "@type": "Person",
-      "additionalType": "geolink:Person",
-      "name": "Dr Uta Passow",
-      "url": "https://www.bco-dmo.org/person/51317"
+      "@id": "http://lod.bco-dmo.org/id/person-role/472036",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": ["Principal Investigator", "Contact"],
+      "url": "http://lod.bco-dmo.org/id/person-role/472036",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/51317",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Dr Uta Passow",
+        "givenName": "Uta",
+        "familyName": "Passow",
+        "url": "https://www.bco-dmo.org/person/51317"
+      }
     },
     {
-      "@id": "https://www.bco-dmo.org/person/50663",
-      "@type": "Person",
-      "additionalType": "geolink:Person",
-      "identifier": {
-        "@type": "PropertyValue",
-        "additionalType": [
-          "geolink:Identifier",
-          "datacite:Identifier"
-        ],
-        "propertyID": "datacite:orcid",
-        "url": "https://orcid.org/0000-0003-3432-2297",
-        "value": "0000-0003-3432-2297"
-      },
-      "name": "Dr Mark Brzezinski",
-      "url": "https://www.bco-dmo.org/person/50663"
+      "@id": "https://www.bco-dmo.org/person-role/472037",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Contact",
+      "url": "https://www.bco-dmo.org/person-role/472037",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/51317",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Dr Uta Passow",
+        "givenName": "Uta",
+        "familyName": "Passow",
+        "url": "https://www.bco-dmo.org/person/51317"
+      }
     },
     {
-      "@id": "https://www.bco-dmo.org/person/50575",
-      "@type": "Person",
-      "additionalType": "geolink:Person",
-      "identifier": {
-        "@type": "PropertyValue",
-        "additionalType": [
-          "geolink:Identifier",
-          "datacite:Identifier"
-        ],
-        "propertyID": "datacite:orcid",
-        "url": "https://orcid.org/0000-0003-2591-5293",
-        "value": "0000-0003-2591-5293"
-      },
-      "name": "Dr Craig Carlson",
-      "url": "https://www.bco-dmo.org/person/50575"
+      "@id": "http://lod.bco-dmo.org/id/person-role/472038",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Co-Principal Investigator",
+      "url": "https://www.bco-dmo.org/person-role/472038",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/50663",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "identifier": {
+          "@type": "PropertyValue",
+          "additionalType": [
+            "geolink:Identifier",
+            "datacite:Identifier"
+          ],
+          "propertyID": "datacite:orcid",
+          "url": "https://orcid.org/0000-0003-3432-2297",
+          "value": "0000-0003-3432-2297"
+        },
+        "name": "Dr Mark Brzezinski",
+        "url": "https://www.bco-dmo.org/person/50663"
+      }
     },
     {
-      "@id": "https://www.bco-dmo.org/person/471722",
-      "@type": "Person",
-      "additionalType": "geolink:Person",
-      "name": "Ms Anna James",
-      "url": "https://www.bco-dmo.org/person/471722"
+      "@id": "https://www.bco-dmo.org/person-role/472039",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Co-Principal Investigator",
+      "url": "https://www.bco-dmo.org/person-role/472039",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/50575",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "identifier": {
+          "@type": "PropertyValue",
+          "additionalType": [
+            "geolink:Identifier",
+            "datacite:Identifier"
+          ],
+          "propertyID": "datacite:orcid",
+          "url": "https://orcid.org/0000-0003-2591-5293",
+          "value": "0000-0003-2591-5293"
+        },
+        "name": "Dr Craig Carlson",
+        "url": "https://www.bco-dmo.org/person/50575"
+      }
+    },
+    { "@id": "http://lod.bco-dmo.org/id/person-role/472040",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Student",
+      "url": "https://www.bco-dmo.org/person-role/472040",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/471722",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Ms Anna James",
+        "url": "https://www.bco-dmo.org/person/471722"
+      }
     }
   ],
   "provider": {
