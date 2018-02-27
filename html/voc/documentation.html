@@ -1271,6 +1271,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
 </script><noscript>&#34;&#64;&#116;&#x79;&#112;&#x65;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#116;&#x79;&#112;&#x65;&#34;&#x29;</noscript>: &quot;Dataset&quot;,<br /> &quot;additionalType&quot;: [&quot;geolink:Dataset&quot;, &quot;vivo:Dataset&quot;],<br /> &quot;name&quot;: &quot;Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016&quot;,<br /> ...<br /> <strong>&quot;temporalCoverage&quot;: &quot;2018-01-22T14:51:12+00:00&quot;</strong><br />}<br /></pre></p>
 <p>Or a single date:<br /><pre><br />{<br /> ...<br /> <strong>&quot;temporalCoverage&quot;: &quot;2018-01-22&quot;</strong><br />}<br /></pre></p>
 <p>Or a date range:<br /><pre><br />{<br /> ...<br /> <strong>&quot;temporalCoverage&quot;: &quot;2012-09-20/2016-01-22&quot;</strong><br />}<br /></pre></p>
+<p>Schema.org also lets you provide date ranges and other temporal coverages through the <a href="http://schema.org/DateTime">DateTime</a> data type. For more granular temporal coverages go here: <a href="http://schema.org/DateTime"><a href="http://schema.org/DateTime">http://schema.org/DateTime</a></a>.</p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-spatial"></a></p>
 <h4 id="describing-a-datasets-spatial-coverage">Describing a Dataset's Spatial Coverage</h4>
@@ -1345,7 +1346,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-creator_contributor"></a></p>
 <h4 id="describing-a-datasets-creatorscontributors">Describing a Dataset's Creators/Contributors</h4>
-<p>People can be linked to datasets iusing three fields: author, creator, and contributor. Since <a href="https://schema.org/contributor">schema:contributor</a> is defined as a secondary author, and <a href="https://schema.org/creator">schema:Creator</a> is defined as being synonymous with the <a href="https://schema.org/author">schema:author</a> field, we recommend using the more expressive fields of creator and contribulds of creator and contributor. But using any of these fields are okay.</p>
+<p>People can be linked to datasets iusing three fields: author, creator, and contributor. Since <a href="https://schema.org/contributor">schema:contributor</a> is defined as a secondary author, and <a href="https://schema.org/creator">schema:Creator</a> is defined as being synonymous with the <a href="https://schema.org/author">schema:author</a> field, we recommend using the more expressive fields of creator and contribulds of creator and contributor. But using any of these fields are okay. Becuase there are more things that can be said about how and when a person contributed to a Dataset, we use the <a href="https://schema.org/Role">schema:Role</a>. You'll notice that the schema.org documentation does not state that the Role type is an expected data type of author, creator and contributor, but that is addressed in this <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post introducing Role into schema.org</a>. <em>Thanks to <a href="https://github.com/smrgeoinfo">Stephen Richard</a> for this contribution</em></p>
 <p><img src="/voc/static/schema/diagrams/dataset-creator_contributor.png" title="Dataset - Creator/Contributor" alt="Variables" /></p>
 <pre>
 {
@@ -1362,35 +1363,146 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
   ...
   <strong>"creator": [
     {
-      "@type": "Person",
-      "additionalType": "geolink:Person",
-      "name": "Dr. Uta Passow",
-      "url": "https://www.sample-data-repository.org/person/51317",
-      "familyName": "Passow",
-      "givenName": "Uta",
-      "honorificPrefix": "Dr."
+      "@id": "http://lod.bco-dmo.org/id/person-role/472036",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Principal Investigator",
+      "url": "http://lod.bco-dmo.org/id/person-role/472036",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/51317",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Dr Uta Passow",
+        "givenName": "Uta",
+        "familyName": "Passow",
+        "url": "https://www.bco-dmo.org/person/51317"
+      }
     },
     {
-      "@type": "Person",
-      "additionalType": "geolink:Person",
-      "name": "Dr. Mark Brzezinski",
-      "url": "https://www.sample-data-repository.org/person/50663",
-      "familyName": "Brzezinski",
-      "givenName": "Mark",
-      "honorificPrefix": "Dr.",
-      "identifier": {
-        "@type": "PropertyValue",
-        "additionalType": ["geolink:Identifier","datacite:Identifier"],
-        "propertyID": "datacite:orcid",
-        "value": "0000-0003-3432-2297",
-        "url": "https://orcid.org/0000-0003-3432-2297"
+      "@id": "http://lod.bco-dmo.org/id/person-role/472038",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Co-Principal Investigator",
+      "url": "https://www.bco-dmo.org/person-role/472038",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/50663",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "identifier": {
+          "@type": "PropertyValue",
+          "additionalType": [
+            "geolink:Identifier",
+            "datacite:Identifier"
+          ],
+          "propertyID": "datacite:orcid",
+          "url": "https://orcid.org/0000-0003-3432-2297",
+          "value": "0000-0003-3432-2297"
+        },
+        "name": "Dr Mark Brzezinski",
+        "url": "https://www.bco-dmo.org/person/50663"
+      }
+    }</strong>
+}
+</pre>
+
+<p>NOTE that the Role inherits the property <code>creator</code> and <code>contributor</code> from the Dataset when pointing to the <a href="https://schema.org/Person">schema:Person</a>.</p>
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    ...
+  },
+  <strong>"@type": "Dataset"</strong>,
+  ...
+  <strong>"creator"</strong>: [
+    {
+      "@id": "http://lod.bco-dmo.org/id/person-role/472036",
+      <strong>"@type": "Role"</strong>,
+      "additionalType": "geolink:Participant",
+      "roleName": "Principal Investigator",
+      "url": "http://lod.bco-dmo.org/id/person-role/472036",
+      <strong>"creator":</strong> {
+        "@id": "https://www.bco-dmo.org/person/51317",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Dr Uta Passow",
+        "givenName": "Uta",
+        "familyName": "Passow",
+        "url": "https://www.bco-dmo.org/person/51317"
       }
     }
-  ]</strong>
 }
 </pre>
 
 
+<p>If a single Person plays multiple roles on a Dataset, each role should be explicitly defined in this way:</p>
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  ...
+  "creator": [
+    {
+      "@id": "http://lod.bco-dmo.org/id/person-role/472036",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Principal Investigator",
+      "url": "http://lod.bco-dmo.org/id/person-role/472036",
+      "creator": {
+        <strong>"@id": "https://www.bco-dmo.org/person/51317"</strong>,
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "name": "Dr Uta Passow",
+        "givenName": "Uta",
+        "familyName": "Passow",
+        "url": "https://www.bco-dmo.org/person/51317"
+      }
+    },
+    <strong>{
+      "@id": "https://www.bco-dmo.org/person-role/472037",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Contact",
+      "url": "https://www.bco-dmo.org/person-role/472037",
+      "creator": { "@id": "https://www.bco-dmo.org/person/51317" }
+    }</strong>,
+    {
+      "@id": "http://lod.bco-dmo.org/id/person-role/472038",
+      "@type": "Role",
+      "additionalType": "geolink:Participant",
+      "roleName": "Co-Principal Investigator",
+      "url": "https://www.bco-dmo.org/person-role/472038",
+      "creator": {
+        "@id": "https://www.bco-dmo.org/person/50663",
+        "@type": "Person",
+        "additionalType": "geolink:Person",
+        "identifier": {
+          "@type": "PropertyValue",
+          "additionalType": [
+            "geolink:Identifier",
+            "datacite:Identifier"
+          ],
+          "propertyID": "datacite:orcid",
+          "url": "https://orcid.org/0000-0003-3432-2297",
+          "value": "0000-0003-3432-2297"
+        },
+        "name": "Dr Mark Brzezinski",
+        "url": "https://www.bco-dmo.org/person/50663"
+      }
+    }
+}
+</pre>
+
+
+<p>Notice that since Uta Passow has already been defined in the document with <code>&quot;@id&quot;: &quot;https://www.bco-dmo.org/person/51317&quot;</code> for her role as Principal Investigator, the <code>@id</code> can be used for her role as Contact by defining the Role's creator as <code>&quot;creator&quot;: { &quot;@id&quot;: &quot;https://www.bco-dmo.org/person/51317&quot; }</code>.</p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-publisher_provider"></a></p>
 <h4 id="describing-a-datasets-publisherprovider">Describing a Dataset's Publisher/Provider</h4>

@@ -31,7 +31,7 @@
     * [Dataset - Publisher/Provider](#dataset-publisher_provider)
     * [Dataset - Protocols](#dataset-protocols)
     * [Dataset - Funding](#dataset-funding)
-    
+
 * [Examples](#examples)
 * [Issues](#issues)
 * [Advanced Publishing Techniques](#advanced-publishing-techniques)
@@ -81,12 +81,12 @@ The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal 
 
 [vivo:](http://vivoweb.org/ontology/core#) the ViVO ontology
 
-[geo-upper:](http://www.geoscienceontology.org/geo-upper#) a segment of the Geoscience Standard Names Ontology, an EarthCube product. This ontology could be used when describing dataset variables. 
+[geo-upper:](http://www.geoscienceontology.org/geo-upper#) a segment of the Geoscience Standard Names Ontology, an EarthCube product. This ontology could be used when describing dataset variables.
 
-[datacite:](http://purl.org/spar/datacite) describes persistent identifier schemes like DOI, ARK, URI for helping to represent PIDs. 
+[datacite:](http://purl.org/spar/datacite) describes persistent identifier schemes like DOI, ARK, URI for helping to represent PIDs.
 
 <a id="extensions"></a>
-## Schema.org Extensions 
+## Schema.org Extensions
 From P418, the vocabulary we built specifically for addressing gaps in schema.org and other EarthCube and community ontologies, we have:
 
 **P418**: http://geodex.org/voc/
@@ -163,7 +163,7 @@ Schema.org's preferred format for markup is JSON-LD. THere are a number of tools
       * [Event](https://schema.pythonanywhere.com/Event)
         * [CreativeWork](https://schema.pythonanywhere.com/CreativeWork)
           * [Vehicle](https://schema.pythonanywhere.com/Vehicle)
-      
+
 * Google Testing Tool for schema.org: [https://search.google.com/structured-data/testing-tool/u/0/](https://search.google.com/structured-data/testing-tool/u/0/)
   * Error Guide: [https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/](https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/)
 
@@ -182,24 +182,24 @@ In schema.org, we model a repository as both an [schema:Organization](https://sc
     "gdx": "https://geodex.org/voc/"
   },
   <strong>"@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService"</strong>,
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService"</strong>,
   "legalName": "Sample Data Repository Office",
   "name": "SDRO"
   </strong>
 }
 </pre>
 
-The other fields you can use to describe the Organziation and the Service are: 
+The other fields you can use to describe the Organziation and the Service are:
 
 <a id="repository-fields"></a>
 [![Research Repository Service - Fields](html/voc/static/schema/diagrams/repository-properties.png "Research Repository Service - Fields")](#)
 
-* [schema:legalName](https://schema.org/legalName) should be the official name of the  repository, 
-* [schema:name](https://schema.org/name) can be an acronym or the name typcially used for the repository, 
-* [schema:url](https://schema.org/url) should be the url of your repository's homepage, 
-* [schema:description](https://schema.org/description) should be text describing your repository, 
+* [schema:legalName](https://schema.org/legalName) should be the official name of the  repository,
+* [schema:name](https://schema.org/name) can be an acronym or the name typcially used for the repository,
+* [schema:url](https://schema.org/url) should be the url of your repository's homepage,
+* [schema:description](https://schema.org/description) should be text describing your repository,
 * [schema:sameAs](https://schema.org/sameAs) can be used to link the repository to other URLs such as Re3Data, Twitter, LinkedIn, etc.,
-* [schema:category](https://schema.org/category) can be used to describe the discipline, domain, area of study that encompasses the repository's holdings. 
+* [schema:category](https://schema.org/category) can be used to describe the discipline, domain, area of study that encompasses the repository's holdings.
 
 <pre>
 {
@@ -208,7 +208,7 @@ The other fields you can use to describe the Organziation and the Service are:
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   <strong>"url": "https://www.sample-data-repository.org",
@@ -236,7 +236,7 @@ If you are using the "@id" attribute for your Repository, you can specify the [s
   },
   "@type": ["Service", "Organization"],
   <strong>"@id": "https://www.sample-data-repository.org",</strong>
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -260,7 +260,7 @@ However, if your repository has a situation where multiple organizations act as 
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -295,7 +295,7 @@ Adding additional fields of [schema:Organization](https://schema.org/Organizatio
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -339,7 +339,7 @@ If this Organization has a parent entity such as a college, university or resear
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -384,7 +384,7 @@ To describe the funding source of a repository, you use the [schema:funder](http
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -466,7 +466,7 @@ Some organizations may have a persistent identifier (DOI) assigned to their orga
     <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -512,7 +512,7 @@ Back to [top](#top)
 
 [![Research Repository Service - Types of Resources](html/voc/static/schema/diagrams/repository-resource-types.png "Research Repository Service - Types of Resources")](#)
 
-To describe the types of research resources a repository curates, we use the [schema:OfferCatalog](https://schema.org/OfferCatalog). With an extension of gdx:ResearchResourceTypes, we define that the OfferCatalog will be a list of types that are dervied from [schema:CreativeWork](https://schema.org/CreativeWork). 
+To describe the types of research resources a repository curates, we use the [schema:OfferCatalog](https://schema.org/OfferCatalog). With an extension of gdx:ResearchResourceTypes, we define that the OfferCatalog will be a list of types that are dervied from [schema:CreativeWork](https://schema.org/CreativeWork).
 
 <pre>
 {
@@ -524,23 +524,23 @@ To describe the types of research resources a repository curates, we use the [sc
     "schema": "http://schema.org/"</strong>
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
   ...
   <strong>"hasOfferCatalog":{
     "@type": "OfferCatalog",
-    "additionalType": "gdx:ResearchResourceTypes",
+    "additionalType": "https://geodex.org/voc/ResearchResourceTypes",
     "itemListElement": [
       {"@type": "Thing", "@id": "schema:Dataset", "name": "Dataset"},
       {"@type": "Thing", "@id": "geolink:PhysicalSample", "name": "Physical Sample" }
-    ]    
+    ]
   }</strong>
 }
 </pre>
 
-Notice, that we use `@id` to describe the type of resource. To reference schema.org classes using `@id` properly, we must add schema.org to the `@context` with a prefix name. Here, we chose `schema:` in the `@context`, thus we use `schema:Dataset` to say that our repository curates resource types of [schema.org/Dataset](https://schema.org/Dataset). 
+Notice, that we use `@id` to describe the type of resource. To reference schema.org classes using `@id` properly, we must add schema.org to the `@context` with a prefix name. Here, we chose `schema:` in the `@context`, thus we use `schema:Dataset` to say that our repository curates resource types of [schema.org/Dataset](https://schema.org/Dataset).
 
 Because schema.org does not have a class for a Physical Sample yet, we use teh calss definition from the [EarthCube GeoLink vocabulary](http://schema.geolink.org) to specify that this repository curates physical samples. We add `geolink:` to the `@context` section, and then specify `geolink:PhysicalSample` as another `@id` offered by this repository.
 
@@ -561,7 +561,7 @@ To describe the outreach activities of a repository, we again use the [schema:Of
     "schema": "http://schema.org/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -569,20 +569,20 @@ To describe the outreach activities of a repository, we again use the [schema:Of
   <strong>"hasOfferCatalog":[</strong>
     {
       "@type": "OfferCatalog",
-      "additionalType": "gdx:ResearchResourceTypes",
+      "additionalType": "https://geodex.org/voc/ResearchResourceTypes",
       "itemListElement": [
         {"@type": "Thing", "@id": "schema:Dataset", "name": "Dataset"},
         {"@type": "Thing", "@id": "geolink:PhysicalSample", "name": "Physical Sample" }
-      ]    
+      ]
     },
     <strong>{
       "@type": "OfferCatalog",
-      "additionalType": "gdx:OutreachActivities",
+      "additionalType": "https://geodex.org/voc/OutreachActivities",
       "itemListElement": [
         {
           "@type": "Action",
           "@id": "gdx:OutreachActivity-Training",
-          "additionalType": "gdx:OutreachActivity-Training",
+          "additionalType": "https://geodex.org/voc/OutreachActivity-Training",
           "name": "User Training",
           "description": "...",
           "url": "https://sample-data-repository.org/training/user-training"
@@ -590,7 +590,7 @@ To describe the outreach activities of a repository, we again use the [schema:Of
         {
           "@type": "Action",
           "@id": "gdx:OutreachActivity-UserWorkshop",
-          "additionalType": "gdx:OutreachActivity-UserWorkshop",
+          "additionalType": "https://geodex.org/voc/OutreachActivity-UserWorkshop",
           "name": "User Workshops",
           "description": "...",
           "url": "https://sample-data-repository.org/workshops/data-submission-workshops"
@@ -598,12 +598,12 @@ To describe the outreach activities of a repository, we again use the [schema:Of
         {
           "@type": "Action",
           "@id": "gdx:OutreachActivity-UserSupport",
-          "additionalType": "gdx:OutreachActivity-UserSupport",
+          "additionalType": "https://geodex.org/voc/OutreachActivity-UserSupport",
           "name": "User Support",
           "description": "...",
           "url": "https://sample-data-repository.org/support/user-support"
         },
-      ]    
+      ]
     }</strong>
 }
 </pre>
@@ -636,7 +636,7 @@ If your repository has policy documents about access control, terms of use, etc.
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -644,14 +644,14 @@ If your repository has policy documents about access control, terms of use, etc.
   <strong>"publishingPrinciples": [
       {
         "@type": "DigitalDocument",
-        "additionalType": "gdx:Protocol-TermsOfUse",
+        "additionalType": "https://geodex.org/voc/Protocol-TermsOfUse",
         "name": "Terms of Use",
         "url": "https://www.sample-data-repository.org/terms-of-use",
         "fileFormat": "text/html"
       },
       {
         "@type": "DigitalDocument",
-        "additionalType": "gdx:Protocol-ResourceSubmissionPolicy",
+        "additionalType": "https://geodex.org/voc/Protocol-ResourceSubmissionPolicy",
         "name": "How to Get Started Contributing Data",
         "url": "https://www.sample-data-repository.org/submit-data",
         "fileFormat": "text/html"
@@ -678,7 +678,7 @@ For repositories might offer services for accessing data as opposed to directly 
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -689,7 +689,7 @@ For repositories might offer services for accessing data as opposed to directly 
       "serviceUrl": "https://www.sample-data-repository.org/search",
       "providesService": {
         "@type": "Service",
-        "additionalType": "gdx:SearchService",
+        "additionalType": "https://geodex.org/voc/SearchService",
         "name": "SDRO Website Search",
         "description": "Search for webpages, datasets, authors, funding awards, instrumentation and measurements",
         "potentialAction": {
@@ -708,14 +708,14 @@ For repositories might offer services for accessing data as opposed to directly 
        "serviceUrl": "https://www.sample-data-repository.org/sitemap.xml",
        "providesService": {
          "@type": "Service",
-         "additionalType": "gdx:SyndicationService",
+         "additionalType": "https://geodex.org/voc/SyndicationService",
          "name": "Sitemap XML",
          "description": "A Sitemap XML providing access to all of the resources for harvesting",
          "potentialAction": {
            "@type": "ConsumeAction",
            "target": {
              "@type": "EntryPoint",
-             "additionalType": "gdx:SitemapXML",
+             "additionalType": "https://geodex.org/voc/SitemapXML",
              "urlTemplate": "https://www.sample-data-repository.org/sitemap.xml?page={page}"
            },
            "object": {
@@ -742,7 +742,7 @@ If your repository does have datasets or other resources with schema.org JSON-LD
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -753,7 +753,7 @@ If your repository does have datasets or other resources with schema.org JSON-LD
       "serviceUrl": "https://www.sample-data-repository.org/search",
       "providesService": {
         "@type": "Service",
-        "additionalType": "gdx:SearchService",
+        "additionalType": "https://geodex.org/voc/SearchService",
         "name": "SDRO Website Search",
         "description": "Search for webpages, datasets, authors, funding awards, instrumentation and measurements",
         "potentialAction": {
@@ -772,14 +772,14 @@ If your repository does have datasets or other resources with schema.org JSON-LD
        "serviceUrl": "https://www.sample-data-repository.org/sitemap.xml",
        "providesService": {
          "@type": "Service",
-         "additionalType": "gdx:SyndicationService",
+         "additionalType": "https://geodex.org/voc/SyndicationService",
          "name": "Sitemap XML",
          "description": "A Sitemap XML providing access to all of the resources for harvesting",
          "potentialAction": {
            "@type": "ConsumeAction",
            "target": {
              "@type": "EntryPoint",
-             "additionalType": "gdx:SitemapXML",
+             "additionalType": "https://geodex.org/voc/SitemapXML",
              "urlTemplate": "https://www.sample-data-repository.org/sitemap.xml?page={page}"
            },
            "object": {
@@ -811,7 +811,7 @@ If your repository has a concept of a data collection, some grouping of a number
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
- "additionalType": "gdx:ResearchRepositoryService",
+ "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -850,7 +850,7 @@ Back to [top](#top)
 <a id="dataset-diagram"></a>
 ### Describing a Dataset
 
-The [schema:Dataset](https://schema.org/Dataset) is a very expressive type within schema.org. 
+The [schema:Dataset](https://schema.org/Dataset) is a very expressive type within schema.org.
 
 ![Dataset](html/voc/static/schema/diagrams/dataset.png "Dataset")
 
@@ -904,7 +904,7 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
 Back to [top](#top)
 
 <a id="dataset-identifiers"></a>
-Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
+Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue).
 
 #### Describing a Dataset Identifier
 ![Identifiers](html/voc/static/schema/diagrams/dataset-identifier.png "Dataset - Identifiers")
@@ -962,7 +962,7 @@ The Persistent Identifier, such as a DOI, ARK, URL, etc as a [schema:PropertyVal
 
 [schema:Dataset](https://schema.org/Dataset) also defines a field for the [schema:citation](https://schema.org/citation) as either text or a [schema:CreativeWork](https://schema.org/CreativeWork). To provide citation text:
 
-NOTE: If you have a DOI, the citation text can be [automatically generated](https://citation.crosscite.org/docs.html#sec-4-1) for you by querying a DOI URL with the Accept Header of 'text/x-bibliography'. 
+NOTE: If you have a DOI, the citation text can be [automatically generated](https://citation.crosscite.org/docs.html#sec-4-1) for you by querying a DOI URL with the Accept Header of 'text/x-bibliography'.
 
 <pre>
 {
@@ -973,7 +973,7 @@ NOTE: If you have a DOI, the citation text can be [automatically generated](http
     <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": "https://geodex.org/voc/"geolink:Dataset", "vivo:Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
   "url": "https://www.sample-data-repository.org/dataset/472032",
@@ -996,7 +996,7 @@ NOTE: If you have a DOI, the citation text can be [automatically generated](http
 Back to [top](#top)
 
 <a id="dataset-variables"></a>
-Adding the [schema:variableMeasured](https://schema.org/variableMeasured) field can be done in two ways - a text description of each variable or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the variable in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue). 
+Adding the [schema:variableMeasured](https://schema.org/variableMeasured) field can be done in two ways - a text description of each variable or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the variable in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue).
 
 #### Describing a Dataset's Variables
 ![Variables](html/voc/static/schema/diagrams/dataset-variables.png "Dataset - Variables")
@@ -1044,7 +1044,7 @@ A fully-fleshed out example that uses a vocabulary to describe the variable can 
   "variableMeasured": [
     {
       "@type": "PropertyValue",
-      <strong>"additionalType": ["gsn-quantity:latitude"],</strong>
+      <strong>"additionalType": "gsn-quantity:latitude",</strong>
       "name": "latitude",
       "url": "https://www.sample-data-repository.org/dataset-parameter/665787",
       "description": "Latitude where water samples were collected; north is positive.",
@@ -1066,9 +1066,9 @@ For some repositories, defining a one or many data collections helps contextuali
 
 ![DataCatalog](html/voc/static/schema/diagrams/dataset-catalog.png "Dataset - Catalog")
 
-The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an ["offering" of your repository[(#repository-offercatalog) and including the `@id` property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a [schema:DataCatalog](https://schema.org/DataCatalog) with the 
+The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an ["offering" of your repository[(#repository-offercatalog) and including the `@id` property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a [schema:DataCatalog](https://schema.org/DataCatalog) with the
 
-`"@id": "https://www.sample-data-repository.org/collection/biological-data"`. 
+`"@id": "https://www.sample-data-repository.org/collection/biological-data"`.
 
 In the dataset JSON-LD, we reuse that `@id` to say a dataset belongs in that catalog:
 
@@ -1085,7 +1085,7 @@ In the dataset JSON-LD, we reuse that `@id` to say a dataset belongs in that cat
   "additionalType": ["geolink:Dataset", "vivo:Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
-  <strong>"includedInDataCatalog": { 
+  <strong>"includedInDataCatalog": {
     "@id": "https://www.sample-data-repository.org/collection/biological-data"
   }</strong>
 }
@@ -1240,7 +1240,7 @@ Back to [top](#top)
 
 ![Spatial](html/voc/static/schema/diagrams/dataset-spatial.png "Dataset - Spatial")
 
-The types of spatial coverages in schema.org are 
+The types of spatial coverages in schema.org are
 
 * [point](https://schema.org/GeoCoordinates) - specify the [schema:latitude](https://schema.org/latitude) and [schema:longitude](https://schema.org/longitude) properties of the schema:GeoCoordinates]() type.
 
@@ -1372,10 +1372,7 @@ People can be linked to datasets iusing three fields: author, creator, and contr
         "additionalType": "geolink:Person",
         "identifier": {
           "@type": "PropertyValue",
-          "additionalType": [
-            "geolink:Identifier",
-            "datacite:Identifier"
-          ],
+          "additionalType": ["geolink:Identifier", "datacite:Identifier"],
           "propertyID": "datacite:orcid",
           "url": "https://orcid.org/0000-0003-3432-2297",
           "value": "0000-0003-3432-2297"
@@ -1386,7 +1383,7 @@ People can be linked to datasets iusing three fields: author, creator, and contr
     }</strong>
 }
 </pre>
-NOTE that the Role inherits the property `creator` and `contributor` from the Dataset when pointing to the [schema:Person](https://schema.org/Person). 
+NOTE that the Role inherits the property `creator` and `contributor` from the Dataset when pointing to the [schema:Person](https://schema.org/Person).
 
 <pre>
 {
@@ -1468,10 +1465,7 @@ If a single Person plays multiple roles on a Dataset, each role should be explic
         "additionalType": "geolink:Person",
         "identifier": {
           "@type": "PropertyValue",
-          "additionalType": [
-            "geolink:Identifier",
-            "datacite:Identifier"
-          ],
+          "additionalType": ["geolink:Identifier", "datacite:Identifier"],
           "propertyID": "datacite:orcid",
           "url": "https://orcid.org/0000-0003-3432-2297",
           "value": "0000-0003-3432-2297"
@@ -1582,7 +1576,7 @@ Datasets can have a number of policies and protocols attached to them - Terms of
 <strong>"publishingPrinciples": {
     "@id": "http://creativecommons.org/licenses/by/4.0/",
     "@type": "DigitalDocument",
-    "additionalType": "gdx:Protocol-License",
+    "additionalType": "https://geodex.org/voc/Protocol-License",
     "name": "Dataset Usage License",
     "url": "http://creativecommons.org/licenses/by/4.0/"
   }</strong>
@@ -1711,7 +1705,7 @@ Back to [top](#top)
 #### How to publish resources for the categories/disciplines at repository services.
 #### & How to use external vocabularies
 
-The SWEET ontology defines a number of science disciplines and a repository could reference those, or another vocabuary's resources, by adding the vocabular to the `@context` attribute of the JSON-LD markup. 
+The SWEET ontology defines a number of science disciplines and a repository could reference those, or another vocabuary's resources, by adding the vocabular to the `@context` attribute of the JSON-LD markup.
 
 <pre>
 {
@@ -1722,7 +1716,7 @@ The SWEET ontology defines a number of science disciplines and a repository coul
     "sweet-kd": "http://sweetontology.net/humanKnowledgeDomain/"</strong>
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
