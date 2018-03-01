@@ -1,4 +1,74 @@
 <a id="top"></a>
+![documentation v1.0.0](https://img.shields.io/badge/documentation-v1.0.0-blue.svg)
+
+# UPDATE
+
+We've updated our documentation for fixing our use of [schema:additionalType](https://schema.org/additionalType) and [schema:propertyID](https://schema.org/propertyID) to use fully-qualified URLs. This corrects the mistake of using a vocabulary prefix such as `gdx:` to make reference to a vocabulary class. An example of this fix for [schema:additionalType](https://schema.org/additionalType):
+
+**OLD**
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"gdx": "https://geodex.org/voc/"</strong>
+  },
+  ...
+  <strong>"additionalType": "gdx:ResearchRepositoryService"</strong>
+  ...
+}
+</pre>
+
+**NEW**
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"gdx": "https://geodex.org/voc/"</strong>
+  },
+  ...
+  <strong>"additionalType": "https://geodex.org/voc/ResearchRepositoryService"</strong>
+  ...
+}
+</pre>
+
+This pattern is also applied to the [schema:propertyID](https://schema.org/propertyID) in this way:
+
+**OLD**
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+  },
+  ...
+  "identifier": {
+    "@type": "PropertyValue",
+    <strong>"propertyID": "datacite:doi"</strong>,
+    "value": "10.13039/100000141",
+    "url": "https://doi.org/10.13039/100000141"
+  },
+}
+</pre>
+
+**NEW**
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+  },
+  ...
+  "identifier": {
+    "@type": "PropertyValue",
+    <strong>"propertyID": "http://purl.org/spar/datacite/doi"</strong>,
+    "value": "10.13039/100000141",
+    "url": "https://doi.org/10.13039/100000141"
+  },
+}
+</pre>
+
+
+
 # Table of Contents
 
 * [About](#about)
