@@ -1,5 +1,5 @@
 <a id="top"></a>
-![documentation v1.0.0](https://img.shields.io/badge/documentation-v1.0.0-blue.svg)
+![documentation v1.0.1](https://img.shields.io/badge/documentation-v1.0.0-blue.svg)
 
 # UPDATE
 
