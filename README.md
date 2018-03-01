@@ -946,6 +946,7 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
 * [url](https://schema.org/url) - Location of a page describing the dataset.
 * [sameAs](https://schema.org/sameAs) - Other URLs that can be used to access the dataset page. A link to a page that provides more information about the same dataset, usually in a different repository.
 * [version](https://schema.org/version) - The version number or identifier for this dataset (text or numeric).
+* [isAccessibleForFree](https://schema.org/isAccessibleForFree) - Boolean (true|false) speficying if the dataset is accessible for free.
 * [keywords](https://schema.org/keywords) - Keywords summarizing the dataset.
 * [license](https://schema.org/license) - A license under which the dataset is distributed (text or URL).
 * [identifier](https://schema.org/identifier) - An identifier for the dataset, such as a DOI. (text,URL, or PropertyValue).
@@ -966,6 +967,7 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
   <strong>"url": "https://www.sample-data-repository.org/dataset/472032",
   "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
   "version": "2013-11-21",
+  "isAccessibleForFree": true,
   "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
   "license": "http://creativecommons.org/licenses/by/4.0/"</strong>
 }
