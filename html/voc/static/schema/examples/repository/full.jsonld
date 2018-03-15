@@ -2,11 +2,11 @@
     "@context": {
         "@vocab": "http://schema.org/",
         "gdx": "https://geodex.org/voc/",
-        "datacite": "http://purl.org/spar/datacite/"
+        "http://purl.org/spar/datacite/": "http://purl.org/spar/datacite/"
     },
     "@type": ["Service", "Organization", "WebSite", "WebPage"],
     "@id": "http://lod.bco-dmo.org/id/affiliation/191",
-    "additionalType": "gdx:ResearchRepositoryService",
+    "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
     "legalName": "Biological and Chemical Data Management Office",
     "name": "BCO-DMO",
     "url": "https://www.bco-dmo.org",
@@ -19,7 +19,7 @@
     ],
     "identifier": {
         "@type": "PropertyValue",
-        "propertyID": "datacite:doi",
+        "propertyID": "http://purl.org/spar/datacite/:doi",
         "value": "10.17616/R37P4C",
         "url": "https://doi.org/10.17616/R37P4C"
     },
@@ -55,7 +55,7 @@
       "url": "https://www.nsf.gov/div/index.jsp?div=OCE",
       "identifier": {
         "@type": "PropertyValue",
-        "propertyID": "datacite:doi",
+        "propertyID": "http://purl.org/spar/datacite/:doi",
         "value": "10.13039/100000141",
         "url": "https://doi.org/10.13039/100000141"
       },
@@ -67,7 +67,7 @@
         "url": "http://www.nsf.gov",
         "identifier": {
           "@type": "PropertyValue",
-          "propertyID": "datacite:doi",
+          "propertyID": "http://purl.org/spar/datacite/:doi",
           "value": "10.13039/100000085",
           "url": "https://doi.org/10.13039/100000085"
          },
@@ -79,7 +79,7 @@
           "url": "http://www.nsf.gov",
           "identifier": {
             "@type": "PropertyValue",
-            "propertyID": "datacite:doi",
+            "propertyID": "http://purl.org/spar/datacite/:doi",
             "value": "10.13039/100000001",
             "url": "https://doi.org/10.13039/100000001"
           }
@@ -104,14 +104,14 @@
     "publishingPrinciples": [
       {
         "@type": "DigitalDocument",
-        "additionalType": "gdx:Protocol-TermsOfUse",
+        "additionalType": "https://geodex.org/voc/Protocol-TermsOfUse",
         "name": "Terms of Use",
         "url": "https://www.bco-dmo.org/terms-use",
         "fileFormat": "text/html"
       },
       {
         "@type": "DigitalDocument",
-        "additionalType": "gdx:Protocol-ResourceSubmissionPolicy",
+        "additionalType": "https://geodex.org/voc/Protocol-ResourceSubmissionPolicy",
         "name": "How to Get Started Contributing Data",
         "url": "https://www.bco-dmo.org/how-get-started",
         "fileFormat": "text/html"
@@ -120,19 +120,19 @@
     "hasOfferCatalog": [
       {
         "@type": "OfferCatalog",
-        "additionalType": "gdx:ResearchResourceTypes",
+        "additionalType": "https://geodex.org/voc/ResearchResourceTypes",
         "itemListElement": [
           {"@type": "Thing", "@id": "schema:Dataset", "name": "Dataset"}
         ]
       },
       {
         "@type": "OfferCatalog",
-        "additionalType": "gdx:OutreachActivities",
+        "additionalType": "https://geodex.org/voc/OutreachActivities",
         "itemListElement": [
           {
             "@type": "Action",
-            "@id": "gdx:OutreachActivity-UserWorkshop",
-            "additionalType": "gdx:OutreachActivity-UserWorkshop",
+            "@id": "https://geodex.org/voc/OutreachActivity-UserWorkshop",
+            "additionalType": "https://geodex.org/voc/OutreachActivity-UserWorkshop",
             "name": "BCO-DMO Tutorial",
             "description": "The BCO-DMO tutorial is usually delvierd as part of the annual OCB Workshop",
             "subjectOf": {
@@ -155,14 +155,14 @@
                 "publishingPrinciples": [
                     {
                         "@type": "DigitalDocument",
-                        "additionalType": "gdx:Protocol-TermsOfUse",
+                        "additionalType": "https://geodex.org/voc/Protocol-TermsOfUse",
                         "name": "Terms of Use",
                         "url": "http://www.bco-dmo.org/terms-use",
                         "fileFormat": "text/html"
                     },
                     {
                         "@type": "DigitalDocument",
-                        "additionalType": "gdx:Protocol-Access",
+                        "additionalType": "https://geodex.org/voc/Protocol-Access",
                         "name": "Accessing Data",
                         "url": "https://www.bco-dmo.org/data",
                         "fileFormat": "text/html"
@@ -183,7 +183,7 @@
             "serviceUrl": "https://www.bco-dmo.org/search",
             "providesService": {
                 "@type": "Service",
-                "additionalType": "gdx:SearchService",
+                "additionalType": "https://geodex.org/voc/SearchService",
                 "name": "BCO-DMO Website Search",
                 "description": "Search for webpages, datasets, people, projects, funding awards, deployments, instrumentation and measurements",
                 "potentialAction": { "@id": "https://www.bco-dmo.org/search" }
@@ -195,7 +195,7 @@
             "providesService": {
                 "@type": "Service",
                 "@id": "http://lod.bco-dmo.org/sparql",
-                "additionalType": "gdx:SearchService",
+                "additionalType": "https://geodex.org/voc/SearchService",
                 "name": "SPARQL Endpoint",
                 "description": "Investigate BCO-DMO structured data for discovering datasets, people, projects, funding awards, deployments, instrumentation and measurements, their properties and relationships to internal and external resources",
                 "potentialAction": {
@@ -235,14 +235,14 @@
             "providesService": {
                 "@type": "Service",
                 "@id": "https://www.bco-dmo.org/sitemap.xml",
-                "additionalType": "gdx:SyndicationService",
+                "additionalType": "https://geodex.org/voc/SyndicationService",
                 "name": "Sitemap XML",
                 "description": "A Sitemap XML providing access to all of the resources for harvesting",
                 "potentialAction": {
                     "@type": "ConsumeAction",
                     "target": {
                         "@type": "EntryPoint",
-                        "additionalType": "gdx:SitemapXML",
+                        "additionalType": "https://geodex.org/voc/SitemapXML",
                         "url": "https://www.bco-dmo.org/sitemap.xml",
                         "urlTemplate": "https://www.bco-dmo.org/sitemap.xml?page={page}"
                     },
@@ -260,7 +260,7 @@
             "serviceUrl": "https://www.bco-dmo.org/rss/datasets/recent.xml",
             "providesService": {
                 "@type": "Service",
-                "additionalType": "gdx:SyndicationService",
+                "additionalType": "https://geodex.org/voc/SyndicationService",
                 "name": "Recently Added Datasets",
                 "description": "List of recently added datasets to the BCO-DMO catalog",
                 "potentialAction": {
@@ -275,7 +275,7 @@
             "serviceUrl": "https://www.bco-dmo.org/how-get-started",
             "providesService": {
                 "@type": "Service",
-                "additionalType": "gdx:SubmissionService",
+                "additionalType": "https://geodex.org/voc/SubmissionService",
                 "name": "Submit Data to BCO-DMO",
                 "description": "Submit data to BCO-DMO",
                 "potentialAction": {

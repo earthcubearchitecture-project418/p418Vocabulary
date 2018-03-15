@@ -1,6 +1,6 @@
 README.html file is made by:
 
-1) sending README.md to https://cloudconvert.com/md-to-html
+1) http://jbt.github.io/markdown-editor/
 2) converting all 'src="html/voc/static/schema/diagrams/' to 'src="/voc/static/schema/diagrams/'
 3) removing '<p><a id="top"></a></p>' from the
 4) copying contents to documentation.html in b/w

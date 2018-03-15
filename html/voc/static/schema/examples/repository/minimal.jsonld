@@ -4,7 +4,7 @@
         "gdx": "https://geodex.org/voc/"
     },
     "@type": ["Service", "Organization"],
-    "additionalType": "gdx:ResearchRepositoryService",
+    "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
     "legalName": "Biological and Chemical Data Management Office",
     "name": "BCO-DMO",
     "url": "https://www.bco-dmo.org",

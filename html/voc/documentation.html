@@ -39,7 +39,7 @@
     </style>
     </noscript>
     <div class="toolkit  header-short">
-       <header>
+       <header style="position: absolute">
           <div class="header-top">
              <div class="container">
                 <div class="logo">
@@ -71,96 +71,197 @@
         <hr/>
 
 <!-- START OF Markdown -->
-<h1 id="table-of-contents">Table of Contents</h1>
+<img src="https://img.shields.io/badge/documentation-v1.0.2-blue.svg" alt="documentation v1.0.2"></p>
+<h1>Table of Contents</h1>
 <ul>
-<li><a href="#about">About</a><br /></li>
-<li><a href="#goals">Goals</a><br /></li>
-<li><a href="#approach">Approach</a><br /></li>
-<li><a href="#prefixes">Vocabulary Prefixes</a><br /></li>
-<li><a href="#extensions">schema.org Extensions</a><br /></li>
-<li><a href="#graphical-notation">Graphical Notation</a><br /></li>
-<li><a href="#schemaorg-jsonld">Publishing schema.org JSON-LD</a><br /></li>
-<li><p><a href="#repository">Describing a Repository</a></p>
+<li>
+<p><a href="#updates">Updates</a></p>
+</li>
+<li>
+<p><a href="#about">About</a></p>
+</li>
+<li>
+<p><a href="#goals">Goals</a></p>
+</li>
+<li>
+<p><a href="#approach">Approach</a></p>
+</li>
+<li>
+<p><a href="#prefixes">Vocabulary Prefixes</a></p>
+</li>
+<li>
+<p><a href="#extensions">schema.org Extensions</a></p>
+</li>
+<li>
+<p><a href="#graphical-notation">Graphical Notation</a></p>
+</li>
+<li>
+<p><a href="#schemaorg-jsonld">Publishing schema.org JSON-LD</a></p>
 <ul>
-<li><a href="#repository-fields">Repository - Fields</a><br /></li>
-<li><a href="#repository-funding-source">Repository - Funding Source</a><br /></li>
-<li><a href="#repository-resource-types">Repository - Types of Resources</a><br /></li>
-<li><a href="#repository-outreach-activities">Repository - Outreach Activities</a><br /></li>
-<li><a href="#repository-identifier">Repository - Identifier</a><br /></li>
-<li><a href="#repository-policies">Repository - Policies</a><br /></li>
-<li><a href="#repository-services">Repository - Services</a><br /></li>
-<li><a href="#repository-data-collections">Repository - Data Collections</a><br /></li>
-</ul></li>
-<li><p><a href="#dataset-diagram">Describing a Dataset</a></p>
+<li><a href="#repository">Describing a Repository</a>
 <ul>
-<li><a href="#dataset-identifiers">Dataset - Identifier</a><br /></li>
-<li><a href="#dataset-variables">Dataset - Variables</a><br /></li>
-<li><a href="#dataset-catalog">Dataset - DataCatalog</a><br /></li>
-<li><a href="#dataset-distros">Dataset - Distributions</a><br /></li>
-<li><a href="#dataset-service-endpoint">Accessing Data through a Service Endpoint</a><br /></li>
-<li><a href="#dataset-temporal">Dataset - Temporal</a><br /></li>
-<li><a href="#dataset-spatial">Dataset - Spatial</a><br /></li>
-<li><a href="#dataset-spatial-point">GeoCoordinates</a><br /></li>
-<li><a href="#dataset-spatial-shape">GeoShape</a><br /></li>
-<li><a href="#dataset-creator_contributor">Dataset - Creators/Contributors</a><br /></li>
-<li><a href="#dataset-publisher_provider">Dataset - Publisher/Provider</a><br /></li>
-<li><a href="#dataset-protocols">Dataset - Protocols</a><br /></li>
-<li><a href="#dataset-funding">Dataset - Funding</a></li>
-</ul></li>
-<li><a href="#examples">Examples</a><br /></li>
-<li><a href="#issues">Issues</a><br /></li>
-<li><a href="#advanced-publishing-techniques">Advanced Publishing Techniques</a><br /></li>
-<li><a href="#advanced-publishing-category">How to use external vocabularies</a><br /></li>
-<li><p><a href="#advanced-publishing-category">Publishing more detail for categories/disciplines for a repository</a></p></li>
+<li><a href="#repository-fields">Repository - Fields</a></li>
+<li><a href="#repository-funding-source">Repository - Funding Source</a></li>
+<li><a href="#repository-resource-types">Repository - Types of Resources</a></li>
+<li><a href="#repository-outreach-activities">Repository - Outreach Activities</a></li>
+<li><a href="#repository-identifier">Repository - Identifier</a></li>
+<li><a href="#repository-policies">Repository - Policies</a></li>
+<li><a href="#repository-services">Repository - Services</a></li>
+<li><a href="#repository-data-collections">Repository - Data Collections</a></li>
 </ul>
+</li>
+<li><a href="#dataset-diagram">Describing a Dataset</a>
+<ul>
+<li><a href="#dataset-identifiers">Dataset - Identifier</a></li>
+<li><a href="#dataset-variables">Dataset - Variables</a></li>
+<li><a href="#dataset-catalog">Dataset - DataCatalog</a></li>
+<li><a href="#dataset-distros">Dataset - Distributions</a>
+<ul>
+<li><a href="#dataset-service-endpoint">Accessing Data through a Service Endpoint</a></li>
+</ul>
+</li>
+<li><a href="#dataset-temporal">Dataset - Temporal</a></li>
+<li><a href="#dataset-spatial">Dataset - Spatial</a>
+<ul>
+<li><a href="#dataset-spatial-point">GeoCoordinates</a></li>
+<li><a href="#dataset-spatial-shape">GeoShape</a></li>
+</ul>
+</li>
+<li><a href="#dataset-creator_contributor">Dataset - Creators/Contributors</a></li>
+<li><a href="#dataset-publisher_provider">Dataset - Publisher/Provider</a></li>
+<li><a href="#dataset-protocols">Dataset - Protocols</a></li>
+<li><a href="#dataset-funding">Dataset - Funding</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#examples">Examples</a></p>
+</li>
+<li>
+<p><a href="#issues">Issues</a></p>
+</li>
+<li>
+<p><a href="#advanced-publishing-techniques">Advanced Publishing Techniques</a></p>
+<ul>
+<li><a href="#advanced-publishing-category">How to use external vocabularies</a></li>
+<li><a href="#advanced-publishing-category">Publishing more detail for categories/disciplines for a repository</a></li>
+</ul>
+</li>
+</ul>
+<p><a id="updates"></a></p>
+<h1>UPDATES</h1>
+<p><strong>Mar 15 2018</strong></p>
+<p>Adding the <a href="https://schema.org/identifier">schema:identifier</a> field can be done in three ways - a text description, a URL, or by using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> type to describe the identifier in more detail. <strong>We highly recommend using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> as the use of text or url does not get indexed properly by Google and other JSON-LD testing tools due to an issue with the properties definition.</strong></p>
+<p><strong>Mar 1 2018</strong></p>
+<p>We've updated our documentation for fixing our use of <a href="https://schema.org/additionalType">schema:additionalType</a> and <a href="https://schema.org/propertyID">schema:propertyID</a> to use fully-qualified URLs. This corrects the mistake of using a vocabulary prefix such as <code>gdx:</code> to make reference to a vocabulary class. An example of this fix for <a href="https://schema.org/additionalType">schema:additionalType</a>:</p>
+<p><strong>OLD</strong></p>
+<pre>{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"gdx": "https://geodex.org/voc/"</strong>
+  },
+  ...
+  <strong>"additionalType": "gdx:ResearchRepositoryService"</strong>
+  ...
+}
+</pre>
+<p><strong>NEW</strong></p>
+<pre>{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"gdx": "https://geodex.org/voc/"</strong>
+  },
+  ...
+  <strong>"additionalType": "https://geodex.org/voc/ResearchRepositoryService"</strong>
+  ...
+}
+</pre>
+<p>This pattern is also applied to the <a href="https://schema.org/propertyID">schema:propertyID</a> in this way:</p>
+<p><strong>OLD</strong></p>
+<pre>{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+  },
+  ...
+  "identifier": {
+    "@type": "PropertyValue",
+    <strong>"propertyID": "datacite:doi"</strong>,
+    "value": "10.13039/100000141",
+    "url": "https://doi.org/10.13039/100000141"
+  },
+}
+</pre>
+<p><strong>NEW</strong></p>
+<pre>{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
+  },
+  ...
+  "identifier": {
+    "@type": "PropertyValue",
+    <strong>"propertyID": "http://purl.org/spar/datacite/doi"</strong>,
+    "value": "10.13039/100000141",
+    "url": "https://doi.org/10.13039/100000141"
+  },
+}
+</pre>
 <p><a id="about"></a></p>
-<h2 id="about">About</h2>
-<p>Serves the vocabulary in JSON-LD at <a href="https://geodex.org/voc/">https://geodex.org/voc/</a>.</p>
+<h2>About</h2>
+<p>Serves the vocabulary in JSON-LD at https://geodex.org/voc/.</p>
 <p><a id="goals"></a></p>
-<h2 id="goals">Goals</h2>
-<p>1) To produce quality schema.org markup with additional extensions to schema.org classes to help improve harvesting technologies.</p>
-<p>2) Produced markup will pass the <a href="https://search.google.com/structured-data/testing-tool/u/0/">Google Structured Data Testing Tool</a> with 0 errors.</p>
-<h2 id="approach">Approach</h2>
-<p>The preferred format for schema.org markup by its harvesters is JSON-LD. For a primer on JSON-LD, see <a href="https://json-ld.org/"><a href="https://json-ld.org/">https://json-ld.org/</a></a></p>
+<h2>Goals</h2>
+<ol>
+<li>
+<p>To produce quality schema.org markup with additional extensions to schema.org classes to help improve harvesting technologies.</p>
+</li>
+<li>
+<p>Produced markup will pass the <a href="https://search.google.com/structured-data/testing-tool/u/0/">Google Structured Data Testing Tool</a> with 0 errors.</p>
+</li>
+</ol>
+<h2>Approach</h2>
+<p>The preferred format for schema.org markup by its harvesters is JSON-LD. For a primer on JSON-LD, see <a href="https://json-ld.org/">https://json-ld.org/</a></p>
 <p>To produce quality schema.org, all extensions to schema.org classes will be made through the use of the recommended property <a href="https://schema.org/additionalType">schema:additionalType</a>.</p>
 <p>The gdx: vocabulary will extend schema.org using rdfs:subClassOf in it's formal ontology, but in schema.org this doesn't translate into the use of JSON-LD's <a href="https://www.w3.org/TR/json-ld/#syntax-tokens-and-keywords">@type</a> as traditional RDF publishing would encourage.</p>
 <p><a id="prefixes"></a></p>
-<h2 id="vocabulary-prefixes">Vocabulary Prefixes</h2>
+<h2>Vocabulary Prefixes</h2>
 <table>
 <thead>
-<tr class="header">
-<th align="left">Prefix</th>
-<th align="left">Vocabulary URI</th>
+<tr>
+<th>Prefix</th>
+<th>Vocabulary URI</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">schema:</td>
-<td align="left"><a href="https://schema.org/"><a href="https://schema.org/">https://schema.org/</a></a></td>
+<tr>
+<td>schema:</td>
+<td><a href="https://schema.org/"></a><a href="https://schema.org/">https://schema.org/</a></td>
 </tr>
-<tr class="even">
-<td align="left">gdx:</td>
-<td align="left"><a href="https://geodex.org/voc/"><a href="https://geodex.org/voc/">https://geodex.org/voc/</a></a></td>
+<tr>
+<td>gdx:</td>
+<td><a href="https://geodex.org/voc/"></a><a href="https://geodex.org/voc/">https://geodex.org/voc/</a></td>
 </tr>
-<tr class="odd">
-<td align="left">geolink:</td>
-<td align="left"><a href="http://schema.geolink.org/1.0/base/main#"><a href="http://schema.geolink.org/1.0/base/main#">http://schema.geolink.org/1.0/base/main#</a></a></td>
+<tr>
+<td>geolink:</td>
+<td><a href="http://schema.geolink.org/1.0/base/main#"></a><a href="http://schema.geolink.org/1.0/base/main#">http://schema.geolink.org/1.0/base/main#</a></td>
 </tr>
-<tr class="even">
-<td align="left">earthcollab:</td>
-<td align="left"><a href="https://library.ucar.edu/earthcollab/schema#"><a href="https://library.ucar.edu/earthcollab/schema#">https://library.ucar.edu/earthcollab/schema#</a></a></td>
+<tr>
+<td>earthcollab:</td>
+<td><a href="https://library.ucar.edu/earthcollab/schema#"></a><a href="https://library.ucar.edu/earthcollab/schema#">https://library.ucar.edu/earthcollab/schema#</a></td>
 </tr>
-<tr class="odd">
-<td align="left">vivo:</td>
-<td align="left"><a href="http://vivoweb.org/ontology/core#"><a href="http://vivoweb.org/ontology/core#">http://vivoweb.org/ontology/core#</a></a></td>
+<tr>
+<td>vivo:</td>
+<td><a href="http://vivoweb.org/ontology/core#"></a><a href="http://vivoweb.org/ontology/core#">http://vivoweb.org/ontology/core#</a></td>
 </tr>
-<tr class="even">
-<td align="left">geo-upper:</td>
-<td align="left"><a href="http://www.geoscienceontology.org/geo-upper#"><a href="http://www.geoscienceontology.org/geo-upper#">http://www.geoscienceontology.org/geo-upper#</a></a></td>
+<tr>
+<td>geo-upper:</td>
+<td><a href="http://www.geoscienceontology.org/geo-upper#"></a><a href="http://www.geoscienceontology.org/geo-upper#">http://www.geoscienceontology.org/geo-upper#</a></td>
 </tr>
-<tr class="odd">
-<td align="left">datacite:</td>
-<td align="left"><a href="http://purl.org/spar/datacite"><a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a></a></td>
+<tr>
+<td>datacite:</td>
+<td><a href="http://purl.org/spar/datacite"></a><a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a></td>
 </tr>
 </tbody>
 </table>
@@ -172,29 +273,38 @@
 <p><a href="http://www.geoscienceontology.org/geo-upper#">geo-upper:</a> a segment of the Geoscience Standard Names Ontology, an EarthCube product. This ontology could be used when describing dataset variables.</p>
 <p><a href="http://purl.org/spar/datacite">datacite:</a> describes persistent identifier schemes like DOI, ARK, URI for helping to represent PIDs.</p>
 <p><a id="extensions"></a></p>
-<h2 id="schema.org-extensions">Schema.org Extensions</h2>
+<h2>Schema.org Extensions</h2>
 <p>From P418, the vocabulary we built specifically for addressing gaps in schema.org and other EarthCube and community ontologies, we have:</p>
-<p><strong>P418</strong>: <a href="http://geodex.org/voc/">http://geodex.org/voc/</a></p>
+<p><strong>P418</strong>: http://geodex.org/voc/</p>
 <ul>
-<li>Classes: <a href="http://geodex.org/voc/?show=classes">http://geodex.org/voc/?show=classes</a><br /></li>
-<li><a href="http://geodex.org/voc/ResearchRepositoryService">gdx:ResearchRepositoryService</a><br /></li>
-<li>Properties: <a href="http://geodex.org/voc/?show=properties">http://geodex.org/voc/?show=properties</a><br /></li>
-<li><a href="http://geodex.org/voc/fundedBy">gdx:fundedBy</a><br /></li>
-<li>NamedIndividuals (these are classes but tightly coupled to existing schema.org classes): <a href="http://geodex.org/voc/?show=namedindividuals">http://geodex.org/voc/?show=namedindividuals</a><br /></li>
-<li><a href="http://geodex.org/voc/OutreachActivities">gdx:OutreachActivities</a><br /></li>
-<li><a href="http://geodex.org/voc/OutreachActivity-Training">gdx:OutreachActivity-Training</a><br /></li>
-<li><a href="http://geodex.org/voc/OutreachActivity-UserSupport">gdx:OutreachActivity-UserSupport</a><br /></li>
-<li><a href="http://geodex.org/voc/OutreachActivity-UserWorkshop">gdx:OutreachActivity-UserWorkshop</a><br /></li>
-<li><a href="http://geodex.org/voc/Protocol-Access">gdx:Protocol-Access</a><br /></li>
-<li><a href="http://geodex.org/voc/Protocol-License">gdx:Protocol-License</a><br /></li>
-<li><a href="http://geodex.org/voc/Protocol-PreservationPolicy">gdx:Protocol-PreservationPolicy</a><br /></li>
-<li><a href="http://geodex.org/voc/Protocol-ResourceSubmissionPolicy">gdx:Protocol-ResourceSubmissionPolicy</a><br /></li>
-<li><a href="http://geodex.org/voc/Protocol-TermsOfUse">gdx:Protocol-TermsOfUse</a><br /></li>
-<li><a href="http://geodex.org/voc/ResearchResourceTypes">gdx:ResearchResourceTypes</a><br /></li>
-<li><a href="http://geodex.org/voc/SearchService">gdx:SearchService</a><br /></li>
-<li><a href="http://geodex.org/voc/SitemapXML">gdx:SitemapXML</a><br /></li>
-<li><a href="http://geodex.org/voc/SubmissionService">gdx:SubmissionService</a><br /></li>
+<li>Classes: http://geodex.org/voc/?show=classes
+<ul>
+<li><a href="http://geodex.org/voc/ResearchRepositoryService">gdx:ResearchRepositoryService</a></li>
+</ul>
+</li>
+<li>Properties: http://geodex.org/voc/?show=properties
+<ul>
+<li><a href="http://geodex.org/voc/fundedBy">gdx:fundedBy</a></li>
+</ul>
+</li>
+<li>NamedIndividuals (these are classes but tightly coupled to existing schema.org classes): http://geodex.org/voc/?show=namedindividuals
+<ul>
+<li><a href="http://geodex.org/voc/OutreachActivities">gdx:OutreachActivities</a></li>
+<li><a href="http://geodex.org/voc/OutreachActivity-Training">gdx:OutreachActivity-Training</a></li>
+<li><a href="http://geodex.org/voc/OutreachActivity-UserSupport">gdx:OutreachActivity-UserSupport</a></li>
+<li><a href="http://geodex.org/voc/OutreachActivity-UserWorkshop">gdx:OutreachActivity-UserWorkshop</a></li>
+<li><a href="http://geodex.org/voc/Protocol-Access">gdx:Protocol-Access</a></li>
+<li><a href="http://geodex.org/voc/Protocol-License">gdx:Protocol-License</a></li>
+<li><a href="http://geodex.org/voc/Protocol-PreservationPolicy">gdx:Protocol-PreservationPolicy</a></li>
+<li><a href="http://geodex.org/voc/Protocol-ResourceSubmissionPolicy">gdx:Protocol-ResourceSubmissionPolicy</a></li>
+<li><a href="http://geodex.org/voc/Protocol-TermsOfUse">gdx:Protocol-TermsOfUse</a></li>
+<li><a href="http://geodex.org/voc/ResearchResourceTypes">gdx:ResearchResourceTypes</a></li>
+<li><a href="http://geodex.org/voc/SearchService">gdx:SearchService</a></li>
+<li><a href="http://geodex.org/voc/SitemapXML">gdx:SitemapXML</a></li>
+<li><a href="http://geodex.org/voc/SubmissionService">gdx:SubmissionService</a></li>
 <li><a href="http://geodex.org/voc/SyndicationService">gdx:SyndicationService</a></li>
+</ul>
+</li>
 </ul>
 <p>We also use terms from other vocabularies:</p>
 <p><strong>GeoLink</strong></p>
@@ -211,90 +321,111 @@
 </ul>
 <p><strong>GeoStandardNames</strong></p>
 <ul>
-<li>Classes: we give an example of how to use one of his terms (<a href="http://www.geoscienceontology.org/geo-lower/quantity#longitude">http://www.geoscienceontology.org/geo-lower/quantity#longitude</a>)</li>
+<li>Classes: we give an example of how to use one of his terms (http://www.geoscienceontology.org/geo-lower/quantity#longitude)</li>
 </ul>
 <p><strong>DataCite</strong></p>
 <ul>
-<li>Classes: <a href="https://sparontologies.github.io/datacite/current/datacite.html#d4e416">Identifier</a><br /></li>
+<li>Classes: <a href="https://sparontologies.github.io/datacite/current/datacite.html#d4e416">Identifier</a></li>
 <li>NamedIndividual: <a href="https://sparontologies.github.io/datacite/current/datacite.html#d4e756">DOI</a>, <a href="https://sparontologies.github.io/datacite/current/datacite.html#d4e1116">ORCID</a></li>
 </ul>
 <p><a id="graphical-notation"></a></p>
-<h2 id="graphical-notation">Graphical Notation</h2>
+<h2>Graphical Notation</h2>
 <p>The graphs display the classes, properties and literals for producing valid schema.org markup.</p>
-<p><a href="#"><img src="/voc/static/schema/diagrams/graphical-notation.png" title="Graphical Notation" alt="Graphical Notation" /></a></p>
+<p><a href="#"><img src="/voc/static/schema/diagrams/graphical-notation.png" alt="Graphical Notation" title="Graphical Notation"></a></p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="schemaorg-jsonld"></a></p>
-<h2 id="schema.org-json-ld">Schema.org JSON-LD</h2>
+<h2>Schema.org JSON-LD</h2>
 <p>Schema.org's preferred format for markup is JSON-LD. THere are a number of tools that will help build valid schema.org JSON-LD.</p>
 <ul>
-<li>Web UI for constructing schema.org: <a href="https://schema.pythonanywhere.com/"><a href="https://schema.pythonanywhere.com/">https://schema.pythonanywhere.com/</a></a><br /></li>
-<li><p>Jumpstart into specific Types:</p>
+<li>
+<p>Web UI for constructing schema.org: <a href="https://schema.pythonanywhere.com/">https://schema.pythonanywhere.com/</a></p>
 <ul>
-<li><a href="https://schema.pythonanywhere.com/Service">Service</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/Organization">Organization</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/ContactPoint">ContactPoint</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/PropertyValue">PropertyValue</a> aka Identifier<br /></li>
-<li><a href="https://schema.pythonanywhere.com/DigitalDocument">DigitalDocument</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/OfferCatalog">OfferCatalog</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/ServiceChannel">ServiceChannel</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/Service">Service</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/Dataset">Dataset</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/DataDownload">DataDownload</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/DataCatalog">DataCatalog</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/Person">Person</a> aka Author/Contributor<br /></li>
-<li><a href="https://schema.pythonanywhere.com/Organization">Organization</a> aka Publisher, Provider, Funder<br /></li>
-<li><p><a href="https://schema.pythonanywhere.com/Place">Place</a></p>
+<li>Jumpstart into specific Types:
 <ul>
-<li><a href="https://schema.pythonanywhere.com/GeoShape">GeoShape</a><br /></li>
-<li><a href="https://schema.pythonanywhere.com/GeoCoordinates">GeoCoordinates</a><br /></li>
-</ul></li>
-<li><a href="https://schema.pythonanywhere.com/PropertyValue">PropertyValue</a> aka Variable, Identifier<br /></li>
-<li><p><a href="https://schema.pythonanywhere.com/Event">Event</a></p>
+<li><a href="https://schema.pythonanywhere.com/Service">Service</a></li>
+<li><a href="https://schema.pythonanywhere.com/Organization">Organization</a>
 <ul>
-<li><a href="https://schema.pythonanywhere.com/CreativeWork">CreativeWork</a><br /></li>
+<li><a href="https://schema.pythonanywhere.com/ContactPoint">ContactPoint</a></li>
+<li><a href="https://schema.pythonanywhere.com/PropertyValue">PropertyValue</a> aka Identifier</li>
+</ul>
+</li>
+<li><a href="https://schema.pythonanywhere.com/DigitalDocument">DigitalDocument</a></li>
+<li><a href="https://schema.pythonanywhere.com/OfferCatalog">OfferCatalog</a></li>
+<li><a href="https://schema.pythonanywhere.com/ServiceChannel">ServiceChannel</a>
+<ul>
+<li><a href="https://schema.pythonanywhere.com/Service">Service</a></li>
+</ul>
+</li>
+<li><a href="https://schema.pythonanywhere.com/Dataset">Dataset</a>
+<ul>
+<li><a href="https://schema.pythonanywhere.com/DataDownload">DataDownload</a></li>
+<li><a href="https://schema.pythonanywhere.com/DataCatalog">DataCatalog</a></li>
+<li><a href="https://schema.pythonanywhere.com/Person">Person</a> aka Author/Contributor</li>
+<li><a href="https://schema.pythonanywhere.com/Organization">Organization</a> aka Publisher, Provider, Funder</li>
+<li><a href="https://schema.pythonanywhere.com/Place">Place</a>
+<ul>
+<li><a href="https://schema.pythonanywhere.com/GeoShape">GeoShape</a></li>
+<li><a href="https://schema.pythonanywhere.com/GeoCoordinates">GeoCoordinates</a></li>
+</ul>
+</li>
+<li><a href="https://schema.pythonanywhere.com/PropertyValue">PropertyValue</a> aka Variable, Identifier</li>
+<li><a href="https://schema.pythonanywhere.com/Event">Event</a>
+<ul>
+<li><a href="https://schema.pythonanywhere.com/CreativeWork">CreativeWork</a>
+<ul>
 <li><a href="https://schema.pythonanywhere.com/Vehicle">Vehicle</a></li>
-</ul></li>
-</ul></li>
-<li>Google Testing Tool for schema.org: <a href="https://search.google.com/structured-data/testing-tool/u/0/"><a href="https://search.google.com/structured-data/testing-tool/u/0/">https://search.google.com/structured-data/testing-tool/u/0/</a></a><br /></li>
-<li><p>Error Guide: <a href="https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/"><a href="https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/">https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/</a></a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Google Testing Tool for schema.org: <a href="https://search.google.com/structured-data/testing-tool/u/0/">https://search.google.com/structured-data/testing-tool/u/0/</a></p>
+<ul>
+<li>Error Guide: <a href="https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/">https://www.schemaapp.com/tips/structured-data-testing-tool-error-guide/</a></li>
+</ul>
+</li>
 </ul>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="repository"></a></p>
-<h2 id="describing-a-repository">Describing a Repository</h2>
-<p><a href="#"><img src="/voc/static/schema/diagrams/repository.png" title="Research Repository Service" alt="Research Repository Service Vocabulary" /></a><br />In schema.org, we model a repository as both an <a href="https://schema.org/Organization">schema:Organization</a> and a <a href="https://schema.org/Service">schema:Service</a>. This double-typing gives us the most flexibility in describing the characteristics of the organization providing the service and the services offered by the organization. Becuase the Service class in schema.org is very broad, to uniquely identify repositories curating research products, this vocabulary defines an extension to <a href="https://schema.org/Service">schema:Service</a> as <a href="https://geodex.org/voc/ResearchRepositoryService">gdx:ResearchRepositoryService</a>.</p>
-<pre>
-{
+<h2>Describing a Repository</h2>
+<p><a href="#"><img src="/voc/static/schema/diagrams/repository.png" alt="Research Repository Service Vocabulary" title="Research Repository Service"></a>
+In schema.org, we model a repository as both an <a href="https://schema.org/Organization">schema:Organization</a> and a <a href="https://schema.org/Service">schema:Service</a>. This double-typing gives us the most flexibility in describing the characteristics of the organization providing the service and the services offered by the organization. Becuase the Service class in schema.org is very broad, to uniquely identify repositories curating research products, this vocabulary defines an extension to <a href="https://schema.org/Service">schema:Service</a> as <a href="https://geodex.org/voc/ResearchRepositoryService">gdx:ResearchRepositoryService</a>.</p>
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
   <strong>"@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService"</strong>,
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService"</strong>,
   "legalName": "Sample Data Repository Office",
   "name": "SDRO"
-  </strong>
+
 }
 </pre>
-
-
 <p>The other fields you can use to describe the Organziation and the Service are:</p>
-<p><a id="repository-fields"></a><br /><a href="#"><img src="/voc/static/schema/diagrams/repository-properties.png" title="Research Repository Service - Fields" alt="Research Repository Service - Fields" /></a></p>
+<p><a id="repository-fields"></a>
+<a href="#"><img src="/voc/static/schema/diagrams/repository-properties.png" alt="Research Repository Service - Fields" title="Research Repository Service - Fields"></a></p>
 <ul>
-<li><a href="https://schema.org/legalName">schema:legalName</a> should be the official name of the repository,<br /></li>
-<li><a href="https://schema.org/name">schema:name</a> can be an acronym or the name typcially used for the repository,<br /></li>
-<li><a href="https://schema.org/url">schema:url</a> should be the url of your repository's homepage,<br /></li>
-<li><a href="https://schema.org/description">schema:description</a> should be text describing your repository,<br /></li>
-<li><a href="https://schema.org/sameAs">schema:sameAs</a> can be used to link the repository to other URLs such as Re3Data, Twitter, LinkedIn, etc.,<br /></li>
+<li><a href="https://schema.org/legalName">schema:legalName</a> should be the official name of the  repository,</li>
+<li><a href="https://schema.org/name">schema:name</a> can be an acronym or the name typcially used for the repository,</li>
+<li><a href="https://schema.org/url">schema:url</a> should be the url of your repository's homepage,</li>
+<li><a href="https://schema.org/description">schema:description</a> should be text describing your repository,</li>
+<li><a href="https://schema.org/sameAs">schema:sameAs</a> can be used to link the repository to other URLs such as Re3Data, Twitter, LinkedIn, etc.,</li>
 <li><a href="https://schema.org/category">schema:category</a> can be used to describe the discipline, domain, area of study that encompasses the repository's holdings.</li>
 </ul>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   <strong>"url": "https://www.sample-data-repository.org",
@@ -310,49 +441,37 @@
   ]</strong>
 }
 </pre>
-
-
 <p>(See <a href="#advanced-publishing">advanced publishing techniques</a> for how to <a href="#advanced-publishing-category">describe categories/disciplines in more detail</a> than just simple text.)</p>
-<p>If you are using the <script type="text/javascript">
-<!--
-h='&#x69;&#100;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#x69;&#100;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#x69;&#100;&#x29;</noscript>&quot; attribute for your Repository, you can specify the <a href="https://schema.org/provider">schema:provider</a> of the <a href="https://schema.org/Service">schema:Service</a> in this way:<br /><pre><br />{<br /> <script type="text/javascript">
-<!--
-h='&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@context&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;&#x29;</noscript>: {<br /> <script type="text/javascript">
-<!--
-h='&#118;&#x6f;&#x63;&#x61;&#98;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@vocab&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#118;&#x6f;&#x63;&#x61;&#98;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#118;&#x6f;&#x63;&#x61;&#98;&#34;&#x29;</noscript>: &quot;<a href="http://schema.org/">http://schema.org/</a>&quot;,<br /> &quot;gdx&quot;: &quot;<a href="https://geodex.org/voc/">https://geodex.org/voc/</a>&quot;<br /> },<br /> <script type="text/javascript">
-<!--
-h='&#116;&#x79;&#112;&#x65;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#116;&#x79;&#112;&#x65;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#116;&#x79;&#112;&#x65;&#34;&#x29;</noscript>: [&quot;Service&quot;, &quot;Organization&quot;],<br /> <strong><script type="text/javascript">
-<!--
-h='&#x69;&#100;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#x69;&#100;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#x69;&#100;&#34;&#x29;</noscript>: &quot;<a href="https://www.sample-data-repository.org">https://www.sample-data-repository.org</a>&quot;,</strong><br /> &quot;additionalType&quot;: &quot;gdx:ResearchRepositoryService&quot;,<br /> &quot;legalName&quot;: &quot;Sample Data Repository Office&quot;,<br /> &quot;name&quot;: &quot;SDRO&quot;,<br /> &quot;url&quot;: &quot;<a href="https://www.sample-data-repository.org">https://www.sample-data-repository.org</a>&quot;,<br /> &quot;description&quot;: &quot;The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.&quot;,<br /> &quot;category&quot;: [<br /> &quot;Biological Oceanography&quot;,<br /> &quot;Chemical Oceanography&quot;<br /> ],<br /> <strong>&quot;provider&quot;: {<br /> <script type="text/javascript">
-<!--
-h='&#x69;&#100;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#x69;&#100;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#x69;&#100;&#34;&#x29;</noscript>: &quot;<a href="https://www.sample-data-repository.org">https://www.sample-data-repository.org</a>&quot;<br /> }</strong><br />}<br /></pre></p>
-<p>However, if your repository has a situation where multiple organizations act as the provider or you want to recognize a different organization as the provider of the repository's service, <a href="https://schema.org/provider">schema:provider</a> can be used in this way:</p>
-<pre>
-{
+<p>If you are using the "@id" attribute for your Repository, you can specify the <a href="https://schema.org/provider">schema:provider</a>  of the <a href="https://schema.org/Service">schema:Service</a> in this way:</p>
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  <strong>"@id": "https://www.sample-data-repository.org",</strong>
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
+  "legalName": "Sample Data Repository Office",
+  "name": "SDRO",
+  "url": "https://www.sample-data-repository.org",
+  "description": "The Sample Data Repository Service provides access to data from an imaginary domain accessible from this website.",
+  "category": [
+    "Biological Oceanography",
+    "Chemical Oceanography"
+  ],
+  <strong>"provider": {
+    "@id": "https://www.sample-data-repository.org"
+  }</strong>
+}
+</pre>
+<p>However, if your repository has a situation where multiple organizations act as the provider or you want to recognize a different organization as the provider of the repository's service, <a href="https://schema.org/provider">schema:provider</a> can be used in this way:</p>
+<pre>{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/"
+  },
+  "@type": ["Service", "Organization"],
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -377,17 +496,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   ]</strong>
 }
 </pre>
-
-
 <p>Adding additional fields of <a href="https://schema.org/Organization">schema:Organization</a>:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -421,17 +537,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }</strong>
 }
 </pre>
-
-
 <p>If this Organization has a parent entity such as a college, university or research center, that information can be provided using the <a href="https://schema.org/parentOrganization">schema:parentOrganization</a> property:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -461,20 +574,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
 <p><a id="repository-funding-source"></a></p>
-<h3 id="describing-a-repositorys-funding-source">Describing a Repository's Funding Source</h3>
+<h3>Describing a Repository's Funding Source</h3>
 <p>To describe the funding source of a repository, you use the <a href="https://schema.org/funder">schema:funder</a> property of <a href="https://schema.org/Organization">schema:Organization</a>:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -508,7 +618,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
       "url": "https://www.nsf.gov/div/index.jsp?div=OCE",
       "identifier": {
         "@type": "PropertyValue",
-        "propertyID": "datacite:doi",
+        "propertyID": "http://purl.org/spar/datacite/doi",
         "value": "10.13039/100000141",
         "url": "https://doi.org/10.13039/100000141"
       },
@@ -520,7 +630,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
         "url": "http://www.nsf.gov",
         "identifier": {
           "@type": "PropertyValue",
-          "propertyID": "datacite:doi",
+          "propertyID": "http://purl.org/spar/datacite/doi",
           "value": "10.13039/100000085",
           "url": "https://doi.org/10.13039/100000085"
          },
@@ -532,7 +642,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
           "url": "http://www.nsf.gov",
           "identifier": {
             "@type": "PropertyValue",
-            "propertyID": "datacite:doi",
+            "propertyID": "http://purl.org/spar/datacite/doi",
             "value": "10.13039/100000001",
             "url": "https://doi.org/10.13039/100000001"
           }
@@ -542,20 +652,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }
 }
 </pre>
-
-
 <p><a id="repository-identifier"></a></p>
-<h3 id="describing-a-repositorys-identifier">Describing a Repository's Identifier</h3>
+<h3>Describing a Repository's Identifier</h3>
 <p>Some organizations may have a persistent identifier (DOI) assigned to their organization from authorities like the Registry of Research Data Repositories (re3data.org). The way to describe these organizational identifiers is to use the <a href="https://schema.org/identifier">schema:identifier</a> property in this way:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
     <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -570,48 +677,45 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   <strong>"identifier": {
     "@type": "PropertyValue",
     "name": "Re3data DOI for this repository",
-    "propertyID": "datacite:doi",
+    "propertyID": "http://purl.org/spar/datacite/doi",
     "value": "10.17616/R37P4C",
     "url": "http://doi.org/10.17616/R37P4C"
   }</strong>
 }
 </pre>
-
-
-<p>We add the <code>datacite</code> vocabulary to the <code>@context</code> because the Datacite Ontology available at <a href="http://purl.org/spar/datacite/"><a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a></a> has URIs to describe a DOI, ORCiD, ARK, URI, URN - all identifier scheme that help for disamiguating identifiers. To properly disambiguate a globally unique identifier, 2 pieces of information are needed - 1) the identifier value and 2) the scheme that on which that identifier exists. Some examples of this concept for common identifiers are:</p>
+<p>We add the <code>datacite</code> vocabulary to the <code>@context</code> because the Datacite Ontology available at <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a> has URIs to describe a DOI, ORCiD, ARK, URI, URN - all identifier scheme that help for disamiguating identifiers. To properly disambiguate a globally unique identifier, 2 pieces of information are needed - 1) the identifier value and 2) the scheme that on which that identifier exists. Some examples of this concept for common identifiers  are:</p>
 <table>
 <thead>
-<tr class="header">
-<th align="left">Scheme</th>
-<th align="left">Value</th>
+<tr>
+<th>Scheme</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">DOI</td>
-<td align="left">10.17616/R37P4C</td>
+<tr>
+<td>DOI</td>
+<td>10.17616/R37P4C</td>
 </tr>
-<tr class="even">
-<td align="left">ORCiD</td>
-<td align="left">0000-0002-6059-4651</td>
+<tr>
+<td>ORCiD</td>
+<td>0000-0002-6059-4651</td>
 </tr>
 </tbody>
 </table>
 <p>When describing PIDs, it's important to include both of these pieces for downstream activities like searching and linking resources. FOor example, a user may want to query for all repositories with a DOI identifier or all Datasets authored by a researcher with an ORCiD. These types of filters become more difficult when only the URL to these identifiers are provided. The reason here is that there are multiple URLs for an persistent identifier. On example is the DOI:</p>
 <ul>
-<li><a href="http://doi.org/10.17616/R37P4C">http://doi.org/10.17616/R37P4C</a><br /></li>
-<li><a href="https://doi.org/10.17616/R37P4C">https://doi.org/10.17616/R37P4C</a><br /></li>
-<li><a href="http://dx.doi.org/10.17616/R37P4C">http://dx.doi.org/10.17616/R37P4C</a><br /></li>
-<li><a href="https://dx.doi.org/10.17616/R37P4C">https://dx.doi.org/10.17616/R37P4C</a></li>
+<li>http://doi.org/10.17616/R37P4C</li>
+<li>https://doi.org/10.17616/R37P4C</li>
+<li>http://dx.doi.org/10.17616/R37P4C</li>
+<li>https://dx.doi.org/10.17616/R37P4C</li>
 </ul>
 <p>So, the best practice is to provide the scheme and value for an identifier, but you can also provide a URL representation using the <a href="https://schema.org/url">schema:url</a> property.</p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="repository-resource-types"></a></p>
-<h3 id="describing-a-repositorys-types-of-resources">Describing a Repository's Types of Resources</h3>
-<p><a href="#"><img src="/voc/static/schema/diagrams/repository-resource-types.png" title="Research Repository Service - Types of Resources" alt="Research Repository Service - Types of Resources" /></a></p>
+<h3>Describing a Repository's Types of Resources</h3>
+<p><a href="#"><img src="/voc/static/schema/diagrams/repository-resource-types.png" alt="Research Repository Service - Types of Resources" title="Research Repository Service - Types of Resources"></a></p>
 <p>To describe the types of research resources a repository curates, we use the <a href="https://schema.org/OfferCatalog">schema:OfferCatalog</a>. With an extension of gdx:ResearchResourceTypes, we define that the OfferCatalog will be a list of types that are dervied from <a href="https://schema.org/CreativeWork">schema:CreativeWork</a>.</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
@@ -620,14 +724,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "schema": "http://schema.org/"</strong>
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
   ...
   <strong>"hasOfferCatalog":{
     "@type": "OfferCatalog",
-    "additionalType": "gdx:ResearchResourceTypes",
+    "additionalType": "https://geodex.org/voc/ResearchResourceTypes",
     "itemListElement": [
       {"@type": "Thing", "@id": "schema:Dataset", "name": "Dataset"},
       {"@type": "Thing", "@id": "geolink:PhysicalSample", "name": "Physical Sample" }
@@ -635,16 +739,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }</strong>
 }
 </pre>
-
-
 <p>Notice, that we use <code>@id</code> to describe the type of resource. To reference schema.org classes using <code>@id</code> properly, we must add schema.org to the <code>@context</code> with a prefix name. Here, we chose <code>schema:</code> in the <code>@context</code>, thus we use <code>schema:Dataset</code> to say that our repository curates resource types of <a href="https://schema.org/Dataset">schema.org/Dataset</a>.</p>
 <p>Because schema.org does not have a class for a Physical Sample yet, we use teh calss definition from the <a href="http://schema.geolink.org">EarthCube GeoLink vocabulary</a> to specify that this repository curates physical samples. We add <code>geolink:</code> to the <code>@context</code> section, and then specify <code>geolink:PhysicalSample</code> as another <code>@id</code> offered by this repository.</p>
 <p><a id="repository-outreach-activities"></a></p>
-<h3 id="describing-a-repositorys-outreach-activities">Describing a Repository's Outreach Activities</h3>
-<p><a href="#"><img src="/voc/static/schema/diagrams/repository-outreach-activities.png" title="Research Repository Service - Outreach Activities" alt="Research Repository Service - Outreach Activities" /></a></p>
+<h3>Describing a Repository's Outreach Activities</h3>
+<p><a href="#"><img src="/voc/static/schema/diagrams/repository-outreach-activities.png" alt="Research Repository Service - Outreach Activities" title="Research Repository Service - Outreach Activities"></a></p>
 <p>To describe the outreach activities of a repository, we again use the <a href="https://schema.org/OfferCatalog">schema:OfferCatalog</a> but specify it's <a href="https://schema.org/additionalType">schema:additionalType</a> to be <code>gdx:OutreachActivities</code>:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
@@ -653,7 +754,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "schema": "http://schema.org/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -661,7 +762,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   <strong>"hasOfferCatalog":[</strong>
     {
       "@type": "OfferCatalog",
-      "additionalType": "gdx:ResearchResourceTypes",
+      "additionalType": "https://geodex.org/voc/ResearchResourceTypes",
       "itemListElement": [
         {"@type": "Thing", "@id": "schema:Dataset", "name": "Dataset"},
         {"@type": "Thing", "@id": "geolink:PhysicalSample", "name": "Physical Sample" }
@@ -669,12 +770,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     },
     <strong>{
       "@type": "OfferCatalog",
-      "additionalType": "gdx:OutreachActivities",
+      "additionalType": "https://geodex.org/voc/OutreachActivities",
       "itemListElement": [
         {
           "@type": "Action",
           "@id": "gdx:OutreachActivity-Training",
-          "additionalType": "gdx:OutreachActivity-Training",
+          "additionalType": "https://geodex.org/voc/OutreachActivity-Training",
           "name": "User Training",
           "description": "...",
           "url": "https://sample-data-repository.org/training/user-training"
@@ -682,7 +783,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
         {
           "@type": "Action",
           "@id": "gdx:OutreachActivity-UserWorkshop",
-          "additionalType": "gdx:OutreachActivity-UserWorkshop",
+          "additionalType": "https://geodex.org/voc/OutreachActivity-UserWorkshop",
           "name": "User Workshops",
           "description": "...",
           "url": "https://sample-data-repository.org/workshops/data-submission-workshops"
@@ -690,7 +791,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
         {
           "@type": "Action",
           "@id": "gdx:OutreachActivity-UserSupport",
-          "additionalType": "gdx:OutreachActivity-UserSupport",
+          "additionalType": "https://geodex.org/voc/OutreachActivity-UserSupport",
           "name": "User Support",
           "description": "...",
           "url": "https://sample-data-repository.org/support/user-support"
@@ -699,11 +800,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     }</strong>
 }
 </pre>
-
-
 <p>These <code>Action</code> items above are not instances of actual events, but specify the type of potential events a repository may hold. To describe a specific <a href="https://schema.org/Event">schema:Event</a> related to one of these activities, you could publish on a different web page in this way:</p>
-<pre>
-{
+<pre>{
   "@context": { "@vocab": "http://schema.org/" },
   "@type": "Event",
   "name": "SDRO Data Submission Workshop - Summer 2018",
@@ -712,21 +810,18 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   ... goes on to describe the schema.org/Event
 }
 </pre>
-
-
 <p><a id="repository-policies"></a></p>
-<h3 id="describing-a-repositorys-policies">Describing a Repository's Policies</h3>
-<p><a href="#"><img src="/voc/static/schema/diagrams/repository-policies.png" title="Research Repository Service - Policies" alt="Research Repository Service - Policies" /></a></p>
+<h3>Describing a Repository's Policies</h3>
+<p><a href="#"><img src="/voc/static/schema/diagrams/repository-policies.png" alt="Research Repository Service - Policies" title="Research Repository Service - Policies"></a></p>
 <p>If your repository has policy documents about access control, terms of use, etc. You can provide those using the <a href="https://schema.org/publishingPrinciples">schema:publishingPrinciples</a> field. Becuase schema.org does not make a distiction for the types of these documents, P418 has created some class names for some common policy document types. These will help make it clear to users what types of policies you have. If you would like us to add more, please let us know by creating an <a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/new">Issue</a>.</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -734,14 +829,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   <strong>"publishingPrinciples": [
       {
         "@type": "DigitalDocument",
-        "additionalType": "gdx:Protocol-TermsOfUse",
+        "additionalType": "https://geodex.org/voc/Protocol-TermsOfUse",
         "name": "Terms of Use",
         "url": "https://www.sample-data-repository.org/terms-of-use",
         "fileFormat": "text/html"
       },
       {
         "@type": "DigitalDocument",
-        "additionalType": "gdx:Protocol-ResourceSubmissionPolicy",
+        "additionalType": "https://geodex.org/voc/Protocol-ResourceSubmissionPolicy",
         "name": "How to Get Started Contributing Data",
         "url": "https://www.sample-data-repository.org/submit-data",
         "fileFormat": "text/html"
@@ -750,22 +845,19 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   ]</strong>
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
 <p><a id="repository-services"></a></p>
-<h3 id="describing-a-repositorys-services">Describing a Repository's Services</h3>
-<p><a href="#"><img src="/voc/static/schema/diagrams/repository-servicechannel.png" title="Research Repository Service - Service Channel" alt="Research Repository Service - Service Channel" /></a></p>
+<h3>Describing a Repository's Services</h3>
+<p><a href="#"><img src="/voc/static/schema/diagrams/repository-servicechannel.png" alt="Research Repository Service - Service Channel" title="Research Repository Service - Service Channel"></a></p>
 <p>For repositories might offer services for accessing data as opposed to directly accessing data files. The <a href="https://schema.org/Service">schema:Service</a> allows us to describe these services as well as repository searches, data submission services, and syndication services. In this first example, we describe a search service at the repository using <a href="https://schema.org/ServiceChannel">schema:ServiceChannel</a>.</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -776,7 +868,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
       "serviceUrl": "https://www.sample-data-repository.org/search",
       "providesService": {
         "@type": "Service",
-        "additionalType": "gdx:SearchService",
+        "additionalType": "https://geodex.org/voc/SearchService",
         "name": "SDRO Website Search",
         "description": "Search for webpages, datasets, authors, funding awards, instrumentation and measurements",
         "potentialAction": {
@@ -795,14 +887,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
        "serviceUrl": "https://www.sample-data-repository.org/sitemap.xml",
        "providesService": {
          "@type": "Service",
-         "additionalType": "gdx:SyndicationService",
+         "additionalType": "https://geodex.org/voc/SyndicationService",
          "name": "Sitemap XML",
          "description": "A Sitemap XML providing access to all of the resources for harvesting",
          "potentialAction": {
            "@type": "ConsumeAction",
            "target": {
              "@type": "EntryPoint",
-             "additionalType": "gdx:SitemapXML",
+             "additionalType": "https://geodex.org/voc/SitemapXML",
              "urlTemplate": "https://www.sample-data-repository.org/sitemap.xml?page={page}"
            },
            "object": {
@@ -816,19 +908,16 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   ]
 }
 </pre>
-
-
-<p>By specifying the [schema:potentialAction(<a href="https://schema.org/potentialAction">https://schema.org/potentialAction</a>), we create a machine-actionable way to execute searches. This means that an EarthCube Registry could take a user submitted query, and pass it along to the repository for the EarthCube Registry user.</p>
+<p>By specifying the [schema:potentialAction(https://schema.org/potentialAction), we create a machine-actionable way to execute searches. This means that an EarthCube Registry could take a user submitted query, and pass it along to the repository for the EarthCube Registry user.</p>
 <p>If your repository does have datasets or other resources with schema.org JSON-LD markup on their landing pages, Google recommends that all URLs be put inside a sitemap.xml file. To create a sitemap.xml, <a href="https://www.google.com/schemas/sitemap/0.84/">go here</a>. To describe your sitemap.xml, add a <a href="https://schema.org/ServiceChannel">schema:ServiceChannel</a> similar to the following markup:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -839,7 +928,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
       "serviceUrl": "https://www.sample-data-repository.org/search",
       "providesService": {
         "@type": "Service",
-        "additionalType": "gdx:SearchService",
+        "additionalType": "https://geodex.org/voc/SearchService",
         "name": "SDRO Website Search",
         "description": "Search for webpages, datasets, authors, funding awards, instrumentation and measurements",
         "potentialAction": {
@@ -858,14 +947,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
        "serviceUrl": "https://www.sample-data-repository.org/sitemap.xml",
        "providesService": {
          "@type": "Service",
-         "additionalType": "gdx:SyndicationService",
+         "additionalType": "https://geodex.org/voc/SyndicationService",
          "name": "Sitemap XML",
          "description": "A Sitemap XML providing access to all of the resources for harvesting",
          "potentialAction": {
            "@type": "ConsumeAction",
            "target": {
              "@type": "EntryPoint",
-             "additionalType": "gdx:SitemapXML",
+             "additionalType": "https://geodex.org/voc/SitemapXML",
              "urlTemplate": "https://www.sample-data-repository.org/sitemap.xml?page={page}"
            },
            "object": {
@@ -879,22 +968,19 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   ]
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
 <p><a id="repository-data-collections"></a></p>
-<h3 id="describing-a-repositorys-data-collections">Describing a Repository's Data Collections</h3>
+<h3>Describing a Repository's Data Collections</h3>
 <p>If your repository has a concept of a data collection, some grouping of a number of datasets, we can use the <a href="https://schema.org/DataCatalog">schema:DataCatalog</a> to describe these collections using the <a href="https://schema.org/OfferCatalog">schema:OfferCatalog</a>. One exampel of a DataCatalog might be to group datasets by a categorization such as 'biological data' or 'chemical data'. Or a catalog could be grouped by instrument, parameter or whatever logical grouping a repository may have.</p>
-<p><a href="#"><img src="/voc/static/schema/diagrams/repository-offerCatalog.png" title="Research Repository Service - Offer Catalog" alt="Research Repository Service - Offer Catalog" /></a></p>
-<pre>
-{
+<p><a href="#"><img src="/voc/static/schema/diagrams/repository-offerCatalog.png" alt="Research Repository Service - Offer Catalog" title="Research Repository Service - Offer Catalog"></a></p>
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
     "datacite": "http://purl.org/spar/datacite/"
   },
   "@type": ["Service", "Organization"],
- "additionalType": "gdx:ResearchRepositoryService",
+ "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -927,44 +1013,39 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }</strong>
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-diagram"></a></p>
-<h3 id="describing-a-dataset">Describing a Dataset</h3>
+<h3>Describing a Dataset</h3>
 <p>The <a href="https://schema.org/Dataset">schema:Dataset</a> is a very expressive type within schema.org.</p>
-<p><img src="/voc/static/schema/diagrams/dataset.png" title="Dataset" alt="Dataset" /></p>
+<p><img src="/voc/static/schema/diagrams/dataset.png" alt="Dataset" title="Dataset"></p>
 <p>However, Google has drafted a <a href="https://developers.google.com/search/docs/data-types/dataset">guide to help publishers</a>. THe guide describes the only required fields as - name and description.</p>
 <ul>
-<li><a href="https://schema.org/name">name</a> - A descriptive name of a dataset (e.g., “Snow depth in Northern Hemisphere”)<br /></li>
+<li><a href="https://schema.org/name">name</a> - A descriptive name of a dataset (e.g., “Snow depth in Northern Hemisphere”)</li>
 <li><a href="https://schema.org/description">description</a> - A short summary describing a dataset.</li>
 </ul>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   <strong>"name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. "</strong>
 }
 </pre>
-
-
 <p>The <a href="https://developers.google.com/search/docs/data-types/dataset">guide</a> suggests the following recommended fields:</p>
 <ul>
-<li><a href="https://schema.org/url">url</a> - Location of a page describing the dataset.<br /></li>
-<li><a href="https://schema.org/sameAs">sameAs</a> - Other URLs that can be used to access the dataset page. A link to a page that provides more information about the same dataset, usually in a different repository.<br /></li>
-<li><a href="https://schema.org/version">version</a> - The version number or identifier for this dataset (text or numeric).<br /></li>
-<li><a href="https://schema.org/keywords">keywords</a> - Keywords summarizing the dataset.<br /></li>
-<li><a href="https://schema.org/license">license</a> - A license under which the dataset is distributed (text or URL).<br /></li>
-<li><a href="https://schema.org/identifier">identifier</a> - An identifier for the dataset, such as a DOI. (text,URL, or PropertyValue).<br /></li>
+<li><a href="https://schema.org/url">url</a> - Location of a page describing the dataset.</li>
+<li><a href="https://schema.org/sameAs">sameAs</a> - Other URLs that can be used to access the dataset page. A link to a page that provides more information about the same dataset, usually in a different repository.</li>
+<li><a href="https://schema.org/version">version</a> - The version number or identifier for this dataset (text or numeric).</li>
+<li><a href="https://schema.org/isAccessibleForFree">isAccessibleForFree</a> - Boolean (true|false) speficying if the dataset is accessible for free.</li>
+<li><a href="https://schema.org/keywords">keywords</a> - Keywords summarizing the dataset.</li>
+<li><a href="https://schema.org/license">license</a> - A license under which the dataset is distributed (text or URL).</li>
+<li><a href="https://schema.org/identifier">identifier</a> - An identifier for the dataset, such as a DOI. (text,URL, or PropertyValue).</li>
 <li><a href="https://schema.org/variableMeasured">variableMeasured</a> - What does the dataset measure? (e.g., temperature, pressure)</li>
 </ul>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     <strong>"geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -972,32 +1053,31 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "datacite": "http://purl.org/spar/datacite/"</strong>
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
   <strong>"url": "https://www.sample-data-repository.org/dataset/472032",
   "sameAs": "https://search.dataone.org/#view/https://www.sample-data-repository.org/dataset/472032",
   "version": "2013-11-21",
+  "isAccessibleForFree": true,
   "keywords": "ocean acidification, Dissolved Organic Carbon, bacterioplankton respiration, pCO2, carbon dioxide, oceans",
   "license": "http://creativecommons.org/licenses/by/4.0/"</strong>
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
-<p><a id="dataset-identifiers"></a><br />Adding the <a href="https://schema.org/identifier">schema:identifier</a> field can be done in three ways - a text description, a URL, or by using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> type to describe the identifier in more detail. We highly recommend using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a>.</p>
-<h4 id="describing-a-dataset-identifier">Describing a Dataset Identifier</h4>
-<p><img src="/voc/static/schema/diagrams/dataset-identifier.png" title="Dataset - Identifiers" alt="Identifiers" /></p>
+<p><a id="dataset-identifiers"></a>
+Adding the <a href="https://schema.org/identifier">schema:identifier</a> field can be done in three ways - a text description, a URL, or by using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> type to describe the identifier in more detail. We highly recommend using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> as the use of text or url does not get indexed properly by Google and other JSON-LD testing tools due to an issue with the properties definition.</p>
+<h4>Describing a Dataset Identifier</h4>
+<p><img src="/voc/static/schema/diagrams/dataset-identifier.png" alt="Identifiers" title="Dataset - Identifiers"></p>
 <p>In it's most basic form, the identifier as a <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> can be published as:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
     "vivo": "http://vivoweb.org/ontology/core#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
   "url": "https://www.sample-data-repository.org/dataset/472032",
@@ -1008,11 +1088,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   <strong>"identifier": "urn:sdro:dataset:472032"</strong>
 }
 </pre>
-
-
 <p>The Persistent Identifier, such as a DOI, ARK, URL, etc as a <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> can be published using the <a href="https://sparontologies.github.io/datacite/current/datacite.html#d4e638">DataCite Ontology Resource Identifier Scheme</a> to define the identifier as:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1020,7 +1097,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
   "url": "https://www.sample-data-repository.org/dataset/472032",
@@ -1030,19 +1107,16 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   "license": "http://creativecommons.org/licenses/by/4.0/",
   <strong>"identifier": {
     "@type": "PropertyValue",
-    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
-    "propertyID": "datacite:doi",
+    "additionalType": ["http://schema.geolink.org/1.0/base/main#Identifier", "http://purl.org/spar/datacite/Identifier"],
+    "propertyID": "http://purl.org/spar/datacite/doi",
     "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
     "value": "10.1575/1912/bco-dmo.665253"
   }</strong>
 }
 </pre>
-
-
 <p><a href="https://schema.org/Dataset">schema:Dataset</a> also defines a field for the <a href="https://schema.org/citation">schema:citation</a> as either text or a <a href="https://schema.org/CreativeWork">schema:CreativeWork</a>. To provide citation text:</p>
 <p>NOTE: If you have a DOI, the citation text can be <a href="https://citation.crosscite.org/docs.html#sec-4-1">automatically generated</a> for you by querying a DOI URL with the Accept Header of 'text/x-bibliography'.</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1050,7 +1124,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     <strong>"datacite": "http://purl.org/spar/datacite/"</strong>
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   "description": "This dataset includes results of laboratory experiments which measured dissolved organic carbon (DOC) usage by natural bacteria in seawater at different pCO2 levels. Included in this dataset are; bacterial abundance, total organic carbon (TOC), what DOC was added to the experiment, target pCO2 level. ",
   "url": "https://www.sample-data-repository.org/dataset/472032",
@@ -1061,23 +1135,21 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   "identifier": {
     "@id": "https://doi.org/10.1575/1912/bco-dmo.665253",
     "@type": "PropertyValue",
-    "additionalType": ["geolink:Identifier", "datacite:Identifier"],
-    "propertyID": "datacite:doi",
+    "additionalType": ["http://schema.geolink.org/1.0/base/main#Identifier", "http://purl.org/spar/datacite/Identifier"],
+    "propertyID": "http://purl.org/spar/datacite/doi",
     "url": "https://doi.org/10.1575/1912/bco-dmo.665253",
     "value": "10.1575/1912/bco-dmo.665253"
    },
    <strong>"citation": "J.Smith 'How I created an awesome dataset’, Journal of Data Science, 1966"</strong>
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
-<p><a id="dataset-variables"></a><br />Adding the <a href="https://schema.org/variableMeasured">schema:variableMeasured</a> field can be done in two ways - a text description of each variable or by using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> type to describe the variable in more detail. We highly recommend using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a>.</p>
-<h4 id="describing-a-datasets-variables">Describing a Dataset's Variables</h4>
-<p><img src="/voc/static/schema/diagrams/dataset-variables.png" title="Dataset - Variables" alt="Variables" /></p>
+<p><a id="dataset-variables"></a>
+Adding the <a href="https://schema.org/variableMeasured">schema:variableMeasured</a> field can be done in two ways - a text description of each variable or by using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> type to describe the variable in more detail. We highly recommend using the <a href="https://schema.org/PropertyValue">schema:PropertyValue</a>.</p>
+<h4>Describing a Dataset's Variables</h4>
+<p><img src="/voc/static/schema/diagrams/dataset-variables.png" alt="Variables" title="Dataset - Variables"></p>
 <p>In it's most basic form, the variable as a <a href="https://schema.org/PropertyValue">schema:PropertyValue</a> can be published as:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1085,13 +1157,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     <strong>"earthcollab": "https://library.ucar.edu/earthcollab/schema#"</strong>
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
   <strong>"variableMeasured": [
     {
       "@type": "PropertyValue",
-      "additionalType": "earthcollab:Parameter",
+      "additionalType": "https://library.ucar.edu/earthcollab/schema#Parameter",
       "name": "Bottle identifier",
       "description": "The bottle number for each associated measurement."
     },
@@ -1099,10 +1171,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   ]</strong>
 }
 </pre>
-
-<p><a id="gsn-example"></a><br />A fully-fleshed out example that uses a vocabulary to describe the variable can be published as:</p>
-<pre>
-{
+<a id="gsn-example"></a>
+A fully-fleshed out example that uses a vocabulary to describe the variable can be published as:
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1110,13 +1181,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     <strong>"gsn-quantity": "http://www.geoscienceontology.org/geo-lower/quantity#"</strong>
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
   "variableMeasured": [
     {
       "@type": "PropertyValue",
-      <strong>"additionalType": ["gsn-quantity:latitude"],</strong>
+      <strong>"additionalType": "http://www.geoscienceontology.org/geo-lower/quantity#latitude",</strong>
       "name": "latitude",
       "url": "https://www.sample-data-repository.org/dataset-parameter/665787",
       "description": "Latitude where water samples were collected; north is positive.",
@@ -1128,18 +1199,15 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   ]
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-catalog"></a></p>
-<h4 id="describing-a-datasets-catalog">Describing a Dataset's Catalog</h4>
+<h4>Describing a Dataset's Catalog</h4>
 <p>For some repositories, defining a one or many data collections helps contextualize the datasets. In schema.org, you define these collections using <a href="https://schema.org/DataCatalog">schema:DataCatalog</a>.</p>
-<p><img src="/voc/static/schema/diagrams/dataset-catalog.png" title="Dataset - Catalog" alt="DataCatalog" /></p>
-<p>The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an [&quot;offering&quot; of your repository[(#repository-offercatalog) and including the <code>@id</code> property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a <a href="https://schema.org/DataCatalog">schema:DataCatalog</a> with the</p>
-<p><code>&quot;@id&quot;: &quot;https://www.sample-data-repository.org/collection/biological-data&quot;</code>.</p>
+<p><img src="/voc/static/schema/diagrams/dataset-catalog.png" alt="DataCatalog" title="Dataset - Catalog"></p>
+<p>The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an ["offering" of your repository[(#repository-offercatalog) and including the <code>@id</code> property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a <a href="https://schema.org/DataCatalog">schema:DataCatalog</a> with the</p>
+<p><code>"@id": "https://www.sample-data-repository.org/collection/biological-data"</code>.</p>
 <p>In the dataset JSON-LD, we reuse that <code>@id</code> to say a dataset belongs in that catalog:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1148,7 +1216,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
   <strong>"includedInDataCatalog": {
@@ -1156,16 +1224,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }</strong>
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-distros"></a></p>
-<h4 id="describing-a-datasets-distributions">Describing a Dataset's Distributions</h4>
-<p>Where the <a href="https://schema.org/url">schema:url</a> property of the Dataset should point to a landing page, the way to describe how to download the data in a specific format is through the <a href="https://schema.org/distribution">schema:distribution</a> property. The &quot;distribution&quot; property describes where to get the data and in what format by using the <a href="https://schema.org/DataDownload">schema:DataDownload</a> type. If your dataset is not accessible through a direct download URL, but rather through a service URL that may need input parameters jump to the next section <a href="#dataset-service-endpoint">Accessing Data through a Service Endpoint</a>.</p>
-<p><img src="/voc/static/schema/diagrams/dataset-distribution.png" title="Dataset - Distributions" alt="Distributions" /></p>
+<h4>Describing a Dataset's Distributions</h4>
+<p>Where the <a href="https://schema.org/url">schema:url</a> property of the Dataset should point to a landing page, the way to describe how to download the data in a specific format is through the <a href="https://schema.org/distribution">schema:distribution</a> property. The "distribution" property describes where to get the data and in what format by using the <a href="https://schema.org/DataDownload">schema:DataDownload</a> type. If your dataset is not accessible through a direct download URL, but rather through a service URL that may need input parameters jump to the next section <a href="#dataset-service-endpoint">Accessing Data through a Service Endpoint</a>.</p>
+<p><img src="/voc/static/schema/diagrams/dataset-distribution.png" alt="Distributions" title="Dataset - Distributions"></p>
 <p>For data available in multipe formats, there will be multiple values of the <a href="https://schema.org/DataDownload">schema:DataDownload</a>:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1174,7 +1239,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
   <strong>"distribution": {
@@ -1184,13 +1249,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }</strong>
 }
 </pre>
-
-
 <p><a id="dataset-service-endpoint"></a></p>
-<h5 id="accessing-data-through-a-service-endpoint">Accessing Data through a Service Endpoint</h5>
+<h5>Accessing Data through a Service Endpoint</h5>
 <p>If access to the data requires some input parameters before a download can occur, we can use the <a href="https://schema.org/potentialAction">schema:potentialAction</a> in this way:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1199,7 +1261,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
   <strong>"potentialAction": {
@@ -1207,7 +1269,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "target": {
         "@type": "EntryPoint",
         "contentType": ["application/x-netcdf", "text/tab-separated-values"],
-        "urlTemplate": "https://www.sample-data-repository.org/dataset/1234/download?format={format}&startDateTime={start}&endDateTime={end}&bounds={bbox}",
+        "urlTemplate": "https://www.sample-data-repository.org/dataset/1234/download?format={format}&amp;startDateTime={start}&amp;endDateTime={end}&amp;bounds={bbox}",
         "description": "Download dataset 1234 based on the requested format, start/end dates and bounding box",
         "httpMethod": ["GET", "POST"]
     },
@@ -1245,51 +1307,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }</strong>
 }
 </pre>
-
-
 <p>Here, we use the <a href="https://schema.org/SearchAction">schema:SearchAction</a> type becuase it lets you define the query parameters and HTTP methods so that machines can build user interfaces to collect those query parmaeters and actuate a request to provide the user what they are looking for.</p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-temporal"></a></p>
-<h4 id="describing-a-datasets-temporal-coverage">Describing a Dataset's Temporal Coverage</h4>
-<p>Temporal coverage is a difficult concept to cover across all the possible scenarios. Schema.org uses <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standard</a> to describe time intervals and time points, but doesn't provide capabilities for geologic time scales or dynamically generated data up to present time. We ask for your <a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues">feedback on any temporal coverages you may have that don't currently fit into schema.org</a>. You can follow [similar issues at the schema.org Github issue] queue(<a href="https://github.com/schemaorg/schemaorg/issues/242">https://github.com/schemaorg/schemaorg/issues/242</a>)</p>
-<p><img src="/voc/static/schema/diagrams/dataset-temporal.png" title="Dataset - Temporal" alt="Temporal" /></p>
-<p>To represent a single date and time:<br /><pre><br />{<br /> <script type="text/javascript">
-<!--
-h='&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@context&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;&#x29;</noscript>: {<br /> <script type="text/javascript">
-<!--
-h='&#118;&#x6f;&#x63;&#x61;&#98;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@vocab&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#118;&#x6f;&#x63;&#x61;&#98;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#118;&#x6f;&#x63;&#x61;&#98;&#34;&#x29;</noscript>: &quot;<a href="http://schema.org/">http://schema.org/</a>&quot;,<br /> &quot;geolink&quot;: &quot;<a href="http://schema.geolink.org/1.0/base/main">http://schema.geolink.org/1.0/base/main</a>#&quot;,<br /> &quot;vivo&quot;: &quot;<a href="http://vivoweb.org/ontology/core">http://vivoweb.org/ontology/core</a>#&quot;,<br /> earthcollab&quot;: &quot;<a href="https://library.ucar.edu/earthcollab/schema">https://library.ucar.edu/earthcollab/schema</a>#&quot;,<br /> &quot;geo-upper&quot;: &quot;<a href="http://www.geoscienceontology.org/geo-upper">http://www.geoscienceontology.org/geo-upper</a>#&quot;<br /> },<br /> <script type="text/javascript">
-<!--
-h='&#116;&#x79;&#112;&#x65;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#116;&#x79;&#112;&#x65;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#116;&#x79;&#112;&#x65;&#34;&#x29;</noscript>: &quot;Dataset&quot;,<br /> &quot;additionalType&quot;: [&quot;geolink:Dataset&quot;, &quot;vivo:Dataset&quot;],<br /> &quot;name&quot;: &quot;Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016&quot;,<br /> ...<br /> <strong>&quot;temporalCoverage&quot;: &quot;2018-01-22T14:51:12+00:00&quot;</strong><br />}<br /></pre></p>
-<p>Or a single date:<br /><pre><br />{<br /> ...<br /> <strong>&quot;temporalCoverage&quot;: &quot;2018-01-22&quot;</strong><br />}<br /></pre></p>
-<p>Or a date range:<br /><pre><br />{<br /> ...<br /> <strong>&quot;temporalCoverage&quot;: &quot;2012-09-20/2016-01-22&quot;</strong><br />}<br /></pre></p>
-<p>Schema.org also lets you provide date ranges and other temporal coverages through the <a href="http://schema.org/DateTime">DateTime</a> data type. For more granular temporal coverages go here: <a href="http://schema.org/DateTime"><a href="http://schema.org/DateTime">http://schema.org/DateTime</a></a>.</p>
-<p>Back to <a href="#top">top</a></p>
-<p><a id="dataset-spatial"></a></p>
-<h4 id="describing-a-datasets-spatial-coverage">Describing a Dataset's Spatial Coverage</h4>
-<p><img src="/voc/static/schema/diagrams/dataset-spatial.png" title="Dataset - Spatial" alt="Spatial" /></p>
-<p>The types of spatial coverages in schema.org are</p>
-<ul>
-<li><a href="https://schema.org/GeoCoordinates">point</a> - specify the <a href="https://schema.org/latitude">schema:latitude</a> and <a href="https://schema.org/longitude">schema:longitude</a> properties of the schema:GeoCoordinates]() type.</li>
-</ul>
-<p>The following shapes use the <a href="https://schema.org/GeoShape">schema:GeoShape</a> type where a 'point' is defined as a latitude/longitude pair separated by a comma.</p>
-<ul>
-<li><a href="https://schema.org/line">line</a> - a series of two or more point objects separated by space.<br /></li>
-<li><a href="https://schema.org/polygon">polygon</a> - a series of four or more space delimited points where the first and final points are identical.<br /></li>
-<li><a href="https://schema.org/polboxygon">box</a> - two points separated by a space character where the first point is the lower corner and the second point is the upper corner.</li>
-</ul>
-<p>These spatial definitiosn were added to schema.org very early on in its <a href="https://github.com/schemaorg/schemaorg/issues/8#issuecomment-97667478">development</a> where they decided to follow the <a href="http://www.georss.org/simple">GeoRSS specification</a>. While this is not ideal, there are ongoing conversations about improving this in schema.org.</p>
-<p><a id="dataset-spatial-point"></a><br />A point, or coordinate, would defined in this way:</p>
-<pre>
-{
+<h4>Describing a Dataset's Temporal Coverage</h4>
+<p>Temporal coverage is a difficult concept to cover across all the possible scenarios. Schema.org uses <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standard</a> to describe time intervals and time points, but doesn't provide capabilities for geologic time scales or dynamically generated data up to present time. We ask for your <a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues">feedback on any temporal coverages you may have that don't currently fit into schema.org</a>. You can follow [similar issues at the schema.org Github issue] queue(https://github.com/schemaorg/schemaorg/issues/242)</p>
+<p><img src="/voc/static/schema/diagrams/dataset-temporal.png" alt="Temporal" title="Dataset - Temporal"></p>
+<p>To represent a single date and time:</p>
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1298,7 +1323,52 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
+  "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
+  ...
+  <strong>"temporalCoverage": "2018-01-22T14:51:12+00:00"</strong>
+}
+</pre>
+<p>Or a single date:</p>
+<pre>{
+  ...
+  <strong>"temporalCoverage": "2018-01-22"</strong>
+}
+</pre>
+<p>Or a date range:</p>
+<pre>{
+  ...
+  <strong>"temporalCoverage": "2012-09-20/2016-01-22"</strong>
+}
+</pre>
+<p>Schema.org also lets you provide date ranges and other temporal coverages through the <a href="http://schema.org/DateTime">DateTime</a> data type. For more granular temporal coverages go here: <a href="http://schema.org/DateTime">http://schema.org/DateTime</a>.</p>
+<p>Back to <a href="#top">top</a></p>
+<p><a id="dataset-spatial"></a></p>
+<h4>Describing a Dataset's Spatial Coverage</h4>
+<p><img src="/voc/static/schema/diagrams/dataset-spatial.png" alt="Spatial" title="Dataset - Spatial"></p>
+<p>The types of spatial coverages in schema.org are</p>
+<ul>
+<li><a href="https://schema.org/GeoCoordinates">point</a> - specify the <a href="https://schema.org/latitude">schema:latitude</a> and <a href="https://schema.org/longitude">schema:longitude</a> properties of the schema:GeoCoordinates]() type.</li>
+</ul>
+<p>The following shapes use the <a href="https://schema.org/GeoShape">schema:GeoShape</a> type where a 'point' is defined as a latitude/longitude pair separated by a comma.</p>
+<ul>
+<li><a href="https://schema.org/line">line</a> - a series of two or more point objects separated by space.</li>
+<li><a href="https://schema.org/polygon">polygon</a> - a series of four or more space delimited points where the first and final points are identical.</li>
+<li><a href="https://schema.org/polboxygon">box</a> - two points separated by a space character where the first point is the lower corner and the second point is the upper corner.</li>
+</ul>
+<p>These spatial definitiosn were added to schema.org very early on in its <a href="https://github.com/schemaorg/schemaorg/issues/8#issuecomment-97667478">development</a> where they decided to follow the <a href="http://www.georss.org/simple">GeoRSS specification</a>. While this is not ideal, there are ongoing conversations about improving this in schema.org.</p>
+<p><a id="dataset-spatial-point"></a>
+A point, or coordinate, would defined in this way:</p>
+<pre>{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#",
+    "vivo": "http://vivoweb.org/ontology/core#",
+    earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+    "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
+  },
+  "@type": "Dataset",
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
   <strong>"spatialCoverage": {
@@ -1311,11 +1381,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
   }</strong>
 }
 </pre>
-
-
-<p><a id="dataset-spatial-shape"></a><br />All other shapes, are defined using the <a href="https://schema.org/GeoShape">schema:GeoShape</a>:</p>
-<pre>
-  <strong>"spatialCoverage": {
+<p><a id="dataset-spatial-shape"></a>
+All other shapes, are defined using the <a href="https://schema.org/GeoShape">schema:GeoShape</a>:</p>
+<pre>  <strong>"spatialCoverage": {
     "@type": "Place",
     "geo": {
       "@type": "GeoShape",
@@ -1324,14 +1392,15 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
   }</strong>
 }
 </pre>
-
-
-<p>A polygon<br /><pre><br /> <strong>&quot;polygon&quot;: &quot;39.3280 120.1633 40.445 123.7878 41 121 39.77 122.42 39.3280 120.1633&quot;</strong><br /></pre></p>
-<p>A box where 'lower-left' corner is 39.3280/120.1633 and 'upper-right' corner is 40.445/123.7878<br /><pre><br /> <strong>&quot;box&quot;: &quot;39.3280 120.1633 40.445 123.7878&quot;</strong><br /></pre></p>
+<p>A polygon</p>
+<pre>  <strong>"polygon": "39.3280 120.1633 40.445 123.7878 41 121 39.77 122.42 39.3280 120.1633"</strong>
+</pre>
+<p>A box where 'lower-left' corner is 39.3280/120.1633 and 'upper-right' corner is 40.445/123.7878</p>
+<pre>  <strong>"box": "39.3280 120.1633 40.445 123.7878"</strong>
+</pre>
 <p>For Project418, we feel the defined spatial coverages are inadequate for the needs of our community, but we also recognize that schema.org continues to hear the needs of its schema.org publishers on these <a href="https://github.com/schemaorg/schemaorg/issues/1548">issues</a>.</p>
 <p>To alleviate some of the pain of converting spatial information into these defined shapes, Project418 offers support for GeoJSON by using the <a href="https://schema.org/subjectOf">schema:subjectOf</a> property of the <a href="https://schema.org/Place">schema:Place</a> type. The <a href="https://schema.org/fileFormat">schema:fileFormat</a> property should have the value of the GeoJSON mime type <code>application\/vnd.geo+json</code> and the <a href="https://schema.org/text">schema:text</a> property should be the encoded value of the GeoJSON itself:</p>
-<pre>
-"spatialCoverage": {
+<pre>"spatialCoverage": {
     "@type": "Place",
     <strong>"subjectOf": {
       "@type": "CreativeWork",
@@ -1340,16 +1409,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     }</strong>
   }
 </pre>
-
-
 <p>We also recognize that there is no defined property for specifying a Coordinate Reference System, but we see from the <a href="https://github.com/schemaorg/schemaorg/issues">schema.org issue queue</a> that this has been mentioned.</p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-creator_contributor"></a></p>
-<h4 id="describing-a-datasets-creatorscontributors">Describing a Dataset's Creators/Contributors</h4>
-<p>People can be linked to datasets iusing three fields: author, creator, and contributor. Since <a href="https://schema.org/contributor">schema:contributor</a> is defined as a secondary author, and <a href="https://schema.org/creator">schema:Creator</a> is defined as being synonymous with the <a href="https://schema.org/author">schema:author</a> field, we recommend using the more expressive fields of creator and contribulds of creator and contributor. But using any of these fields are okay. Becuase there are more things that can be said about how and when a person contributed to a Dataset, we use the <a href="https://schema.org/Role">schema:Role</a>. You'll notice that the schema.org documentation does not state that the Role type is an expected data type of author, creator and contributor, but that is addressed in this <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post introducing Role into schema.org</a>. <em>Thanks to <a href="https://github.com/smrgeoinfo">Stephen Richard</a> for this contribution</em></p>
-<p><img src="/voc/static/schema/diagrams/dataset-creator_contributor.png" title="Dataset - Creator/Contributor" alt="Variables" /></p>
-<pre>
-{
+<h4>Describing a Dataset's Creators/Contributors</h4>
+<p>People can be linked to datasets iusing three fields: author, creator, and contributor. Since  <a href="https://schema.org/contributor">schema:contributor</a> is defined as a secondary author, and <a href="https://schema.org/creator">schema:Creator</a> is defined as being synonymous with the <a href="https://schema.org/author">schema:author</a> field, we recommend using the more expressive fields of creator and contribulds of creator and contributor. But using any of these fields are okay. Becuase there are more things that can be said about how and when a person contributed to a Dataset, we use the <a href="https://schema.org/Role">schema:Role</a>. You'll notice that the schema.org documentation does not state that the Role type is an expected data type of author, creator and contributor, but that is addressed in this <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post introducing Role into schema.org</a>. <em>Thanks to <a href="https://github.com/smrgeoinfo">Stephen Richard</a> for this contribution</em></p>
+<p><img src="/voc/static/schema/diagrams/dataset-creator_contributor.png" alt="Variables" title="Dataset - Creator/Contributor"></p>
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1358,20 +1424,20 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
   <strong>"creator": [
     {
       "@id": "http://lod.bco-dmo.org/id/person-role/472036",
       "@type": "Role",
-      "additionalType": "geolink:Participant",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
       "roleName": "Principal Investigator",
       "url": "http://lod.bco-dmo.org/id/person-role/472036",
       "creator": {
         "@id": "https://www.bco-dmo.org/person/51317",
         "@type": "Person",
-        "additionalType": "geolink:Person",
+        "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
         "name": "Dr Uta Passow",
         "givenName": "Uta",
         "familyName": "Passow",
@@ -1381,20 +1447,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     {
       "@id": "http://lod.bco-dmo.org/id/person-role/472038",
       "@type": "Role",
-      "additionalType": "geolink:Participant",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
       "roleName": "Co-Principal Investigator",
       "url": "https://www.bco-dmo.org/person-role/472038",
       "creator": {
         "@id": "https://www.bco-dmo.org/person/50663",
         "@type": "Person",
-        "additionalType": "geolink:Person",
+        "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
         "identifier": {
           "@type": "PropertyValue",
-          "additionalType": [
-            "geolink:Identifier",
-            "datacite:Identifier"
-          ],
-          "propertyID": "datacite:orcid",
+          "additionalType": ["http://schema.geolink.org/1.0/base/main#Identifier", "http://purl.org/spar/datacite/Identifier"],
+          "propertyID": "http://purl.org/spar/datacite/orcid",
           "url": "https://orcid.org/0000-0003-3432-2297",
           "value": "0000-0003-3432-2297"
         },
@@ -1404,10 +1467,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     }</strong>
 }
 </pre>
-
-<p>NOTE that the Role inherits the property <code>creator</code> and <code>contributor</code> from the Dataset when pointing to the <a href="https://schema.org/Person">schema:Person</a>.</p>
-<pre>
-{
+NOTE that the Role inherits the property `creator` and `contributor` from the Dataset when pointing to the [schema:Person](https://schema.org/Person).
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     ...
@@ -1418,13 +1479,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     {
       "@id": "http://lod.bco-dmo.org/id/person-role/472036",
       <strong>"@type": "Role"</strong>,
-      "additionalType": "geolink:Participant",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
       "roleName": "Principal Investigator",
       "url": "http://lod.bco-dmo.org/id/person-role/472036",
       <strong>"creator":</strong> {
         "@id": "https://www.bco-dmo.org/person/51317",
         "@type": "Person",
-        "additionalType": "geolink:Person",
+        "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
         "name": "Dr Uta Passow",
         "givenName": "Uta",
         "familyName": "Passow",
@@ -1433,11 +1494,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     }
 }
 </pre>
-
-
 <p>If a single Person plays multiple roles on a Dataset, each role should be explicitly defined in this way:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1446,20 +1504,20 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
   "creator": [
     {
       "@id": "http://lod.bco-dmo.org/id/person-role/472036",
       "@type": "Role",
-      "additionalType": "geolink:Participant",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
       "roleName": "Principal Investigator",
       "url": "http://lod.bco-dmo.org/id/person-role/472036",
       "creator": {
         <strong>"@id": "https://www.bco-dmo.org/person/51317"</strong>,
         "@type": "Person",
-        "additionalType": "geolink:Person",
+        "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
         "name": "Dr Uta Passow",
         "givenName": "Uta",
         "familyName": "Passow",
@@ -1469,7 +1527,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     <strong>{
       "@id": "https://www.bco-dmo.org/person-role/472037",
       "@type": "Role",
-      "additionalType": "geolink:Participant",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
       "roleName": "Contact",
       "url": "https://www.bco-dmo.org/person-role/472037",
       "creator": { "@id": "https://www.bco-dmo.org/person/51317" }
@@ -1477,20 +1535,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     {
       "@id": "http://lod.bco-dmo.org/id/person-role/472038",
       "@type": "Role",
-      "additionalType": "geolink:Participant",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
       "roleName": "Co-Principal Investigator",
       "url": "https://www.bco-dmo.org/person-role/472038",
       "creator": {
         "@id": "https://www.bco-dmo.org/person/50663",
         "@type": "Person",
-        "additionalType": "geolink:Person",
+        "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
         "identifier": {
           "@type": "PropertyValue",
-          "additionalType": [
-            "geolink:Identifier",
-            "datacite:Identifier"
-          ],
-          "propertyID": "datacite:orcid",
+          "additionalType": ["http://schema.geolink.org/1.0/base/main#Identifier", "http://purl.org/spar/datacite/Identifier"],
+          "propertyID": "http://purl.org/spar/datacite/orcid",
           "url": "https://orcid.org/0000-0003-3432-2297",
           "value": "0000-0003-3432-2297"
         },
@@ -1500,32 +1555,22 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'
     }
 }
 </pre>
-
-
-<p>Notice that since Uta Passow has already been defined in the document with <code>&quot;@id&quot;: &quot;https://www.bco-dmo.org/person/51317&quot;</code> for her role as Principal Investigator, the <code>@id</code> can be used for her role as Contact by defining the Role's creator as <code>&quot;creator&quot;: { &quot;@id&quot;: &quot;https://www.bco-dmo.org/person/51317&quot; }</code>.</p>
+<p>Notice that since Uta Passow has already been defined in the document with <code>"@id": "https://www.bco-dmo.org/person/51317"</code> for her role as Principal Investigator, the <code>@id</code> can be used for her role as Contact by defining the Role's creator as <code>"creator": { "@id": "https://www.bco-dmo.org/person/51317" }</code>.</p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-publisher_provider"></a></p>
-<h4 id="describing-a-datasets-publisherprovider">Describing a Dataset's Publisher/Provider</h4>
-<p><img src="/voc/static/schema/diagrams/dataset-publisher_provider.png" title="Dataset - Publisher/Provider" alt="Publisher/Provider" /></p>
-<p>If your repository is the publisher and/or provider of the dataset then you don't have to describe your repository as a <a href="https://schema.org/Organization">schema:Organziation</a> <strong>if</strong> your repository markup includes the <strong><code>@id</code></strong>. For example, if you published repository markup such as:<br /><pre><br />{<br /> <script type="text/javascript">
-<!--
-h='&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@context&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#x63;&#x6f;&#110;&#116;&#x65;&#120;&#116;&#34;&#x29;</noscript>: {...},<br /> <script type="text/javascript">
-<!--
-h='&#116;&#x79;&#112;&#x65;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@type&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#116;&#x79;&#112;&#x65;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#116;&#x79;&#112;&#x65;&#34;&#x29;</noscript>: [&quot;Service&quot;, &quot;Organization&quot;],<br /> ...<br /> <strong><script type="text/javascript">
-<!--
-h='&#x69;&#100;&#34;';a='&#64;';n='&#34;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#34;&#64;&#x69;&#100;&#34;&#32;&#40;&#34;&#32;&#x61;&#116;&#32;&#x69;&#100;&#34;&#x29;</noscript>: &quot;<a href="https://www.sample-data-repository.org">https://www.sample-data-repository.org</a>&quot;</strong><br /> ...<br />}<br /></pre></p>
+<h4>Describing a Dataset's Publisher/Provider</h4>
+<p><img src="/voc/static/schema/diagrams/dataset-publisher_provider.png" alt="Publisher/Provider" title="Dataset - Publisher/Provider"></p>
+<p>If your repository is the publisher and/or provider of the dataset then you don't have to describe your repository as a <a href="https://schema.org/Organization">schema:Organziation</a> <strong>if</strong> your repository markup includes the <strong><code>@id</code></strong>. For example, if you published repository markup such as:</p>
+<pre>{
+  "@context": {...},
+  "@type": ["Service", "Organization"],
+  ...
+  <strong>"@id": "https://www.sample-data-repository.org"</strong>
+  ...
+}
+</pre>
 <p>then you can reuse that <code>@id</code> here. Harvesters such as Google and Project418 will make the appropriate linkages and your dataset publisher/provider can be published in this way:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1534,7 +1579,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
 <strong>"provider": {
@@ -1545,11 +1590,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }</strong>
 }
 </pre>
-
-
 <p>Otherwise, you can define the organization inline in this way:</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1558,13 +1600,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
 <strong>"provider": {
     "@id": "https://www.sample-data-repository.org",
     "@type": "Organization",
-    "additionalType": "geolink:Organization",
+    "additionalType": "http://schema.geolink.org/1.0/base/main#Organization",
     "legalName": "Sample Data Repository Office",
     "name": "SDRO",
     "sameAs": "http://www.re3data.org/repository/r3dxxxxxxxxx",
@@ -1575,15 +1617,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   }</strong>
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-protocols"></a></p>
-<h4 id="describing-a-datasets-protocols">Describing a Dataset's Protocols</h4>
+<h4>Describing a Dataset's Protocols</h4>
 <p>Datasets can have a number of policies and protocols attached to them - Terms of Use, access restrictions, certain licenses, etc. If you want to represent one or more of these protocols and there is a URL at which a user can read that protocol, we can use the <a href="https://schema.org/DigitalDocument">schema:DigitalDocument</a> to describe the protocol using the <a href="https://schema.org/publishingPrinciples">schema:publishingPrinciples</a> field.</p>
-<p><img src="/voc/static/schema/diagrams/dataset-protocols.png" title="Dataset - Protocols" alt="Protocols" /></p>
-<pre>
-{
+<p><img src="/voc/static/schema/diagrams/dataset-protocols.png" alt="Protocols" title="Dataset - Protocols"></p>
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1592,35 +1631,33 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "geo-upper": "http://www.geoscienceontology.org/geo-upper#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
 <strong>"publishingPrinciples": {
     "@id": "http://creativecommons.org/licenses/by/4.0/",
     "@type": "DigitalDocument",
-    "additionalType": "gdx:Protocol-License",
+    "additionalType": "https://geodex.org/voc/Protocol-License",
     "name": "Dataset Usage License",
     "url": "http://creativecommons.org/licenses/by/4.0/"
   }</strong>
 }
 </pre>
-
-
 <p>P418 has created some class names for some common protocol document types. These will help make it clear to users what types of policies you have. If you would like us to add more, please let us know by creating an <a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/new">Issue</a>.</p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="dataset-funding"></a></p>
-<p>Trying to describe a Dataset's funding award is one area of schema.org that doesn't fit all that well. There is a lot of <a href="https://github.com/schemaorg/schemaorg/issues/383">discussion</a> on this topic already happening with schema.org governance.<br />Schema.org's most recent communication with P418 recommended that the award be something generated from the <a href="https://schema.org/funder">schema:funder</a>. We feel the best class to classify as an Award <strong>until this is addressed by schema.org</strong> is the <a href="https://schema.org/Offer">schema:Offer</a>. If you specify an Award, you <strong>should</strong> also use the <code>gdx:fundedBy</code> property to directly link the Dataset to the Award in this way.</p>
-<h4 id="describing-a-datasets-funding">Describing a Dataset's Funding</h4>
-<p><img src="/voc/static/schema/diagrams/dataset-funding.png" title="Dataset - Funding" alt="Funding" /></p>
+<p>Trying to describe a Dataset's funding award is one area of schema.org that doesn't fit all that well. There is a lot of <a href="https://github.com/schemaorg/schemaorg/issues/383">discussion</a> on this topic already happening with schema.org governance.
+Schema.org's most recent communication with P418 recommended that the award be something generated from the <a href="https://schema.org/funder">schema:funder</a>. We feel the best class to classify as an Award <strong>until this is addressed by schema.org</strong> is the <a href="https://schema.org/Offer">schema:Offer</a>. If you specify an Award, you <strong>should</strong> also use the <code>gdx:fundedBy</code> property to directly link the Dataset to the Award in this way.</p>
+<h4>Describing a Dataset's Funding</h4>
+<p><img src="/voc/static/schema/diagrams/dataset-funding.png" alt="Funding" title="Dataset - Funding"></p>
 <ul>
-<li><a href="">schema:name</a> - The award title<br /></li>
-<li><a href="">schema:description</a> - The award description/abstract<br /></li>
-<li><a href="">schema:identifier</a> - The award identifier,number,etc.<br /></li>
-<li><a href="">schema:validFrom</a> - The award start date<br /></li>
+<li><a href="">schema:name</a> - The award title</li>
+<li><a href="">schema:description</a> - The award description/abstract</li>
+<li><a href="">schema:identifier</a> - The award identifier,number,etc.</li>
+<li><a href="">schema:validFrom</a> - The award start date</li>
 <li><a href="">schema:validThrough</a> - The award end date</li>
 </ul>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "geolink": "http://schema.geolink.org/1.0/base/main#",
@@ -1630,25 +1667,25 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "geolink-vocab": "http://schema.geolink.org/1.0/voc/local#"
   },
   "@type": "Dataset",
-  "additionalType": ["geolink:Dataset", "vivo:Dataset"],
+  "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
   "name": "Removal of organic carbon by natural bacterioplankton communities as a function of pCO2 from laboratory experiments between 2012 and 2016",
   ...
 <strong>"funder": {
     "@type": "Organization",
-    "additionalType": "geolink:Organization",
+    "additionalType": "http://schema.geolink.org/1.0/base/main#Organization",
     "legalName": "National Science Foundation",
     "name": "NSF",
     "url": "https://www.nsf.gov",
     "identifier": {
       "@type": "PropertyValue",
-      "propertyID": "datacite:doi",
+      "propertyID": "http://purl.org/spar/datacite/doi",
       "value": "10.13039/100000141",
       "url": "https://doi.org/10.13039/100000001"
     },
     "makesOffer": {
       "@type": "Offer",
       "@id": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1623751",
-      "additionalType": "geolink:Award",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#Award",
       "name": "EarthCube Science Support Office (ESSO)",
       "description": "EarthCube is a community-driven effort with the goal of transforming the conduct of geoscience research and education by creating a well-integrated and facile environment to share scientific data, information tools and services, and knowledge in an open, transparent, and inclusive manner....[truncated]",
       "identifier": {
@@ -1661,7 +1698,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
       "validThrough": "2019-04-30",
       "offeredBy": {
         "@type": "Person",
-        "additionalType": "geolink-vocab:roletype_program_manager",
+        "additionalType": "http://schema.geolink.org/1.0/voc/local#roletype_program_manager",
         "name": "Eva E. Zanzerkia"
       }
     },
@@ -1670,7 +1707,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
       "legalName": "Directorate for Geosciences",
       "identifier": {
         "@type": "PropertyValue",
-        "propertyID": "datacite:doi",
+        "propertyID": "http://purl.org/spar/datacite/doi",
         "value": "10.13039/100000085",
         "url": "https://doi.org/10.13039/100000085"
        },
@@ -1680,7 +1717,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
         "url": "http://www.nsf.gov",
         "identifier": {
           "@type": "PropertyValue",
-          "propertyID": "datacite:doi",
+          "propertyID": "http://purl.org/spar/datacite/doi",
           "value": "10.13039/100000001",
           "url": "https://doi.org/10.13039/100000001"
         }
@@ -1690,35 +1727,37 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   "gdx:fundedBy": { "@id": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1623751" }</strong>
  }
 </pre>
-
-
-
 <p>Back to <a href="#top">top</a></p>
 <p><a id="examples"></a></p>
-<h3 id="examples">Examples</h3>
-<p>All examples can be found at: <a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/">https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/</a></p>
+<h3>Examples</h3>
+<p>All examples can be found at: https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/</p>
 <ul>
-<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/repository">Repository Examples</a><br /></li>
-<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/repository/full.jsonld">Full Example by BCO-DMO</a><br /></li>
-<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/repository/minimal.jsonld">Minimal Example by BCO-DMO</a><br /></li>
-<li>See <a href="https://www.bco-dmo.org">BCO-DMO homepage</a> (view source of the page to see the schema.org JSON-LD)<br /></li>
-<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/resource">Dataset Examples</a><br /></li>
-<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/resource/dataset-full.jsonld">Full Example by BCO-DMO</a><br /></li>
+<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/repository">Repository Examples</a>
+<ul>
+<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/repository/full.jsonld">Full Example by BCO-DMO</a></li>
+<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/repository/minimal.jsonld">Minimal Example by BCO-DMO</a></li>
+<li>See <a href="https://www.bco-dmo.org">BCO-DMO homepage</a> (view source of the page to see the schema.org JSON-LD)</li>
+</ul>
+</li>
+<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/tree/master/html/voc/static/schema/examples/resource">Dataset Examples</a>
+<ul>
+<li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/resource/dataset-full.jsonld">Full Example by BCO-DMO</a></li>
 <li><a href="https://github.com/earthcubearchitecture-project418/p418Vocabulary/blob/master/html/voc/static/schema/examples/resource/dataset-minimal.jsonld">Minimal Example by BCO-DMO</a></li>
+</ul>
+</li>
 </ul>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="issues"></a></p>
-<h4 id="issues">Issues</h4>
-<p><a href="https://stackoverflow.com/questions/38243521/schema-org-contacttype-validation-issue-the-value-provided-for-office-must-be">https://stackoverflow.com/questions/38243521/schema-org-contacttype-validation-issue-the-value-provided-for-office-must-be</a></p>
+<h4>Issues</h4>
+<p>https://stackoverflow.com/questions/38243521/schema-org-contacttype-validation-issue-the-value-provided-for-office-must-be</p>
 <p>Back to <a href="#top">top</a></p>
 <p><a id="advanced-publishing"></a></p>
-<h3 id="advanced-publishing-techniques">Advanced Publishing Techniques</h3>
+<h3>Advanced Publishing Techniques</h3>
 <p><a id="advanced-publishing-category"></a></p>
-<h4 id="how-to-publish-resources-for-the-categoriesdisciplines-at-repository-services.">How to publish resources for the categories/disciplines at repository services.</h4>
-<h4 id="how-to-use-external-vocabularies">&amp; How to use external vocabularies</h4>
+<h4>How to publish resources for the categories/disciplines at repository services.</h4>
+<h4>&amp; How to use external vocabularies</h4>
 <p>The SWEET ontology defines a number of science disciplines and a repository could reference those, or another vocabuary's resources, by adding the vocabular to the <code>@context</code> attribute of the JSON-LD markup.</p>
-<pre>
-{
+<pre>{
   "@context": {
     "@vocab": "http://schema.org/",
     "gdx": "https://geodex.org/voc/",
@@ -1726,7 +1765,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
     "sweet-kd": "http://sweetontology.net/humanKnowledgeDomain/"</strong>
   },
   "@type": ["Service", "Organization"],
-  "additionalType": "gdx:ResearchRepositoryService",
+  "additionalType": "https://geodex.org/voc/ResearchRepositoryService",
   "legalName": "Sample Data Repository Office",
   "name": "SDRO",
   "url": "https://www.sample-data-repository.org",
@@ -1738,8 +1777,6 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'&quot;@id&quot;'+'<\/'+'a'
   </strong>
 }
 </pre>
-
-
 <p>Back to <a href="#top">top</a></p>
 
 <!-- END OF Markdown -->
