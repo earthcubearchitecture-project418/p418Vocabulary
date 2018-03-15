@@ -1,9 +1,58 @@
 <a id="top"></a>
-![documentation v1.0.1](https://img.shields.io/badge/documentation-v1.0.1-blue.svg)
+![documentation v1.0.2](https://img.shields.io/badge/documentation-v1.0.2-blue.svg)
 
-# UPDATE
+
+# Table of Contents
+* [Updates](#updates)
+* [About](#about)
+* [Goals](#goals)
+* [Approach](#approach)
+* [Vocabulary Prefixes](#prefixes)
+* [schema.org Extensions](#extensions)
+* [Graphical Notation](#graphical-notation)
+* [Publishing schema.org JSON-LD](#schemaorg-jsonld)
+  * [Describing a Repository](#repository)
+    * [Repository - Fields](#repository-fields)
+    * [Repository - Funding Source](#repository-funding-source)
+    * [Repository - Types of Resources](#repository-resource-types)
+    * [Repository - Outreach Activities](#repository-outreach-activities)
+    * [Repository - Identifier](#repository-identifier)
+    * [Repository - Policies](#repository-policies)
+    * [Repository - Services](#repository-services)
+    * [Repository - Data Collections](#repository-data-collections)
+  * [Describing a Dataset](#dataset-diagram)
+    * [Dataset - Identifier](#dataset-identifiers)
+    * [Dataset - Variables](#dataset-variables)
+    * [Dataset - DataCatalog](#dataset-catalog)
+    * [Dataset - Distributions](#dataset-distros)
+       * [Accessing Data through a Service Endpoint](#dataset-service-endpoint)
+    * [Dataset - Temporal](#dataset-temporal)
+    * [Dataset - Spatial](#dataset-spatial)
+      * [GeoCoordinates](#dataset-spatial-point)
+      * [GeoShape](#dataset-spatial-shape)
+    * [Dataset - Creators/Contributors](#dataset-creator_contributor)
+    * [Dataset - Publisher/Provider](#dataset-publisher_provider)
+    * [Dataset - Protocols](#dataset-protocols)
+    * [Dataset - Funding](#dataset-funding)
+
+* [Examples](#examples)
+* [Issues](#issues)
+* [Advanced Publishing Techniques](#advanced-publishing-techniques)
+  * [How to use external vocabularies](#advanced-publishing-category)
+  * [Publishing more detail for categories/disciplines for a repository](#advanced-publishing-category)
+
+
+<a id="updates"></a>
+# UPDATES
+
+**Mar 15 2018**
+
+Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. **We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue) as the use of text or url does not get indexed properly by Google and other JSON-LD testing tools due to an issue with the properties definition.**
+
+**Mar 1 2018**
 
 We've updated our documentation for fixing our use of [schema:additionalType](https://schema.org/additionalType) and [schema:propertyID](https://schema.org/propertyID) to use fully-qualified URLs. This corrects the mistake of using a vocabulary prefix such as `gdx:` to make reference to a vocabulary class. An example of this fix for [schema:additionalType](https://schema.org/additionalType):
+
 
 **OLD**
 <pre>
@@ -66,47 +115,6 @@ This pattern is also applied to the [schema:propertyID](https://schema.org/prope
   },
 }
 </pre>
-
-
-
-# Table of Contents
-
-* [About](#about)
-* [Goals](#goals)
-* [Approach](#approach)
-* [Vocabulary Prefixes](#prefixes)
-* [schema.org Extensions](#extensions)
-* [Graphical Notation](#graphical-notation)
-* [Publishing schema.org JSON-LD](#schemaorg-jsonld)
-  * [Describing a Repository](#repository)
-    * [Repository - Fields](#repository-fields)
-    * [Repository - Funding Source](#repository-funding-source)
-    * [Repository - Types of Resources](#repository-resource-types)
-    * [Repository - Outreach Activities](#repository-outreach-activities)
-    * [Repository - Identifier](#repository-identifier)
-    * [Repository - Policies](#repository-policies)
-    * [Repository - Services](#repository-services)
-    * [Repository - Data Collections](#repository-data-collections)
-  * [Describing a Dataset](#dataset-diagram)
-    * [Dataset - Identifier](#dataset-identifiers)
-    * [Dataset - Variables](#dataset-variables)
-    * [Dataset - DataCatalog](#dataset-catalog)
-    * [Dataset - Distributions](#dataset-distros)
-       * [Accessing Data through a Service Endpoint](#dataset-service-endpoint)
-    * [Dataset - Temporal](#dataset-temporal)
-    * [Dataset - Spatial](#dataset-spatial)
-      * [GeoCoordinates](#dataset-spatial-point)
-      * [GeoShape](#dataset-spatial-shape)
-    * [Dataset - Creators/Contributors](#dataset-creator_contributor)
-    * [Dataset - Publisher/Provider](#dataset-publisher_provider)
-    * [Dataset - Protocols](#dataset-protocols)
-    * [Dataset - Funding](#dataset-funding)
-
-* [Examples](#examples)
-* [Issues](#issues)
-* [Advanced Publishing Techniques](#advanced-publishing-techniques)
-  * [How to use external vocabularies](#advanced-publishing-category)
-  * [Publishing more detail for categories/disciplines for a repository](#advanced-publishing-category)
 
 <a id="about"></a>
 ## About
@@ -976,7 +984,7 @@ The [guide](https://developers.google.com/search/docs/data-types/dataset) sugges
 Back to [top](#top)
 
 <a id="dataset-identifiers"></a>
-Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue).
+Adding the [schema:identifier](https://schema.org/identifier) field can be done in three ways - a text description, a URL, or by using the [schema:PropertyValue](https://schema.org/PropertyValue) type to describe the identifier in more detail. We highly recommend using the [schema:PropertyValue](https://schema.org/PropertyValue) as the use of text or url does not get indexed properly by Google and other JSON-LD testing tools due to an issue with the properties definition.
 
 #### Describing a Dataset Identifier
 ![Identifiers](html/voc/static/schema/diagrams/dataset-identifier.png "Dataset - Identifiers")
