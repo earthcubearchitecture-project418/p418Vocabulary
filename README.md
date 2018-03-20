@@ -1400,6 +1400,31 @@ To alleviate some of the pain of converting spatial information into these defin
 
 We also recognize that there is no defined property for specifying a Coordinate Reference System, but we see from the [schema.org issue queue](https://github.com/schemaorg/schemaorg/issues) that this has been mentioned.
 
+<a id="dataset-multiple-geometries"></a>
+If you have multiple geometries, you can publish those by making the [schema:geo](https://schema.org/geo) field an array of [GeoShape](https://schema.org/GeoShape) or [GeoCoordinates](https://schema.org/GeoCoordinates) like so:
+
+<pre>
+{
+  ...
+  "spatialCoverage": {
+    "@type": "Place",
+    <strong>"geo": [</strong>
+      {
+        "@type": "GeoCoordinates",
+        "latitude": -17.65,
+        "longitude": 50
+      },
+      {
+        "@type": "GeoCoordinates",
+        "latitude": -19,
+        "longitude": 51
+      },
+      ...
+    <strong>]</strong>
+  }
+  ...
+}
+</pre>
 
 Back to [top](#top)
 
