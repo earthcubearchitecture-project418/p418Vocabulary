@@ -1,5 +1,5 @@
 <a id="top"></a>
-![documentation v1.0.2](https://img.shields.io/badge/documentation-v1.0.2-blue.svg)
+![documentation v1.0.3](https://img.shields.io/badge/documentation-v1.0.3-blue.svg)
 
 
 # Table of Contents
@@ -40,10 +40,14 @@
 * [Advanced Publishing Techniques](#advanced-publishing-techniques)
   * [How to use external vocabularies](#advanced-publishing-category)
   * [Publishing more detail for categories/disciplines for a repository](#advanced-publishing-category)
+  * [Attaching Physical Samples to a Dataset](#physical-sample-igsn)
 
 
 <a id="updates"></a>
 # UPDATES
+
+**Mar 21 2018**
+Adding an example of how to attach physical samples, and their IGSN identifiers, to a Dataset. See: [Attaching Physical Samples to a Dataset](#physical-sample-igsn)
 
 **Mar 15 2018**
 
@@ -1833,5 +1837,61 @@ The SWEET ontology defines a number of science disciplines and a repository coul
   </strong>
 }
 </pre>
+
+<a id="physical-sample-igsn"></a>
+#### Attaching Physical Samples to a Dataset
+
+Currently, there isn't a breat semantic property for a Dataset to distinguish the related physical samples. However, we can use the [schema:hasPart](https://schema.org/hasPart) property to accomplish this without too much compromise. A [GitHub issue](https://github.com/earthcubearchitecture-project418/p418Vocabulary/issues/16) has been setup to follow this scenario. Here is the best way, so far, to link physical samples to a Dataset:
+
+<pre>
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "gdx": "https://geodex.org/voc/",
+    <strong>"geolink": "http://schema.geolink.org/1.0/base/main#",
+    "igsn": "http://pid.geoscience.gov.au/def/voc/igsn-codelists/",</strong>
+  },
+  "@type": "Dataset",
+  ...,
+  <strong>"hasPart": [
+    { 
+      "@type": "CreativeWork",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#PhysicalSample",
+      "identifier": {
+        "@type": "PropertyValue",
+        "additionalType": ["http://schema.geolink.org/1.0/base/main#Identifier", "http://purl.org/spar/datacite/Identifier"],
+        "propertyID": "http://pid.geoscience.gov.au/def/voc/igsn-codelists/IGSN",
+        "url": "https://app.geosamples.org/sample/igsn/WHO000A53",
+        "value": "WHO000A53"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -26.94486389,
+          "longitude": 143.43508333,
+          "elevation": 219.453
+        }
+      }
+      ...
+    },
+    { 
+      "@type": "CreativeWork",
+      "additionalType": "http://schema.geolink.org/1.0/base/main#PhysicalSample",
+      "identifier": {
+        "@type": "PropertyValue",
+        "additionalType": ["http://schema.geolink.org/1.0/base/main#Identifier", "http://purl.org/spar/datacite/Identifier"],
+        "propertyID": "http://pid.geoscience.gov.au/def/voc/igsn-codelists/IGSN",
+        "url": "https://app.geosamples.org/sample/igsn/WHO000A67",
+        "value": "WHO000A67"
+      }
+      ...
+    }
+  ]</strong>
+}
+</pre>
+
+Here, we use the superclass of a Dataset, the [schema:CreativeWork](https://schema.org/CreativeWork) to also define a Physical Sample. We disambiguate the Creative Work to be a physical sample by using the GeoLink definition in the [schema:additionalType](https://schema.org/additionalType) field. See the [schema:CreativeWork](https://schema.org/CreativeWork) to for the additional fields available for adding to the physical sample.
+
 
 Back to [top](#top)
