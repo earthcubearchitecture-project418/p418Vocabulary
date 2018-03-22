@@ -1860,7 +1860,7 @@ Currently, there isn't a breat semantic property for a Dataset to distinguish th
       "identifier": {
         "@type": "PropertyValue",
         "additionalType": ["http://schema.geolink.org/1.0/base/main#Identifier", "http://purl.org/spar/datacite/Identifier"],
-        "propertyID": "http://pid.geoscience.gov.au/def/voc/igsn-codelists/IGSN",
+        "propertyID": "IGSN",
         "url": "https://app.geosamples.org/sample/igsn/WHO000A53",
         "value": "WHO000A53"
       },
@@ -1881,7 +1881,7 @@ Currently, there isn't a breat semantic property for a Dataset to distinguish th
       "identifier": {
         "@type": "PropertyValue",
         "additionalType": ["http://schema.geolink.org/1.0/base/main#Identifier", "http://purl.org/spar/datacite/Identifier"],
-        "propertyID": "http://pid.geoscience.gov.au/def/voc/igsn-codelists/IGSN",
+        "propertyID": "IGSN",
         "url": "https://app.geosamples.org/sample/igsn/WHO000A67",
         "value": "WHO000A67"
       }
@@ -1892,6 +1892,8 @@ Currently, there isn't a breat semantic property for a Dataset to distinguish th
 </pre>
 
 Here, we use the superclass of a Dataset, the [schema:CreativeWork](https://schema.org/CreativeWork) to also define a Physical Sample. We disambiguate the Creative Work to be a physical sample by using the GeoLink definition in the [schema:additionalType](https://schema.org/additionalType) field. See the [schema:CreativeWork](https://schema.org/CreativeWork) to for the additional fields available for adding to the physical sample.
+
+**NOTE:** We use "IGSN" as the [schema:propertyID](https://schema.org/propertyID) until a canonical URI is defined by IGSN governance.
 
 
 Back to [top](#top)
