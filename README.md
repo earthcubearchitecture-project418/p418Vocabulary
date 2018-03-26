@@ -1150,7 +1150,7 @@ For some repositories, defining a one or many data collections helps contextuali
 
 ![DataCatalog](html/voc/static/schema/diagrams/dataset-catalog.png "Dataset - Catalog")
 
-The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an ["offering" of your repository[(#repository-offercatalog) and including the `@id` property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a [schema:DataCatalog](https://schema.org/DataCatalog) with the
+The most optimal way to use these DataCatalogs for a repository is to define these catalogs as an ["offering" of your repository](#repository-offercatalog) and including the `@id` property to be reused in the dataset JSON-LD. For example, the repository JSON-LD defines a [schema:DataCatalog](https://schema.org/DataCatalog) with the
 
 `"@id": "https://www.sample-data-repository.org/collection/biological-data"`.
 
