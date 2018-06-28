@@ -2,7 +2,7 @@
     "@context": {
         "@vocab": "http://schema.org/",
         "gdx": "https://geodex.org/voc/",
-        "http://purl.org/spar/datacite/": "http://purl.org/spar/datacite/"
+        "datacite": "http://purl.org/spar/datacite/"
     },
     "@type": ["Service", "Organization", "WebSite", "WebPage"],
     "@id": "http://lod.bco-dmo.org/id/affiliation/191",
@@ -19,7 +19,7 @@
     ],
     "identifier": {
         "@type": "PropertyValue",
-        "propertyID": "http://purl.org/spar/datacite/:doi",
+        "propertyID": "http://purl.org/spar/datacite/doi",
         "value": "10.17616/R37P4C",
         "url": "https://doi.org/10.17616/R37P4C"
     },
@@ -55,7 +55,7 @@
       "url": "https://www.nsf.gov/div/index.jsp?div=OCE",
       "identifier": {
         "@type": "PropertyValue",
-        "propertyID": "http://purl.org/spar/datacite/:doi",
+        "propertyID": "http://purl.org/spar/datacite/doi",
         "value": "10.13039/100000141",
         "url": "https://doi.org/10.13039/100000141"
       },
@@ -67,7 +67,7 @@
         "url": "http://www.nsf.gov",
         "identifier": {
           "@type": "PropertyValue",
-          "propertyID": "http://purl.org/spar/datacite/:doi",
+          "propertyID": "http://purl.org/spar/datacite/doi",
           "value": "10.13039/100000085",
           "url": "https://doi.org/10.13039/100000085"
          },
@@ -79,7 +79,7 @@
           "url": "http://www.nsf.gov",
           "identifier": {
             "@type": "PropertyValue",
-            "propertyID": "http://purl.org/spar/datacite/:doi",
+            "propertyID": "http://purl.org/spar/datacite/doi",
             "value": "10.13039/100000001",
             "url": "https://doi.org/10.13039/100000001"
           }
@@ -100,7 +100,6 @@
         "addressCountry": "USA"
       }
     },
-
     "publishingPrinciples": [
       {
         "@type": "DigitalDocument",
@@ -131,7 +130,7 @@
         "itemListElement": [
           {
             "@type": "Action",
-            "@id": "https://geodex.org/voc/OutreachActivity-UserWorkshop",
+            "@id": "gdx:OutreachActivity-UserWorkshop",
             "additionalType": "https://geodex.org/voc/OutreachActivity-UserWorkshop",
             "name": "BCO-DMO Tutorial",
             "description": "The BCO-DMO tutorial is usually delvierd as part of the annual OCB Workshop",
